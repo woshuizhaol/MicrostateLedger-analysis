@@ -1,0 +1,266 @@
+{
+ "source": "ten_target",
+ "results": {
+  "ten_target_main|geom": {
+   "n_flips_jak2": 11,
+   "n_flips_rest": 105,
+   "chi2": 2.435945263842143,
+   "perm_p": 0.41045895410458955,
+   "permutation_unit": "compound cluster (target labels permuted across the clusters that have a flip)",
+   "jak2_type_counts": {
+    "tautomer": 8,
+    "protonation": 2,
+    "stereo": 1
+   },
+   "rest_type_counts": {
+    "tautomer": 59,
+    "stereo": 32,
+    "protonation": 13,
+    "resonance": 1
+   },
+   "jak2_share_protonation": 0.18181818181818182,
+   "rest_share_protonation": 0.12380952380952381,
+   "flip_pct_by_target": {
+    "adrb2": 9.644670050761421,
+    "egfr": 8.16326530612245,
+    "fa10": 7.5,
+    "cdk2": 6.598984771573604,
+    "src": 5.8201058201058204,
+    "jak2": 5.612244897959184,
+    "bace1": 5.527638190954774,
+    "aa2ar": 4.615384615384615,
+    "pde5a": 3.553299492385787,
+    "hivpr": 2.1739130434782608
+   },
+   "jak2_flip_pct": 5.612244897959184,
+   "jak2_rank": 6,
+   "n_targets": 10,
+   "jak2_percentile": 40.0
+  },
+  "ten_target_main|full_pb": {
+   "n_flips_jak2": 12,
+   "n_flips_rest": 107,
+   "chi2": 1.3556358911568844,
+   "perm_p": 0.6716328367163283,
+   "permutation_unit": "compound cluster (target labels permuted across the clusters that have a flip)",
+   "jak2_type_counts": {
+    "tautomer": 8,
+    "protonation": 2,
+    "stereo": 2
+   },
+   "rest_type_counts": {
+    "tautomer": 59,
+    "stereo": 34,
+    "protonation": 13,
+    "resonance": 1
+   },
+   "jak2_share_protonation": 0.16666666666666666,
+   "rest_share_protonation": 0.12149532710280374,
+   "flip_pct_by_target": {
+    "adrb2": 10.152284263959391,
+    "egfr": 8.16326530612245,
+    "fa10": 7.5,
+    "cdk2": 6.598984771573604,
+    "src": 6.349206349206349,
+    "jak2": 6.122448979591836,
+    "bace1": 5.527638190954774,
+    "aa2ar": 4.615384615384615,
+    "pde5a": 3.553299492385787,
+    "hivpr": 2.1739130434782608
+   },
+   "jak2_flip_pct": 6.122448979591836,
+   "jak2_rank": 6,
+   "n_targets": 10,
+   "jak2_percentile": 40.0
+  },
+  "ten_target_main|score_rank": {
+   "n_flips_jak2": 72,
+   "n_flips_rest": 630,
+   "chi2": 0.49950310540163434,
+   "perm_p": 0.8534146585341466,
+   "permutation_unit": "compound cluster (target labels permuted across the clusters that have a flip)",
+   "jak2_type_counts": {
+    "tautomer": 29,
+    "stereo": 25,
+    "protonation": 18
+   },
+   "rest_type_counts": {
+    "tautomer": 273,
+    "stereo": 197,
+    "protonation": 159,
+    "resonance": 1
+   },
+   "jak2_share_protonation": 0.25,
+   "rest_share_protonation": 0.2523809523809524,
+   "flip_pct_by_target": {
+    "cdk2": 39.08629441624365,
+    "adrb2": 38.578680203045685,
+    "bace1": 37.688442211055275,
+    "hivpr": 36.95652173913044,
+    "jak2": 36.734693877551024,
+    "egfr": 36.224489795918366,
+    "pde5a": 35.53299492385787,
+    "fa10": 35.5,
+    "src": 32.804232804232804,
+    "aa2ar": 30.76923076923077
+   },
+   "jak2_flip_pct": 36.734693877551024,
+   "jak2_rank": 5,
+   "n_targets": 10,
+   "jak2_percentile": 50.0
+  },
+  "ten_target_budget6|geom": {
+   "n_flips_jak2": 12,
+   "n_flips_rest": 115,
+   "chi2": 7.343499156506402,
+   "perm_p": 0.027797220277972202,
+   "permutation_unit": "compound cluster (target labels permuted across the clusters that have a flip)",
+   "jak2_type_counts": {
+    "tautomer": 8,
+    "stereo": 3,
+    "protonation": 1
+   },
+   "rest_type_counts": {
+    "protonation": 53,
+    "tautomer": 37,
+    "stereo": 25
+   },
+   "jak2_share_protonation": 0.08333333333333333,
+   "rest_share_protonation": 0.4608695652173913,
+   "flip_pct_by_target": {
+    "adrb2": 9.644670050761421,
+    "aa2ar": 8.333333333333334,
+    "pde5a": 7.142857142857143,
+    "fa10": 7.106598984771574,
+    "jak2": 6.217616580310881,
+    "bace1": 6.153846153846154,
+    "src": 5.7591623036649215,
+    "egfr": 5.154639175257732,
+    "hivpr": 5.142857142857143,
+    "cdk2": 5.128205128205129
+   },
+   "jak2_flip_pct": 6.217616580310881,
+   "jak2_rank": 5,
+   "n_targets": 10,
+   "jak2_percentile": 50.0
+  },
+  "ten_target_budget6|full_pb": {
+   "n_flips_jak2": 14,
+   "n_flips_rest": 117,
+   "chi2": 8.142878704188227,
+   "perm_p": 0.017998200179982,
+   "permutation_unit": "compound cluster (target labels permuted across the clusters that have a flip)",
+   "jak2_type_counts": {
+    "tautomer": 8,
+    "stereo": 5,
+    "protonation": 1
+   },
+   "rest_type_counts": {
+    "protonation": 55,
+    "tautomer": 37,
+    "stereo": 25
+   },
+   "jak2_share_protonation": 0.07142857142857142,
+   "rest_share_protonation": 0.4700854700854701,
+   "flip_pct_by_target": {
+    "adrb2": 9.644670050761421,
+    "aa2ar": 8.333333333333334,
+    "pde5a": 7.653061224489796,
+    "fa10": 7.614213197969543,
+    "jak2": 7.253886010362694,
+    "bace1": 6.153846153846154,
+    "src": 5.7591623036649215,
+    "egfr": 5.154639175257732,
+    "hivpr": 5.142857142857143,
+    "cdk2": 5.128205128205129
+   },
+   "jak2_flip_pct": 7.253886010362694,
+   "jak2_rank": 5,
+   "n_targets": 10,
+   "jak2_percentile": 50.0
+  },
+  "ten_target_budget6|score_rank": {
+   "n_flips_jak2": 58,
+   "n_flips_rest": 563,
+   "chi2": 1.6194847012652205,
+   "perm_p": 0.47225277472252775,
+   "permutation_unit": "compound cluster (target labels permuted across the clusters that have a flip)",
+   "jak2_type_counts": {
+    "protonation": 30,
+    "stereo": 16,
+    "tautomer": 12
+   },
+   "rest_type_counts": {
+    "protonation": 320,
+    "tautomer": 128,
+    "stereo": 115
+   },
+   "jak2_share_protonation": 0.5172413793103449,
+   "rest_share_protonation": 0.5683836589698046,
+   "flip_pct_by_target": {
+    "adrb2": 43.65482233502538,
+    "hivpr": 42.857142857142854,
+    "src": 34.031413612565444,
+    "cdk2": 33.333333333333336,
+    "bace1": 32.30769230769231,
+    "pde5a": 31.122448979591837,
+    "jak2": 30.05181347150259,
+    "egfr": 26.804123711340207,
+    "aa2ar": 25.520833333333332,
+    "fa10": 23.85786802030457
+   },
+   "jak2_flip_pct": 30.05181347150259,
+   "jak2_rank": 7,
+   "n_targets": 10,
+   "jak2_percentile": 30.0
+  },
+  "rescue_catalog": {
+   "n_cases": 42,
+   "n_jak2": 2,
+   "jak2_cases": [
+    {
+     "ligand_id": "C-6fbf13c4cda7",
+     "gain": 0.20800000000000018,
+     "gain_rank": 27,
+     "gain_percentile": 38.095238095238095,
+     "in_manuscript_jak2_provenance_flips": true
+    },
+    {
+     "ligand_id": "C-ec9beed0474b",
+     "gain": 0.17800000000000082,
+     "gain_rank": 28,
+     "gain_percentile": 35.71428571428571,
+     "in_manuscript_jak2_provenance_flips": false
+    }
+   ],
+   "by_target": {
+    "pde5a": 6,
+    "hivpr": 6,
+    "aa2ar": 6,
+    "fa10": 5,
+    "cdk2": 4,
+    "src": 4,
+    "egfr": 4,
+    "adrb2": 4,
+    "jak2": 2,
+    "bace1": 1
+   }
+  }
+ },
+ "provenance": {
+  "script": "$ANALYSIS_ROOT/scripts/flip_attribution/attribution.py",
+  "config": "$ANALYSIS_ROOT/configs/pose_validity.yaml",
+  "inputs": [],
+  "seed": 20261052,
+  "n_boot": null,
+  "n_perm": 10000,
+  "tool_versions": {
+   "python": "3.11.15",
+   "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+   "numpy": "2.4.6",
+   "scipy": "1.17.1",
+   "pandas": "3.0.3",
+   "yaml": "6.0.3"
+  }
+ }
+}

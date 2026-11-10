@@ -1,0 +1,119 @@
+{
+ "file": "predictor_contrast.csv",
+ "description": "POST HOC paired bootstrap contrasts of Rp between predictor-defined dominant states",
+ "row_grain": "scorer x predictor pair",
+ "n_rows": 30,
+ "n_columns": 11,
+ "delimiter": ",",
+ "file_md5": "ea203878887127d56ed26519c73839d0",
+ "columns": [
+  {
+   "name": "scorer",
+   "type": "str",
+   "unit": "",
+   "description": "vina, smina, ad4",
+   "n_missing": 0
+  },
+  {
+   "name": "predictor_a",
+   "type": "str",
+   "unit": "",
+   "description": "first predictor",
+   "n_missing": 0
+  },
+  {
+   "name": "predictor_b",
+   "type": "str",
+   "unit": "",
+   "description": "second predictor",
+   "n_missing": 0
+  },
+  {
+   "name": "n",
+   "type": "int",
+   "unit": "",
+   "description": "n_common complexes",
+   "n_missing": 0
+  },
+  {
+   "name": "dRp_a",
+   "type": "float",
+   "unit": "",
+   "description": "Rp(state of A) - Rp(default)",
+   "n_missing": 0
+  },
+  {
+   "name": "dRp_b",
+   "type": "float",
+   "unit": "",
+   "description": "Rp(state of B) - Rp(default)",
+   "n_missing": 0
+  },
+  {
+   "name": "diff",
+   "type": "float",
+   "unit": "",
+   "description": "Rp(A) - Rp(B)",
+   "n_missing": 0
+  },
+  {
+   "name": "lo",
+   "type": "float",
+   "unit": "",
+   "description": "paired bootstrap 2.5th percentile of diff (same resamples as predictor_robustness.csv)",
+   "n_missing": 0
+  },
+  {
+   "name": "hi",
+   "type": "float",
+   "unit": "",
+   "description": "paired bootstrap 97.5th percentile",
+   "n_missing": 0
+  },
+  {
+   "name": "p_two_sided",
+   "type": "float",
+   "unit": "",
+   "description": "min(1, 2 * min(P(diff <= 0), P(diff >= 0))) over the bootstrap resamples",
+   "n_missing": 0
+  },
+  {
+   "name": "n_states_differ",
+   "type": "int",
+   "unit": "",
+   "description": "complexes in which the two predictors give a different score",
+   "n_missing": 0
+  }
+ ],
+ "extra": {
+  "provenance": {
+   "script": "$ANALYSIS_ROOT/scripts/casf_scoring/predictor_contrast.py",
+   "config": "$ANALYSIS_ROOT/configs/casf_scoring.yaml",
+   "inputs": [
+    {
+     "exists": true,
+     "bytes": 239723,
+     "md5": "25efd85b17a29af635dec48e298eef30",
+     "n_records": 3735,
+     "record_unit": "table_rows",
+     "file": "per_complex_scores_by_predictor.csv"
+    }
+   ],
+   "seed": null,
+   "n_boot": 10000,
+   "n_perm": null,
+   "tool_versions": {
+    "python": "3.11.15",
+    "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "pandas": "3.0.3",
+    "yaml": "6.0.3"
+   },
+   "extra": {
+    "seed_boot": 20261015,
+    "post_hoc": true
+   }
+  }
+ }
+}

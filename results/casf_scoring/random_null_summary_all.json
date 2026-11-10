@@ -1,0 +1,94 @@
+{
+ "provenance": {
+  "script": "$ANALYSIS_ROOT/scripts/casf_scoring/random_null.py",
+  "config": "$ANALYSIS_ROOT/configs/casf_scoring.yaml",
+  "inputs": [
+   {
+    "exists": true,
+    "bytes": 362795,
+    "md5": "31b667b33f088bc9f14854563bc45973",
+    "n_records": 2367,
+    "record_unit": "table_rows",
+    "file": "per_microstate_inplace_scores.csv"
+   },
+   {
+    "exists": true,
+    "bytes": 154722,
+    "md5": "a74168c2559d822f448551d2c1890f2d",
+    "n_records": 1425,
+    "record_unit": "table_rows",
+    "file": "predictor_states.csv"
+   },
+   {
+    "exists": true,
+    "bytes": 14019,
+    "md5": "d5a551fd8edd409e9eb42d247b2ee47f",
+    "n_records": 286,
+    "record_unit": "lines",
+    "file": "CoreSet.dat"
+   }
+  ],
+  "seed": 20261014,
+  "n_boot": 10000,
+  "n_perm": null,
+  "tool_versions": {
+   "python": "3.11.15",
+   "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+   "numpy": "2.4.6",
+   "scipy": "1.17.1",
+   "pandas": "3.0.3",
+   "yaml": "6.0.3"
+  },
+  "extra": {
+   "seed_boot": 20261015,
+   "n_null": 10000,
+   "null_pool_rule": "ensemble members (the Dimorphite 6.4-8.4 ensemble, truncated to 24 as in D11) other than the default (single) state, with a finite score for the scorer; the draw is uniform over the pool"
+  }
+ },
+ "scorers": {
+  "vina": {
+   "n_common": 257,
+   "Rp_single": 0.5808151277250503,
+   "RMSE_single": 1.7620073111647012,
+   "original_dominant_dRp": 0.014191146897984952,
+   "original_random_dRp": 0.008842439042855754,
+   "n_empty_nonsingle_pool": 0,
+   "original_random_percentile_in_null": 0.838,
+   "n_pool_size_1": 67,
+   "pool_size_median": 3.0,
+   "null_ns_mean": 0.0037698488906092215,
+   "null_ns_sd": 0.005088511199898963,
+   "frac_null_dRp_gt0": 0.7711
+  },
+  "smina": {
+   "n_common": 246,
+   "Rp_single": 0.5862694074225554,
+   "RMSE_single": 1.7626150508802862,
+   "original_dominant_dRp": 0.019853545064877465,
+   "original_random_dRp": 0.0077290370514024875,
+   "n_empty_nonsingle_pool": 0,
+   "original_random_percentile_in_null": 0.7186,
+   "n_pool_size_1": 67,
+   "pool_size_median": 3.0,
+   "null_ns_mean": 0.004421137952473959,
+   "null_ns_sd": 0.005698660583577837,
+   "frac_null_dRp_gt0": 0.7822
+  },
+  "ad4": {
+   "n_common": 244,
+   "Rp_single": 0.5390383330453947,
+   "RMSE_single": 1.8258047431538702,
+   "original_dominant_dRp": 0.0006474295348479764,
+   "original_random_dRp": -0.0020361061305294026,
+   "n_empty_nonsingle_pool": 0,
+   "original_random_percentile_in_null": 0.0759,
+   "n_pool_size_1": 67,
+   "pool_size_median": 3.0,
+   "null_ns_mean": -0.0005553171787982306,
+   "null_ns_sd": 0.0010238516985907119,
+   "frac_null_dRp_gt0": 0.2947
+  }
+ },
+ "failures": [],
+ "wall_seconds": 7.5
+}

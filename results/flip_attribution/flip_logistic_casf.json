@@ -1,0 +1,205 @@
+{
+ "source": "casf",
+ "formula_note": "logistic regression (binomial GLM) with cluster-robust standard errors (clusters = compounds; the 5 seeds of one compound form one cluster); reference class tautomer; covariates: target fixed effects, z-scored heavy atoms of the default microstate, log(n microstates); classes with < 20 pairs and targets without outcome variation dropped. A GEE with exchangeable working correlation was tried first on a subset and returned NaN for score_rank (highly correlated within-ligand outcomes) -- replaced for all criteria before any result existed",
+ "results": {
+  "casf2016|geom": {
+   "n_pairs": 6237,
+   "n_ligands": 840,
+   "n_clusters": 280,
+   "change_types_kept": [
+    "protonation",
+    "tautomer"
+   ],
+   "pair_counts": {
+    "protonation": 4701,
+    "tautomer": 1536
+   },
+   "n_flips": 361,
+   "targets_dropped_no_variation": [],
+   "types_vs_tautomer": {
+    "C(change_type, Treatment('tautomer'))[T.protonation]": {
+     "coef": -0.233723882755786,
+     "odds_ratio": 0.7915803547091441,
+     "or_lo": 0.5397627817972753,
+     "or_hi": 1.1608793327228577,
+     "p": 0.23155388383463849
+    },
+    "z_heavy": {
+     "coef": 0.29122816651607236,
+     "odds_ratio": 1.3380698518591134,
+     "or_lo": 0.9370696726663675,
+     "or_hi": 1.9106700181211937,
+     "p": 0.10907929398226669
+    },
+    "log_nmicro": {
+     "coef": -0.3970370173986038,
+     "odds_ratio": 0.6723091380366754,
+     "or_lo": 0.40152341353569654,
+     "or_hi": 1.125711631875817,
+     "p": 0.13112011802545592
+    }
+   },
+   "protonation_vs_rest": {
+    "is_prot": {
+     "coef": -0.233723882755786,
+     "odds_ratio": 0.7915803547091441,
+     "or_lo": 0.5397627817972753,
+     "or_hi": 1.1608793327228577,
+     "p": 0.23155388383463849
+    },
+    "z_heavy": {
+     "coef": 0.29122816651607236,
+     "odds_ratio": 1.3380698518591134,
+     "or_lo": 0.9370696726663675,
+     "or_hi": 1.9106700181211937,
+     "p": 0.10907929398226669
+    },
+    "log_nmicro": {
+     "coef": -0.3970370173986038,
+     "odds_ratio": 0.6723091380366754,
+     "or_lo": 0.40152341353569654,
+     "or_hi": 1.125711631875817,
+     "p": 0.13112011802545592
+    }
+   }
+  },
+  "casf2016|full_pb": {
+   "n_pairs": 6237,
+   "n_ligands": 840,
+   "n_clusters": 280,
+   "change_types_kept": [
+    "protonation",
+    "tautomer"
+   ],
+   "pair_counts": {
+    "protonation": 4701,
+    "tautomer": 1536
+   },
+   "n_flips": 377,
+   "targets_dropped_no_variation": [],
+   "types_vs_tautomer": {
+    "C(change_type, Treatment('tautomer'))[T.protonation]": {
+     "coef": -0.2570203930424921,
+     "odds_ratio": 0.7733524425954154,
+     "or_lo": 0.5328304820538468,
+     "or_hi": 1.1224470457526399,
+     "p": 0.1762997184182582
+    },
+    "z_heavy": {
+     "coef": 0.28696525062380934,
+     "odds_ratio": 1.3323779133698908,
+     "or_lo": 0.9411231576991632,
+     "or_hi": 1.8862896843128891,
+     "p": 0.10569391394268554
+    },
+    "log_nmicro": {
+     "coef": -0.46492952260394005,
+     "odds_ratio": 0.6281793760762585,
+     "or_lo": 0.38147061124505116,
+     "or_hi": 1.0344422791565093,
+     "p": 0.06771416761549404
+    }
+   },
+   "protonation_vs_rest": {
+    "is_prot": {
+     "coef": -0.2570203930424921,
+     "odds_ratio": 0.7733524425954154,
+     "or_lo": 0.5328304820538468,
+     "or_hi": 1.1224470457526399,
+     "p": 0.1762997184182582
+    },
+    "z_heavy": {
+     "coef": 0.28696525062380934,
+     "odds_ratio": 1.3323779133698908,
+     "or_lo": 0.9411231576991632,
+     "or_hi": 1.8862896843128891,
+     "p": 0.10569391394268554
+    },
+    "log_nmicro": {
+     "coef": -0.46492952260394005,
+     "odds_ratio": 0.6281793760762585,
+     "or_lo": 0.38147061124505116,
+     "or_hi": 1.0344422791565093,
+     "p": 0.06771416761549404
+    }
+   }
+  },
+  "casf2016|score_rank": {
+   "n_pairs": 6237,
+   "n_ligands": 840,
+   "n_clusters": 280,
+   "change_types_kept": [
+    "protonation",
+    "tautomer"
+   ],
+   "pair_counts": {
+    "protonation": 4701,
+    "tautomer": 1536
+   },
+   "n_flips": 3510,
+   "targets_dropped_no_variation": [],
+   "types_vs_tautomer": {
+    "C(change_type, Treatment('tautomer'))[T.protonation]": {
+     "coef": -0.08341222693571121,
+     "odds_ratio": 0.9199718318743006,
+     "or_lo": 0.7817907302866746,
+     "or_hi": 1.082576370701926,
+     "p": 0.3151477259337546
+    },
+    "z_heavy": {
+     "coef": 0.0061065897359292185,
+     "odds_ratio": 1.0061252729659433,
+     "or_lo": 0.9779500556226653,
+     "or_hi": 1.0351122320416104,
+     "p": 0.6734743581463744
+    },
+    "log_nmicro": {
+     "coef": -0.4439596317661801,
+     "odds_ratio": 0.6414913161760865,
+     "or_lo": 0.6010299417346915,
+     "or_hi": 0.6846765529544586,
+     "p": 1.0951636346242234e-40
+    }
+   },
+   "protonation_vs_rest": {
+    "is_prot": {
+     "coef": -0.08341222693571121,
+     "odds_ratio": 0.9199718318743006,
+     "or_lo": 0.7817907302866746,
+     "or_hi": 1.082576370701926,
+     "p": 0.3151477259337546
+    },
+    "z_heavy": {
+     "coef": 0.0061065897359292185,
+     "odds_ratio": 1.0061252729659433,
+     "or_lo": 0.9779500556226653,
+     "or_hi": 1.0351122320416104,
+     "p": 0.6734743581463744
+    },
+    "log_nmicro": {
+     "coef": -0.4439596317661801,
+     "odds_ratio": 0.6414913161760865,
+     "or_lo": 0.6010299417346915,
+     "or_hi": 0.6846765529544586,
+     "p": 1.0951636346242234e-40
+    }
+   }
+  }
+ },
+ "provenance": {
+  "script": "$ANALYSIS_ROOT/scripts/flip_attribution/attribution.py",
+  "config": "$ANALYSIS_ROOT/configs/pose_validity.yaml",
+  "inputs": [],
+  "seed": 20261051,
+  "n_boot": null,
+  "n_perm": null,
+  "tool_versions": {
+   "python": "3.11.15",
+   "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+   "numpy": "2.4.6",
+   "scipy": "1.17.1",
+   "pandas": "3.0.3",
+   "yaml": "6.0.3"
+  }
+ }
+}

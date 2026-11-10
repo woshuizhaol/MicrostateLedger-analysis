@@ -1,0 +1,84 @@
+paths:
+  d11_scores: $BASE_ROOT/results/benchmark/p3_casf_scoring_power/scores
+  d11_ad4: $BASE_ROOT/results/benchmark/p3_casf_scoring_power/scores_ad4
+  d11_summary: $BASE_ROOT/results/benchmark/p3_casf_scoring_power/tables/p3_summary.json
+  d11_per_complex: $BASE_ROOT/results/benchmark/p3_casf_scoring_power/tables/p3_per_complex_all.csv
+  coreset_dat: $DOCKING_ROOT/data/processed/CASF-2016/CASF-2016/power_scoring/CoreSet.dat
+  coreset_dir: $DOCKING_ROOT/data/processed/CASF-2016/CASF-2016/coreset
+  original_scoring_py: $BASE_ROOT/code/analysis/p3_casf_scoring_power.py
+  original_ad4_py: $BASE_ROOT/code/analysis/p3_ad4_rescore.py
+  original_analyze_py: $BASE_ROOT/code/analysis/p3_analyze.py
+  dominant_funcs: $ANALYSIS_ROOT/scripts/charge_state/dominant_state.py
+  dimorphite_smarts: $ANALYSIS_ROOT/env/conda/lib/python3.11/site-packages/dimorphite_dl/smarts/site_substructures.smarts
+  obabel: $ANALYSIS_ROOT/env/conda/bin/obabel
+  ml_python: $ANALYSIS_ROOT/env/pka_ml/bin/python
+  ml_wrapper: $ANALYSIS_ROOT/scripts/charge_state/ml_pka_sites.py
+  anchor_set: $ANALYSIS_ROOT/results/charge_state/anchor_set.csv
+  anchor_constants: $ANALYSIS_ROOT/results/charge_state/anchor_constants.csv
+  iupac_csv: $DOCKING_ROOT/data/crawled/Dissociation-Constants/iupac_high-confidence_v2_3.csv
+  vina_binary: /usr/bin/vina
+  smina_binary: $ANALYSIS_ROOT/env/smina_link/bin/smina
+pinned_md5:
+  d11_summary: 52ff6787f863f2683a5a035811678cab
+  d11_per_complex: 901bca1017ed1876652b779e0c593e62
+  original_scoring_py: b4e133082c64592d803b519b92b72952
+  original_ad4_py: cd926e39799e64fb3541bdd25298f86d
+  original_analyze_py: e7f7398af25a21510f28e890b2de38d4
+  smina_binary: 2c36acc7c512a800640012355ea791bc
+  vina_binary: e595071ea454b8c0c2d6c97a79ba7013
+  coreset_dat: d5a551fd8edd409e9eb42d247b2ee47f
+d11_score_digest:
+  scores: 0b4dda4b9d11928e60a9df3c0beae5a3
+  scores_ad4: 21e749a585415d89125a5f39bf62314c
+stats:
+  seed_null: 20261014
+  n_null: 10000
+  seed_boot: 20261015
+  n_boot: 10000
+  alpha: 0.05
+  null_pool_rule: ensemble members (the Dimorphite 6.4-8.4 ensemble, truncated to 24 as in D11) other than the default (single) state, with a finite score for the scorer; the draw is uniform over the pool
+  null_variants:
+  - non_single
+  - incl_single
+scorers:
+- vina
+- smina
+- ad4
+n_common_expected:
+  vina: 257
+  smina: 246
+  ad4: 244
+original_delta_expected:
+  vina: 0.0142
+  smina: 0.0199
+  ad4: 0.0006
+original_random_delta_expected:
+  vina: 0.0088
+  smina: 0.0077
+  ad4: -0.002
+validation:
+  n_complexes: 20
+  seed: 20261017
+  tolerance: 0.01
+  nproc: 20
+predictors:
+  list:
+  - dimorphite_dom
+  - openbabel
+  - enum_popmax
+  - ml_pka
+  - consensus_ge3
+  consensus_min_agree: 3
+  state_rule: 'A predictor gives a net charge for the ligand. The microstate scored for it is the candidate with that net charge: candidates are the ensemble members plus the Dimorphite dominant state;
+    ties are broken by the highest independent-site Henderson-Hasselbalch population (original code), then by SMILES. Dimorphite uses its own dominant state directly (as in the original analysis). If no
+    candidate has the predicted net charge, the complex keeps the default state and is counted as `fallback_single`.'
+  input_for_prediction: input_smiles
+matched_null:
+  rule: in each complex whose chosen state differs from the default, draw uniformly among candidates other than the default and the chosen state that have the same |q - q_default|; complexes with an empty
+    matched pool are left unchanged in BOTH the observed and the null delta, so both compare the same set of changed complexes
+anchoring:
+  min_n_for_inference: 30
+  match_key: inchikey_skeleton
+  mcs_similarity_min: 0.8
+affected_subset:
+  score_change_tol: 1.0e-09

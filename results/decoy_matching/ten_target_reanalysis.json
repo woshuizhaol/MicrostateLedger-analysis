@@ -1,0 +1,81 @@
+{
+ "source": "$ANALYSIS_ROOT/results/benchmark_analyses/swing_signal/fig4_swing_per_ligand.csv",
+ "n_active": 99,
+ "n_negative": 292,
+ "median_active": 0.314,
+ "median_negative": 0.319,
+ "mann_whitney_p": 0.8733465984262032,
+ "cliffs_delta": {
+  "estimate": 0.010723675107236819,
+  "ci95": [
+   -0.10848294589732947,
+   0.1304846409298464
+  ],
+  "tost": {
+   "ci90": [
+    -0.08842361975923621,
+    0.11197765324477656
+   ],
+   "p_lower": 0.0056,
+   "p_upper": 0.0128,
+   "p_tost": 0.0128,
+   "equivalent": true
+  }
+ },
+ "hodges_lehmann": {
+  "estimate": -1.875877380479622e-06,
+  "ci95": [
+   -0.05500257015228274,
+   0.06607849562168078
+  ],
+  "tost": {
+   "ci90": [
+    -0.04205232973098764,
+    0.05199889831542965
+   ],
+   "p_lower": 0.0,
+   "p_upper": 0.006,
+   "p_tost": 0.006,
+   "equivalent": true
+  }
+ },
+ "bounds": {
+  "cliffs_delta": 0.147,
+  "hl_kcal": 0.1
+ },
+ "note": "original gain = best empirical Vina over docked microstates minus the default microstate's best (the default was tried with more conformers in the original design); not comparable in value with the decoy-matching gain, comparable in the question asked",
+ "half_width_ci90_cliffs_delta": 0.10020063650200639,
+ "provenance": {
+  "script": "$ANALYSIS_ROOT/scripts/decoy_matching/ten_target_reanalysis.py",
+  "config": "$ANALYSIS_ROOT/configs/decoy_matching.yaml",
+  "inputs": [
+   {
+    "exists": true,
+    "bytes": 40809,
+    "md5": "d4a9a9d003f4c27010c87a622afaf209",
+    "n_records": 391,
+    "record_unit": "table_rows",
+    "file": "fig4_swing_per_ligand.csv"
+   },
+   {
+    "exists": true,
+    "bytes": 10426,
+    "md5": "95021ecbb1b609fa91f004bed809dd88",
+    "n_records": 219,
+    "record_unit": "lines",
+    "file": "decoy_stats.py"
+   }
+  ],
+  "seed": 20268019,
+  "n_boot": 10000,
+  "n_perm": null,
+  "tool_versions": {
+   "python": "3.11.15",
+   "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+   "numpy": "2.4.6",
+   "scipy": "1.17.1",
+   "pandas": "3.0.3",
+   "yaml": "6.0.3"
+  }
+ }
+}

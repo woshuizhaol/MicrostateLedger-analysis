@@ -1,0 +1,143 @@
+{
+ "file": "random_null_summary.csv",
+ "description": "Random-microstate null distributions (mean, 2.5/97.5 percentiles) and empirical p of each predictor-defined dRp",
+ "row_grain": "scorer x null_type x predictor",
+ "n_rows": 60,
+ "n_columns": 12,
+ "delimiter": ",",
+ "file_md5": "9fb454bda214d127ab8549eee664aef4",
+ "columns": [
+  {
+   "name": "scorer",
+   "type": "str",
+   "unit": "",
+   "description": "vina, smina, ad4",
+   "n_missing": 0
+  },
+  {
+   "name": "null_type",
+   "type": "str",
+   "unit": "",
+   "description": "non_single / incl_single, changed_set (random only where the predictor changes the state), matched_dq",
+   "n_missing": 0
+  },
+  {
+   "name": "predictor",
+   "type": "str",
+   "unit": "",
+   "description": "predictor whose observed dRp is compared with the null",
+   "n_missing": 0
+  },
+  {
+   "name": "n_perturbed",
+   "type": "int",
+   "unit": "",
+   "description": "complexes in which a state is drawn / changed (matched_dq: complexes with a non-empty matched pool)",
+   "n_missing": 0
+  },
+  {
+   "name": "n_draws",
+   "type": "int",
+   "unit": "",
+   "description": "number of random draws",
+   "n_missing": 0
+  },
+  {
+   "name": "null_mean",
+   "type": "float",
+   "unit": "",
+   "description": "mean of dRp over the draws",
+   "n_missing": 0
+  },
+  {
+   "name": "q025",
+   "type": "float",
+   "unit": "",
+   "description": "2.5th percentile of the null dRp",
+   "n_missing": 0
+  },
+  {
+   "name": "q975",
+   "type": "float",
+   "unit": "",
+   "description": "97.5th percentile of the null dRp",
+   "n_missing": 0
+  },
+  {
+   "name": "obs_dRp",
+   "type": "float",
+   "unit": "",
+   "description": "observed dRp(predictor state) - Rp(single); matched_dq: restricted to the complexes with a non-empty matched pool",
+   "n_missing": 0
+  },
+  {
+   "name": "p_emp",
+   "type": "float",
+   "unit": "",
+   "description": "(#{null dRp >= obs} + 1) / (n_draws + 1)",
+   "n_missing": 0
+  },
+  {
+   "name": "obs_within_null_95",
+   "type": "str",
+   "unit": "",
+   "description": "True when q025 <= obs_dRp <= q975",
+   "n_missing": 0
+  },
+  {
+   "name": "frac_null_ge_obs",
+   "type": "float",
+   "unit": "",
+   "description": "#{null dRp >= obs} / n_draws",
+   "n_missing": 0
+  }
+ ],
+ "extra": {
+  "provenance": {
+   "script": "$ANALYSIS_ROOT/scripts/casf_scoring/random_null.py",
+   "config": "$ANALYSIS_ROOT/configs/casf_scoring.yaml",
+   "inputs": [
+    {
+     "exists": true,
+     "bytes": 362795,
+     "md5": "31b667b33f088bc9f14854563bc45973",
+     "n_records": 2367,
+     "record_unit": "table_rows",
+     "file": "per_microstate_inplace_scores.csv"
+    },
+    {
+     "exists": true,
+     "bytes": 154722,
+     "md5": "a74168c2559d822f448551d2c1890f2d",
+     "n_records": 1425,
+     "record_unit": "table_rows",
+     "file": "predictor_states.csv"
+    },
+    {
+     "exists": true,
+     "bytes": 14019,
+     "md5": "d5a551fd8edd409e9eb42d247b2ee47f",
+     "n_records": 286,
+     "record_unit": "lines",
+     "file": "CoreSet.dat"
+    }
+   ],
+   "seed": 20261014,
+   "n_boot": 10000,
+   "n_perm": null,
+   "tool_versions": {
+    "python": "3.11.15",
+    "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "pandas": "3.0.3",
+    "yaml": "6.0.3"
+   },
+   "extra": {
+    "seed_boot": 20261015,
+    "n_null": 10000,
+    "null_pool_rule": "ensemble members (the Dimorphite 6.4-8.4 ensemble, truncated to 24 as in D11) other than the default (single) state, with a finite score for the scorer; the draw is uniform over the pool"
+   }
+  }
+ }
+}

@@ -1,0 +1,100 @@
+{
+ "file": "posthoc_nan_energy_ligands.csv",
+ "description": "POST HOC: ligands touched by poses with internal_energy NaN",
+ "row_grain": "one row per set x role",
+ "n_rows": 12,
+ "n_columns": 7,
+ "delimiter": ",",
+ "file_md5": "4fd7ac98d87cc292cd6808bd7f22c77e",
+ "columns": [
+  {
+   "name": "set",
+   "type": "str",
+   "unit": "",
+   "description": "ligand set",
+   "n_missing": 0
+  },
+  {
+   "name": "role",
+   "type": "str",
+   "unit": "",
+   "description": "active / negative / ALL",
+   "n_missing": 0
+  },
+  {
+   "name": "n_ligands_primary",
+   "type": "int",
+   "unit": "",
+   "description": "ligands with a default and >= 2 docked microstates",
+   "n_missing": 0
+  },
+  {
+   "name": "n_default_or_best_nan",
+   "type": "int",
+   "unit": "",
+   "description": "of them: default or best microstate pose has internal_energy NaN",
+   "n_missing": 0
+  },
+  {
+   "name": "n_any_microstate_nan",
+   "type": "int",
+   "unit": "",
+   "description": "of them: any docked microstate pose has internal_energy NaN",
+   "n_missing": 0
+  },
+  {
+   "name": "pct_default_or_best_nan",
+   "type": "float",
+   "unit": "%",
+   "description": "share of n_ligands_primary",
+   "n_missing": 0
+  },
+  {
+   "name": "pct_any_microstate_nan",
+   "type": "float",
+   "unit": "%",
+   "description": "share of n_ligands_primary",
+   "n_missing": 0
+  }
+ ],
+ "extra": {
+  "provenance": {
+   "script": "$ANALYSIS_ROOT/scripts/pose_validity/exclusion_sensitivity.py",
+   "config": "$ANALYSIS_ROOT/configs/pose_validity.yaml",
+   "inputs": [
+    {
+     "exists": true,
+     "bytes": 12716778,
+     "md5": "f060ae9af11564a987d7c7c67e477f72",
+     "n_records": 60291,
+     "record_unit": "table_rows",
+     "file": "full_scale_ligand_flips.csv"
+    },
+    {
+     "exists": true,
+     "bytes": 35027437,
+     "md5": "a15af92ea73919a39b9ee1b509674283",
+     "n_records": 119462,
+     "record_unit": "lines",
+     "file": "full_scale_pose_table.parquet"
+    }
+   ],
+   "seed": null,
+   "n_boot": null,
+   "n_perm": null,
+   "tool_versions": {
+    "python": "3.11.15",
+    "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "pandas": "3.0.3",
+    "yaml": "6.0.3"
+   },
+   "extra": {
+    "post_hoc": true,
+    "n_poses": 548338,
+    "n_nan_energy_poses": 1250
+   }
+  }
+ }
+}

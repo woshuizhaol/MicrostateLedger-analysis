@@ -1,0 +1,52 @@
+inputs:
+  microstates: 'raw_outputs/casf_scoring/per_microstate_inplace_scores.csv (CASF-scoring enumeration: 2,367 microstates of 285 complexes)'
+  roles: 'raw_outputs/casf_scoring/predictor_states.csv, predictor dimorphite_dom: affected complexes = differs_from_single True (178 complexes, 1,886 microstates)'
+  receptor_for_docking: $BASE_ROOT/results/benchmark/p3_casf_scoring_power/receptors/<pdbid>.pdbqt (rigid PDBbind receptor of the CASF-scoring / CASF scoring analysis)
+  box: centre of the crystal-ligand heavy atoms, edge max(22.5, extent + 10) A (casf_scoring_protocol.box_from)
+  reference: CASF-2016 coreset <pdbid>_ligand.mol2 (crystal ligand) and <pdbid>_protein.pdb (receptor for PoseBusters and ProLIF)
+redock:
+  protocol: docking protocol of decoy-matching (Vina 7ac2999-mod, exhaustiveness 8, --cpu 1, 4 ETKDG conformers per microstate from rdkit_conformers e6ce488, energy-ordered budget-quota loop with budget
+    1 success)
+  seeds:
+  - 20261041
+  - 20261042
+  - 20261043
+  order: affected complexes (178) first; the other 107 complexes only if the affected set is finished and the budget allows; the extension is a coverage question, not a change of
+    any definition
+  nproc_rule: 3 processes while the server load average is about 50 (user instruction 2026-10-17); raised only when the load is clearly below 50
+flip:
+  pair: single (default, role `single`) vs dominant (Dimorphite, role `dominant`) of the SAME complex and the SAME Vina seed
+  complex_level: mean over the seeds with both verdicts; headline = mean over the affected complexes; CI = complex bootstrap (2000 resamples, seed 20261061)
+  direction: rescue = single invalid & dominant valid; degrade = the reverse
+  score_rank: rank <= ceil(n/2) among the microstates of the complex docked with the same seed
+  na_policy: a verdict that is NA (rmsd or plif not computable) is dropped for that criterion only
+noise_floor:
+  definition: for each microstate (single, dominant) the share of the 3 seed pairs whose verdict differs; complex-level noise = mean of the two microstates
+  comparison: 'paired over complexes: Wilcoxon signed-rank on (flip fraction - noise fraction), bootstrap CI of the mean difference, Holm over the 5 criteria; the naive pooled two-proportion z is listed
+    as descriptive only'
+kappa:
+  unit: all re-docked poses with both verdicts; complex-cluster bootstrap 2000, seed 20261061
+  pairs:
+  - - geom
+    - full_pb
+  - - geom
+    - score_rank
+  - - full_pb
+    - score_rank
+  - - geom
+    - rmsd_ref
+  - - geom
+    - plif
+  - - full_pb
+    - rmsd_ref
+  - - full_pb
+    - plif
+  - - score_rank
+    - rmsd_ref
+  - - score_rank
+    - plif
+  - - rmsd_ref
+    - plif
+plif:
+  receptor_route: RDKit PDB reader on the ATOM/TER records with the residues renumbered 1..N (reference_criteria._receptor_block); sanitization without the property check as a fallback; ProLIF n_jobs = 1
+  failure_policy: complexes whose receptor or crystal fingerprint cannot be built get plif = NA; their number and ids are reported

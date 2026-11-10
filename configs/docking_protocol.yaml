@@ -1,0 +1,75 @@
+# Docking protocol used for all full-scale and ten-target docking runs.
+vina_binary:
+  path: "$DOCKING_ROOT/envs/all/bin/vina"
+  version_string: "AutoDock Vina 7ac2999-mod"
+  md5: f0fc6b2586d2bd4416030eb56b22e946
+  note: "Custom build (commit 7ac2999 with a local modification); this binary defines the protocol and was reused unchanged."
+
+box_definition:
+  method: compute_box_from_crystal_ligand
+  padding: 6.0
+  size_min: 10.0
+  center_source: "geometric centre of the crystal ligand coordinates, (min+max)/2 per axis"
+  size_source: "max(size_min, (max-min)+2*padding) per axis"
+
+vina_cli_args:
+  exhaustiveness: 8
+  seed: "one integer seed per docking batch, shared by all microstates and conformers of the batch"
+  defaults_not_passed: {num_modes: 9, energy_range: 3, min_rmsd: 1, cpu: "0 (auto)"}
+
+receptor_prep:
+  method: meeko (mk_prepare_receptor.py)
+  mode_effective_by_target:
+    aa2ar: primary_sanitize
+    jak2: primary_sanitize
+    cdk2: fallback_filter_sanitize
+    egfr: fallback_filter_sanitize
+    hivpr: fallback_filter_sanitize
+    pde5a: fallback_filter_sanitize
+    src: fallback_filter_sanitize
+    adrb2: obabel_fallback
+    bace1: obabel_fallback
+    fa10: obabel_fallback
+  hetatm_handling: "non-standard residues are removed"
+  receptor_pdbqt_sha256_prefix_by_target:
+    aa2ar: ea5bd3e81f1b9424
+    adrb2: d53721b091a30626
+    bace1: c124ecd1a2cdf8ff
+    cdk2: 48f00a48b45b9042
+    egfr: 2575e4e2ff68c735
+    fa10: 877750cafd58cdf9
+    hivpr: ce2d13f7e69ea18e
+    jak2: 707b13d05d98677c
+    pde5a: 9f0c24551d2c98f8
+    src: b3f798b4831a6cf0
+
+ligand_enumeration:
+  target_actives: 10
+  target_decoys: 30
+  total_budget: 4
+  prioritized_max_microstates: 4
+  max_abs_charge: 2
+  max_microstates_eval: 0
+  conformer_method: rdkit
+  conformer_topk: 4
+  microstate_ordering: "SELECT ... ORDER BY ABS(formal_charge), microstate_id"
+
+seeds_ten_target_docking: [20260210, 20260211, 20260212, 20260213, 20260214]
+
+environments:
+  vina_env: "$DOCKING_ROOT/envs/all (RDKit 2025.09.5; the docking step calls only the Vina binary)"
+  analysis_env: "$ANALYSIS_ROOT/env/conda (RDKit 2025.03.6)"
+
+conformer_budget_mechanism:
+  description: >
+    A candidate microstate is complete when it has accumulated total_budget (4) successful dockings. The outer loop
+    docks conformers in order of increasing energy; the conformer pointer advances after every attempt, and only a
+    successful docking reduces the remaining budget. Failed attempts (ligand preparation, Vina or pose ingestion)
+    do not consume budget, and the loop continues with the next conformer until the budget is met, the microstate
+    exceeds its failure limit (max(3, total_budget)) or the total number of attempts exceeds its limit.
+    For a candidate pool of one microstate whose conformers all succeed, this amounts to docking its four lowest-energy
+    conformers and keeping the best score.
+  consequence: >
+    In a sample of 50 docking units, 74% (37/50) ended with a conformer other than the lowest-energy one as the best
+    pose. The full-scale docking therefore implements the same budget loop (all successful attempts are scored and the
+    best is kept) and does not dock only the lowest-energy conformer once.

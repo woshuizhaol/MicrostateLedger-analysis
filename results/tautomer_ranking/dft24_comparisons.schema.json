@@ -1,0 +1,354 @@
+{
+ "file": "dft24_comparisons.csv",
+ "description": "Method rates on the 24 DFT pairs, paired comparisons with DFT, and the 24 pairs against the other 126 of the 150",
+ "row_grain": "per-comparison (method rate on the 24 pairs, paired comparison with DFT, or 24-pair subset against the other 126)",
+ "n_rows": 16,
+ "n_columns": 20,
+ "delimiter": ",",
+ "file_md5": "7948bd41a319fa6b30211baaeb3c4f8c",
+ "columns": [
+  {
+   "name": "analysis",
+   "type": "str",
+   "unit": "",
+   "description": "rate (one method on the 24 pairs) | paired_vs_dft (McNemar of a method against DFT on the 24 pairs) | dft24_vs_rest (the 24 pairs against the other 126 of the 150)",
+   "n_missing": 0
+  },
+  {
+   "name": "convention",
+   "type": "str",
+   "unit": "",
+   "description": "A (ties count as misranked) or B-like 'ties_dropped' for RDKit; non-RDKit methods have no ties",
+   "n_missing": 0
+  },
+  {
+   "name": "method",
+   "type": "str",
+   "unit": "",
+   "description": "RDKit_score | PM6_gas | GFN2xtb_ALPB_free | GFN2xtb_ALPB_opt | DFT_SMD",
+   "n_missing": 0
+  },
+  {
+   "name": "group_1",
+   "type": "str",
+   "unit": "",
+   "description": "first group (the 24 pairs for rate and dft24_vs_rest rows)",
+   "n_missing": 0
+  },
+  {
+   "name": "k1",
+   "type": "int",
+   "unit": "count",
+   "description": "misranked pairs in group 1",
+   "n_missing": 0
+  },
+  {
+   "name": "n1",
+   "type": "int",
+   "unit": "count",
+   "description": "pairs in group 1",
+   "n_missing": 0
+  },
+  {
+   "name": "rate1_pct",
+   "type": "float",
+   "unit": "%",
+   "description": "rate in group 1",
+   "n_missing": 0
+  },
+  {
+   "name": "wilson1_lo_pct",
+   "type": "float",
+   "unit": "%",
+   "description": "lower end of the 95% Wilson interval of rate 1, percent",
+   "n_missing": 5
+  },
+  {
+   "name": "wilson1_hi_pct",
+   "type": "float",
+   "unit": "%",
+   "description": "upper end of the 95% Wilson interval of rate 1, percent",
+   "n_missing": 5
+  },
+  {
+   "name": "group_2",
+   "type": "str",
+   "unit": "",
+   "description": "second group (the 126 other pairs, or DFT on the 24 pairs for paired rows); empty for rate rows",
+   "n_missing": 6
+  },
+  {
+   "name": "k2",
+   "type": "int",
+   "unit": "count",
+   "description": "misranked pairs in group 2; empty for rate rows",
+   "n_missing": 6
+  },
+  {
+   "name": "n2",
+   "type": "int",
+   "unit": "count",
+   "description": "pairs in group 2; empty for rate rows",
+   "n_missing": 6
+  },
+  {
+   "name": "rate2_pct",
+   "type": "float",
+   "unit": "%",
+   "description": "rate in group 2; empty for rate rows",
+   "n_missing": 6
+  },
+  {
+   "name": "b",
+   "type": "int",
+   "unit": "count",
+   "description": "paired rows: pairs misranked by the method only",
+   "n_missing": 11
+  },
+  {
+   "name": "c",
+   "type": "int",
+   "unit": "count",
+   "description": "paired rows: pairs misranked by DFT only",
+   "n_missing": 11
+  },
+  {
+   "name": "diff_pct_points",
+   "type": "float",
+   "unit": "%",
+   "description": "rate 1 minus rate 2 in percentage points; empty for rate rows",
+   "n_missing": 6
+  },
+  {
+   "name": "diff_lo",
+   "type": "float",
+   "unit": "%",
+   "description": "lower end of the 95% interval of the difference (Newcombe paired for paired rows, Newcombe unpaired for dft24_vs_rest)",
+   "n_missing": 6
+  },
+  {
+   "name": "diff_hi",
+   "type": "float",
+   "unit": "%",
+   "description": "upper end of the 95% interval of the difference",
+   "n_missing": 6
+  },
+  {
+   "name": "p_value",
+   "type": "float",
+   "unit": "",
+   "description": "exact McNemar p (paired rows) or Fisher exact p (dft24_vs_rest rows); empty for rate rows",
+   "n_missing": 6
+  },
+  {
+   "name": "p_holm",
+   "type": "float",
+   "unit": "",
+   "description": "Holm-corrected p within the analysis type and convention; empty for rate rows",
+   "n_missing": 6
+  }
+ ],
+ "extra": {
+  "provenance": {
+   "script": "$ANALYSIS_ROOT/scripts/tautomer_ranking/tautomer.py",
+   "config": "$ANALYSIS_ROOT/configs/tautomer_ranking.yaml",
+   "inputs": [
+    {
+     "exists": true,
+     "bytes": 23720,
+     "md5": "bf4e640107aced048f07d6a86fe65ce5",
+     "n_records": 543,
+     "record_unit": "lines",
+     "file": "tautomer_benchmark.py"
+    },
+    {
+     "exists": true,
+     "bytes": 11484,
+     "md5": "1141c735aaddcfe79ab6f02ef82b2432",
+     "n_records": 233,
+     "record_unit": "lines",
+     "file": "p3_tautomer_dft_g16.py"
+    },
+    {
+     "exists": true,
+     "bytes": 15256,
+     "md5": "945338e645e8945bb6f2d8ec45558e2c",
+     "n_records": 334,
+     "record_unit": "lines",
+     "file": "p3_tautomer_solvated_xtb.py"
+    },
+    {
+     "exists": true,
+     "bytes": 3766,
+     "md5": "83d68412b77e0f04f05ccaf58af7fd0e",
+     "n_records": 24,
+     "record_unit": "table_rows",
+     "file": "p3_dft_detail.tsv"
+    },
+    {
+     "exists": true,
+     "bytes": 1239,
+     "md5": "3b40cb7ebb635e619e85ccab6b4909fb",
+     "n_records": 3,
+     "record_unit": "json_top_level_keys",
+     "file": "p3_dft_summary.json"
+    },
+    {
+     "exists": true,
+     "bytes": 25374,
+     "md5": "de18ae3a71fae98070e804f316a281c4",
+     "n_records": 150,
+     "record_unit": "table_rows",
+     "file": "p3_xtb_detail_free.tsv"
+    },
+    {
+     "exists": true,
+     "bytes": 25351,
+     "md5": "6a8afc2914fcfb0d5b245950118b0a78",
+     "n_records": 150,
+     "record_unit": "table_rows",
+     "file": "p3_xtb_detail_opt.tsv"
+    },
+    {
+     "exists": true,
+     "bytes": 2209,
+     "md5": "49978c21dfc5ff9a6aa12acc32fc54c3",
+     "n_records": 7,
+     "record_unit": "json_top_level_keys",
+     "file": "p3_xtb_summary_free.json"
+    },
+    {
+     "exists": true,
+     "bytes": 2218,
+     "md5": "cdc0d01ead8dace7ccda81b8b2d81d72",
+     "n_records": 7,
+     "record_unit": "json_top_level_keys",
+     "file": "p3_xtb_summary_opt.json"
+    },
+    {
+     "exists": true,
+     "bytes": 179626,
+     "md5": "4bc5a70c53bbfe9f450b0b6a670b0f9d",
+     "n_records": 1677,
+     "record_unit": "table_rows",
+     "file": "tautomer_pairs.tsv"
+    },
+    {
+     "exists": true,
+     "bytes": 20246,
+     "md5": "932c572b6a9afb8719a5d30cd092b81b",
+     "n_records": 150,
+     "record_unit": "table_rows",
+     "file": "tautomer_sqm_detail.tsv"
+    },
+    {
+     "exists": true,
+     "bytes": 6445,
+     "md5": "6f64309c5307922ee149cc121311bfbb",
+     "n_records": 3,
+     "record_unit": "json_top_level_keys",
+     "file": "tautomer_summary.json"
+    },
+    {
+     "exists": true,
+     "bytes": 57921,
+     "md5": "c50abeec1511194181cc854decb18e1a",
+     "n_records": 1060,
+     "record_unit": "lines",
+     "file": "camis_paired_proportions_sas.html"
+    },
+    {
+     "exists": true,
+     "bytes": 139150,
+     "md5": "4343f314ea2ff295fe60114f3233f1b3",
+     "n_records": 667,
+     "record_unit": "lines",
+     "file": "newcombe1998_statmed.pdf"
+    },
+    {
+     "exists": true,
+     "bytes": 254204,
+     "md5": "351612e9ad0ceb78c4f639c31c83e4a0",
+     "n_records": 2918,
+     "record_unit": "lines",
+     "file": "perry_jacs2025_PMC13012796.html"
+    },
+    {
+     "exists": true,
+     "bytes": 6568,
+     "md5": "383bd91e37421c4d937168502af8e7c0",
+     "n_records": 4,
+     "record_unit": "json_top_level_keys",
+     "file": "perry_jacs2025_europepmc_record.json"
+    },
+    {
+     "exists": true,
+     "bytes": 261791,
+     "md5": "a2631af79a5a84a6ce1dd1dedcce0112",
+     "n_records": 2891,
+     "record_unit": "lines",
+     "file": "wieder_chemsci2021_PMC8409483.html"
+    },
+    {
+     "exists": true,
+     "bytes": 2209,
+     "md5": "49978c21dfc5ff9a6aa12acc32fc54c3",
+     "n_records": 7,
+     "record_unit": "json_top_level_keys",
+     "file": "tautomer_xtb.json"
+    },
+    {
+     "exists": true,
+     "bytes": 47685,
+     "md5": "faca7dd4203fc2ca5ecdd185aa6d52db",
+     "n_records": 236,
+     "record_unit": "lines",
+     "file": "manuscript_main.md"
+    },
+    {
+     "exists": true,
+     "bytes": 17668,
+     "md5": "dc822632b9709a3a054efe57f1f4cede",
+     "n_records": 89,
+     "record_unit": "lines",
+     "file": "supplementary_materials.md"
+    },
+    {
+     "exists": true,
+     "bytes": 359422,
+     "md5": "df5da62d080229955361c2a9af12a7ec",
+     "n_records": 1681,
+     "record_unit": "lines",
+     "file": "Tautobase_SMIRKS.txt"
+    }
+   ],
+   "seed": 20261015,
+   "n_boot": 200000,
+   "n_perm": null,
+   "tool_versions": {
+    "python": "3.11.15",
+    "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "pandas": "3.0.3",
+    "yaml": "6.0.3",
+    "statsmodels": "0.14.6",
+    "rdkit": "2025.03.6"
+   },
+   "extra": {
+    "numpy": "2.4.6",
+    "pandas": "3.0.3",
+    "null_fields_explained": {
+     "n_perm": "no permutation test is used: McNemar and Fisher tests are exact, the paired CI is Newcombe's closed form plus a multinomial bootstrap"
+    },
+    "bootstrap_unit": "tautomer pair (paired multinomial resampling of the four cell counts)",
+    "rdkit_probe_digests": {
+     "2025.03.6": "30881d906b627acb78cc94d34a6c96029a806d6db33a1fe90103b95910e858a4",
+     "2025.09.5": "30881d906b627acb78cc94d34a6c96029a806d6db33a1fe90103b95910e858a4",
+     "2026.03.3": "1593f6ea4c411acfbe289e7705f39c188f52ae2eb52723ab5191e766f4ce5527"
+    },
+    "out_root": "$ANALYSIS_ROOT"
+   }
+  }
+ }
+}

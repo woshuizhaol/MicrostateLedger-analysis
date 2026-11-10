@@ -1,0 +1,191 @@
+{
+ "file": "exp_anchor_matches.csv",
+ "description": "CASF-2016 ligands that match a charge-state anchor-set molecule (exact cleaned InChIKey skeleton) and what each predictor says about them",
+ "row_grain": "matched CASF ligand x predictor",
+ "n_rows": 50,
+ "n_columns": 19,
+ "delimiter": ",",
+ "file_md5": "5df269c3a5b58505338ff5863503f1c1",
+ "columns": [
+  {
+   "name": "pdbid",
+   "type": "str",
+   "unit": "",
+   "description": "CASF-2016 complex",
+   "n_missing": 0
+  },
+  {
+   "name": "ligand_smiles",
+   "type": "str",
+   "unit": "",
+   "description": "input SMILES of the ligand (D11)",
+   "n_missing": 0
+  },
+  {
+   "name": "ik_skeleton",
+   "type": "str",
+   "unit": "",
+   "description": "first InChIKey block of the cleaned ligand",
+   "n_missing": 0
+  },
+  {
+   "name": "anchor_mol_id",
+   "type": "str",
+   "unit": "",
+   "description": "charge-state anchor-set molecule id (the complete-profile record when several)",
+   "n_missing": 0
+  },
+  {
+   "name": "anchor_source",
+   "type": "str",
+   "unit": "",
+   "description": "IUPAC / ChEMBL / SAMPL source taken for that molecule",
+   "n_missing": 0
+  },
+  {
+   "name": "n_anchor_records",
+   "type": "int",
+   "unit": "",
+   "description": "anchor-set rows sharing the skeleton",
+   "n_missing": 0
+  },
+  {
+   "name": "complete_profile",
+   "type": "str",
+   "unit": "",
+   "description": "charge-state strict completeness gate: experimental constants cover every predicted ionisable group in the window",
+   "n_missing": 0
+  },
+  {
+   "name": "complete_relaxed",
+   "type": "str",
+   "unit": "",
+   "description": "charge-state relaxed gate",
+   "n_missing": 0
+  },
+  {
+   "name": "n_sites_pred",
+   "type": "int",
+   "unit": "",
+   "description": "predicted ionisable groups in the gate window (charge-state)",
+   "n_missing": 0
+  },
+  {
+   "name": "n_pka_exp_window",
+   "type": "int",
+   "unit": "",
+   "description": "experimental constants inside the window",
+   "n_missing": 0
+  },
+  {
+   "name": "ambiguous",
+   "type": "str",
+   "unit": "",
+   "description": "charge-state flag",
+   "n_missing": 0
+  },
+  {
+   "name": "coupled_sites",
+   "type": "str",
+   "unit": "",
+   "description": "charge-state flag",
+   "n_missing": 0
+  },
+  {
+   "name": "exp_dominant_charge",
+   "type": "int",
+   "unit": "e",
+   "description": "experimental pH-7.4 dominant net charge from the merged ladder (independent-site HH); reliable only when complete_profile is True",
+   "n_missing": 0
+  },
+  {
+   "name": "q_single",
+   "type": "int",
+   "unit": "e",
+   "description": "net charge of the default (single) state",
+   "n_missing": 0
+  },
+  {
+   "name": "predictor",
+   "type": "str",
+   "unit": "",
+   "description": "predictor",
+   "n_missing": 0
+  },
+  {
+   "name": "q_pred",
+   "type": "int",
+   "unit": "e",
+   "description": "net charge predicted",
+   "n_missing": 4
+  },
+  {
+   "name": "status",
+   "type": "str",
+   "unit": "",
+   "description": "state selection status",
+   "n_missing": 0
+  },
+  {
+   "name": "agrees_with_exp",
+   "type": "str",
+   "unit": "",
+   "description": "q_pred == exp_dominant_charge",
+   "n_missing": 4
+  },
+  {
+   "name": "single_agrees_with_exp",
+   "type": "str",
+   "unit": "",
+   "description": "default state net charge == exp_dominant_charge",
+   "n_missing": 0
+  }
+ ],
+ "extra": {
+  "provenance": {
+   "script": "$ANALYSIS_ROOT/scripts/casf_scoring/reference_coverage.py",
+   "config": "$ANALYSIS_ROOT/configs/casf_scoring.yaml",
+   "inputs": [
+    {
+     "exists": true,
+     "bytes": 771888,
+     "md5": "df781cdbf2939ded87390f2f07dedb3b",
+     "n_records": 3371,
+     "record_unit": "table_rows",
+     "file": "anchor_set.csv"
+    },
+    {
+     "exists": true,
+     "bytes": 7337064,
+     "md5": "178b3358152ae98e398a9135c43bdae3",
+     "n_records": 24211,
+     "record_unit": "table_rows",
+     "file": "iupac_high-confidence_v2_3.csv"
+    },
+    {
+     "exists": true,
+     "bytes": 154722,
+     "md5": "a74168c2559d822f448551d2c1890f2d",
+     "n_records": 1425,
+     "record_unit": "table_rows",
+     "file": "predictor_states.csv"
+    }
+   ],
+   "seed": null,
+   "n_boot": null,
+   "n_perm": null,
+   "tool_versions": {
+    "python": "3.11.15",
+    "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "pandas": "3.0.3",
+    "yaml": "6.0.3",
+    "rdkit": "2025.03.6"
+   },
+   "extra": {
+    "n_ligands": 285
+   }
+  }
+ }
+}

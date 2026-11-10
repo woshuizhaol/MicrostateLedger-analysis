@@ -1,0 +1,9 @@
+{
+ "dataset": "IUPAC_experimental_anchor",
+ "n_scored": 50,
+ "n_skipped_no_transition": 56,
+ "n_monoprotic_delta1": 43,
+ "cheap_pH74_dominant_error_vs_experiment": 0.06,
+ "openbabel_pH74_dominant_error_vs_experiment": 0.2,
+ "note": "charge states from OpenBabel at pH 1.5/12.5; pH-7.4 side chosen by the method's pKa; truth uses the EXPERIMENTAL pKa. Cheap error here should match the reported 6.6% flip rate."
+}

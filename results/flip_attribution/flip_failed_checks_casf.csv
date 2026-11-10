@@ -1,0 +1,14 @@
+source,dataset,change_type_fine,direction,n_flips_of_type_direction,failed_check,n_flips_with_check,share
+casf,casf2016,protonation,rescue (default invalid -> best valid),29,internal_energy,16,0.5517241379310345
+casf,casf2016,protonation,rescue (default invalid -> best valid),29,internal_steric_clash,6,0.20689655172413793
+casf,casf2016,protonation,rescue (default invalid -> best valid),29,minimum_distance_to_protein,6,0.20689655172413793
+casf,casf2016,protonation,rescue (default invalid -> best valid),29,double_bond_flatness,3,0.10344827586206896
+casf,casf2016,protonation,rescue (default invalid -> best valid),29,aromatic_ring_flatness,1,0.034482758620689655
+casf,casf2016,protonation,degrade (default valid -> best invalid),11,internal_energy,9,0.8181818181818182
+casf,casf2016,protonation,degrade (default valid -> best invalid),11,double_bond_flatness,2,0.18181818181818182
+casf,casf2016,protonation,degrade (default valid -> best invalid),11,bond_lengths,1,0.09090909090909091
+casf,casf2016,protonation,degrade (default valid -> best invalid),11,bond_angles,1,0.09090909090909091
+casf,casf2016,tautomer_ionisation_shift,rescue (default invalid -> best valid),3,internal_steric_clash,2,0.6666666666666666
+casf,casf2016,tautomer_ionisation_shift,rescue (default invalid -> best valid),3,aromatic_ring_flatness,1,0.3333333333333333
+casf,casf2016,tautomer_ionisation_shift,rescue (default invalid -> best valid),3,internal_energy,1,0.3333333333333333
+casf,casf2016,tautomer_ionisation_shift,degrade (default valid -> best invalid),2,internal_energy,2,1.0

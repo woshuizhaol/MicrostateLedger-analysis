@@ -1,0 +1,120 @@
+{
+ "file": "dude_reweighted_error.csv",
+ "description": "Expected method error under the DUD-E class composition (weighted extrapolation)",
+ "row_grain": "per-scheme-anchor-set-method (expected error under the DUD-E stratum composition, with the weights in class_weights)",
+ "n_rows": 36,
+ "n_columns": 10,
+ "delimiter": ",",
+ "file_md5": "1cabad5281559d6c455a3d12b55aff78",
+ "columns": [
+  {
+   "name": "scheme",
+   "type": "str",
+   "unit": "",
+   "description": "stratification: functional_class (as pre-specified) or n_sites_stratum[post_hoc]",
+   "n_missing": 0
+  },
+  {
+   "name": "anchor_set",
+   "type": "str",
+   "unit": "",
+   "description": "anchor set the stratum-level error rates come from",
+   "n_missing": 0
+  },
+  {
+   "name": "method",
+   "type": "str",
+   "unit": "",
+   "description": "charge-state method",
+   "n_missing": 0
+  },
+  {
+   "name": "expected_error",
+   "type": "float",
+   "unit": "fraction",
+   "description": "sum over covered classes of weight * class error rate, weights renormalised to the covered classes",
+   "n_missing": 0
+  },
+  {
+   "name": "lo",
+   "type": "float",
+   "unit": "fraction",
+   "description": "2.5th percentile of the bootstrap (anchor molecules resampled within class, DUD-E composition resampled multinomially)",
+   "n_missing": 0
+  },
+  {
+   "name": "hi",
+   "type": "float",
+   "unit": "fraction",
+   "description": "97.5th percentile of the same bootstrap",
+   "n_missing": 0
+  },
+  {
+   "name": "covered_weight",
+   "type": "int",
+   "unit": "fraction",
+   "description": "share of DUD-E ligands in classes that have anchor molecules",
+   "n_missing": 0
+  },
+  {
+   "name": "unweighted_error",
+   "type": "float",
+   "unit": "fraction",
+   "description": "the plain anchor error rate of the same set, for comparison",
+   "n_missing": 0
+  },
+  {
+   "name": "class_weights",
+   "type": "str",
+   "unit": "",
+   "description": "DUD-E weights of the covered strata, stratum:weight separated by |",
+   "n_missing": 0
+  },
+  {
+   "name": "label",
+   "type": "str",
+   "unit": "",
+   "description": "extrapolation label: this is a weighted extrapolation, not a measurement on DUD-E",
+   "n_missing": 0
+  }
+ ],
+ "extra": {
+  "provenance": {
+   "script": "$ANALYSIS_ROOT/scripts/charge_state/reference_errors.py",
+   "config": "$ANALYSIS_ROOT/configs/charge_state.yaml",
+   "inputs": [
+    {
+     "exists": true,
+     "bytes": 771888,
+     "md5": "df781cdbf2939ded87390f2f07dedb3b",
+     "n_records": 3371,
+     "record_unit": "table_rows",
+     "file": "anchor_set.csv"
+    },
+    {
+     "exists": true,
+     "bytes": 905959,
+     "md5": "99e2008dbb710c2702b9e9fa8f14d9f8",
+     "n_records": 3584,
+     "record_unit": "table_rows",
+     "file": "dude_single_vs_dominant.tsv"
+    }
+   ],
+   "seed": 20261016,
+   "n_boot": 10000,
+   "n_perm": null,
+   "tool_versions": {
+    "python": "3.11.15",
+    "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "pandas": "3.0.3",
+    "yaml": "6.0.3",
+    "rdkit": "2025.03.6"
+   },
+   "extra": {
+    "openbabel": "Open Babel 3.1.0 -- Nov 30 2023 -- 20:41:23"
+   }
+  }
+ }
+}

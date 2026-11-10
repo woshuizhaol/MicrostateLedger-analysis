@@ -1,0 +1,174 @@
+{
+ "note": "MolGpKa was trained on ACD/pKa predictions for 1.6 million ChEMBL compounds (Pan et al., J. Chem. Inf. Model. 2021, 61, 3159); that training set is not public. The only public related files are the 19,848-molecule example mols.sdf shipped with the code and the Baltruschat et al. experimental collection used by pkasolver; overlap with both is removed as a proxy and both versions are reported.",
+ "primary_set": "complete",
+ "resources": {
+  "molgpka_example": {
+   "n_complete": 2010,
+   "n_overlap": 5,
+   "n_non_overlap": 2005,
+   "ml_pka_error_on_overlap": 0.2,
+   "error_rates": {
+    "naive": {
+     "all": 0.32288557213930347,
+     "non_overlap": 0.3226932668329177,
+     "non_overlap_wilson": [
+      0.30258565430355744,
+      0.34347899809693716
+     ]
+    },
+    "neutral_input": {
+     "all": 0.48308457711442787,
+     "non_overlap": 0.4822942643391521,
+     "non_overlap_wilson": [
+      0.4604770219216425,
+      0.5041792232547782
+     ]
+    },
+    "dimorphite_dom": {
+     "all": 0.3044776119402985,
+     "non_overlap": 0.30423940149625933,
+     "non_overlap_wilson": [
+      0.2844909656669239,
+      0.32473653381885415
+     ]
+    },
+    "openbabel": {
+     "all": 0.18118466898954705,
+     "non_overlap": 0.18113772455089822,
+     "non_overlap_wilson": [
+      0.164890875019562,
+      0.1986046866516103
+     ]
+    },
+    "enum_popmax": {
+     "all": 0.2960199004975124,
+     "non_overlap": 0.29576059850374065,
+     "non_overlap_wilson": [
+      0.27618986507790877,
+      0.31611245604164817
+     ]
+    },
+    "ml_pka": {
+     "all": 0.11592039800995024,
+     "non_overlap": 0.11571072319201996,
+     "non_overlap_wilson": [
+      0.10243818383225795,
+      0.1304529966869574
+     ]
+    }
+   }
+  },
+  "pkasolver_train": {
+   "n_complete": 2010,
+   "n_overlap": 393,
+   "n_non_overlap": 1617,
+   "ml_pka_error_on_overlap": 0.03307888040712468,
+   "error_rates": {
+    "naive": {
+     "all": 0.32288557213930347,
+     "non_overlap": 0.3209647495361781,
+     "non_overlap_wilson": [
+      0.29865755798749927,
+      0.3441205824351464
+     ]
+    },
+    "neutral_input": {
+     "all": 0.48308457711442787,
+     "non_overlap": 0.4749536178107607,
+     "non_overlap_wilson": [
+      0.4507019379165032,
+      0.4993240195519499
+     ]
+    },
+    "dimorphite_dom": {
+     "all": 0.3044776119402985,
+     "non_overlap": 0.31910946196660483,
+     "non_overlap_wilson": [
+      0.2968414229912453,
+      0.34223493650313774
+     ]
+    },
+    "openbabel": {
+     "all": 0.18118466898954705,
+     "non_overlap": 0.2042079207920792,
+     "non_overlap_wilson": [
+      0.185265614851336,
+      0.22455317031792113
+     ]
+    },
+    "enum_popmax": {
+     "all": 0.2960199004975124,
+     "non_overlap": 0.3129251700680272,
+     "non_overlap_wilson": [
+      0.2907906292312861,
+      0.33594646050222116
+     ]
+    },
+    "ml_pka": {
+     "all": 0.11592039800995024,
+     "non_overlap": 0.1360544217687075,
+     "non_overlap_wilson": [
+      0.12020390643520146,
+      0.1536300681372581
+     ]
+    }
+   }
+  },
+  "chembl37": {
+   "n_complete": 2010,
+   "n_overlap": 702,
+   "n_non_overlap": 1308,
+   "ml_pka_error_on_overlap": 0.07692307692307693,
+   "error_rates": {
+    "naive": {
+     "all": 0.32288557213930347,
+     "non_overlap": 0.32262996941896027,
+     "non_overlap_wilson": [
+      0.29784681213546704,
+      0.3484519102595991
+     ]
+    },
+    "neutral_input": {
+     "all": 0.48308457711442787,
+     "non_overlap": 0.4701834862385321,
+     "non_overlap_wilson": [
+      0.4432619463833497,
+      0.4972796491916831
+     ]
+    },
+    "dimorphite_dom": {
+     "all": 0.3044776119402985,
+     "non_overlap": 0.30275229357798167,
+     "non_overlap_wilson": [
+      0.2784606911028791,
+      0.32819909500887545
+     ]
+    },
+    "openbabel": {
+     "all": 0.18118466898954705,
+     "non_overlap": 0.2019892884468248,
+     "non_overlap_wilson": [
+      0.18111098450330754,
+      0.22461425041500843
+     ]
+    },
+    "enum_popmax": {
+     "all": 0.2960199004975124,
+     "non_overlap": 0.29357798165137616,
+     "non_overlap_wilson": [
+      0.2695315976000372,
+      0.31883329484249656
+     ]
+    },
+    "ml_pka": {
+     "all": 0.11592039800995024,
+     "non_overlap": 0.13685015290519878,
+     "non_overlap_wilson": [
+      0.11928488979034023,
+      0.15654223580300602
+     ]
+    }
+   }
+  }
+ }
+}

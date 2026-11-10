@@ -1,0 +1,167 @@
+{
+ "file": "fig4_swing_per_ligand.csv",
+ "description": "Fig. 4a recompute (ten-target docking (single seed), single seed 20260210): one row per ligand that has >=2 successfully docked microstates, giving the within-ligand spread of empirical best Vina scores across its microstates (the 'swing') and the comparison between the default (single-strategy) microstate and the best microstate.",
+ "row_grain": "per ligand (rankable ligand: >=2 docked microstates with an empirical Vina score)",
+ "n_rows": 391,
+ "n_columns": 14,
+ "delimiter": ",",
+ "file_md5": "d4a9a9d003f4c27010c87a622afaf209",
+ "columns": [
+  {
+   "name": "ligand_id",
+   "type": "str",
+   "unit": "none (identifier)",
+   "description": "MicrostateLedger compound id (cid) from fig3_run019_rows.csv; unique across the 391 rows.",
+   "n_missing": 0
+  },
+  {
+   "name": "target",
+   "type": "str",
+   "unit": "none (DUD-E target code)",
+   "description": "DUD-E target of the ligand, taken from the first docked microstate's target in fig3_prior_empirical_scatter.csv.",
+   "n_missing": 0
+  },
+  {
+   "name": "is_active",
+   "type": "int",
+   "unit": "0/1 flag",
+   "description": "Class label from fig3_run019_rows.csv: 1 = DUD-E active (99 rows), 0 = decoy (292 rows).",
+   "n_missing": 0
+  },
+  {
+   "name": "n_microstates",
+   "type": "int",
+   "unit": "count",
+   "description": "Number of the ligand's candidate microstates (union over strategies) that have an empirical Vina score; always >=2 by the rankable definition.",
+   "n_missing": 0
+  },
+  {
+   "name": "vina_min",
+   "type": "float",
+   "unit": "kcal/mol",
+   "description": "Most favourable (lowest) empirical_best_vina among the ligand's docked microstates.",
+   "n_missing": 0
+  },
+  {
+   "name": "vina_max",
+   "type": "float",
+   "unit": "kcal/mol",
+   "description": "Least favourable (highest) empirical_best_vina among the ligand's docked microstates.",
+   "n_missing": 0
+  },
+  {
+   "name": "swing",
+   "type": "float",
+   "unit": "kcal/mol",
+   "description": "vina_max - vina_min rounded to 4 decimals; the within-ligand microstate swing (0.01-3.632 here).",
+   "n_missing": 0
+  },
+  {
+   "name": "std",
+   "type": "float",
+   "unit": "kcal/mol",
+   "description": "Population standard deviation (ddof=0) of the ligand's microstate Vina scores, 4 decimals.",
+   "n_missing": 0
+  },
+  {
+   "name": "vina_default",
+   "type": "float",
+   "unit": "kcal/mol",
+   "description": "Empirical Vina score of the default microstate = first candidate of the 'single' strategy (ORDER BY ABS(formal_charge), microstate_id); present for all 391 rows.",
+   "n_missing": 0
+  },
+  {
+   "name": "vina_best",
+   "type": "float",
+   "unit": "kcal/mol",
+   "description": "Empirical Vina score of the best microstate (argmin); equals vina_min in every row by construction.",
+   "n_missing": 0
+  },
+  {
+   "name": "best_default_gain",
+   "type": "float",
+   "unit": "kcal/mol",
+   "description": "vina_default - vina_best (>=0): how much the best microstate improves on the default; 0 when they coincide.",
+   "n_missing": 0
+  },
+  {
+   "name": "default_mid",
+   "type": "str",
+   "unit": "none (identifier)",
+   "description": "Microstate id of the default (single-strategy) microstate.",
+   "n_missing": 0
+  },
+  {
+   "name": "best_mid",
+   "type": "str",
+   "unit": "none (identifier)",
+   "description": "Microstate id of the best-scoring microstate.",
+   "n_missing": 0
+  },
+  {
+   "name": "best_ne_default",
+   "type": "int",
+   "unit": "0/1 flag",
+   "description": "1 if best_mid != default_mid (323 of 391 rows = 82.61%), else 0.",
+   "n_missing": 0
+  }
+ ],
+ "extra": {
+  "provenance": {
+   "script": "$ANALYSIS_ROOT/scripts/benchmark_analyses/swing_signal.py",
+   "config": null,
+   "inputs": [
+    {
+     "exists": true,
+     "bytes": 194003,
+     "md5": "2ad977cff3d413b3e60474d1c14e4d8c",
+     "n_records": 2168,
+     "record_unit": "table_rows",
+     "file": "fig3_prior_empirical_scatter.csv"
+    },
+    {
+     "exists": true,
+     "bytes": 2655442,
+     "md5": "0fd89a33cc980b659d7987ba3d79f474",
+     "n_records": 400,
+     "record_unit": "table_rows",
+     "file": "fig3_run019_rows.csv"
+    }
+   ],
+   "seed": 20260702,
+   "n_boot": null,
+   "n_perm": null,
+   "tool_versions": {
+    "python": "3.11.15",
+    "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "pandas": "3.0.3",
+    "yaml": "6.0.3",
+    "rdkit": "2025.03.6",
+    "dimorphite_dl": "2.0.2",
+    "measured_at_finalize": {
+     "vina": {
+      "path": "$DOCKING_ROOT/envs/all/bin/vina",
+      "md5": "f0fc6b2586d2bd4416030eb56b22e946",
+      "self_reported": "AutoDock Vina 7ac2999-mod"
+     },
+     "obabel": {
+      "path": "$ANALYSIS_ROOT/env/conda/bin/obabel",
+      "self_reported": "Open Babel 3.1.0 -- Nov 30 2023 -- 20:41:23",
+      "environment_yml": "openbabel=3.1.1 (env/environment.yml L111); binary self-reports 3.1.0 -- both recorded as found"
+     },
+     "env_conda_python": "$ANALYSIS_ROOT/env/conda/bin/python"
+    }
+   },
+   "extra": {
+    "n_boot_note": "n_boot=10000 applies only to the bootstrap CI of the swing median (one call, swing_signal.py:136); resampling unit = rankable ligand (391 swing values, iid draw with replacement, target clustering ignored); n_perm=null: scipy mannwhitneyu default (no resampling)",
+    "seed_note": "seed 20260702 only drives the bootstrap in the summary JSON; the rows of this table are deterministic",
+    "null_fields_explained": {
+     "n_boot": "the bootstrap only feeds the summary JSON, not the rows of this table",
+     "n_perm": "no permutation test in the producing script"
+    }
+   }
+  }
+ }
+}

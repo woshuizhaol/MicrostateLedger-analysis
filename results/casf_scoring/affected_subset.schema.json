@@ -1,0 +1,164 @@
+{
+ "file": "affected_subset.csv",
+ "description": "Gain restricted to the complexes in which the predictor changes the state / charge / score",
+ "row_grain": "predictor x scorer x subset definition",
+ "n_rows": 45,
+ "n_columns": 15,
+ "delimiter": ",",
+ "file_md5": "e88bcda10c7c1a286381c2d96b6b7b2b",
+ "columns": [
+  {
+   "name": "predictor",
+   "type": "str",
+   "unit": "",
+   "description": "predictor",
+   "n_missing": 0
+  },
+  {
+   "name": "scorer",
+   "type": "str",
+   "unit": "",
+   "description": "scorer",
+   "n_missing": 0
+  },
+  {
+   "name": "definition",
+   "type": "str",
+   "unit": "",
+   "description": "state_differs (chosen microstate != default), charge_differs (net charge differs), score_changed (|score change| > tol; the original '94' for Vina and the Dimorphite dominant state)",
+   "n_missing": 0
+  },
+  {
+   "name": "n",
+   "type": "int",
+   "unit": "",
+   "description": "complexes in the subset (within n_common)",
+   "n_missing": 0
+  },
+  {
+   "name": "Rp_single",
+   "type": "float",
+   "unit": "",
+   "description": "Rp of the default state computed on the subset only",
+   "n_missing": 0
+  },
+  {
+   "name": "Rp_pred",
+   "type": "float",
+   "unit": "",
+   "description": "Rp of the predictor state on the subset",
+   "n_missing": 0
+  },
+  {
+   "name": "dRp",
+   "type": "float",
+   "unit": "",
+   "description": "difference",
+   "n_missing": 0
+  },
+  {
+   "name": "lo",
+   "type": "float",
+   "unit": "",
+   "description": "paired bootstrap 2.5th percentile (complexes of the subset)",
+   "n_missing": 0
+  },
+  {
+   "name": "hi",
+   "type": "float",
+   "unit": "",
+   "description": "paired bootstrap 97.5th percentile",
+   "n_missing": 0
+  },
+  {
+   "name": "p_boot",
+   "type": "float",
+   "unit": "",
+   "description": "fraction of bootstrap dRp <= 0",
+   "n_missing": 0
+  },
+  {
+   "name": "RMSE_single",
+   "type": "float",
+   "unit": "",
+   "description": "OLS RMSE on the subset",
+   "n_missing": 0
+  },
+  {
+   "name": "RMSE_pred",
+   "type": "float",
+   "unit": "",
+   "description": "OLS RMSE on the subset",
+   "n_missing": 0
+  },
+  {
+   "name": "dRMSE",
+   "type": "float",
+   "unit": "",
+   "description": "difference",
+   "n_missing": 0
+  },
+  {
+   "name": "dRMSE_lo",
+   "type": "float",
+   "unit": "",
+   "description": "paired bootstrap 2.5th percentile of dRMSE",
+   "n_missing": 0
+  },
+  {
+   "name": "dRMSE_hi",
+   "type": "float",
+   "unit": "",
+   "description": "paired bootstrap 97.5th percentile of dRMSE",
+   "n_missing": 0
+  }
+ ],
+ "extra": {
+  "provenance": {
+   "script": "$ANALYSIS_ROOT/scripts/casf_scoring/random_null.py",
+   "config": "$ANALYSIS_ROOT/configs/casf_scoring.yaml",
+   "inputs": [
+    {
+     "exists": true,
+     "bytes": 362795,
+     "md5": "31b667b33f088bc9f14854563bc45973",
+     "n_records": 2367,
+     "record_unit": "table_rows",
+     "file": "per_microstate_inplace_scores.csv"
+    },
+    {
+     "exists": true,
+     "bytes": 154722,
+     "md5": "a74168c2559d822f448551d2c1890f2d",
+     "n_records": 1425,
+     "record_unit": "table_rows",
+     "file": "predictor_states.csv"
+    },
+    {
+     "exists": true,
+     "bytes": 14019,
+     "md5": "d5a551fd8edd409e9eb42d247b2ee47f",
+     "n_records": 286,
+     "record_unit": "lines",
+     "file": "CoreSet.dat"
+    }
+   ],
+   "seed": 20261014,
+   "n_boot": 10000,
+   "n_perm": null,
+   "tool_versions": {
+    "python": "3.11.15",
+    "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "pandas": "3.0.3",
+    "yaml": "6.0.3"
+   },
+   "extra": {
+    "seed_boot": 20261015,
+    "n_null": 10000,
+    "null_pool_rule": "ensemble members (the Dimorphite 6.4-8.4 ensemble, truncated to 24 as in D11) other than the default (single) state, with a finite score for the scorer; the draw is uniform over the pool"
+   }
+  }
+ }
+}

@@ -1,0 +1,64 @@
+{
+ "n_poses_manifest": 43236,
+ "n_poses_missing_verdict": 0,
+ "partial": false,
+ "n_poses_used": 43236,
+ "n_ligands": 3992,
+ "pass_rate_by_dataset": {
+  "ten_target_main": {
+   "geom": 0.9289351339384547,
+   "full_pb": 0.9263338499003764,
+   "inter": 0.9972880230241311
+  },
+  "ten_target_budget6": {
+   "geom": 0.9286792752701843,
+   "full_pb": 0.9265336935791482,
+   "inter": 0.9975762873490146
+  }
+ },
+ "n_ligands_with_default": 3963,
+ "n_ligands_missing_default": 29,
+ "failed_checks_top": {
+  "non-aromatic_ring_non-flatness": 1843,
+  "internal_energy": 772,
+  "double_bond_flatness": 352,
+  "internal_steric_clash": 199,
+  "minimum_distance_to_protein": 110,
+  "inchi_convertible": 57,
+  "aromatic_ring_flatness": 31,
+  "bond_angles": 28,
+  "bond_lengths": 9
+ },
+ "provenance": {
+  "script": "$ANALYSIS_ROOT/scripts/pose_validity/flips_ten_target.py",
+  "config": "$ANALYSIS_ROOT/configs/pose_validity.yaml",
+  "inputs": [
+   {
+    "exists": true,
+    "bytes": 31250158,
+    "md5": "89d658e030037c7cd9964eee963eb632",
+    "n_records": 43236,
+    "record_unit": "table_rows",
+    "file": "ten_target_pose_manifest.csv"
+   }
+  ],
+  "seed": 20261031,
+  "n_boot": 2000,
+  "n_perm": null,
+  "tool_versions": {
+   "python": "3.11.15",
+   "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+   "numpy": "2.4.6",
+   "scipy": "1.17.1",
+   "pandas": "3.0.3",
+   "yaml": "6.0.3"
+  },
+  "extra": {
+   "n_bust_parquet_files": 726,
+   "n_poses_missing_verdict": 0,
+   "partial": false,
+   "n_duplicate_verdict_rows_same_key": 0,
+   "n_pose_ids_shared_by_two_seeds": 272
+  }
+ }
+}

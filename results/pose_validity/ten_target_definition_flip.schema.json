@@ -1,0 +1,94 @@
+{
+ "file": "ten_target_definition_flip.csv",
+ "description": "Old p2 flip definition recomputed with full_pb next to the new definition",
+ "row_grain": "one row per target of ten-target docking seed 20260210",
+ "n_rows": 10,
+ "n_columns": 7,
+ "delimiter": ",",
+ "file_md5": "2511210299f30dc6d7bdf37f10b3215f",
+ "columns": [
+  {
+   "name": "target",
+   "type": "str",
+   "unit": "",
+   "description": "receptor target; ALL = pooled over targets",
+   "n_missing": 0
+  },
+  {
+   "name": "n_ligands_checked",
+   "type": "int",
+   "unit": "",
+   "description": "ten-target docking seed 20260210 ligands with at least one checked strategy pose",
+   "n_missing": 0
+  },
+  {
+   "name": "n_flip_old_definition",
+   "type": "int",
+   "unit": "",
+   "description": "ligands with >= 2 distinct strategy-chosen microstates, one valid and one invalid (original p2 definition, full_pb)",
+   "n_missing": 0
+  },
+  {
+   "name": "flip_pct_old_definition",
+   "type": "float",
+   "unit": "%",
+   "description": "100 * n_flip_old_definition / n_ligands_checked",
+   "n_missing": 0
+  },
+  {
+   "name": "n_ligands_new_def",
+   "type": "int",
+   "unit": "",
+   "description": "n_ligands of the new definition (primary denominator, full_pb)",
+   "n_missing": 0
+  },
+  {
+   "name": "n_flip_new_def",
+   "type": "int",
+   "unit": "",
+   "description": "n_flip of the new definition",
+   "n_missing": 0
+  },
+  {
+   "name": "flip_pct_new_def",
+   "type": "float",
+   "unit": "%",
+   "description": "flip_pct of the new definition",
+   "n_missing": 0
+  }
+ ],
+ "extra": {
+  "provenance": {
+   "script": "$ANALYSIS_ROOT/scripts/pose_validity/flips_ten_target.py",
+   "config": "$ANALYSIS_ROOT/configs/pose_validity.yaml",
+   "inputs": [
+    {
+     "exists": true,
+     "bytes": 31250158,
+     "md5": "89d658e030037c7cd9964eee963eb632",
+     "n_records": 43236,
+     "record_unit": "table_rows",
+     "file": "ten_target_pose_manifest.csv"
+    }
+   ],
+   "seed": 20261031,
+   "n_boot": 2000,
+   "n_perm": null,
+   "tool_versions": {
+    "python": "3.11.15",
+    "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "pandas": "3.0.3",
+    "yaml": "6.0.3"
+   },
+   "extra": {
+    "n_bust_parquet_files": 726,
+    "n_poses_missing_verdict": 0,
+    "partial": false,
+    "n_duplicate_verdict_rows_same_key": 0,
+    "n_pose_ids_shared_by_two_seeds": 272
+   }
+  }
+ }
+}

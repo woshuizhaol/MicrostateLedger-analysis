@@ -1,0 +1,194 @@
+paths:
+  pairs_tsv: $BASE_ROOT/results/stats/tautomer/tautomer_pairs.tsv
+  sqm_detail_tsv: $BASE_ROOT/results/stats/tautomer/tautomer_sqm_detail.tsv
+  xtb_free_tsv: $BASE_ROOT/results/benchmark/p3_tautomer_solvated_qm/p3_xtb_detail_free.tsv
+  xtb_opt_tsv: $BASE_ROOT/results/benchmark/p3_tautomer_solvated_qm/p3_xtb_detail_opt.tsv
+  dft_tsv: $BASE_ROOT/results/benchmark/p3_tautomer_solvated_qm/p3_dft_detail.tsv
+  xtb_free_summary_json: $BASE_ROOT/results/benchmark/p3_tautomer_solvated_qm/p3_xtb_summary_free.json
+  xtb_opt_summary_json: $BASE_ROOT/results/benchmark/p3_tautomer_solvated_qm/p3_xtb_summary_opt.json
+  dft_summary_json: $BASE_ROOT/results/benchmark/p3_tautomer_solvated_qm/p3_dft_summary.json
+  tautobase_raw: $DOCKING_ROOT/data/crawled/Tautobase/Tautobase_SMIRKS.txt
+  lit_perry_html: $ANALYSIS_ROOT/inputs/external/literature/perry_jacs2025_PMC13012796.html
+  lit_perry_json: $ANALYSIS_ROOT/inputs/external/literature/perry_jacs2025_europepmc_record.json
+  lit_wieder_html: $ANALYSIS_ROOT/inputs/external/literature/wieder_chemsci2021_PMC8409483.html
+  lit_newcombe_pdf: $ANALYSIS_ROOT/inputs/external/literature/newcombe1998_statmed.pdf
+  lit_camis_html: $ANALYSIS_ROOT/inputs/external/literature/camis_paired_proportions_sas.html
+  manuscript_main: $ANALYSIS_ROOT/inputs/linked/manuscript_main.md
+  supplementary: $ANALYSIS_ROOT/inputs/linked/supplementary_materials.md
+  figbuild_xtb_json: $ANALYSIS_ROOT/inputs/data/tautomer_xtb.json
+  original_code_p2: $BASE_ROOT/code/analysis/tautomer_benchmark.py
+  original_code_p3xtb: $BASE_ROOT/code/analysis/p3_tautomer_solvated_xtb.py
+  original_code_p3dft: $BASE_ROOT/code/analysis/p3_tautomer_dft_g16.py
+pinned_md5:
+  pairs_tsv: 4bc5a70c53bbfe9f450b0b6a670b0f9d
+  sqm_detail_tsv: 932c572b6a9afb8719a5d30cd092b81b
+  xtb_free_tsv: de18ae3a71fae98070e804f316a281c4
+  xtb_opt_tsv: 6a8afc2914fcfb0d5b245950118b0a78
+  dft_tsv: 83d68412b77e0f04f05ccaf58af7fd0e
+  xtb_free_summary_json: 49978c21dfc5ff9a6aa12acc32fc54c3
+  xtb_opt_summary_json: cdc0d01ead8dace7ccda81b8b2d81d72
+  dft_summary_json: 3b40cb7ebb635e619e85ccab6b4909fb
+  tautobase_raw: df5da62d080229955361c2a9af12a7ec
+  lit_perry_html: 351612e9ad0ceb78c4f639c31c83e4a0
+  lit_perry_json: 383bd91e37421c4d937168502af8e7c0
+  lit_wieder_html: a2631af79a5a84a6ce1dd1dedcce0112
+  lit_newcombe_pdf: 4343f314ea2ff295fe60114f3233f1b3
+  lit_camis_html: c50abeec1511194181cc854decb18e1a
+  manuscript_main: faca7dd4203fc2ca5ecdd185aa6d52db
+  supplementary: dc822632b9709a3a054efe57f1f4cede
+  original_code_p2: bf4e640107aced048f07d6a86fe65ce5
+  original_code_p3xtb: 945338e645e8945bb6f2d8ec45558e2c
+  original_code_p3dft: 1141c735aaddcfe79ab6f02ef82b2432
+rdkit_probe_pythons:
+  2025.09.5: $DOCKING_ROOT/envs/all/bin/python
+  2026.03.3: $BASE_ROOT/env/xtb_env/bin/python
+stats:
+  alpha: 0.05
+  holm_family_size: 3
+  min_discordant_for_asymptotic: 10
+  kcal_per_logK: 1.3642
+  energy_tie_tolerance_kcal: 0.0
+  n_boot: 200000
+  boot_chunk: 20000
+  boot_percentiles:
+  - 2.5
+  - 97.5
+  seed_bootstrap: 20261015
+  bootstrap_vs_newcombe_tolerance: 5.0
+  newcombe_known_answers:
+  - cells:
+    - 20
+    - 15
+    - 6
+    - 5
+    expected:
+    - 0.002602
+    - 0.369943
+    tol: 1.0e-06
+    source: CAMIS worked example (psiaims.github.io/CAMIS, paired proportions in SAS), phi = 0 branch
+  - cells:
+    - 36
+    - 12
+    - 2
+    - 0
+    expected:
+    - 0.0569
+    - 0.3404
+    tol: 5.1e-05
+    source: Newcombe 1998 Statist. Med. 17:2635, Table III row 1, method 10 (phi < 0)
+  - cells:
+    - 20
+    - 12
+    - 2
+    - 16
+    expected:
+    - 0.0562
+    - 0.3292
+    tol: 5.1e-05
+    source: Newcombe 1998 Table III row 2, method 10 (phi > 0, continuity-corrected)
+  - cells:
+    - 18
+    - 12
+    - 2
+    - 18
+    expected:
+    - 0.0562
+    - 0.329
+    tol: 5.1e-05
+    source: Newcombe 1998 Table III row 3, method 10 (phi > 0, continuity-corrected)
+  independent_known_answer:
+    groups:
+    - 35
+    - 46
+    - 26
+    - 46
+    expected:
+    - 0.002602
+    - 0.369943
+    tol: 1.0e-06
+band:
+  lo: 20.0
+  hi: 30.0
+alt_reference:
+  source_key: wieder_chemsci2021
+  wrong_pairs: 59
+  n_pairs: 460
+conventions:
+  A: ties and failures count as misranked; denominator 150 for every method
+  B: pairs with a tie or failure in ANY of RDKit, PM6 and GFN2-xTB (--ohess) are dropped; common subset, same denominator for every method
+  C: each method drops its OWN ties/failures (denominators differ)
+  D: 'sensitivity, not in the preset: a tie counts 0.5 (expected error under random tie-breaking); failures count as misranked'
+selection:
+  sqm_seed: 20260702
+  sqm_max_pairs: 150
+  sqm_heavy_max: 24
+  dft_n: 24
+  dft_solvent: Water
+  dft_order: water-only pairs of the 150, ordered by heavy1 then numeric row id, first dft_n
+representativeness:
+  heavy_bins:
+  - - 3
+    - 7
+  - - 8
+    - 10
+  - - 11
+    - 12
+  - - 13
+    - 15
+  - - 16
+    - 24
+  - - 25
+    - 99
+reported_values:
+  rdkit_150:
+    correct: 90
+    wrong: 32
+    tie: 28
+  pm6_150_wrong: 52
+  gfn2_free_150_wrong: 46
+  gfn2_opt_150_wrong: 46
+  dft24_wrong: 1
+  pm6_24_wrong: 5
+  gfn2_opt_24_wrong: 5
+  gfn2_free_24_wrong: 6
+  rdkit_full1101:
+    score_strict_pct: 50.32
+    score_lenient_pct: 39.29
+    canon_strict_pct: 53.04
+    canon_lenient_pct: 37.86
+    n_clear: 1101
+    exp_source_composition:
+      logK: 332
+      Preferred: 552
+      logK_ineq: 14
+      '%T1': 202
+      '%T1_ineq': 1
+  rmse_kcal:
+    pm6_gas: 7.128
+    gfn2_free: 5.44
+    gfn2_opt: 5.52
+outputs:
+  results:
+  - tautomer_per_pair_matrix.csv
+  - tautomer_per_pair_matrix.schema.json
+  - misrank_rates.csv
+  - misrank_rates.schema.json
+  - mcnemar.csv
+  - mcnemar.schema.json
+  - subset_representativeness.csv
+  - subset_representativeness.schema.json
+  - subset_representativeness_tests.csv
+  - subset_representativeness_tests.schema.json
+  - dft24_same_pairs.csv
+  - dft24_same_pairs.schema.json
+  - dft24_comparisons.csv
+  - dft24_comparisons.schema.json
+  - band_source.json
+  - tautomer_summary.json
+  raw:
+  - rdkit_rescore_all.csv
+  - rdkit_rescore_all.schema.json
+  scripts_allowed:
+  - tautomer.py
+  - rdkit_version_comparison.py
+  - tautomer_schemas.py

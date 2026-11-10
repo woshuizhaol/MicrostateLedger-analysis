@@ -1,0 +1,13 @@
+scheme,stratum,n_dude,weight,n_anchor_complete,covered
+functional_class,amidine_guanidine,349,0.09737723214,51,True
+functional_class,aliphatic_amine,1220,0.3404017857,387,True
+functional_class,carboxylic_acid,40,0.01116071429,335,True
+functional_class,tetrazole_acylsulfonamide,3,0.0008370535714,2,True
+functional_class,imidazole_azole,313,0.08733258929,137,True
+functional_class,pyridine_azine,1118,0.3119419643,501,True
+functional_class,aniline,54,0.01506696429,147,True
+functional_class,phenol,131,0.03655133929,230,True
+functional_class,sulfonamide_imide,43,0.01199776786,58,True
+functional_class,none,313,0.08733258929,162,True
+n_sites_stratum[post_hoc],<=1_group,652,0.1819196429,1698,True
+n_sites_stratum[post_hoc],>=2_groups,2932,0.8180803571,312,True

@@ -1,0 +1,22 @@
+{
+ "n_poses": 43236,
+ "by_dataset": {
+  "ten_target_main": 18068,
+  "ten_target_budget6": 25168
+ },
+ "by_dataset_seed": {
+  "ten_target_main/20260210": 3684,
+  "ten_target_main/20260211": 3727,
+  "ten_target_main/20260212": 3757,
+  "ten_target_main/20260213": 3505,
+  "ten_target_main/20260214": 3395,
+  "ten_target_budget6/20260301": 5056,
+  "ten_target_budget6/20260302": 5141,
+  "ten_target_budget6/20260303": 4977,
+  "ten_target_budget6/20260304": 4993,
+  "ten_target_budget6/20260305": 5001
+ },
+ "n_without_score": 0,
+ "n_microstate_units": 19602,
+ "seconds": 174.9
+}

@@ -1,0 +1,241 @@
+{
+ "file": "charge_per_ligand.csv",
+ "description": "Per-ligand pH-7.4 net charge and charge class of five methods on DUD-E and PDBbind",
+ "row_grain": "per-ligand (one row per DUD-E active or PDBbind co-crystal ligand)",
+ "n_rows": 3776,
+ "n_columns": 22,
+ "delimiter": ",",
+ "file_md5": "3bc1645ece46fefd053cb1b2810b8e32",
+ "columns": [
+  {
+   "name": "dataset",
+   "type": "str",
+   "unit": "",
+   "description": "dude (3,584 DUD-E actives) or pdbbind (192 co-crystal ligands)",
+   "n_missing": 0
+  },
+  {
+   "name": "compound_id",
+   "type": "str",
+   "unit": "",
+   "description": "compound id of the original ledger tables the join key to the original analysis",
+   "n_missing": 0
+  },
+  {
+   "name": "parent_smiles",
+   "type": "str",
+   "unit": "",
+   "description": "input structure of the original analysis (the structure every method was run on)",
+   "n_missing": 0
+  },
+  {
+   "name": "q_naive",
+   "type": "int",
+   "unit": "e",
+   "description": "net formal charge of the default state = the ensemble member with the smallest |charge| (original 'single'; pdbbind: the faithful ledger choice)",
+   "n_missing": 0
+  },
+  {
+   "name": "q_dimorphite_dom",
+   "type": "int",
+   "unit": "e",
+   "description": "net charge of the Dimorphite-DL 2.0.2 dominant state, protonate(ph 7.4, precision 0)",
+   "n_missing": 0
+  },
+  {
+   "name": "q_openbabel",
+   "type": "int",
+   "unit": "e",
+   "description": "net charge assigned by OpenBabel 3.1.0 obabel -p 7.4; EMPTY when RDKit cannot sanitise the OpenBabel output (an invalid structure, usually an [O-] with two heavy-atom neighbours; baseline convention)",
+   "n_missing": 97
+  },
+  {
+   "name": "q_openbabel_raw",
+   "type": "int",
+   "unit": "e",
+   "description": "net charge of the OpenBabel output read from the unsanitised structure; equals q_openbabel whenever ob_parse_ok is True; sensitivity only, the charge of an invalid structure is not trusted",
+   "n_missing": 0
+  },
+  {
+   "name": "ob_parse_ok",
+   "type": "str",
+   "unit": "",
+   "description": "True if RDKit sanitises the OpenBabel output",
+   "n_missing": 0
+  },
+  {
+   "name": "q_enum_popmax",
+   "type": "int",
+   "unit": "e",
+   "description": "net charge of the most populated member of the pH 6.4-8.4 Dimorphite ensemble (independent-site Henderson-Hasselbalch populations, original code)",
+   "n_missing": 0
+  },
+  {
+   "name": "q_ml_pka",
+   "type": "int",
+   "unit": "e",
+   "description": "net charge of the independent-site Henderson-Hasselbalch dominant state built from MolGpKa pKa predictions (empty = MolGpKa failed)",
+   "n_missing": 0
+  },
+  {
+   "name": "class_naive",
+   "type": "str",
+   "unit": "",
+   "description": "charge class of the naive state (<=-2, -1, 0, zwitterion, +1, >=+2); charge-only when the state's SMILES is unavailable",
+   "n_missing": 0
+  },
+  {
+   "name": "class_dimorphite_dom",
+   "type": "str",
+   "unit": "",
+   "description": "charge class of the Dimorphite dominant state",
+   "n_missing": 0
+  },
+  {
+   "name": "class_openbabel",
+   "type": "str",
+   "unit": "",
+   "description": "charge class of the OpenBabel state",
+   "n_missing": 97
+  },
+  {
+   "name": "class_enum_popmax",
+   "type": "str",
+   "unit": "",
+   "description": "charge class of the most populated ensemble member",
+   "n_missing": 0
+  },
+  {
+   "name": "class_ml_pka",
+   "type": "str",
+   "unit": "",
+   "description": "charge class of the MolGpKa-based state (zwitterion if the state has a free positive and a free negative charge)",
+   "n_missing": 0
+  },
+  {
+   "name": "dd_state_charges",
+   "type": "str",
+   "unit": "e",
+   "description": "net charges of all Dimorphite states at pH 7.4 (default precision), separated by |",
+   "n_missing": 0
+  },
+  {
+   "name": "dd_plausible_charged",
+   "type": "str",
+   "unit": "",
+   "description": "True if any Dimorphite state at pH 7.4 is charged (the original '77%' set-type metric)",
+   "n_missing": 0
+  },
+  {
+   "name": "dd_neutral_excluded",
+   "type": "str",
+   "unit": "",
+   "description": "True if the naive charge is not among the Dimorphite states at pH 7.4 (the original '9%' set-type metric)",
+   "n_missing": 0
+  },
+  {
+   "name": "ml_q0",
+   "type": "int",
+   "unit": "e",
+   "description": "net charge of the MolGpKa input after RDKit uncharging",
+   "n_missing": 0
+  },
+  {
+   "name": "ml_n_base_groups",
+   "type": "int",
+   "unit": "count",
+   "description": "MolGpKa basic groups (after merging N-C-N pairs)",
+   "n_missing": 0
+  },
+  {
+   "name": "ml_n_acid_groups",
+   "type": "int",
+   "unit": "count",
+   "description": "MolGpKa acidic groups (after merging N-C-N pairs)",
+   "n_missing": 0
+  },
+  {
+   "name": "complete_case",
+   "type": "str",
+   "unit": "",
+   "description": "True if all five methods produced a charge (the Fleiss kappa population)",
+   "n_missing": 0
+  }
+ ],
+ "extra": {
+  "provenance": {
+   "script": "$ANALYSIS_ROOT/scripts/charge_state/agreement.py",
+   "config": "$ANALYSIS_ROOT/configs/charge_state.yaml",
+   "inputs": [
+    {
+     "exists": true,
+     "bytes": 905959,
+     "md5": "99e2008dbb710c2702b9e9fa8f14d9f8",
+     "n_records": 3584,
+     "record_unit": "table_rows",
+     "file": "dude_single_vs_dominant.tsv"
+    },
+    {
+     "exists": true,
+     "bytes": 22111,
+     "md5": "f60b42846d9368247fb3b0a43e0f0b57",
+     "n_records": 192,
+     "record_unit": "table_rows",
+     "file": "pdbbind_faithful_single_vs_dominant.tsv"
+    },
+    {
+     "exists": true,
+     "bytes": 17456,
+     "md5": "37dc8b4c52f7e6cc54c87c6582209a98",
+     "n_records": 410,
+     "record_unit": "lines",
+     "file": "dominant_state.py"
+    },
+    {
+     "exists": true,
+     "bytes": 5141,
+     "md5": "7f204cccfa129d7ff147af76827e1e4e",
+     "n_records": 69,
+     "record_unit": "lines",
+     "file": "site_substructures.smarts"
+    },
+    {
+     "exists": true,
+     "bytes": 544,
+     "md5": "a3b21ff96ea51c58176f8cbc2ba405e6",
+     "n_records": 2,
+     "record_unit": "json_top_level_keys",
+     "file": "production_protonation_charge.json"
+    }
+   ],
+   "seed": 20261016,
+   "n_boot": 10000,
+   "n_perm": null,
+   "tool_versions": {
+    "python": "3.11.15",
+    "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "pandas": "3.0.3",
+    "yaml": "6.0.3",
+    "statsmodels": "0.14.6",
+    "rdkit": "2025.03.6",
+    "sklearn": "1.9.0"
+   },
+   "extra": {
+    "dimorphite_dl": "2.0.2",
+    "openbabel": "Open Babel 3.1.0 -- Nov 30 2023 -- 20:41:23",
+    "ml_env_python_rdkit_torch": "3.10.22 2026.09.1 2.0.1+cu117",
+    "molgpka_weight_acid_md5": "f2125a7fccb4b9d04e677574aa52d1a9",
+    "molgpka_weight_base_md5": "4882070604809094d2b3c75d2db45fb6",
+    "molgpka_commit": "4dc835219baad18c2e705274ac54d49597703966",
+    "ml_wrapper_md5": "a1c65ca8cd0417d68655bf5db3622ee9",
+    "original_dominant_functions": "scripts/charge_state/dominant_state.py (verbatim copy of dominant_state.py lines 19-276)",
+    "ml_raw_outputs": [
+     "$ANALYSIS_ROOT/raw_outputs/charge_state/ml_sites_dude.jsonl",
+     "$ANALYSIS_ROOT/raw_outputs/charge_state/ml_sites_pdbbind.jsonl"
+    ]
+   }
+  }
+ }
+}

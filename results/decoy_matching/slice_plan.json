@@ -1,0 +1,178 @@
+{
+ "provenance": {
+  "script": "$ANALYSIS_ROOT/scripts/decoy_matching/slices.py",
+  "config": "$ANALYSIS_ROOT/configs/decoy_matching_slices.yaml",
+  "inputs": [
+   {
+    "exists": true,
+    "bytes": 5477936,
+    "md5": "5d555f37b4d328e297835b19a648aca3",
+    "n_records": 52236,
+    "record_unit": "table_rows",
+    "file": "ligand_sets.csv"
+   }
+  ],
+  "seed": 20261025,
+  "n_boot": null,
+  "n_perm": null,
+  "tool_versions": {
+   "python": "3.11.15",
+   "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+   "numpy": "2.4.6",
+   "scipy": "1.17.1",
+   "pandas": "3.0.3",
+   "yaml": "6.0.3"
+  },
+  "extra": {
+   "n_slices": 12
+  }
+ },
+ "n_slices": 12,
+ "plan": {
+  "1": {
+   "ligands": 4424,
+   "expected_dockings": 46845,
+   "by_set": {
+    "zinc_charge_mismatch/negative": 1044,
+    "dude_full/active": 348,
+    "dude_full/negative": 1044,
+    "litpcba/active": 236,
+    "litpcba/negative": 708,
+    "zinc_unmatched/negative": 1044
+   }
+  },
+  "2": {
+   "ligands": 4358,
+   "expected_dockings": 46153,
+   "by_set": {
+    "zinc_charge_mismatch/negative": 1029,
+    "dude_full/active": 343,
+    "dude_full/negative": 1029,
+    "litpcba/active": 232,
+    "litpcba/negative": 696,
+    "zinc_unmatched/negative": 1029
+   }
+  },
+  "3": {
+   "ligands": 4318,
+   "expected_dockings": 45768,
+   "by_set": {
+    "zinc_charge_mismatch/negative": 1023,
+    "dude_full/active": 341,
+    "dude_full/negative": 1023,
+    "litpcba/active": 227,
+    "litpcba/negative": 681,
+    "zinc_unmatched/negative": 1023
+   }
+  },
+  "4": {
+   "ligands": 4356,
+   "expected_dockings": 46103,
+   "by_set": {
+    "zinc_charge_mismatch/negative": 1026,
+    "dude_full/active": 342,
+    "dude_full/negative": 1026,
+    "litpcba/active": 234,
+    "litpcba/negative": 702,
+    "zinc_unmatched/negative": 1026
+   }
+  },
+  "5": {
+   "ligands": 4364,
+   "expected_dockings": 46234,
+   "by_set": {
+    "zinc_charge_mismatch/negative": 1032,
+    "dude_full/active": 344,
+    "dude_full/negative": 1032,
+    "litpcba/active": 231,
+    "litpcba/negative": 693,
+    "zinc_unmatched/negative": 1032
+   }
+  },
+  "6": {
+   "ligands": 4322,
+   "expected_dockings": 45800,
+   "by_set": {
+    "zinc_charge_mismatch/negative": 1023,
+    "dude_full/active": 341,
+    "dude_full/negative": 1023,
+    "litpcba/active": 228,
+    "litpcba/negative": 684,
+    "zinc_unmatched/negative": 1023
+   }
+  },
+  "7": {
+   "ligands": 4410,
+   "expected_dockings": 46700,
+   "by_set": {
+    "zinc_charge_mismatch/negative": 1041,
+    "dude_full/active": 347,
+    "dude_full/negative": 1041,
+    "litpcba/active": 235,
+    "litpcba/negative": 705,
+    "zinc_unmatched/negative": 1041
+   }
+  },
+  "8": {
+   "ligands": 4334,
+   "expected_dockings": 45895,
+   "by_set": {
+    "zinc_charge_mismatch/negative": 1023,
+    "dude_full/active": 341,
+    "dude_full/negative": 1023,
+    "litpcba/active": 231,
+    "litpcba/negative": 693,
+    "zinc_unmatched/negative": 1023
+   }
+  },
+  "9": {
+   "ligands": 4342,
+   "expected_dockings": 46026,
+   "by_set": {
+    "zinc_charge_mismatch/negative": 1029,
+    "dude_full/active": 343,
+    "dude_full/negative": 1029,
+    "litpcba/active": 228,
+    "litpcba/negative": 684,
+    "zinc_unmatched/negative": 1029
+   }
+  },
+  "10": {
+   "ligands": 4352,
+   "expected_dockings": 46071,
+   "by_set": {
+    "zinc_charge_mismatch/negative": 1026,
+    "dude_full/active": 342,
+    "dude_full/negative": 1026,
+    "litpcba/active": 233,
+    "litpcba/negative": 699,
+    "zinc_unmatched/negative": 1026
+   }
+  },
+  "11": {
+   "ligands": 4368,
+   "expected_dockings": 46266,
+   "by_set": {
+    "zinc_charge_mismatch/negative": 1032,
+    "dude_full/active": 344,
+    "dude_full/negative": 1032,
+    "litpcba/active": 232,
+    "litpcba/negative": 696,
+    "zinc_unmatched/negative": 1032
+   }
+  },
+  "12": {
+   "ligands": 4288,
+   "expected_dockings": 45429,
+   "by_set": {
+    "zinc_charge_mismatch/negative": 1014,
+    "dude_full/active": 338,
+    "dude_full/negative": 1014,
+    "litpcba/active": 227,
+    "litpcba/negative": 681,
+    "zinc_unmatched/negative": 1014
+   }
+  }
+ },
+ "total_expected_dockings": 553290
+}

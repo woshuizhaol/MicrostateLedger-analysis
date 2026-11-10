@@ -1,0 +1,139 @@
+{
+ "provenance": {
+  "script": "$ANALYSIS_ROOT/scripts/casf_scoring/states.py",
+  "config": "$ANALYSIS_ROOT/configs/casf_scoring.yaml",
+  "inputs": [
+   {
+    "exists": true,
+    "bytes": 16515,
+    "md5": "52ff6787f863f2683a5a035811678cab",
+    "n_records": 7,
+    "record_unit": "json_top_level_keys",
+    "file": "p3_summary.json"
+   },
+   {
+    "exists": true,
+    "bytes": 53976,
+    "md5": "901bca1017ed1876652b779e0c593e62",
+    "n_records": 285,
+    "record_unit": "table_rows",
+    "file": "p3_per_complex_all.csv"
+   },
+   {
+    "exists": true,
+    "bytes": 13634,
+    "md5": "b4e133082c64592d803b519b92b72952",
+    "n_records": 271,
+    "record_unit": "lines",
+    "file": "p3_casf_scoring_power.py"
+   },
+   {
+    "exists": true,
+    "bytes": 6953,
+    "md5": "cd926e39799e64fb3541bdd25298f86d",
+    "n_records": 142,
+    "record_unit": "lines",
+    "file": "p3_ad4_rescore.py"
+   },
+   {
+    "exists": true,
+    "bytes": 14019,
+    "md5": "d5a551fd8edd409e9eb42d247b2ee47f",
+    "n_records": 286,
+    "record_unit": "lines",
+    "file": "CoreSet.dat"
+   },
+   {
+    "exists": true,
+    "bytes": 59159,
+    "md5": "666713276f915104f3278314345d5be7",
+    "n_records": 285,
+    "record_unit": "lines",
+    "file": "ml_sites_casf.jsonl"
+   }
+  ],
+  "seed": null,
+  "n_boot": null,
+  "n_perm": null,
+  "tool_versions": {
+   "python": "3.11.15",
+   "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+   "numpy": "2.4.6",
+   "scipy": "1.17.1",
+   "pandas": "3.0.3",
+   "yaml": "6.0.3",
+   "rdkit": "2025.03.6",
+   "meeko": "0.7.1"
+  },
+  "extra": {
+   "d11_score_digest": {
+    "scores": "0b4dda4b9d11928e60a9df3c0beae5a3",
+    "scores_ad4": "21e749a585415d89125a5f39bf62314c"
+   },
+   "obabel_version": "Open Babel 3.1.0 -- Nov 30 2023 -- 20:41:23"
+  }
+ },
+ "n_complexes": 285,
+ "n_microstates": 2367,
+ "checks": {
+  "ensemble_size_equal": 285,
+  "truncated_equal": 285,
+  "ens_subset_of_scored": 285,
+  "named_states_equal": 285,
+  "named_scores_equal": 4191,
+  "named_scores_checked": 4191,
+  "analyze_failed": 0,
+  "random_stored_in_pool": 285,
+  "dominant_charge_equal_old": 285,
+  "single_equal_old": 285
+ },
+ "per_predictor": {
+  "dimorphite_dom": {
+   "status": {
+    "direct": 285
+   },
+   "n_differs_from_single": 178,
+   "n_charge_differs": 157
+  },
+  "openbabel": {
+   "status": {
+    "chosen": 271,
+    "no_candidate_with_charge": 7,
+    "no_prediction": 7
+   },
+   "n_differs_from_single": 142,
+   "n_charge_differs": 113
+  },
+  "enum_popmax": {
+   "status": {
+    "chosen": 284,
+    "no_candidate_with_charge": 1
+   },
+   "n_differs_from_single": 173,
+   "n_charge_differs": 152
+  },
+  "ml_pka": {
+   "status": {
+    "chosen": 276,
+    "no_candidate_with_charge": 9
+   },
+   "n_differs_from_single": 143,
+   "n_charge_differs": 111
+  },
+  "consensus_ge3": {
+   "status": {
+    "chosen": 188,
+    "no_consensus": 97
+   },
+   "n_differs_from_single": 92,
+   "n_charge_differs": 79
+  }
+ },
+ "pairwise_charge_agreement_with_dimorphite": {
+  "dimorphite_dom": 285,
+  "openbabel": 165,
+  "enum_popmax": 276,
+  "ml_pka": 163,
+  "consensus_ge3": 186
+ }
+}

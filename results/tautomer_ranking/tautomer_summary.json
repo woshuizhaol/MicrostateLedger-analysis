@@ -1,0 +1,859 @@
+{
+ "n_pairs_150": 150,
+ "n_common_subset_B": 122,
+ "n_pool": 332,
+ "n_full": 1101,
+ "n_dft24": 24,
+ "dft24_heavy_atoms": {
+  "3": 1,
+  "4": 1,
+  "5": 4,
+  "6": 8,
+  "7": 7,
+  "8": 3
+ },
+ "n_failures_or_ties": {
+  "RDKit_score": {
+   "tie": 28,
+   "failed": 0
+  },
+  "PM6_gas": {
+   "tie": 0,
+   "failed": 0
+  },
+  "GFN2xtb_ALPB_free": {
+   "tie": 0,
+   "failed": 0
+  },
+  "GFN2xtb_ALPB_opt": {
+   "tie": 0,
+   "failed": 0
+  }
+ },
+ "conventions": {
+  "A": "ties and failures count as misranked; denominator 150 for every method",
+  "B": "pairs with a tie or failure in ANY of RDKit, PM6 and GFN2-xTB (--ohess) are dropped; common subset, same denominator for every method",
+  "C": "each method drops its OWN ties/failures (denominators differ)",
+  "D": "sensitivity, not in the preset: a tie counts 0.5 (expected error under random tie-breaking); failures count as misranked"
+ },
+ "dft24_selection_rule": "water-only pairs of the 150, ordered by heavy1 then numeric row id, first dft_n",
+ "selection_reproduced": {
+  "sqm150": true,
+  "dft24": true,
+  "numpy": "2.4.6"
+ },
+ "input_consistency_counters": {
+  "exp_dom differs (sqm vs pairs)": 0,
+  "exp_dom differs (xtb free/opt vs pairs)": 0,
+  "t1/t2 differ (sqm vs pairs)": 0,
+  "PM6 energy differs between sqm and xtb files": 0,
+  "dG_exp != -1.3642*logK": 0,
+  "stored xtb_dom != recomputed": 0,
+  "stored score_dom (sqm file) != recomputed RDKit": 0,
+  "exp_src not logK": 0,
+  "stored dft_dom != recomputed": 0
+ },
+ "reported_reproduction": [
+  {
+   "name": "RDKit on the 150: correct/wrong/tie",
+   "expected": {
+    "correct": 90,
+    "wrong": 32,
+    "tie": 28
+   },
+   "got": {
+    "correct": 90,
+    "wrong": 32,
+    "tie": 28
+   },
+   "ok": true
+  },
+  {
+   "name": "PM6 wrong on the 150",
+   "expected": 52,
+   "got": 52,
+   "ok": true
+  },
+  {
+   "name": "GFN2-xTB --ohess wrong on the 150",
+   "expected": 46,
+   "got": 46,
+   "ok": true
+  },
+  {
+   "name": "GFN2-xTB --opt wrong on the 150",
+   "expected": 46,
+   "got": 46,
+   "ok": true
+  },
+  {
+   "name": "DFT wrong on the 24",
+   "expected": 1,
+   "got": 1,
+   "ok": true
+  },
+  {
+   "name": "PM6 wrong on the 24",
+   "expected": 5,
+   "got": 5,
+   "ok": true
+  },
+  {
+   "name": "GFN2-xTB --opt wrong on the 24 (the original DFT trend table used the --opt energies)",
+   "expected": 5,
+   "got": 5,
+   "ok": true
+  },
+  {
+   "name": "GFN2-xTB --ohess wrong on the 24 (not in the original table; the manuscript's 150-pair xTB variant)",
+   "expected": 6,
+   "got": 6,
+   "ok": true
+  },
+  {
+   "name": "RMSE of pm6_gas on the 150 (rounded to the reported precision)",
+   "expected": 7.128,
+   "got": 7.128,
+   "ok": true
+  },
+  {
+   "name": "RMSE of gfn2_free on the 150 (rounded to the reported precision)",
+   "expected": 5.44,
+   "got": 5.44,
+   "ok": true
+  },
+  {
+   "name": "RMSE of gfn2_opt on the 150 (rounded to the reported precision)",
+   "expected": 5.52,
+   "got": 5.52,
+   "ok": true
+  },
+  {
+   "name": "full set: n with a clear dominant tautomer",
+   "expected": 1101,
+   "got": 1101,
+   "ok": true
+  },
+  {
+   "name": "full set: evidence-class composition",
+   "expected": {
+    "logK": 332,
+    "Preferred": 552,
+    "logK_ineq": 14,
+    "%T1": 202,
+    "%T1_ineq": 1
+   },
+   "got": {
+    "logK": 332,
+    "Preferred": 552,
+    "logK_ineq": 14,
+    "%T1": 202,
+    "%T1_ineq": 1
+   },
+   "ok": true
+  },
+  {
+   "name": "full set RDKit score_strict rate (rounded to 2 decimals)",
+   "expected": 50.32,
+   "got": 50.32,
+   "ok": true
+  },
+  {
+   "name": "full set RDKit score_lenient rate (rounded to 2 decimals)",
+   "expected": 39.29,
+   "got": 39.29,
+   "ok": true
+  },
+  {
+   "name": "full set RDKit canon_strict rate (rounded to 2 decimals)",
+   "expected": 53.04,
+   "got": 53.04,
+   "ok": true
+  },
+  {
+   "name": "full set RDKit canon_lenient rate (rounded to 2 decimals)",
+   "expected": 37.86,
+   "got": 37.86,
+   "ok": true
+  },
+  {
+   "name": "logK-class RDKit score_lenient rate = original summary by_exp_source (24.81)",
+   "expected": 24.81,
+   "got": 24.81,
+   "ok": true
+  }
+ ],
+ "known_answer_tests": [
+  {
+   "cells": [
+    20,
+    15,
+    6,
+    5
+   ],
+   "expected": [
+    0.002602,
+    0.369943
+   ],
+   "got": [
+    0.002602,
+    0.369943
+   ],
+   "phi": 0.0,
+   "tol": 1e-06,
+   "ok": true,
+   "source": "CAMIS worked example (psiaims.github.io/CAMIS, paired proportions in SAS), phi = 0 branch"
+  },
+  {
+   "cells": [
+    36,
+    12,
+    2,
+    0
+   ],
+   "expected": [
+    0.0569,
+    0.3404
+   ],
+   "got": [
+    0.05693,
+    0.340428
+   ],
+   "phi": -0.1147,
+   "tol": 5.1e-05,
+   "ok": true,
+   "source": "Newcombe 1998 Statist. Med. 17:2635, Table III row 1, method 10 (phi < 0)"
+  },
+  {
+   "cells": [
+    20,
+    12,
+    2,
+    16
+   ],
+   "expected": [
+    0.0562,
+    0.3292
+   ],
+   "got": [
+    0.056156,
+    0.329207
+   ],
+   "phi": 0.455,
+   "tol": 5.1e-05,
+   "ok": true,
+   "source": "Newcombe 1998 Table III row 2, method 10 (phi > 0, continuity-corrected)"
+  },
+  {
+   "cells": [
+    18,
+    12,
+    2,
+    18
+   ],
+   "expected": [
+    0.0562,
+    0.329
+   ],
+   "got": [
+    0.056172,
+    0.328976
+   ],
+   "phi": 0.4583,
+   "tol": 5.1e-05,
+   "ok": true,
+   "source": "Newcombe 1998 Table III row 3, method 10 (phi > 0, continuity-corrected)"
+  },
+  {
+   "cells": [
+    35,
+    46,
+    26,
+    46
+   ],
+   "expected": [
+    0.002602,
+    0.369943
+   ],
+   "got": [
+    0.002602,
+    0.369943
+   ],
+   "phi": null,
+   "tol": 1e-06,
+   "ok": true,
+   "source": "unpaired square-and-add of Wilson intervals = phi 0 case of the CAMIS example"
+  }
+ ],
+ "rdkit": {
+  "main_version": "2025.03.6",
+  "manuscript_states": "2025.03.6",
+  "versions": {
+   "2025.03.6": {
+    "python": "(main environment)",
+    "digest_sha256": "30881d906b627acb78cc94d34a6c96029a806d6db33a1fe90103b95910e858a4",
+    "score_digest_sha256": "5e4aa9c924d9f92f9b7499e157526ecbcd470328537b2ea6d3ba79cf0e9ff866",
+    "n_canon_dom_differences_from_main": 0,
+    "n_pairs": 1677,
+    "n_matching_stored": 1677,
+    "n_score_tie": 295
+   },
+   "2025.09.5": {
+    "python": "$DOCKING_ROOT/envs/all/bin/python",
+    "digest_sha256": "30881d906b627acb78cc94d34a6c96029a806d6db33a1fe90103b95910e858a4",
+    "score_digest_sha256": "5e4aa9c924d9f92f9b7499e157526ecbcd470328537b2ea6d3ba79cf0e9ff866",
+    "n_pairs": 1677,
+    "n_matching_stored": 1677,
+    "n_score_tie": 295,
+    "n_canon_dom_differences_from_main": 0
+   },
+   "2026.03.3": {
+    "python": "$BASE_ROOT/env/xtb_env/bin/python",
+    "digest_sha256": "1593f6ea4c411acfbe289e7705f39c188f52ae2eb52723ab5191e766f4ce5527",
+    "score_digest_sha256": "5e4aa9c924d9f92f9b7499e157526ecbcd470328537b2ea6d3ba79cf0e9ff866",
+    "n_pairs": 1677,
+    "n_matching_stored": 1667,
+    "n_score_tie": 295,
+    "n_canon_dom_differences_from_main": 10
+   }
+  },
+  "canon_dom_differences": {
+   "2025.09.5": {
+    "rows": [],
+    "n_in_full1101": 0,
+    "rows_in_the_150": []
+   },
+   "2026.03.3": {
+    "rows": [
+     "1097",
+     "1603",
+     "1604",
+     "1668",
+     "1669",
+     "1670",
+     "199",
+     "316",
+     "440",
+     "856"
+    ],
+    "n_in_full1101": 4,
+    "rows_in_the_150": []
+   }
+  },
+  "all_digests_equal": true,
+  "n_pairs_rescored": 1677,
+  "n_matching_stored": 1677
+ },
+ "xtb_variant_evidence": {
+  "figure_data_method": "GFN2-xTB + ALPB(water), --ohess (Gibbs free energy G@298.15K)",
+  "figure_data_rmse": 5.44,
+  "figure_data_misselect_pct": 30.67,
+  "recomputed_rmse": {
+   "pm6_gas": 7.1277,
+   "gfn2_free": 5.4398,
+   "gfn2_opt": 5.5198
+  },
+  "manuscript_states": "31% / 30.7% misranked, free-energy RMSE 5.4 kcal/mol",
+  "conclusion": "the manuscript's xTB numbers are the --ohess (Gibbs free energy) variant: RMSE 5.44 -> 5.4, whereas --opt would read 5.5; both variants misrank 46/150 (30.67%), with 43 wrong pairs in common",
+  "wrong_pairs_in_common": 43
+ },
+ "band": {
+  "lo": 20.0,
+  "hi": 30.0,
+  "status": "TRACED_TO_A_SOURCE_BUT_THE_SOURCE_DOES_NOT_MATCH_THE_MANUSCRIPT_DESCRIPTION",
+  "like_for_like_literature": {
+   "source_key": "wieder_chemsci2021",
+   "citation": "Wieder M, Fass J, Chodera JD. Chem. Sci. 2021, 12, 11364 (doi 10.1039/d1sc01185e)",
+   "method": "B3LYP/aug-cc-pVTZ // B3LYP/6-31G(d) + SMD(water) transfer free energy, RRHO gas-phase free energies, Tautobase aqueous pairs with numeric logK",
+   "wrong_dominant_pairs": 59,
+   "n_pairs": 460,
+   "rate_pct": 12.83,
+   "wilson_pct": [
+    10.08,
+    16.19
+   ],
+   "quote": [
+    ". 4B (lower panel). For 59 tautomer pairs (13% of the dataset) the method was not "
+   ],
+   "caveats": "a different pair set (460 of the Tautobase aqueous pairs, not our 150); position-only comparison; DFT here still has 13% wrong dominant tautomers, below the band the manuscript quotes; not used for the band relation in misrank_rates.csv"
+  }
+ },
+ "answers": {
+  "q1_is_26pct_above_the_20_30_band": {
+   "A": {
+    "RDKit_score": {
+     "k": 60,
+     "n": 150,
+     "rate_pct": 40.0,
+     "wilson_pct": [
+      32.5,
+      48.0
+     ],
+     "band_relation": "ABOVE",
+     "point_position": "ABOVE"
+    },
+    "PM6_gas": {
+     "k": 52,
+     "n": 150,
+     "rate_pct": 34.67,
+     "wilson_pct": [
+      27.52,
+      42.58
+     ],
+     "band_relation": "OVERLAP",
+     "point_position": "ABOVE"
+    },
+    "GFN2xtb_ALPB_free": {
+     "k": 46,
+     "n": 150,
+     "rate_pct": 30.67,
+     "wilson_pct": [
+      23.85,
+      38.45
+     ],
+     "band_relation": "OVERLAP",
+     "point_position": "ABOVE"
+    },
+    "GFN2xtb_ALPB_opt": {
+     "k": 46,
+     "n": 150,
+     "rate_pct": 30.67,
+     "wilson_pct": [
+      23.85,
+      38.45
+     ],
+     "band_relation": "OVERLAP",
+     "point_position": "ABOVE"
+    }
+   },
+   "B": {
+    "RDKit_score": {
+     "k": 32,
+     "n": 122,
+     "rate_pct": 26.23,
+     "wilson_pct": [
+      19.24,
+      34.67
+     ],
+     "band_relation": "OVERLAP",
+     "point_position": "IN"
+    },
+    "PM6_gas": {
+     "k": 33,
+     "n": 122,
+     "rate_pct": 27.05,
+     "wilson_pct": [
+      19.96,
+      35.54
+     ],
+     "band_relation": "OVERLAP",
+     "point_position": "IN"
+    },
+    "GFN2xtb_ALPB_free": {
+     "k": 40,
+     "n": 122,
+     "rate_pct": 32.79,
+     "wilson_pct": [
+      25.09,
+      41.53
+     ],
+     "band_relation": "OVERLAP",
+     "point_position": "ABOVE"
+    },
+    "GFN2xtb_ALPB_opt": {
+     "k": 39,
+     "n": 122,
+     "rate_pct": 31.97,
+     "wilson_pct": [
+      24.35,
+      40.68
+     ],
+     "band_relation": "OVERLAP",
+     "point_position": "ABOVE"
+    }
+   },
+   "C": {
+    "RDKit_score": {
+     "k": 32,
+     "n": 122,
+     "rate_pct": 26.23,
+     "wilson_pct": [
+      19.24,
+      34.67
+     ],
+     "band_relation": "OVERLAP",
+     "point_position": "IN"
+    },
+    "PM6_gas": {
+     "k": 52,
+     "n": 150,
+     "rate_pct": 34.67,
+     "wilson_pct": [
+      27.52,
+      42.58
+     ],
+     "band_relation": "OVERLAP",
+     "point_position": "ABOVE"
+    },
+    "GFN2xtb_ALPB_free": {
+     "k": 46,
+     "n": 150,
+     "rate_pct": 30.67,
+     "wilson_pct": [
+      23.85,
+      38.45
+     ],
+     "band_relation": "OVERLAP",
+     "point_position": "ABOVE"
+    },
+    "GFN2xtb_ALPB_opt": {
+     "k": 46,
+     "n": 150,
+     "rate_pct": 30.67,
+     "wilson_pct": [
+      23.85,
+      38.45
+     ],
+     "band_relation": "OVERLAP",
+     "point_position": "ABOVE"
+    }
+   },
+   "D": {
+    "RDKit_score": {
+     "k": 46.0,
+     "n": 150,
+     "rate_pct": 30.67,
+     "wilson_pct": [
+      23.85,
+      38.45
+     ],
+     "band_relation": "OVERLAP",
+     "point_position": "ABOVE"
+    },
+    "PM6_gas": {
+     "k": 52.0,
+     "n": 150,
+     "rate_pct": 34.67,
+     "wilson_pct": [
+      27.52,
+      42.58
+     ],
+     "band_relation": "OVERLAP",
+     "point_position": "ABOVE"
+    },
+    "GFN2xtb_ALPB_free": {
+     "k": 46.0,
+     "n": 150,
+     "rate_pct": 30.67,
+     "wilson_pct": [
+      23.85,
+      38.45
+     ],
+     "band_relation": "OVERLAP",
+     "point_position": "ABOVE"
+    },
+    "GFN2xtb_ALPB_opt": {
+     "k": 46.0,
+     "n": 150,
+     "rate_pct": 30.67,
+     "wilson_pct": [
+      23.85,
+      38.45
+     ],
+     "band_relation": "OVERLAP",
+     "point_position": "ABOVE"
+    }
+   }
+  },
+  "q2_is_rdkit_no_worse_than_semiempirical": {
+   "A": [
+    {
+     "comparison": "RDKit_score vs PM6_gas",
+     "b": 26,
+     "c": 18,
+     "diff_pct_points": 5.3333,
+     "newcombe": [
+      -3.3684,
+      13.9066
+     ],
+     "p_exact": 0.291215,
+     "p_holm": 0.58243
+    },
+    {
+     "comparison": "RDKit_score vs GFN2xtb_ALPB_free",
+     "b": 37,
+     "c": 23,
+     "diff_pct_points": 9.3333,
+     "newcombe": [
+      -0.7994,
+      19.1941
+     ],
+     "p_exact": 0.092461,
+     "p_holm": 0.277383
+    },
+    {
+     "comparison": "PM6_gas vs GFN2xtb_ALPB_free",
+     "b": 23,
+     "c": 17,
+     "diff_pct_points": 4.0,
+     "newcombe": [
+      -4.3217,
+      12.2439
+     ],
+     "p_exact": 0.429591,
+     "p_holm": 0.58243
+    }
+   ],
+   "B": [
+    {
+     "comparison": "RDKit_score vs PM6_gas",
+     "b": 17,
+     "c": 18,
+     "diff_pct_points": -0.8197,
+     "newcombe": [
+      -10.4076,
+      8.7852
+     ],
+     "p_exact": 1.0,
+     "p_holm": 1.0
+    },
+    {
+     "comparison": "RDKit_score vs GFN2xtb_ALPB_free",
+     "b": 15,
+     "c": 23,
+     "diff_pct_points": -6.5574,
+     "newcombe": [
+      -16.3659,
+      3.4185
+     ],
+     "p_exact": 0.255875,
+     "p_holm": 0.743366
+    },
+    {
+     "comparison": "PM6_gas vs GFN2xtb_ALPB_free",
+     "b": 10,
+     "c": 17,
+     "diff_pct_points": -5.7377,
+     "newcombe": [
+      -14.0932,
+      2.7076
+     ],
+     "p_exact": 0.247789,
+     "p_holm": 0.743366
+    }
+   ]
+  }
+ },
+ "failures": [],
+ "n_rows": {
+  "matrix": 150,
+  "rates": 16,
+  "mcnemar": 12,
+  "representativeness": 119,
+  "tests": 8,
+  "dft_pairs": 24,
+  "dft_comparisons": 16,
+  "rescore": 1677
+ },
+ "provenance": {
+  "script": "$ANALYSIS_ROOT/scripts/tautomer_ranking/tautomer.py",
+  "config": "$ANALYSIS_ROOT/configs/tautomer_ranking.yaml",
+  "inputs": [
+   {
+    "exists": true,
+    "bytes": 23720,
+    "md5": "bf4e640107aced048f07d6a86fe65ce5",
+    "n_records": 543,
+    "record_unit": "lines",
+    "file": "tautomer_benchmark.py"
+   },
+   {
+    "exists": true,
+    "bytes": 11484,
+    "md5": "1141c735aaddcfe79ab6f02ef82b2432",
+    "n_records": 233,
+    "record_unit": "lines",
+    "file": "p3_tautomer_dft_g16.py"
+   },
+   {
+    "exists": true,
+    "bytes": 15256,
+    "md5": "945338e645e8945bb6f2d8ec45558e2c",
+    "n_records": 334,
+    "record_unit": "lines",
+    "file": "p3_tautomer_solvated_xtb.py"
+   },
+   {
+    "exists": true,
+    "bytes": 3766,
+    "md5": "83d68412b77e0f04f05ccaf58af7fd0e",
+    "n_records": 24,
+    "record_unit": "table_rows",
+    "file": "p3_dft_detail.tsv"
+   },
+   {
+    "exists": true,
+    "bytes": 1239,
+    "md5": "3b40cb7ebb635e619e85ccab6b4909fb",
+    "n_records": 3,
+    "record_unit": "json_top_level_keys",
+    "file": "p3_dft_summary.json"
+   },
+   {
+    "exists": true,
+    "bytes": 25374,
+    "md5": "de18ae3a71fae98070e804f316a281c4",
+    "n_records": 150,
+    "record_unit": "table_rows",
+    "file": "p3_xtb_detail_free.tsv"
+   },
+   {
+    "exists": true,
+    "bytes": 25351,
+    "md5": "6a8afc2914fcfb0d5b245950118b0a78",
+    "n_records": 150,
+    "record_unit": "table_rows",
+    "file": "p3_xtb_detail_opt.tsv"
+   },
+   {
+    "exists": true,
+    "bytes": 2209,
+    "md5": "49978c21dfc5ff9a6aa12acc32fc54c3",
+    "n_records": 7,
+    "record_unit": "json_top_level_keys",
+    "file": "p3_xtb_summary_free.json"
+   },
+   {
+    "exists": true,
+    "bytes": 2218,
+    "md5": "cdc0d01ead8dace7ccda81b8b2d81d72",
+    "n_records": 7,
+    "record_unit": "json_top_level_keys",
+    "file": "p3_xtb_summary_opt.json"
+   },
+   {
+    "exists": true,
+    "bytes": 179626,
+    "md5": "4bc5a70c53bbfe9f450b0b6a670b0f9d",
+    "n_records": 1677,
+    "record_unit": "table_rows",
+    "file": "tautomer_pairs.tsv"
+   },
+   {
+    "exists": true,
+    "bytes": 20246,
+    "md5": "932c572b6a9afb8719a5d30cd092b81b",
+    "n_records": 150,
+    "record_unit": "table_rows",
+    "file": "tautomer_sqm_detail.tsv"
+   },
+   {
+    "exists": true,
+    "bytes": 6445,
+    "md5": "6f64309c5307922ee149cc121311bfbb",
+    "n_records": 3,
+    "record_unit": "json_top_level_keys",
+    "file": "tautomer_summary.json"
+   },
+   {
+    "exists": true,
+    "bytes": 57921,
+    "md5": "c50abeec1511194181cc854decb18e1a",
+    "n_records": 1060,
+    "record_unit": "lines",
+    "file": "camis_paired_proportions_sas.html"
+   },
+   {
+    "exists": true,
+    "bytes": 139150,
+    "md5": "4343f314ea2ff295fe60114f3233f1b3",
+    "n_records": 667,
+    "record_unit": "lines",
+    "file": "newcombe1998_statmed.pdf"
+   },
+   {
+    "exists": true,
+    "bytes": 254204,
+    "md5": "351612e9ad0ceb78c4f639c31c83e4a0",
+    "n_records": 2918,
+    "record_unit": "lines",
+    "file": "perry_jacs2025_PMC13012796.html"
+   },
+   {
+    "exists": true,
+    "bytes": 6568,
+    "md5": "383bd91e37421c4d937168502af8e7c0",
+    "n_records": 4,
+    "record_unit": "json_top_level_keys",
+    "file": "perry_jacs2025_europepmc_record.json"
+   },
+   {
+    "exists": true,
+    "bytes": 261791,
+    "md5": "a2631af79a5a84a6ce1dd1dedcce0112",
+    "n_records": 2891,
+    "record_unit": "lines",
+    "file": "wieder_chemsci2021_PMC8409483.html"
+   },
+   {
+    "exists": true,
+    "bytes": 2209,
+    "md5": "49978c21dfc5ff9a6aa12acc32fc54c3",
+    "n_records": 7,
+    "record_unit": "json_top_level_keys",
+    "file": "tautomer_xtb.json"
+   },
+   {
+    "exists": true,
+    "bytes": 47685,
+    "md5": "faca7dd4203fc2ca5ecdd185aa6d52db",
+    "n_records": 236,
+    "record_unit": "lines",
+    "file": "manuscript_main.md"
+   },
+   {
+    "exists": true,
+    "bytes": 17668,
+    "md5": "dc822632b9709a3a054efe57f1f4cede",
+    "n_records": 89,
+    "record_unit": "lines",
+    "file": "supplementary_materials.md"
+   },
+   {
+    "exists": true,
+    "bytes": 359422,
+    "md5": "df5da62d080229955361c2a9af12a7ec",
+    "n_records": 1681,
+    "record_unit": "lines",
+    "file": "Tautobase_SMIRKS.txt"
+   }
+  ],
+  "seed": 20261015,
+  "n_boot": 200000,
+  "n_perm": null,
+  "tool_versions": {
+   "python": "3.11.15",
+   "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+   "numpy": "2.4.6",
+   "scipy": "1.17.1",
+   "pandas": "3.0.3",
+   "yaml": "6.0.3",
+   "statsmodels": "0.14.6",
+   "rdkit": "2025.03.6"
+  },
+  "extra": {
+   "numpy": "2.4.6",
+   "pandas": "3.0.3",
+   "null_fields_explained": {
+    "n_perm": "no permutation test is used: McNemar and Fisher tests are exact, the paired CI is Newcombe's closed form plus a multinomial bootstrap"
+   },
+   "bootstrap_unit": "tautomer pair (paired multinomial resampling of the four cell counts)",
+   "rdkit_probe_digests": {
+    "2025.03.6": "30881d906b627acb78cc94d34a6c96029a806d6db33a1fe90103b95910e858a4",
+    "2025.09.5": "30881d906b627acb78cc94d34a6c96029a806d6db33a1fe90103b95910e858a4",
+    "2026.03.3": "1593f6ea4c411acfbe289e7705f39c188f52ae2eb52723ab5191e766f4ce5527"
+   },
+   "out_root": "$ANALYSIS_ROOT"
+  }
+ }
+}

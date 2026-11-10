@@ -1,0 +1,508 @@
+{
+ "provenance": {
+  "script": "$ANALYSIS_ROOT/scripts/decoy_matching/positive_control.py",
+  "config": "$ANALYSIS_ROOT/configs/decoy_matching.yaml",
+  "inputs": [
+   {
+    "exists": true,
+    "bytes": 3284877,
+    "md5": "11b1de033c4466d322088a949b6a5c74",
+    "n_records": 16456,
+    "record_unit": "table_rows",
+    "file": "dude_full_per_ligand.csv"
+   }
+  ],
+  "seed": 20261021,
+  "n_boot": 10000,
+  "n_perm": 10000,
+  "tool_versions": {
+   "python": "3.11.15",
+   "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+   "numpy": "2.4.6",
+   "scipy": "1.17.1",
+   "pandas": "3.0.3",
+   "yaml": "6.0.3"
+  },
+  "extra": {
+   "deltas": [
+    0.3,
+    0.6,
+    1.0
+   ]
+  }
+ },
+ "rule": "pass if the stratified test rejects 'activity-independence' at every delta (or at least delta 0.6 and 1.0)",
+ "passed_all_deltas": true,
+ "passed_06_and_10": true,
+ "passed": true,
+ "mw_reject_by_delta": {
+  "0.0": true,
+  "0.3": true,
+  "0.6": true,
+  "1.0": true
+ },
+ "stratified_reject_by_delta": {
+  "0.0": true,
+  "0.3": true,
+  "0.6": true,
+  "1.0": true
+ },
+ "details": {
+  "0.0": {
+   "gaincol": "gain_inj",
+   "n_active": 4062,
+   "n_negative": 11859,
+   "median_active": 0.4299999999999997,
+   "median_negative": 0.412,
+   "mean_active": 0.5438252092565239,
+   "mean_negative": 0.5091905725609241,
+   "frac_zero_active": 0.11570654849827672,
+   "frac_zero_negative": 0.1403996964330888,
+   "mann_whitney": {
+    "U": 24873330.5,
+    "p": 0.0018116456197425882
+   },
+   "cliffs_delta": {
+    "estimate": 0.03270421129545764,
+    "ci95": [
+     0.012375904735558385,
+     0.05290236763175249
+    ],
+    "tost": {
+     "ci90": [
+      0.015784800554720736,
+      0.04964106916203026
+     ],
+     "p_lower": 0.0,
+     "p_upper": 0.0,
+     "p_tost": 0.0,
+     "equivalent": true
+    },
+    "bound": 0.147
+   },
+   "hodges_lehmann": {
+    "estimate": 0.011997195720672645,
+    "ci95": [
+     -1.5673637389753936e-06,
+     0.027027165603637448
+    ],
+    "tost": {
+     "ci90": [
+      -7.362365725207892e-07,
+      0.024996361255645465
+     ],
+     "p_lower": 0.0,
+     "p_upper": 0.0,
+     "p_tost": 0.0,
+     "equivalent": true
+    },
+    "bound": 0.1,
+    "n_boot": 2000
+   },
+   "stratified": {
+    "van_elteren": {
+     "z": -3.5132917599242397,
+     "p": 0.0004425911901654553,
+     "T": -52.60296987895681,
+     "n_strata": 47,
+     "n_used": 15911
+    },
+    "stratified_delta": -0.03890161668092363,
+    "stratified_delta_ci95": [
+     -0.06031724564798548,
+     -0.017295156930780282
+    ],
+    "tost": {
+     "ci90": [
+      -0.05668844272079666,
+      -0.020688734030636844
+     ],
+     "p_lower": 0.0,
+     "p_upper": 0.0,
+     "p_tost": 0.0,
+     "equivalent": true
+    },
+    "permutation_p": 0.0006999300069993001,
+    "n_strata_total": 48,
+    "n_strata_used": 47,
+    "n_ligands_in_strata": 15921,
+    "n_ligands_excluded_no_property": 0,
+    "quartile_cuts_n_eligible": [
+     6.0,
+     12.0,
+     16.0
+    ]
+   },
+   "mixed_model": {
+    "n": 15921,
+    "n_groups": 10,
+    "model": "MixedLM",
+    "coef": -0.026250587821429458,
+    "se": 0.008620779577853125,
+    "ci95": [
+     -0.043147005312679995,
+     -0.00935417033017892
+    ],
+    "p": 0.002326521316701957,
+    "converged": true,
+    "group_var": 0.00472561807110268
+   },
+   "mixed_model_rank": {
+    "n": 15921,
+    "n_groups": 10,
+    "model": "MixedLM",
+    "coef": -0.022885714021603665,
+    "se": 0.005040089866292226,
+    "ci95": [
+     -0.03276410863838172,
+     -0.013007319404825605
+    ],
+    "p": 5.605837365130092e-06,
+    "converged": true,
+    "group_var": 0.0
+   }
+  },
+  "0.3": {
+   "gaincol": "gain_inj",
+   "n_active": 4062,
+   "n_negative": 11859,
+   "median_active": 0.73,
+   "median_negative": 0.412,
+   "mean_active": 0.8284716888232405,
+   "mean_negative": 0.5091905725609241,
+   "frac_zero_active": 0.019694731659281144,
+   "frac_zero_negative": 0.1403996964330888,
+   "mann_whitney": {
+    "U": 33537142.0,
+    "p": 2.7082737279816625e-306
+   },
+   "cliffs_delta": {
+    "estimate": 0.3924129612724667,
+    "ci95": [
+     0.3752651570776915,
+     0.4095802438873405
+    ],
+    "tost": {
+     "ci90": [
+      0.3781735594283214,
+      0.4068323636057003
+     ],
+     "p_lower": 0.0,
+     "p_upper": 1.0,
+     "p_tost": 1.0,
+     "equivalent": false
+    },
+    "bound": 0.147
+   },
+   "hodges_lehmann": {
+    "estimate": 0.311998618602753,
+    "ci95": [
+     0.297997200965882,
+     0.32600104540586555
+    ],
+    "tost": {
+     "ci90": [
+      0.299998745441437,
+      0.3239984917640689
+     ],
+     "p_lower": 0.0,
+     "p_upper": 1.0,
+     "p_tost": 1.0,
+     "equivalent": false
+    },
+    "bound": 0.1,
+    "n_boot": 2000
+   },
+   "stratified": {
+    "van_elteren": {
+     "z": 32.18273126154249,
+     "p": 3.0787874468962757e-227,
+     "T": 482.26184027544326,
+     "n_strata": 47,
+     "n_used": 15911
+    },
+    "stratified_delta": 0.3566484039475712,
+    "stratified_delta_ci95": [
+     0.3372595225292428,
+     0.37545928500030196
+    ],
+    "tost": {
+     "ci90": [
+      0.34045721595560013,
+      0.3722968503725988
+     ],
+     "p_lower": 0.0,
+     "p_upper": 1.0,
+     "p_tost": 1.0,
+     "equivalent": false
+    },
+    "permutation_p": 9.999000099990002e-05,
+    "n_strata_total": 48,
+    "n_strata_used": 47,
+    "n_ligands_in_strata": 15921,
+    "n_ligands_excluded_no_property": 0,
+    "quartile_cuts_n_eligible": [
+     6.0,
+     12.0,
+     16.0
+    ]
+   },
+   "mixed_model": {
+    "n": 15921,
+    "n_groups": 10,
+    "model": "MixedLM",
+    "coef": 0.25759459237097293,
+    "se": 0.008712673169168905,
+    "ci95": [
+     0.24051806675033344,
+     0.2746711179916124
+    ],
+    "p": 4.150462396086046e-192,
+    "converged": true,
+    "group_var": 0.0
+   },
+   "mixed_model_rank": {
+    "n": 15921,
+    "n_groups": 10,
+    "model": "MixedLM",
+    "coef": 0.1592077257242581,
+    "se": 0.004829248117066953,
+    "ci95": [
+     0.149742573342399,
+     0.1686728781061172
+    ],
+    "p": 2.3833045382052563e-238,
+    "converged": true,
+    "group_var": 0.0
+   }
+  },
+  "0.6": {
+   "gaincol": "gain_inj",
+   "n_active": 4062,
+   "n_negative": 11859,
+   "median_active": 1.0299999999999994,
+   "median_negative": 0.412,
+   "mean_active": 1.1251681437715408,
+   "mean_negative": 0.5091905725609241,
+   "frac_zero_active": 0.006154603643525357,
+   "frac_zero_negative": 0.1403996964330888,
+   "mann_whitney": {
+    "U": 39986604.0,
+    "p": 0.0
+   },
+   "cliffs_delta": {
+    "estimate": 0.6601851668478327,
+    "ci95": [
+     0.6472217899104898,
+     0.6730486839268345
+    ],
+    "tost": {
+     "ci90": [
+      0.6493595880348401,
+      0.6710253342356141
+     ],
+     "p_lower": 0.0,
+     "p_upper": 1.0,
+     "p_tost": 1.0,
+     "equivalent": false
+    },
+    "bound": 0.147
+   },
+   "hodges_lehmann": {
+    "estimate": 0.6119965939521788,
+    "ci95": [
+     0.5979969778060912,
+     0.6269984493136406
+    ],
+    "tost": {
+     "ci90": [
+      0.5999964489936827,
+      0.6249997096061704
+     ],
+     "p_lower": 0.0,
+     "p_upper": 1.0,
+     "p_tost": 1.0,
+     "equivalent": false
+    },
+    "bound": 0.1,
+    "n_boot": 2000
+   },
+   "stratified": {
+    "van_elteren": {
+     "z": 58.42555507512717,
+     "p": 0.0,
+     "T": 875.600111669263,
+     "n_strata": 47,
+     "n_used": 15911
+    },
+    "stratified_delta": 0.6475349203345605,
+    "stratified_delta_ci95": [
+     0.6328914425792939,
+     0.6618879792518151
+    ],
+    "tost": {
+     "ci90": [
+      0.6351434193697614,
+      0.659619156071121
+     ],
+     "p_lower": 0.0,
+     "p_upper": 1.0,
+     "p_tost": 1.0,
+     "equivalent": false
+    },
+    "permutation_p": 9.999000099990002e-05,
+    "n_strata_total": 48,
+    "n_strata_used": 47,
+    "n_ligands_in_strata": 15921,
+    "n_ligands_excluded_no_property": 0,
+    "quartile_cuts_n_eligible": [
+     6.0,
+     12.0,
+     16.0
+    ]
+   },
+   "mixed_model": {
+    "n": 15921,
+    "n_groups": 10,
+    "model": "MixedLM",
+    "coef": 0.5540781821685368,
+    "se": 0.008742243174637279,
+    "ci95": [
+     0.5369437004021566,
+     0.571212663934917
+    ],
+    "p": 0.0,
+    "converged": true,
+    "group_var": 0.0
+   },
+   "mixed_model_rank": {
+    "n": 15921,
+    "n_groups": 10,
+    "model": "MixedLM",
+    "coef": 0.29702351217399586,
+    "se": 0.004394956487170061,
+    "ci95": [
+     0.28840955574552185,
+     0.3056374686024699
+    ],
+    "p": 0.0,
+    "converged": true,
+    "group_var": 0.0
+   }
+  },
+  "1.0": {
+   "gaincol": "gain_inj",
+   "n_active": 4062,
+   "n_negative": 11859,
+   "median_active": 1.4299999999999997,
+   "median_negative": 0.412,
+   "mean_active": 1.5236233382570161,
+   "mean_negative": 0.5091905725609241,
+   "frac_zero_active": 0.0022156573116691287,
+   "frac_zero_negative": 0.1403996964330888,
+   "mann_whitney": {
+    "U": 44803011.0,
+    "p": 0.0
+   },
+   "cliffs_delta": {
+    "estimate": 0.860155323325789,
+    "ci95": [
+     0.8520876608620019,
+     0.8680674360839818
+    ],
+    "tost": {
+     "ci90": [
+      0.8534188644191106,
+      0.8668574391393308
+     ],
+     "p_lower": 0.0,
+     "p_upper": 1.0,
+     "p_tost": 1.0,
+     "equivalent": false
+    },
+    "bound": 0.147
+   },
+   "hodges_lehmann": {
+    "estimate": 1.0119961314201358,
+    "ci95": [
+     0.9979708737611769,
+     1.0279984139204028
+    ],
+    "tost": {
+     "ci90": [
+      0.9999986491203311,
+      1.0249986092090613
+     ],
+     "p_lower": 0.0,
+     "p_upper": 1.0,
+     "p_tost": 1.0,
+     "equivalent": false
+    },
+    "bound": 0.1,
+    "n_boot": 2000
+   },
+   "stratified": {
+    "van_elteren": {
+     "z": 77.41163200584752,
+     "p": 0.0,
+     "T": 1160.1868982962137,
+     "n_strata": 47,
+     "n_used": 15911
+    },
+    "stratified_delta": 0.857996156863455,
+    "stratified_delta_ci95": [
+     0.8489077168199718,
+     0.8671543296474543
+    ],
+    "tost": {
+     "ci90": [
+      0.850401010349195,
+      0.8655853739910592
+     ],
+     "p_lower": 0.0,
+     "p_upper": 1.0,
+     "p_tost": 1.0,
+     "equivalent": false
+    },
+    "permutation_p": 9.999000099990002e-05,
+    "n_strata_total": 48,
+    "n_strata_used": 47,
+    "n_ligands_in_strata": 15921,
+    "n_ligands_excluded_no_property": 0,
+    "quartile_cuts_n_eligible": [
+     6.0,
+     12.0,
+     16.0
+    ]
+   },
+   "mixed_model": {
+    "n": 15921,
+    "n_groups": 10,
+    "model": "MixedLM",
+    "coef": 0.9524678511223044,
+    "se": 0.00876242607163779,
+    "ci95": [
+     0.9352938116046995,
+     0.9696418906399092
+    ],
+    "p": 0.0,
+    "converged": true,
+    "group_var": 0.004784256193326349
+   },
+   "mixed_model_rank": {
+    "n": 15921,
+    "n_groups": 10,
+    "model": "MixedLM",
+    "coef": 0.40127558133490093,
+    "se": 0.0038587556059434874,
+    "ci95": [
+     0.3937125593221097,
+     0.4088386033476922
+    ],
+    "p": 0.0,
+    "converged": true,
+    "group_var": 0.0
+   }
+  }
+ }
+}

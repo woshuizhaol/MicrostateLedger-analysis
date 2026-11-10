@@ -1,0 +1,5 @@
+set,n_active,n_negative,median_swing_active,median_swing_negative,mw_p,cliffs_delta
+dude_full,4062,11859,1.0805,0.961,7.8424752e-35,0.12922891
+litpcba,2475,7746,0.64,0.6495,0.24138612,-0.015618358
+zinc_unmatched,4062,11868,1.0805,0.725,5.053245e-279,0.37461631
+zinc_charge_mismatch,4062,11887,1.0805,0.763,1.375104e-221,0.33343958

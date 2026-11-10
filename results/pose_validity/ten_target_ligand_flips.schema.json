@@ -1,0 +1,255 @@
+{
+ "file": "ten_target_ligand_flips.csv",
+ "description": "Default vs best-scoring microstate validity of the original poses",
+ "row_grain": "one row per (dataset, seed, target, ligand)",
+ "n_rows": 3992,
+ "n_columns": 30,
+ "delimiter": ",",
+ "file_md5": "0b4922c8bdfb133fce7cbc5832873196",
+ "columns": [
+  {
+   "name": "dataset",
+   "type": "str",
+   "unit": "",
+   "description": "ten_target_main / ten_target_budget6 = original runs re-checked; dude_full / litpcba / zinc_unmatched / zinc_charge_mismatch = decoy-matching ligand sets",
+   "n_missing": 0
+  },
+  {
+   "name": "seed",
+   "type": "int",
+   "unit": "",
+   "description": "docking seed of the original run (directory name); ALL = pooled",
+   "n_missing": 0
+  },
+  {
+   "name": "target",
+   "type": "str",
+   "unit": "",
+   "description": "receptor target; ALL = pooled over targets",
+   "n_missing": 0
+  },
+  {
+   "name": "ligand_idx",
+   "type": "int",
+   "unit": "",
+   "description": "row index of the ligand in the original run",
+   "n_missing": 0
+  },
+  {
+   "name": "n_micro",
+   "type": "int",
+   "unit": "",
+   "description": "microstates with a docked pose (and a PoseBusters verdict)",
+   "n_missing": 0
+  },
+  {
+   "name": "has_default",
+   "type": "str",
+   "unit": "",
+   "description": "the default microstate was docked",
+   "n_missing": 0
+  },
+  {
+   "name": "best_microstate",
+   "type": "str",
+   "unit": "",
+   "description": "microstate of the lowest Vina score among the docked microstates",
+   "n_missing": 0
+  },
+  {
+   "name": "best_score",
+   "type": "float",
+   "unit": "kcal/mol",
+   "description": "lowest Vina score of the ligand",
+   "n_missing": 0
+  },
+  {
+   "name": "default_microstate",
+   "type": "str",
+   "unit": "",
+   "description": "default microstate id (original: first candidate of the single strategy; decoy-matching: order 0)",
+   "n_missing": 29
+  },
+  {
+   "name": "default_score",
+   "type": "float",
+   "unit": "kcal/mol",
+   "description": "Vina score of the default microstate's representative pose",
+   "n_missing": 29
+  },
+  {
+   "name": "best_is_default",
+   "type": "str",
+   "unit": "",
+   "description": "best-scoring microstate equals the default microstate",
+   "n_missing": 29
+  },
+  {
+   "name": "gain",
+   "type": "float",
+   "unit": "kcal/mol",
+   "description": "default_score - best_score (>= 0)",
+   "n_missing": 29
+  },
+  {
+   "name": "default_geom",
+   "type": "str",
+   "unit": "",
+   "description": "verdict of the default microstate's representative pose under geom",
+   "n_missing": 29
+  },
+  {
+   "name": "best_geom",
+   "type": "str",
+   "unit": "",
+   "description": "verdict of the best-scoring microstate's representative pose under geom",
+   "n_missing": 29
+  },
+  {
+   "name": "flip_geom",
+   "type": "str",
+   "unit": "",
+   "description": "default and best microstate differ in validity under geom",
+   "n_missing": 29
+  },
+  {
+   "name": "rescue_geom",
+   "type": "str",
+   "unit": "",
+   "description": "default invalid and best valid under geom",
+   "n_missing": 29
+  },
+  {
+   "name": "degrade_geom",
+   "type": "str",
+   "unit": "",
+   "description": "default valid and best invalid under geom",
+   "n_missing": 29
+  },
+  {
+   "name": "default_full_pb",
+   "type": "str",
+   "unit": "",
+   "description": "verdict of the default microstate's representative pose under full_pb",
+   "n_missing": 29
+  },
+  {
+   "name": "best_full_pb",
+   "type": "str",
+   "unit": "",
+   "description": "verdict of the best-scoring microstate's representative pose under full_pb",
+   "n_missing": 29
+  },
+  {
+   "name": "flip_full_pb",
+   "type": "str",
+   "unit": "",
+   "description": "default and best microstate differ in validity under full_pb",
+   "n_missing": 29
+  },
+  {
+   "name": "rescue_full_pb",
+   "type": "str",
+   "unit": "",
+   "description": "default invalid and best valid under full_pb",
+   "n_missing": 29
+  },
+  {
+   "name": "degrade_full_pb",
+   "type": "str",
+   "unit": "",
+   "description": "default valid and best invalid under full_pb",
+   "n_missing": 29
+  },
+  {
+   "name": "default_score_rank",
+   "type": "str",
+   "unit": "",
+   "description": "verdict of the default microstate's representative pose under score_rank",
+   "n_missing": 29
+  },
+  {
+   "name": "best_score_rank",
+   "type": "str",
+   "unit": "",
+   "description": "verdict of the best-scoring microstate's representative pose under score_rank",
+   "n_missing": 29
+  },
+  {
+   "name": "flip_score_rank",
+   "type": "str",
+   "unit": "",
+   "description": "default and best microstate differ in validity under score_rank",
+   "n_missing": 29
+  },
+  {
+   "name": "rescue_score_rank",
+   "type": "str",
+   "unit": "",
+   "description": "default invalid and best valid under score_rank",
+   "n_missing": 29
+  },
+  {
+   "name": "degrade_score_rank",
+   "type": "str",
+   "unit": "",
+   "description": "default valid and best invalid under score_rank",
+   "n_missing": 29
+  },
+  {
+   "name": "compound_id",
+   "type": "str",
+   "unit": "",
+   "description": "original ledger compound id",
+   "n_missing": 0
+  },
+  {
+   "name": "label",
+   "type": "int",
+   "unit": "",
+   "description": "1 = active, 0 = decoy (original run)",
+   "n_missing": 0
+  },
+  {
+   "name": "source",
+   "type": "str",
+   "unit": "",
+   "description": "original run ligand source (active / decoy)",
+   "n_missing": 0
+  }
+ ],
+ "extra": {
+  "provenance": {
+   "script": "$ANALYSIS_ROOT/scripts/pose_validity/flips_ten_target.py",
+   "config": "$ANALYSIS_ROOT/configs/pose_validity.yaml",
+   "inputs": [
+    {
+     "exists": true,
+     "bytes": 31250158,
+     "md5": "89d658e030037c7cd9964eee963eb632",
+     "n_records": 43236,
+     "record_unit": "table_rows",
+     "file": "ten_target_pose_manifest.csv"
+    }
+   ],
+   "seed": 20261031,
+   "n_boot": 2000,
+   "n_perm": null,
+   "tool_versions": {
+    "python": "3.11.15",
+    "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "pandas": "3.0.3",
+    "yaml": "6.0.3"
+   },
+   "extra": {
+    "n_bust_parquet_files": 726,
+    "n_poses_missing_verdict": 0,
+    "partial": false,
+    "n_duplicate_verdict_rows_same_key": 0,
+    "n_pose_ids_shared_by_two_seeds": 272
+   }
+  }
+ }
+}

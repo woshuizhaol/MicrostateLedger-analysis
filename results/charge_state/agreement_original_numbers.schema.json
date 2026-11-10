@@ -1,0 +1,171 @@
+{
+ "file": "agreement_original_numbers.csv",
+ "description": "Map from each original charge-state percentage to its reproduced value and its agreement-wording counterpart",
+ "row_grain": "per-original-claim (one row per charge-state percentage quoted in the manuscript, with its agreement-wording counterpart)",
+ "n_rows": 10,
+ "n_columns": 12,
+ "delimiter": ",",
+ "file_md5": "a50ed99d12db5505dcc5cca47badc6d5",
+ "columns": [
+  {
+   "name": "item_id",
+   "type": "str",
+   "unit": "",
+   "description": "identifier of the original claim",
+   "n_missing": 0
+  },
+  {
+   "name": "dataset",
+   "type": "str",
+   "unit": "",
+   "description": "dude or pdbbind",
+   "n_missing": 0
+  },
+  {
+   "name": "original_claim",
+   "type": "str",
+   "unit": "",
+   "description": "the charge-state percentage as quoted in the manuscript (registry token ids in the note)",
+   "n_missing": 0
+  },
+  {
+   "name": "original_metric",
+   "type": "str",
+   "unit": "",
+   "description": "name of the field of the original analysis that carries the number",
+   "n_missing": 0
+  },
+  {
+   "name": "original_value",
+   "type": "float",
+   "unit": "fraction",
+   "description": "value stored by the original analysis / baseline reproduction",
+   "n_missing": 0
+  },
+  {
+   "name": "reproduced_value",
+   "type": "float",
+   "unit": "fraction",
+   "description": "the same metric recomputed in charge-state from the same structures",
+   "n_missing": 0
+  },
+  {
+   "name": "reproduced_ok",
+   "type": "str",
+   "unit": "",
+   "description": "True if reproduced_value equals original_value at four decimals",
+   "n_missing": 0
+  },
+  {
+   "name": "agreement_definition",
+   "type": "str",
+   "unit": "",
+   "description": "the agreement-wording counterpart: which methods agree on what",
+   "n_missing": 0
+  },
+  {
+   "name": "agreement_value",
+   "type": "float",
+   "unit": "fraction",
+   "description": "value of the counterpart (a proportion of ligands)",
+   "n_missing": 0
+  },
+  {
+   "name": "agreement_lo",
+   "type": "float",
+   "unit": "fraction",
+   "description": "lower 95% Wilson limit of agreement_value",
+   "n_missing": 0
+  },
+  {
+   "name": "agreement_hi",
+   "type": "float",
+   "unit": "fraction",
+   "description": "upper 95% Wilson limit of agreement_value",
+   "n_missing": 0
+  },
+  {
+   "name": "note",
+   "type": "str",
+   "unit": "",
+   "description": "registry token ids and wording remarks",
+   "n_missing": 0
+  }
+ ],
+ "extra": {
+  "provenance": {
+   "script": "$ANALYSIS_ROOT/scripts/charge_state/agreement.py",
+   "config": "$ANALYSIS_ROOT/configs/charge_state.yaml",
+   "inputs": [
+    {
+     "exists": true,
+     "bytes": 905959,
+     "md5": "99e2008dbb710c2702b9e9fa8f14d9f8",
+     "n_records": 3584,
+     "record_unit": "table_rows",
+     "file": "dude_single_vs_dominant.tsv"
+    },
+    {
+     "exists": true,
+     "bytes": 22111,
+     "md5": "f60b42846d9368247fb3b0a43e0f0b57",
+     "n_records": 192,
+     "record_unit": "table_rows",
+     "file": "pdbbind_faithful_single_vs_dominant.tsv"
+    },
+    {
+     "exists": true,
+     "bytes": 17456,
+     "md5": "37dc8b4c52f7e6cc54c87c6582209a98",
+     "n_records": 410,
+     "record_unit": "lines",
+     "file": "dominant_state.py"
+    },
+    {
+     "exists": true,
+     "bytes": 5141,
+     "md5": "7f204cccfa129d7ff147af76827e1e4e",
+     "n_records": 69,
+     "record_unit": "lines",
+     "file": "site_substructures.smarts"
+    },
+    {
+     "exists": true,
+     "bytes": 544,
+     "md5": "a3b21ff96ea51c58176f8cbc2ba405e6",
+     "n_records": 2,
+     "record_unit": "json_top_level_keys",
+     "file": "production_protonation_charge.json"
+    }
+   ],
+   "seed": 20261016,
+   "n_boot": 10000,
+   "n_perm": null,
+   "tool_versions": {
+    "python": "3.11.15",
+    "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "pandas": "3.0.3",
+    "yaml": "6.0.3",
+    "statsmodels": "0.14.6",
+    "rdkit": "2025.03.6",
+    "sklearn": "1.9.0"
+   },
+   "extra": {
+    "dimorphite_dl": "2.0.2",
+    "openbabel": "Open Babel 3.1.0 -- Nov 30 2023 -- 20:41:23",
+    "ml_env_python_rdkit_torch": "3.10.22 2026.09.1 2.0.1+cu117",
+    "molgpka_weight_acid_md5": "f2125a7fccb4b9d04e677574aa52d1a9",
+    "molgpka_weight_base_md5": "4882070604809094d2b3c75d2db45fb6",
+    "molgpka_commit": "4dc835219baad18c2e705274ac54d49597703966",
+    "ml_wrapper_md5": "a1c65ca8cd0417d68655bf5db3622ee9",
+    "original_dominant_functions": "scripts/charge_state/dominant_state.py (verbatim copy of dominant_state.py lines 19-276)",
+    "ml_raw_outputs": [
+     "$ANALYSIS_ROOT/raw_outputs/charge_state/ml_sites_dude.jsonl",
+     "$ANALYSIS_ROOT/raw_outputs/charge_state/ml_sites_pdbbind.jsonl"
+    ]
+   }
+  }
+ }
+}

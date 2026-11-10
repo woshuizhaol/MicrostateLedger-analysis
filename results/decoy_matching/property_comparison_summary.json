@@ -1,0 +1,188 @@
+{
+ "datasets": {
+  "dude": {
+   "n_failed_enum": 0,
+   "n_ligands": 264289,
+   "n_tests": 60,
+   "n_sig_holm": 51,
+   "sig_by_variable": {
+    "dominant_charge": 8,
+    "n_sites": 10,
+    "n_microstates": 10,
+    "n_tautomers": 9,
+    "n_rot": 6,
+    "n_heavy": 8
+   },
+   "median_abs_effect": {
+    "dominant_charge": 0.04156194669276761,
+    "n_sites": 0.10276127094071408,
+    "n_microstates": 0.2116877284394279,
+    "n_tautomers": 0.3589103522957021,
+    "n_rot": 0.05785203306257197,
+    "n_heavy": 0.18738494070188405
+   },
+   "max_abs_effect": {
+    "dominant_charge": 0.08589252227862883,
+    "n_sites": 0.18772633259326205,
+    "n_microstates": 0.3986527677929548,
+    "n_tautomers": 0.6000877066858374,
+    "n_rot": 0.34590945621542635,
+    "n_heavy": 0.5769142051977874
+   }
+  },
+  "litpcba": {
+   "n_failed_enum": 0,
+   "n_ligands": 95003,
+   "n_tests": 60,
+   "n_sig_holm": 27,
+   "sig_by_variable": {
+    "dominant_charge": 5,
+    "n_sites": 4,
+    "n_microstates": 3,
+    "n_tautomers": 4,
+    "n_rot": 4,
+    "n_heavy": 7
+   },
+   "median_abs_effect": {
+    "dominant_charge": 0.047829367662283184,
+    "n_sites": 0.04091143919219707,
+    "n_microstates": 0.06592056128293244,
+    "n_tautomers": 0.12111229183187944,
+    "n_rot": 0.11387323711335479,
+    "n_heavy": 0.1743598382132504
+   },
+   "max_abs_effect": {
+    "dominant_charge": 0.18183188807116055,
+    "n_sites": 0.15428960300257638,
+    "n_microstates": 0.2678506870229007,
+    "n_tautomers": 0.32029631901840494,
+    "n_rot": 0.28793505154639176,
+    "n_heavy": 0.37162065683008083
+   }
+  },
+  "zinc_unmatched": {
+   "n_tests": 60,
+   "n_sig_holm": 55,
+   "sig_by_variable": {
+    "dominant_charge": 9,
+    "n_sites": 10,
+    "n_microstates": 10,
+    "n_tautomers": 9,
+    "n_rot": 7,
+    "n_heavy": 10
+   },
+   "median_abs_effect": {
+    "dominant_charge": 0.17210434412234296,
+    "n_sites": 0.3488584245148839,
+    "n_microstates": 0.26856877706687665,
+    "n_tautomers": 0.3270536625251763,
+    "n_rot": 0.37747548493071037,
+    "n_heavy": 0.6509143834245631
+   },
+   "max_abs_effect": {
+    "dominant_charge": 0.3911862230734551,
+    "n_sites": 0.508711809521979,
+    "n_microstates": 0.5396395609514659,
+    "n_tautomers": 0.5741403907182578,
+    "n_rot": 0.777501253063043,
+    "n_heavy": 0.9450645989455639
+   }
+  },
+  "zinc_charge_mismatch": {
+   "n_tests": 60,
+   "n_sig_holm": 54,
+   "sig_by_variable": {
+    "dominant_charge": 10,
+    "n_sites": 10,
+    "n_microstates": 8,
+    "n_tautomers": 9,
+    "n_rot": 7,
+    "n_heavy": 10
+   },
+   "median_abs_effect": {
+    "dominant_charge": 0.2837363456273425,
+    "n_sites": 0.3093106534234894,
+    "n_microstates": 0.2244662387070644,
+    "n_tautomers": 0.29570819576810115,
+    "n_rot": 0.374955982535106,
+    "n_heavy": 0.6491861377481478
+   },
+   "max_abs_effect": {
+    "dominant_charge": 0.5363167283087897,
+    "n_sites": 0.49670710596047085,
+    "n_microstates": 0.4925903281218156,
+    "n_tautomers": 0.558302035112237,
+    "n_rot": 0.786874860770773,
+    "n_heavy": 0.938074712145434
+   }
+  }
+ },
+ "notes": [],
+ "litpcba_targets_skipped": [],
+ "first900_vs_rest": {
+  "matching": "(smiles, ligand_id)",
+  "matched_by_target": {
+   "aa2ar": {
+    "lines": 900,
+    "distinct_pairs": 900,
+    "rows_matched": 900
+   },
+   "adrb2": {
+    "lines": 900,
+    "distinct_pairs": 900,
+    "rows_matched": 900
+   },
+   "bace1": {
+    "lines": 900,
+    "distinct_pairs": 900,
+    "rows_matched": 900
+   },
+   "cdk2": {
+    "lines": 900,
+    "distinct_pairs": 900,
+    "rows_matched": 900
+   },
+   "egfr": {
+    "lines": 900,
+    "distinct_pairs": 900,
+    "rows_matched": 900
+   },
+   "fa10": {
+    "lines": 900,
+    "distinct_pairs": 900,
+    "rows_matched": 900
+   },
+   "hivpr": {
+    "lines": 900,
+    "distinct_pairs": 900,
+    "rows_matched": 900
+   },
+   "jak2": {
+    "lines": 900,
+    "distinct_pairs": 900,
+    "rows_matched": 900
+   },
+   "pde5a": {
+    "lines": 900,
+    "distinct_pairs": 900,
+    "rows_matched": 900
+   },
+   "src": {
+    "lines": 900,
+    "distinct_pairs": 900,
+    "rows_matched": 900
+   }
+  },
+  "n_tests": 60,
+  "n_sig_holm": 47,
+  "max_abs_effect": {
+   "dominant_charge": 0.09634852603994747,
+   "n_sites": 0.050971373059160406,
+   "n_microstates": 0.46368391519209307,
+   "n_tautomers": 0.30105754822254105,
+   "n_rot": 0.6097453531005899,
+   "n_heavy": 0.5530775462962962
+  }
+ },
+ "wall_seconds": 12.3
+}

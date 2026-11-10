@@ -1,0 +1,163 @@
+{
+ "alpha": 0.05,
+ "family_main": [
+  {
+   "set": "dude_full",
+   "test": "mann_whitney",
+   "p": 0.0018103141677818875,
+   "holm_p": 0.005430942503345662
+  },
+  {
+   "set": "dude_full",
+   "test": "van_elteren",
+   "p": 0.0004426631323324106,
+   "holm_p": 0.0017706525293296423
+  },
+  {
+   "set": "litpcba",
+   "test": "mann_whitney",
+   "p": 0.8402250301528592,
+   "holm_p": 0.8402250301528592
+  },
+  {
+   "set": "litpcba",
+   "test": "van_elteren",
+   "p": 0.1462606439451165,
+   "holm_p": 0.292521287890233
+  },
+  {
+   "set": "zinc_unmatched",
+   "test": "mann_whitney",
+   "p": 1.2208831317678176e-62,
+   "holm_p": 7.3252987906069055e-62
+  },
+  {
+   "set": "zinc_unmatched",
+   "test": "van_elteren",
+   "p": 2.2564294821201777e-12,
+   "holm_p": 1.1282147410600889e-11
+  }
+ ],
+ "family_stress": [
+  {
+   "set": "zinc_charge_mismatch",
+   "test": "mann_whitney",
+   "p": 1.7512533696492649e-47,
+   "holm_p": 3.5025067392985297e-47
+  },
+  {
+   "set": "zinc_charge_mismatch",
+   "test": "van_elteren",
+   "p": 7.128743101460092e-13,
+   "holm_p": 7.128743101460092e-13
+  }
+ ],
+ "verdicts": {
+  "dude_full": {
+   "mw_reject": true,
+   "stratified_reject": true,
+   "mixed_reject": true,
+   "equivalent_by_cliffs_delta": true,
+   "equivalent_by_hl": true,
+   "stratified_equivalent": true,
+   "sensitivity_incl_single": {
+    "n": 16230,
+    "mw_p": 1.6227011514069466e-06,
+    "van_elteren_p": 0.0015761220408585053,
+    "cliffs_delta": 0.05002544917198204
+   }
+  },
+  "litpcba": {
+   "mw_reject": false,
+   "stratified_reject": false,
+   "mixed_reject": false,
+   "equivalent_by_cliffs_delta": true,
+   "equivalent_by_hl": true,
+   "stratified_equivalent": true,
+   "sensitivity_incl_single": {
+    "n": 11028,
+    "mw_p": 0.012072641725717013,
+    "van_elteren_p": 0.5813956310846805,
+    "cliffs_delta": -0.03157793027035716
+   }
+  },
+  "zinc_unmatched": {
+   "mw_reject": true,
+   "stratified_reject": true,
+   "mixed_reject": false,
+   "equivalent_by_cliffs_delta": false,
+   "equivalent_by_hl": false,
+   "stratified_equivalent": true,
+   "sensitivity_incl_single": {
+    "n": 16245,
+    "mw_p": 2.726144279138391e-73,
+    "van_elteren_p": 1.6973515451592495e-12,
+    "cliffs_delta": 0.1887969336814641
+   }
+  },
+  "zinc_charge_mismatch": {
+   "mw_reject": true,
+   "stratified_reject": true,
+   "mixed_reject": false,
+   "equivalent_by_cliffs_delta": false,
+   "equivalent_by_hl": false,
+   "stratified_equivalent": true,
+   "sensitivity_incl_single": {
+    "n": 16222,
+    "mw_p": 2.147711013731889e-55,
+    "van_elteren_p": 9.027518999327202e-14,
+    "cliffs_delta": 0.1635579120053423
+   }
+  }
+ },
+ "provenance": {
+  "script": "$ANALYSIS_ROOT/scripts/decoy_matching/gain_tests.py",
+  "config": "$ANALYSIS_ROOT/configs/decoy_matching.yaml",
+  "inputs": [
+   {
+    "exists": true,
+    "bytes": 3284877,
+    "md5": "11b1de033c4466d322088a949b6a5c74",
+    "n_records": 16456,
+    "record_unit": "table_rows",
+    "file": "dude_full_per_ligand.csv"
+   },
+   {
+    "exists": true,
+    "bytes": 2099092,
+    "md5": "bf2f1a3bad6805cdb277aafb03a9e707",
+    "n_records": 11096,
+    "record_unit": "table_rows",
+    "file": "litpcba_per_ligand.csv"
+   },
+   {
+    "exists": true,
+    "bytes": 3140342,
+    "md5": "38189099e8fa6fadcf4af567d45398a8",
+    "n_records": 16456,
+    "record_unit": "table_rows",
+    "file": "zinc_unmatched_per_ligand.csv"
+   },
+   {
+    "exists": true,
+    "bytes": 3261858,
+    "md5": "ec66cafec1655a50eba6202195e3b291",
+    "n_records": 16456,
+    "record_unit": "table_rows",
+    "file": "zinc_charge_mismatch_per_ligand.csv"
+   }
+  ],
+  "seed": 20261019,
+  "n_boot": 10000,
+  "n_perm": 10000,
+  "tool_versions": {
+   "python": "3.11.15",
+   "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+   "numpy": "2.4.6",
+   "scipy": "1.17.1",
+   "pandas": "3.0.3",
+   "yaml": "6.0.3"
+  }
+ },
+ "wall_seconds": 1548.1
+}

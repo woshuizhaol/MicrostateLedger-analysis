@@ -1,0 +1,129 @@
+{
+ "file": "ten_target_flip_rate_by_criterion.csv",
+ "description": "Validity flip rates of the original poses (Wilson CI)",
+ "row_grain": "one row per (dataset, seed, target) x criterion x denominator",
+ "n_rows": 792,
+ "n_columns": 12,
+ "delimiter": ",",
+ "file_md5": "1235c10dc7587540541cc1cb809cc99d",
+ "columns": [
+  {
+   "name": "dataset",
+   "type": "str",
+   "unit": "",
+   "description": "ten_target_main / ten_target_budget6 = original runs re-checked; dude_full / litpcba / zinc_unmatched / zinc_charge_mismatch = decoy-matching ligand sets",
+   "n_missing": 0
+  },
+  {
+   "name": "seed",
+   "type": "str",
+   "unit": "",
+   "description": "docking seed of the original run (directory name); ALL = pooled",
+   "n_missing": 0
+  },
+  {
+   "name": "target",
+   "type": "str",
+   "unit": "",
+   "description": "receptor target; ALL = pooled over targets",
+   "n_missing": 0
+  },
+  {
+   "name": "criterion",
+   "type": "str",
+   "unit": "",
+   "description": "geom | full_pb | score_rank",
+   "n_missing": 0
+  },
+  {
+   "name": "denominator",
+   "type": "str",
+   "unit": "",
+   "description": "primary = ligands with a default and >= 2 microstates; best_differs = those whose best microstate is not the default",
+   "n_missing": 0
+  },
+  {
+   "name": "n_ligands",
+   "type": "int",
+   "unit": "",
+   "description": "ligands in the denominator",
+   "n_missing": 0
+  },
+  {
+   "name": "n_flip",
+   "type": "int",
+   "unit": "",
+   "description": "ligands whose default and best microstate differ in the criterion",
+   "n_missing": 0
+  },
+  {
+   "name": "flip_pct",
+   "type": "float",
+   "unit": "%",
+   "description": "100 * n_flip / n_ligands",
+   "n_missing": 0
+  },
+  {
+   "name": "wilson_lo",
+   "type": "float",
+   "unit": "%",
+   "description": "Wilson 95% lower bound of flip_pct",
+   "n_missing": 0
+  },
+  {
+   "name": "wilson_hi",
+   "type": "float",
+   "unit": "%",
+   "description": "Wilson 95% upper bound of flip_pct",
+   "n_missing": 0
+  },
+  {
+   "name": "n_rescue",
+   "type": "int",
+   "unit": "",
+   "description": "default invalid -> best valid",
+   "n_missing": 0
+  },
+  {
+   "name": "n_degrade",
+   "type": "int",
+   "unit": "",
+   "description": "default valid -> best invalid",
+   "n_missing": 0
+  }
+ ],
+ "extra": {
+  "provenance": {
+   "script": "$ANALYSIS_ROOT/scripts/pose_validity/flips_ten_target.py",
+   "config": "$ANALYSIS_ROOT/configs/pose_validity.yaml",
+   "inputs": [
+    {
+     "exists": true,
+     "bytes": 31250158,
+     "md5": "89d658e030037c7cd9964eee963eb632",
+     "n_records": 43236,
+     "record_unit": "table_rows",
+     "file": "ten_target_pose_manifest.csv"
+    }
+   ],
+   "seed": 20261031,
+   "n_boot": 2000,
+   "n_perm": null,
+   "tool_versions": {
+    "python": "3.11.15",
+    "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "pandas": "3.0.3",
+    "yaml": "6.0.3"
+   },
+   "extra": {
+    "n_bust_parquet_files": 726,
+    "n_poses_missing_verdict": 0,
+    "partial": false,
+    "n_duplicate_verdict_rows_same_key": 0,
+    "n_pose_ids_shared_by_two_seeds": 272
+   }
+  }
+ }
+}

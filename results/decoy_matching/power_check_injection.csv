@@ -1,0 +1,5 @@
+delta_kcal,n_active,n_negative,median_gain_active,median_gain_negative,cliffs_delta,cliffs_delta_lo,cliffs_delta_hi,hl_shift,mw_p,mw_reject,stratified_p,stratified_reject,stratified_delta,equivalent_cliffs,equivalent_hl,mixed_coef,mixed_p,mixed_reject
+0,4062,11859,0.43,0.412,0.032704211,0.012375905,0.052902368,0.011997196,0.0018116456,True,0.00044259119,True,-0.038901617,True,True,-0.026250588,0.0023265213,True
+0.3,4062,11859,0.73,0.412,0.39241296,0.37526516,0.40958024,0.31199862,2.7082737e-306,True,3.0787874e-227,True,0.3566484,False,False,0.25759459,4.1504624e-192,True
+0.6,4062,11859,1.03,0.412,0.66018517,0.64722179,0.67304868,0.61199659,0,True,0,True,0.64753492,False,False,0.55407818,0,True
+1,4062,11859,1.43,0.412,0.86015532,0.85208766,0.86806744,1.0119961,0,True,0,True,0.85799616,False,False,0.95246785,0,True

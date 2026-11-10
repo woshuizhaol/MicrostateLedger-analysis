@@ -1,0 +1,227 @@
+{
+ "file": "predictor_robustness.csv",
+ "description": "Gain of predictor-defined states over the default state, paired bootstrap CI, p against the nulls",
+ "row_grain": "predictor x scorer",
+ "n_rows": 15,
+ "n_columns": 24,
+ "delimiter": ",",
+ "file_md5": "4015cf0a35208fb3cfc3e6fd885cc18e",
+ "columns": [
+  {
+   "name": "predictor",
+   "type": "str",
+   "unit": "",
+   "description": "dimorphite_dom, openbabel, enum_popmax, ml_pka, consensus_ge3",
+   "n_missing": 0
+  },
+  {
+   "name": "scorer",
+   "type": "str",
+   "unit": "",
+   "description": "vina, smina, ad4",
+   "n_missing": 0
+  },
+  {
+   "name": "n",
+   "type": "int",
+   "unit": "",
+   "description": "n_common (complexes with finite scores for all seven original conditions)",
+   "n_missing": 0
+  },
+  {
+   "name": "n_changed",
+   "type": "int",
+   "unit": "",
+   "description": "complexes whose chosen microstate differs from the default state",
+   "n_missing": 0
+  },
+  {
+   "name": "n_charge_changed",
+   "type": "int",
+   "unit": "",
+   "description": "...with a different net charge",
+   "n_missing": 0
+  },
+  {
+   "name": "n_fallback",
+   "type": "int",
+   "unit": "",
+   "description": "complexes keeping the default state because the predictor gave no usable state",
+   "n_missing": 0
+  },
+  {
+   "name": "n_score_changed",
+   "type": "int",
+   "unit": "",
+   "description": "complexes whose score differs from the default state's by more than score_change_tol",
+   "n_missing": 0
+  },
+  {
+   "name": "Rp_single",
+   "type": "float",
+   "unit": "",
+   "description": "Rp of the default state",
+   "n_missing": 0
+  },
+  {
+   "name": "Rp_pred",
+   "type": "float",
+   "unit": "",
+   "description": "Rp of the predictor-defined state",
+   "n_missing": 0
+  },
+  {
+   "name": "dRp",
+   "type": "float",
+   "unit": "",
+   "description": "Rp_pred - Rp_single",
+   "n_missing": 0
+  },
+  {
+   "name": "lo",
+   "type": "float",
+   "unit": "",
+   "description": "paired bootstrap 2.5th percentile of dRp",
+   "n_missing": 0
+  },
+  {
+   "name": "hi",
+   "type": "float",
+   "unit": "",
+   "description": "paired bootstrap 97.5th percentile of dRp",
+   "n_missing": 0
+  },
+  {
+   "name": "p_boot",
+   "type": "float",
+   "unit": "",
+   "description": "fraction of bootstrap dRp <= 0 (one-sided, as in the original analysis)",
+   "n_missing": 0
+  },
+  {
+   "name": "RMSE_single",
+   "type": "float",
+   "unit": "",
+   "description": "OLS RMSE of the default state",
+   "n_missing": 0
+  },
+  {
+   "name": "RMSE_pred",
+   "type": "float",
+   "unit": "",
+   "description": "OLS RMSE of the predictor-defined state",
+   "n_missing": 0
+  },
+  {
+   "name": "dRMSE",
+   "type": "float",
+   "unit": "",
+   "description": "RMSE_pred - RMSE_single",
+   "n_missing": 0
+  },
+  {
+   "name": "dRMSE_lo",
+   "type": "float",
+   "unit": "",
+   "description": "bootstrap 2.5th percentile",
+   "n_missing": 0
+  },
+  {
+   "name": "dRMSE_hi",
+   "type": "float",
+   "unit": "",
+   "description": "bootstrap 97.5th percentile",
+   "n_missing": 0
+  },
+  {
+   "name": "p_null",
+   "type": "float",
+   "unit": "",
+   "description": "empirical p against the preset step-2 random null (non_single pool, every complex perturbed)",
+   "n_missing": 0
+  },
+  {
+   "name": "p_null_incl_single",
+   "type": "float",
+   "unit": "",
+   "description": "same with the default state in the pool",
+   "n_missing": 0
+  },
+  {
+   "name": "p_null_changed_set",
+   "type": "float",
+   "unit": "",
+   "description": "empirical p against the random null restricted to the complexes the predictor changes",
+   "n_missing": 0
+  },
+  {
+   "name": "n_matched",
+   "type": "int",
+   "unit": "",
+   "description": "changed complexes with a non-empty matched-|dq| pool",
+   "n_missing": 0
+  },
+  {
+   "name": "dRp_matched_obs",
+   "type": "float",
+   "unit": "",
+   "description": "observed dRp when only the n_matched complexes are changed",
+   "n_missing": 0
+  },
+  {
+   "name": "p_null_matched",
+   "type": "float",
+   "unit": "",
+   "description": "empirical p against the matched-|dq| null",
+   "n_missing": 0
+  }
+ ],
+ "extra": {
+  "provenance": {
+   "script": "$ANALYSIS_ROOT/scripts/casf_scoring/random_null.py",
+   "config": "$ANALYSIS_ROOT/configs/casf_scoring.yaml",
+   "inputs": [
+    {
+     "exists": true,
+     "bytes": 362795,
+     "md5": "31b667b33f088bc9f14854563bc45973",
+     "n_records": 2367,
+     "record_unit": "table_rows",
+     "file": "per_microstate_inplace_scores.csv"
+    },
+    {
+     "exists": true,
+     "bytes": 154722,
+     "md5": "a74168c2559d822f448551d2c1890f2d",
+     "n_records": 1425,
+     "record_unit": "table_rows",
+     "file": "predictor_states.csv"
+    },
+    {
+     "exists": true,
+     "bytes": 14019,
+     "md5": "d5a551fd8edd409e9eb42d247b2ee47f",
+     "n_records": 286,
+     "record_unit": "lines",
+     "file": "CoreSet.dat"
+    }
+   ],
+   "seed": 20261014,
+   "n_boot": 10000,
+   "n_perm": null,
+   "tool_versions": {
+    "python": "3.11.15",
+    "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "pandas": "3.0.3",
+    "yaml": "6.0.3"
+   },
+   "extra": {
+    "seed_boot": 20261015,
+    "n_null": 10000,
+    "null_pool_rule": "ensemble members (the Dimorphite 6.4-8.4 ensemble, truncated to 24 as in D11) other than the default (single) state, with a finite score for the scorer; the draw is uniform over the pool"
+   }
+  }
+ }
+}

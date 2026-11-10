@@ -1,0 +1,7 @@
+slices:
+  n_slices: 12
+  seed: 20261025
+  rule: within every (set, target, role, round) group the ligands are shuffled and slice = floor(rank * n_slices / n_group) + 1; slices are processed in increasing order, inside a slice the (set, target)
+    groups in a random order (seed 20261023), then by round and ligand id
+  rounds_kept: the `round` column is unchanged (0 actives, 1-3 the k-th negative of an active); it no longer orders the work
+  analysis_unit: the largest k such that slices 1..k are complete for EVERY (set, target) group; ligands of later slices that happen to be docked are not used (no data-dependent stopping)

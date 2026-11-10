@@ -1,0 +1,85 @@
+{
+ "file": "anchor_confusion.csv",
+ "description": "Confusion between experimental and method charge class on the anchor sets",
+ "row_grain": "per-set-method-experimental-class-method-class (long-format confusion matrices, zero cells omitted)",
+ "n_rows": 231,
+ "n_columns": 5,
+ "delimiter": ",",
+ "file_md5": "b3b2072ac338111dbb31d2324fad6c2a",
+ "columns": [
+  {
+   "name": "set",
+   "type": "str",
+   "unit": "",
+   "description": "anchor set (same names as anchor_method_error.csv)",
+   "n_missing": 0
+  },
+  {
+   "name": "method",
+   "type": "str",
+   "unit": "",
+   "description": "charge-state method",
+   "n_missing": 0
+  },
+  {
+   "name": "exp_charge_class",
+   "type": "str",
+   "unit": "",
+   "description": "experimental dominant net charge class: <=-2, -1, 0, +1, >=+2",
+   "n_missing": 0
+  },
+  {
+   "name": "method_charge_class",
+   "type": "str",
+   "unit": "",
+   "description": "net charge class assigned by the method (same five classes)",
+   "n_missing": 0
+  },
+  {
+   "name": "count",
+   "type": "int",
+   "unit": "molecules",
+   "description": "molecules in this cell",
+   "n_missing": 0
+  }
+ ],
+ "extra": {
+  "provenance": {
+   "script": "$ANALYSIS_ROOT/scripts/charge_state/reference_errors.py",
+   "config": "$ANALYSIS_ROOT/configs/charge_state.yaml",
+   "inputs": [
+    {
+     "exists": true,
+     "bytes": 771888,
+     "md5": "df781cdbf2939ded87390f2f07dedb3b",
+     "n_records": 3371,
+     "record_unit": "table_rows",
+     "file": "anchor_set.csv"
+    },
+    {
+     "exists": true,
+     "bytes": 905959,
+     "md5": "99e2008dbb710c2702b9e9fa8f14d9f8",
+     "n_records": 3584,
+     "record_unit": "table_rows",
+     "file": "dude_single_vs_dominant.tsv"
+    }
+   ],
+   "seed": 20261016,
+   "n_boot": 10000,
+   "n_perm": null,
+   "tool_versions": {
+    "python": "3.11.15",
+    "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "pandas": "3.0.3",
+    "yaml": "6.0.3",
+    "rdkit": "2025.03.6"
+   },
+   "extra": {
+    "openbabel": "Open Babel 3.1.0 -- Nov 30 2023 -- 20:41:23"
+   }
+  }
+ }
+}

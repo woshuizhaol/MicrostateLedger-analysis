@@ -1,0 +1,29 @@
+{
+ "source": "casf",
+ "results": {
+  "rescue_catalog": {
+   "n_cases": 29,
+   "n_jak2": 0,
+   "jak2_cases": [],
+   "by_target": {
+    "casf2016": 29
+   }
+  }
+ },
+ "provenance": {
+  "script": "$ANALYSIS_ROOT/scripts/flip_attribution/attribution.py",
+  "config": "$ANALYSIS_ROOT/configs/pose_validity.yaml",
+  "inputs": [],
+  "seed": 20261052,
+  "n_boot": null,
+  "n_perm": 10000,
+  "tool_versions": {
+   "python": "3.11.15",
+   "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+   "numpy": "2.4.6",
+   "scipy": "1.17.1",
+   "pandas": "3.0.3",
+   "yaml": "6.0.3"
+  }
+ }
+}

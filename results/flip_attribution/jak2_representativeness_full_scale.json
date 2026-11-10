@@ -1,0 +1,563 @@
+{
+ "source": "full_scale",
+ "results": {
+  "dude_full|geom": {
+   "n_flips_jak2": 39,
+   "n_flips_rest": 1252,
+   "chi2": 2.5715848083337147,
+   "perm_p": 0.3020697930206979,
+   "permutation_unit": "compound cluster (target labels permuted across the clusters that have a flip)",
+   "jak2_type_counts": {
+    "protonation": 28,
+    "tautomer": 7,
+    "stereo": 4
+   },
+   "rest_type_counts": {
+    "protonation": 739,
+    "tautomer": 337,
+    "stereo": 176
+   },
+   "jak2_share_protonation": 0.717948717948718,
+   "rest_share_protonation": 0.5902555910543131,
+   "flip_pct_by_target": {
+    "adrb2": 10.607734806629834,
+    "jak2": 9.558823529411764,
+    "hivpr": 8.9171974522293,
+    "cdk2": 8.817086527929902,
+    "aa2ar": 8.20458177943527,
+    "fa10": 8.097747963584093,
+    "egfr": 7.86463298379409,
+    "src": 7.4926542605288935,
+    "pde5a": 6.7408376963350785,
+    "bace1": 6.221821460775473
+   },
+   "jak2_flip_pct": 9.558823529411764,
+   "jak2_rank": 2,
+   "n_targets": 10,
+   "jak2_percentile": 80.0
+  },
+  "dude_full|full_pb": {
+   "n_flips_jak2": 39,
+   "n_flips_rest": 1274,
+   "chi2": 2.450819725849847,
+   "perm_p": 0.32196780321967805,
+   "permutation_unit": "compound cluster (target labels permuted across the clusters that have a flip)",
+   "jak2_type_counts": {
+    "protonation": 28,
+    "tautomer": 7,
+    "stereo": 4
+   },
+   "rest_type_counts": {
+    "protonation": 756,
+    "tautomer": 339,
+    "stereo": 179
+   },
+   "jak2_share_protonation": 0.717948717948718,
+   "rest_share_protonation": 0.5934065934065934,
+   "flip_pct_by_target": {
+    "adrb2": 11.38121546961326,
+    "jak2": 9.558823529411764,
+    "hivpr": 8.9171974522293,
+    "cdk2": 8.871851040525739,
+    "aa2ar": 8.41768779968034,
+    "fa10": 8.385241974125538,
+    "egfr": 7.959961868446139,
+    "src": 7.4926542605288935,
+    "pde5a": 6.871727748691099,
+    "bace1": 6.221821460775473
+   },
+   "jak2_flip_pct": 9.558823529411764,
+   "jak2_rank": 2,
+   "n_targets": 10,
+   "jak2_percentile": 80.0
+  },
+  "dude_full|score_rank": {
+   "n_flips_jak2": 191,
+   "n_flips_rest": 7558,
+   "chi2": 1.6807283320455897,
+   "perm_p": 0.5007499250074993,
+   "permutation_unit": "compound cluster (target labels permuted across the clusters that have a flip)",
+   "jak2_type_counts": {
+    "protonation": 124,
+    "stereo": 35,
+    "tautomer": 32
+   },
+   "rest_type_counts": {
+    "protonation": 4772,
+    "tautomer": 1531,
+    "stereo": 1251,
+    "resonance": 4
+   },
+   "jak2_share_protonation": 0.6492146596858639,
+   "rest_share_protonation": 0.6313839640116433,
+   "flip_pct_by_target": {
+    "egfr": 52.00190657769304,
+    "bace1": 49.32371505861136,
+    "hivpr": 48.84860362567369,
+    "pde5a": 48.69109947643979,
+    "cdk2": 48.57612267250821,
+    "fa10": 48.29899377096311,
+    "src": 47.992164544564154,
+    "aa2ar": 47.2562599893447,
+    "jak2": 46.81372549019608,
+    "adrb2": 46.07734806629834
+   },
+   "jak2_flip_pct": 46.81372549019608,
+   "jak2_rank": 9,
+   "n_targets": 10,
+   "jak2_percentile": 10.0
+  },
+  "zinc_charge_mismatch|geom": {
+   "n_flips_jak2": 33,
+   "n_flips_rest": 976,
+   "chi2": 0.573104776927431,
+   "perm_p": 0.7543245675432457,
+   "permutation_unit": "compound cluster (target labels permuted across the clusters that have a flip)",
+   "jak2_type_counts": {
+    "protonation": 23,
+    "tautomer": 8,
+    "stereo": 2
+   },
+   "rest_type_counts": {
+    "protonation": 657,
+    "tautomer": 221,
+    "stereo": 98
+   },
+   "jak2_share_protonation": 0.696969696969697,
+   "rest_share_protonation": 0.673155737704918,
+   "flip_pct_by_target": {
+    "jak2": 7.990314769975787,
+    "hivpr": 7.1498054474708175,
+    "adrb2": 6.966292134831461,
+    "cdk2": 6.883468834688347,
+    "aa2ar": 6.773333333333333,
+    "fa10": 6.5393794749403344,
+    "pde5a": 5.779220779220779,
+    "src": 5.653883972468043,
+    "egfr": 5.47945205479452,
+    "bace1": 5.166051660516605
+   },
+   "jak2_flip_pct": 7.990314769975787,
+   "jak2_rank": 1,
+   "n_targets": 10,
+   "jak2_percentile": 90.0
+  },
+  "zinc_charge_mismatch|full_pb": {
+   "n_flips_jak2": 33,
+   "n_flips_rest": 985,
+   "chi2": 0.573372223578357,
+   "perm_p": 0.7581241875812419,
+   "permutation_unit": "compound cluster (target labels permuted across the clusters that have a flip)",
+   "jak2_type_counts": {
+    "protonation": 23,
+    "tautomer": 8,
+    "stereo": 2
+   },
+   "rest_type_counts": {
+    "protonation": 662,
+    "tautomer": 224,
+    "stereo": 99
+   },
+   "jak2_share_protonation": 0.696969696969697,
+   "rest_share_protonation": 0.6720812182741117,
+   "flip_pct_by_target": {
+    "jak2": 7.990314769975787,
+    "hivpr": 7.1498054474708175,
+    "adrb2": 6.966292134831461,
+    "cdk2": 6.883468834688347,
+    "aa2ar": 6.826666666666667,
+    "fa10": 6.730310262529833,
+    "pde5a": 5.779220779220779,
+    "egfr": 5.668398677373642,
+    "src": 5.653883972468043,
+    "bace1": 5.166051660516605
+   },
+   "jak2_flip_pct": 7.990314769975787,
+   "jak2_rank": 1,
+   "n_targets": 10,
+   "jak2_percentile": 90.0
+  },
+  "zinc_charge_mismatch|score_rank": {
+   "n_flips_jak2": 200,
+   "n_flips_rest": 7416,
+   "chi2": 2.2387736017115367,
+   "perm_p": 0.40245975402459755,
+   "permutation_unit": "compound cluster (target labels permuted across the clusters that have a flip)",
+   "jak2_type_counts": {
+    "protonation": 148,
+    "stereo": 26,
+    "tautomer": 26
+   },
+   "rest_type_counts": {
+    "protonation": 5390,
+    "tautomer": 1211,
+    "stereo": 811,
+    "resonance": 4
+   },
+   "jak2_share_protonation": 0.74,
+   "rest_share_protonation": 0.72680690399137,
+   "flip_pct_by_target": {
+    "cdk2": 50.24390243902439,
+    "egfr": 49.409541804440245,
+    "bace1": 48.8929889298893,
+    "jak2": 48.426150121065376,
+    "hivpr": 48.39494163424124,
+    "src": 47.885939036381515,
+    "pde5a": 47.33766233766234,
+    "fa10": 46.968973747016705,
+    "adrb2": 46.96629213483146,
+    "aa2ar": 43.36
+   },
+   "jak2_flip_pct": 48.426150121065376,
+   "jak2_rank": 4,
+   "n_targets": 10,
+   "jak2_percentile": 60.0
+  },
+  "zinc_unmatched|geom": {
+   "n_flips_jak2": 30,
+   "n_flips_rest": 885,
+   "chi2": 0.2838831179961447,
+   "perm_p": 0.8876112388761124,
+   "permutation_unit": "compound cluster (target labels permuted across the clusters that have a flip)",
+   "jak2_type_counts": {
+    "protonation": 19,
+    "tautomer": 8,
+    "stereo": 3
+   },
+   "rest_type_counts": {
+    "protonation": 576,
+    "tautomer": 203,
+    "stereo": 106
+   },
+   "jak2_share_protonation": 0.6333333333333333,
+   "rest_share_protonation": 0.6508474576271186,
+   "flip_pct_by_target": {
+    "jak2": 7.299270072992701,
+    "adrb2": 7.286995515695067,
+    "hivpr": 7.087753134040502,
+    "aa2ar": 6.354334948842219,
+    "fa10": 5.792245093346098,
+    "src": 5.752212389380531,
+    "cdk2": 5.700325732899023,
+    "egfr": 5.238095238095238,
+    "pde5a": 3.961038961038961,
+    "bace1": 3.758020164986251
+   },
+   "jak2_flip_pct": 7.299270072992701,
+   "jak2_rank": 1,
+   "n_targets": 10,
+   "jak2_percentile": 90.0
+  },
+  "zinc_unmatched|full_pb": {
+   "n_flips_jak2": 30,
+   "n_flips_rest": 893,
+   "chi2": 0.27420066399651793,
+   "perm_p": 0.894010598940106,
+   "permutation_unit": "compound cluster (target labels permuted across the clusters that have a flip)",
+   "jak2_type_counts": {
+    "protonation": 19,
+    "tautomer": 8,
+    "stereo": 3
+   },
+   "rest_type_counts": {
+    "protonation": 582,
+    "tautomer": 205,
+    "stereo": 106
+   },
+   "jak2_share_protonation": 0.6333333333333333,
+   "rest_share_protonation": 0.6517357222844344,
+   "flip_pct_by_target": {
+    "adrb2": 7.511210762331839,
+    "jak2": 7.299270072992701,
+    "hivpr": 7.087753134040502,
+    "aa2ar": 6.4081852450188475,
+    "fa10": 5.983724269985639,
+    "src": 5.752212389380531,
+    "cdk2": 5.700325732899023,
+    "egfr": 5.285714285714286,
+    "pde5a": 3.961038961038961,
+    "bace1": 3.758020164986251
+   },
+   "jak2_flip_pct": 7.299270072992701,
+   "jak2_rank": 2,
+   "n_targets": 10,
+   "jak2_percentile": 80.0
+  },
+  "zinc_unmatched|score_rank": {
+   "n_flips_jak2": 200,
+   "n_flips_rest": 7420,
+   "chi2": 1.8929158262750807,
+   "perm_p": 0.40475952404759524,
+   "permutation_unit": "compound cluster (target labels permuted across the clusters that have a flip)",
+   "jak2_type_counts": {
+    "protonation": 154,
+    "tautomer": 28,
+    "stereo": 18
+   },
+   "rest_type_counts": {
+    "protonation": 5395,
+    "tautomer": 1192,
+    "stereo": 832,
+    "resonance": 1
+   },
+   "jak2_share_protonation": 0.77,
+   "rest_share_protonation": 0.727088948787062,
+   "flip_pct_by_target": {
+    "cdk2": 50.4885993485342,
+    "fa10": 50.1675442795596,
+    "adrb2": 50.11210762331839,
+    "hivpr": 48.98746383799421,
+    "jak2": 48.661800486618006,
+    "egfr": 48.57142857142857,
+    "bace1": 47.112740604949586,
+    "src": 46.95181907571288,
+    "pde5a": 44.15584415584416,
+    "aa2ar": 43.61873990306947
+   },
+   "jak2_flip_pct": 48.661800486618006,
+   "jak2_rank": 5,
+   "n_targets": 10,
+   "jak2_percentile": 50.0
+  },
+  "rescue_catalog": {
+   "n_cases": 1340,
+   "n_jak2": 28,
+   "jak2_cases": [
+    {
+     "ligand_id": "C13498895",
+     "gain": 1.9800000000000004,
+     "gain_rank": 21,
+     "gain_percentile": 98.50746268656717,
+     "in_manuscript_jak2_provenance_flips": false
+    },
+    {
+     "ligand_id": "617202",
+     "gain": 1.5579999999999998,
+     "gain_rank": 54,
+     "gain_percentile": 96.04477611940298,
+     "in_manuscript_jak2_provenance_flips": false
+    },
+    {
+     "ligand_id": "617202",
+     "gain": 1.5579999999999998,
+     "gain_rank": 55,
+     "gain_percentile": 95.97014925373134,
+     "in_manuscript_jak2_provenance_flips": false
+    },
+    {
+     "ligand_id": "617202",
+     "gain": 1.5579999999999998,
+     "gain_rank": 56,
+     "gain_percentile": 95.8955223880597,
+     "in_manuscript_jak2_provenance_flips": false
+    },
+    {
+     "ligand_id": "9846477",
+     "gain": 0.7750000000000004,
+     "gain_rank": 305,
+     "gain_percentile": 77.31343283582089,
+     "in_manuscript_jak2_provenance_flips": false
+    },
+    {
+     "ligand_id": "590715",
+     "gain": 0.7260000000000009,
+     "gain_rank": 352,
+     "gain_percentile": 73.80597014925372,
+     "in_manuscript_jak2_provenance_flips": false
+    },
+    {
+     "ligand_id": "590715",
+     "gain": 0.7260000000000009,
+     "gain_rank": 353,
+     "gain_percentile": 73.73134328358208,
+     "in_manuscript_jak2_provenance_flips": false
+    },
+    {
+     "ligand_id": "590715",
+     "gain": 0.7260000000000009,
+     "gain_rank": 354,
+     "gain_percentile": 73.65671641791045,
+     "in_manuscript_jak2_provenance_flips": false
+    },
+    {
+     "ligand_id": "C48273800",
+     "gain": 0.6059999999999999,
+     "gain_rank": 459,
+     "gain_percentile": 65.82089552238806,
+     "in_manuscript_jak2_provenance_flips": false
+    },
+    {
+     "ligand_id": "C12475169",
+     "gain": 0.5789999999999988,
+     "gain_rank": 483,
+     "gain_percentile": 64.02985074626866,
+     "in_manuscript_jak2_provenance_flips": false
+    },
+    {
+     "ligand_id": "613579",
+     "gain": 0.5700000000000003,
+     "gain_rank": 491,
+     "gain_percentile": 63.43283582089552,
+     "in_manuscript_jak2_provenance_flips": false
+    },
+    {
+     "ligand_id": "613579",
+     "gain": 0.5700000000000003,
+     "gain_rank": 492,
+     "gain_percentile": 63.35820895522388,
+     "in_manuscript_jak2_provenance_flips": false
+    },
+    {
+     "ligand_id": "613579",
+     "gain": 0.5700000000000003,
+     "gain_rank": 493,
+     "gain_percentile": 63.28358208955224,
+     "in_manuscript_jak2_provenance_flips": false
+    },
+    {
+     "ligand_id": "C16925358",
+     "gain": 0.5,
+     "gain_rank": 576,
+     "gain_percentile": 57.089552238805965,
+     "in_manuscript_jak2_provenance_flips": false
+    },
+    {
+     "ligand_id": "95530961",
+     "gain": 0.4630000000000001,
+     "gain_rank": 637,
+     "gain_percentile": 52.537313432835816,
+     "in_manuscript_jak2_provenance_flips": false
+    },
+    {
+     "ligand_id": "1124200",
+     "gain": 0.3730000000000011,
+     "gain_rank": 742,
+     "gain_percentile": 44.701492537313435,
+     "in_manuscript_jak2_provenance_flips": false
+    },
+    {
+     "ligand_id": "C61122153",
+     "gain": 0.3130000000000006,
+     "gain_rank": 832,
+     "gain_percentile": 37.98507462686567,
+     "in_manuscript_jak2_provenance_flips": false
+    },
+    {
+     "ligand_id": "113740995",
+     "gain": 0.17499999999999982,
+     "gain_rank": 1051,
+     "gain_percentile": 21.641791044776117,
+     "in_manuscript_jak2_provenance_flips": false
+    },
+    {
+     "ligand_id": "6974072",
+     "gain": 0.15700000000000003,
+     "gain_rank": 1086,
+     "gain_percentile": 19.02985074626866,
+     "in_manuscript_jak2_provenance_flips": false
+    },
+    {
+     "ligand_id": "367884",
+     "gain": 0.12700000000000067,
+     "gain_rank": 1129,
+     "gain_percentile": 15.820895522388057,
+     "in_manuscript_jak2_provenance_flips": false
+    },
+    {
+     "ligand_id": "367884",
+     "gain": 0.12700000000000067,
+     "gain_rank": 1130,
+     "gain_percentile": 15.746268656716422,
+     "in_manuscript_jak2_provenance_flips": false
+    },
+    {
+     "ligand_id": "367884",
+     "gain": 0.12700000000000067,
+     "gain_rank": 1131,
+     "gain_percentile": 15.671641791044777,
+     "in_manuscript_jak2_provenance_flips": false
+    },
+    {
+     "ligand_id": "335042",
+     "gain": 0.0909999999999993,
+     "gain_rank": 1180,
+     "gain_percentile": 12.014925373134332,
+     "in_manuscript_jak2_provenance_flips": false
+    },
+    {
+     "ligand_id": "335042",
+     "gain": 0.0909999999999993,
+     "gain_rank": 1181,
+     "gain_percentile": 11.940298507462687,
+     "in_manuscript_jak2_provenance_flips": false
+    },
+    {
+     "ligand_id": "335042",
+     "gain": 0.0909999999999993,
+     "gain_rank": 1182,
+     "gain_percentile": 11.865671641791042,
+     "in_manuscript_jak2_provenance_flips": false
+    },
+    {
+     "ligand_id": "C40515349",
+     "gain": 0.0680000000000005,
+     "gain_rank": 1219,
+     "gain_percentile": 9.104477611940299,
+     "in_manuscript_jak2_provenance_flips": false
+    },
+    {
+     "ligand_id": "119371749",
+     "gain": 0.0389999999999997,
+     "gain_rank": 1279,
+     "gain_percentile": 4.626865671641789,
+     "in_manuscript_jak2_provenance_flips": false
+    },
+    {
+     "ligand_id": "2081129776",
+     "gain": 0.028999999999999915,
+     "gain_rank": 1288,
+     "gain_percentile": 3.955223880597014,
+     "in_manuscript_jak2_provenance_flips": false
+    }
+   ],
+   "by_target": {
+    "hivpr": 176,
+    "fa10": 158,
+    "cdk2": 131,
+    "egfr": 130,
+    "src": 123,
+    "aa2ar": 118,
+    "pde5a": 82,
+    "adrb2": 77,
+    "bace1": 62,
+    "litpcba_pkm2": 57,
+    "litpcba_vdr": 45,
+    "litpcba_aldh1": 42,
+    "litpcba_fen1": 36,
+    "jak2": 28,
+    "litpcba_mapk1": 21,
+    "litpcba_kat2a": 18,
+    "litpcba_gba": 15,
+    "litpcba_esr1_ant": 10,
+    "litpcba_tp53": 6,
+    "litpcba_mtorc1": 5
+   }
+  }
+ },
+ "provenance": {
+  "script": "$ANALYSIS_ROOT/scripts/flip_attribution/attribution.py",
+  "config": "$ANALYSIS_ROOT/configs/pose_validity.yaml",
+  "inputs": [],
+  "seed": 20261052,
+  "n_boot": null,
+  "n_perm": 10000,
+  "tool_versions": {
+   "python": "3.11.15",
+   "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+   "numpy": "2.4.6",
+   "scipy": "1.17.1",
+   "pandas": "3.0.3",
+   "yaml": "6.0.3"
+  }
+ }
+}

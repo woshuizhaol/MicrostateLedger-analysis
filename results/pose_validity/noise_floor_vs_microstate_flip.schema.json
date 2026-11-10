@@ -1,0 +1,168 @@
+{
+ "file": "noise_floor_vs_microstate_flip.csv",
+ "description": "Docking-noise flip rate versus microstate-induced flip rate",
+ "row_grain": "one row per (set, criterion)",
+ "n_rows": 12,
+ "n_columns": 17,
+ "delimiter": ",",
+ "file_md5": "3fb4ef81cddbe1b503e152656158f6bf",
+ "columns": [
+  {
+   "name": "set",
+   "type": "str",
+   "unit": "",
+   "description": "ligand set (ALL = pooled, descriptive)",
+   "n_missing": 0
+  },
+  {
+   "name": "criterion",
+   "type": "str",
+   "unit": "",
+   "description": "geom | full_pb | score_rank",
+   "n_missing": 0
+  },
+  {
+   "name": "n_ligands",
+   "type": "int",
+   "unit": "",
+   "description": "ligands with complete data",
+   "n_missing": 0
+  },
+  {
+   "name": "n_ligand_units",
+   "type": "int",
+   "unit": "",
+   "description": "(ligand, unit) pairs, unit = default or best microstate",
+   "n_missing": 0
+  },
+  {
+   "name": "microstate_flip_k",
+   "type": "int",
+   "unit": "",
+   "description": "ligands whose default and best microstate differ in the criterion (original poses)",
+   "n_missing": 0
+  },
+  {
+   "name": "microstate_flip_rate",
+   "type": "float",
+   "unit": "",
+   "description": "k / n_ligands",
+   "n_missing": 0
+  },
+  {
+   "name": "microstate_flip_lo",
+   "type": "float",
+   "unit": "",
+   "description": "Wilson 95% lower",
+   "n_missing": 0
+  },
+  {
+   "name": "microstate_flip_hi",
+   "type": "float",
+   "unit": "",
+   "description": "Wilson 95% upper",
+   "n_missing": 0
+  },
+  {
+   "name": "noise_flip_rate_all_pairs",
+   "type": "float",
+   "unit": "",
+   "description": "mean over (ligand, unit) of the fraction of the 10 run pairs whose verdict differs",
+   "n_missing": 0
+  },
+  {
+   "name": "noise_flip_rate_orig_vs_extra",
+   "type": "float",
+   "unit": "",
+   "description": "same, only the 4 original-vs-extra-seed pairs",
+   "n_missing": 0
+  },
+  {
+   "name": "diff",
+   "type": "float",
+   "unit": "",
+   "description": "microstate_flip_rate - noise_flip_rate_all_pairs",
+   "n_missing": 0
+  },
+  {
+   "name": "diff_lo",
+   "type": "float",
+   "unit": "",
+   "description": "ligand-cluster bootstrap 2.5%",
+   "n_missing": 0
+  },
+  {
+   "name": "diff_hi",
+   "type": "float",
+   "unit": "",
+   "description": "ligand-cluster bootstrap 97.5%",
+   "n_missing": 0
+  },
+  {
+   "name": "z",
+   "type": "float",
+   "unit": "",
+   "description": "pooled two-proportion z",
+   "n_missing": 0
+  },
+  {
+   "name": "p_value",
+   "type": "float",
+   "unit": "",
+   "description": "two-sided",
+   "n_missing": 0
+  },
+  {
+   "name": "mean_score_sd_extra_seeds",
+   "type": "float",
+   "unit": "",
+   "description": "mean SD of the Vina score over original + 4 extra seeds (kcal/mol)",
+   "n_missing": 0
+  },
+  {
+   "name": "p_holm",
+   "type": "float",
+   "unit": "",
+   "description": "Holm over criteria x set (non-ALL rows)",
+   "n_missing": 3
+  }
+ ],
+ "extra": {
+  "provenance": {
+   "script": "$ANALYSIS_ROOT/scripts/pose_validity/noise_analysis.py",
+   "config": "$ANALYSIS_ROOT/configs/pose_validity.yaml",
+   "inputs": [
+    {
+     "exists": true,
+     "bytes": 311243,
+     "md5": "0a84a4188208863382d2d1ab8ea2b65d",
+     "n_records": 1200,
+     "record_unit": "table_rows",
+     "file": "noise_sample.csv"
+    }
+   ],
+   "seed": 20261033,
+   "n_boot": 2000,
+   "n_perm": null,
+   "tool_versions": {
+    "python": "3.11.15",
+    "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "pandas": "3.0.3",
+    "yaml": "6.0.3"
+   },
+   "extra": {
+    "excluded": {
+     "no_noise_record": 0,
+     "noise_not_ok": 0,
+     "units_incomplete": 0,
+     "missing_verdict": 0,
+     "score_mismatch": 0,
+     "n_micro_mismatch": 0
+    },
+    "n_ligands_used": 1200
+   }
+  }
+ }
+}

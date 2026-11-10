@@ -1,0 +1,94 @@
+{
+ "file": "changed_set_null_dimorphite_dom_ad4.csv",
+ "description": "Random microstate null restricted to the complexes where the Dimorphite dominant state differs from the default (ad4)",
+ "row_grain": "one row per random draw (10000)",
+ "n_rows": 10000,
+ "n_columns": 5,
+ "delimiter": ",",
+ "file_md5": "d2a8cf6d2624726286de1b1b988b263d",
+ "columns": [
+  {
+   "name": "b",
+   "type": "int",
+   "unit": "",
+   "description": "draw number, seed = seed_null + b",
+   "n_missing": 0
+  },
+  {
+   "name": "Rp",
+   "type": "float",
+   "unit": "",
+   "description": "Pearson Rp of the drawn states over n_common complexes",
+   "n_missing": 0
+  },
+  {
+   "name": "dRp",
+   "type": "float",
+   "unit": "",
+   "description": "Rp(drawn) - Rp(single)",
+   "n_missing": 0
+  },
+  {
+   "name": "RMSE",
+   "type": "float",
+   "unit": "",
+   "description": "OLS RMSE of the drawn states",
+   "n_missing": 0
+  },
+  {
+   "name": "dRMSE",
+   "type": "float",
+   "unit": "",
+   "description": "RMSE(drawn) - RMSE(single)",
+   "n_missing": 0
+  }
+ ],
+ "extra": {
+  "provenance": {
+   "script": "$ANALYSIS_ROOT/scripts/casf_scoring/random_null.py",
+   "config": "$ANALYSIS_ROOT/configs/casf_scoring.yaml",
+   "inputs": [
+    {
+     "exists": true,
+     "bytes": 362795,
+     "md5": "31b667b33f088bc9f14854563bc45973",
+     "n_records": 2367,
+     "record_unit": "table_rows",
+     "file": "per_microstate_inplace_scores.csv"
+    },
+    {
+     "exists": true,
+     "bytes": 154722,
+     "md5": "a74168c2559d822f448551d2c1890f2d",
+     "n_records": 1425,
+     "record_unit": "table_rows",
+     "file": "predictor_states.csv"
+    },
+    {
+     "exists": true,
+     "bytes": 14019,
+     "md5": "d5a551fd8edd409e9eb42d247b2ee47f",
+     "n_records": 286,
+     "record_unit": "lines",
+     "file": "CoreSet.dat"
+    }
+   ],
+   "seed": 20261014,
+   "n_boot": 10000,
+   "n_perm": null,
+   "tool_versions": {
+    "python": "3.11.15",
+    "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "pandas": "3.0.3",
+    "yaml": "6.0.3"
+   },
+   "extra": {
+    "seed_boot": 20261015,
+    "n_null": 10000,
+    "null_pool_rule": "ensemble members (the Dimorphite 6.4-8.4 ensemble, truncated to 24 as in D11) other than the default (single) state, with a finite score for the scorer; the draw is uniform over the pool"
+   }
+  }
+ }
+}

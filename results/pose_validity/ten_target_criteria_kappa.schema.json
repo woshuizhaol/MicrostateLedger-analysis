@@ -1,0 +1,136 @@
+{
+ "file": "ten_target_criteria_kappa.csv",
+ "description": "Pairwise Cohen's kappa of geom / full_pb / score_rank on the original poses",
+ "row_grain": "one row per dataset x unit x criterion pair",
+ "n_rows": 12,
+ "n_columns": 13,
+ "delimiter": ",",
+ "file_md5": "c13ed89335613f0e0f46dea320762c29",
+ "columns": [
+  {
+   "name": "dataset",
+   "type": "str",
+   "unit": "",
+   "description": "ten_target_main / ten_target_budget6 = original runs re-checked; dude_full / litpcba / zinc_unmatched / zinc_charge_mismatch = decoy-matching ligand sets",
+   "n_missing": 0
+  },
+  {
+   "name": "unit",
+   "type": "str",
+   "unit": "",
+   "description": "all_poses | representative_poses",
+   "n_missing": 0
+  },
+  {
+   "name": "criterion_a",
+   "type": "str",
+   "unit": "",
+   "description": "first criterion",
+   "n_missing": 0
+  },
+  {
+   "name": "criterion_b",
+   "type": "str",
+   "unit": "",
+   "description": "second criterion",
+   "n_missing": 0
+  },
+  {
+   "name": "n_poses",
+   "type": "int",
+   "unit": "",
+   "description": "poses in the table",
+   "n_missing": 0
+  },
+  {
+   "name": "n_clusters",
+   "type": "int",
+   "unit": "",
+   "description": "ligands (bootstrap clusters)",
+   "n_missing": 0
+  },
+  {
+   "name": "kappa",
+   "type": "float",
+   "unit": "",
+   "description": "Cohen's kappa",
+   "n_missing": 0
+  },
+  {
+   "name": "kappa_lo",
+   "type": "float",
+   "unit": "",
+   "description": "ligand-cluster bootstrap 2.5%",
+   "n_missing": 0
+  },
+  {
+   "name": "kappa_hi",
+   "type": "float",
+   "unit": "",
+   "description": "ligand-cluster bootstrap 97.5%",
+   "n_missing": 0
+  },
+  {
+   "name": "p_both_true",
+   "type": "float",
+   "unit": "",
+   "description": "share of poses valid under both criteria",
+   "n_missing": 0
+  },
+  {
+   "name": "p_first_true",
+   "type": "float",
+   "unit": "",
+   "description": "share valid under the first criterion",
+   "n_missing": 0
+  },
+  {
+   "name": "p_second_true",
+   "type": "float",
+   "unit": "",
+   "description": "share valid under the second criterion",
+   "n_missing": 0
+  },
+  {
+   "name": "agree",
+   "type": "float",
+   "unit": "",
+   "description": "observed agreement",
+   "n_missing": 0
+  }
+ ],
+ "extra": {
+  "provenance": {
+   "script": "$ANALYSIS_ROOT/scripts/pose_validity/flips_ten_target.py",
+   "config": "$ANALYSIS_ROOT/configs/pose_validity.yaml",
+   "inputs": [
+    {
+     "exists": true,
+     "bytes": 31250158,
+     "md5": "89d658e030037c7cd9964eee963eb632",
+     "n_records": 43236,
+     "record_unit": "table_rows",
+     "file": "ten_target_pose_manifest.csv"
+    }
+   ],
+   "seed": 20261031,
+   "n_boot": 2000,
+   "n_perm": null,
+   "tool_versions": {
+    "python": "3.11.15",
+    "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "pandas": "3.0.3",
+    "yaml": "6.0.3"
+   },
+   "extra": {
+    "n_bust_parquet_files": 726,
+    "n_poses_missing_verdict": 0,
+    "partial": false,
+    "n_duplicate_verdict_rows_same_key": 0,
+    "n_pose_ids_shared_by_two_seeds": 272
+   }
+  }
+ }
+}

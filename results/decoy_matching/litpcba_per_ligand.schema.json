@@ -1,0 +1,264 @@
+{
+ "file": "litpcba_per_ligand.csv",
+ "description": "Per-ligand docking summary and gain, litpcba",
+ "row_grain": "one row per ligand of the set",
+ "n_rows": 11096,
+ "n_columns": 27,
+ "delimiter": ",",
+ "file_md5": "bf2f1a3bad6805cdb277aafb03a9e707",
+ "columns": [
+  {
+   "name": "set",
+   "type": "str",
+   "unit": "",
+   "description": "dude_full / litpcba / zinc_unmatched / zinc_charge_mismatch",
+   "n_missing": 0
+  },
+  {
+   "name": "target",
+   "type": "str",
+   "unit": "",
+   "description": "receptor target",
+   "n_missing": 0
+  },
+  {
+   "name": "role",
+   "type": "str",
+   "unit": "",
+   "description": "active / negative",
+   "n_missing": 0
+  },
+  {
+   "name": "round",
+   "type": "int",
+   "unit": "",
+   "description": "0 = active, k = k-th negative of the active",
+   "n_missing": 0
+  },
+  {
+   "name": "slice",
+   "type": "int",
+   "unit": "",
+   "description": "Amendment 1 slice of the ligand (1..12; the ZINC-set actives carry the slice of their dude_full row)",
+   "n_missing": 0
+  },
+  {
+   "name": "ligand_id",
+   "type": "int",
+   "unit": "",
+   "description": "database id",
+   "n_missing": 0
+  },
+  {
+   "name": "uid",
+   "type": "str",
+   "unit": "",
+   "description": "md5(target|smiles)[:12], key of the docking records",
+   "n_missing": 0
+  },
+  {
+   "name": "smiles",
+   "type": "str",
+   "unit": "",
+   "description": "SMILES from the source file",
+   "n_missing": 0
+  },
+  {
+   "name": "dominant_charge",
+   "type": "int",
+   "unit": "e",
+   "description": "Dimorphite dominant state charge at pH 7.4",
+   "n_missing": 0
+  },
+  {
+   "name": "n_sites",
+   "type": "int",
+   "unit": "",
+   "description": "ionizable groups (charge-state SMARTS)",
+   "n_missing": 0
+  },
+  {
+   "name": "n_heavy",
+   "type": "int",
+   "unit": "",
+   "description": "heavy atoms",
+   "n_missing": 0
+  },
+  {
+   "name": "docked_record",
+   "type": "str",
+   "unit": "",
+   "description": "a docking record exists",
+   "n_missing": 0
+  },
+  {
+   "name": "n_eligible",
+   "type": "int",
+   "unit": "",
+   "description": "docking-eligible microstates",
+   "n_missing": 0
+  },
+  {
+   "name": "n_docked",
+   "type": "int",
+   "unit": "",
+   "description": "microstates with a successful docking",
+   "n_missing": 0
+  },
+  {
+   "name": "default_docked",
+   "type": "str",
+   "unit": "",
+   "description": "the default (first eligible) microstate was docked",
+   "n_missing": 0
+  },
+  {
+   "name": "score_default",
+   "type": "float",
+   "unit": "kcal/mol",
+   "description": "Vina top-1 score of the default microstate",
+   "n_missing": 68
+  },
+  {
+   "name": "score_min",
+   "type": "float",
+   "unit": "kcal/mol",
+   "description": "best score over the docked microstates (oracle)",
+   "n_missing": 7
+  },
+  {
+   "name": "score_min_nd",
+   "type": "float",
+   "unit": "kcal/mol",
+   "description": "best score over the docked non-default microstates",
+   "n_missing": 814
+  },
+  {
+   "name": "score_first4_min",
+   "type": "float",
+   "unit": "kcal/mol",
+   "description": "best of the first 4 eligible microstates",
+   "n_missing": 21
+  },
+  {
+   "name": "gain",
+   "type": "float",
+   "unit": "kcal/mol",
+   "description": "score_default - score_min (>= 0)",
+   "n_missing": 68
+  },
+  {
+   "name": "gain_first4",
+   "type": "float",
+   "unit": "kcal/mol",
+   "description": "score_default - score_first4_min",
+   "n_missing": 68
+  },
+  {
+   "name": "swing",
+   "type": "float",
+   "unit": "kcal/mol",
+   "description": "max - min over docked microstates",
+   "n_missing": 7
+  },
+  {
+   "name": "in_analysis",
+   "type": "str",
+   "unit": "",
+   "description": "default docked, >= 1 other microstate docked, slice <= max_slice, round <= max_round",
+   "n_missing": 0
+  },
+  {
+   "name": "in_analysis_incl_single",
+   "type": "str",
+   "unit": "",
+   "description": "sensitivity set: as in_analysis but a ligand with only the default microstate docked is kept (gain = 0 by definition)",
+   "n_missing": 0
+  },
+  {
+   "name": "in_prefix",
+   "type": "str",
+   "unit": "",
+   "description": "the ligand belongs to the analysis unit of Amendment 1 (slice <= max_slice and round <= max_round), whether or not it was docked; the virtual-screening metrics use only these",
+   "n_missing": 0
+  },
+  {
+   "name": "charge_class",
+   "type": "str",
+   "unit": "",
+   "description": "<=-1 / 0 / +1 / >=+2",
+   "n_missing": 0
+  },
+  {
+   "name": "sites_class",
+   "type": "str",
+   "unit": "",
+   "description": "0 / 1 / >=2",
+   "n_missing": 0
+  }
+ ],
+ "extra": {
+  "provenance": {
+   "script": "$ANALYSIS_ROOT/scripts/decoy_matching/assemble.py",
+   "config": "$ANALYSIS_ROOT/configs/decoy_matching.yaml",
+   "inputs": [
+    {
+     "exists": true,
+     "bytes": 5477936,
+     "md5": "5d555f37b4d328e297835b19a648aca3",
+     "n_records": 52236,
+     "record_unit": "table_rows",
+     "file": "ligand_sets.csv"
+    },
+    {
+     "exists": true,
+     "bytes": 5595422,
+     "md5": "b76be6cb3220fecf7fc6444fe8d168fc",
+     "n_records": 52236,
+     "record_unit": "table_rows",
+     "file": "ligand_sets_sliced.csv"
+    },
+    {
+     "exists": true,
+     "bytes": 51892207,
+     "md5": "ca84c0b01eb7a0eb7dcade5f1cc95811",
+     "n_records": 264289,
+     "record_unit": "table_rows",
+     "file": "ligand_properties_dude.csv"
+    },
+    {
+     "exists": true,
+     "bytes": 16364274,
+     "md5": "edbb589dbdae977509d39b1b19352ff8",
+     "n_records": 95003,
+     "record_unit": "table_rows",
+     "file": "ligand_properties_litpcba.csv"
+    },
+    {
+     "exists": true,
+     "bytes": 12442,
+     "md5": "edcd555583dce7fea52bfbd7ffb12b10",
+     "n_records": 66,
+     "record_unit": "table_rows",
+     "file": "ligand_properties_litpcba_queue_extra.csv"
+    }
+   ],
+   "seed": null,
+   "n_boot": null,
+   "n_perm": null,
+   "tool_versions": {
+    "python": "3.11.15",
+    "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "pandas": "3.0.3",
+    "yaml": "6.0.3"
+   },
+   "extra": {
+    "max_round": 3,
+    "max_slice": 12,
+    "n_records": 52236
+   }
+  }
+ }
+}

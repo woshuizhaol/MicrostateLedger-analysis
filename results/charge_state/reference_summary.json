@@ -1,0 +1,112 @@
+{
+ "primary_set": "complete",
+ "n_primary": 2010,
+ "n_all": 3371,
+ "headline": {
+  "naive": {
+   "k": 649,
+   "n": 2010,
+   "rate": 0.32288557213930347,
+   "lo": 0.3027989794598818,
+   "hi": 0.34364786625311333
+  },
+  "neutral_input": {
+   "k": 971,
+   "n": 2010,
+   "rate": 0.48308457711442787,
+   "lo": 0.4612916926984694,
+   "hi": 0.504941994813446
+  },
+  "dimorphite_dom": {
+   "k": 612,
+   "n": 2010,
+   "rate": 0.3044776119402985,
+   "lo": 0.2847483826758025,
+   "hi": 0.3249527700354533
+  },
+  "openbabel": {
+   "k": 364,
+   "n": 2009,
+   "rate": 0.18118466898954705,
+   "lo": 0.16495549818830518,
+   "hi": 0.19863074235419315
+  },
+  "enum_popmax": {
+   "k": 595,
+   "n": 2010,
+   "rate": 0.2960199004975124,
+   "lo": 0.27646745407182893,
+   "hi": 0.3163505423953845
+  },
+  "ml_pka": {
+   "k": 233,
+   "n": 2010,
+   "rate": 0.11592039800995024,
+   "lo": 0.10265212342003545,
+   "hi": 0.13065395773286392
+  }
+ },
+ "representativeness": {
+  "anchor_complete_heavy_atoms_median": 13.0,
+  "anchor_complete_mw_median": 193.1775,
+  "dude_heavy_atoms_median": 33.0,
+  "anchor_complete_n_sites_ind_ge2": 0.13233830845771144,
+  "exp_charged_fraction_complete": 0.48308457711442787
+ },
+ "dude_class_composition": {
+  "functional_class": {
+   "amidine_guanidine": 349,
+   "aliphatic_amine": 1220,
+   "carboxylic_acid": 40,
+   "tetrazole_acylsulfonamide": 3,
+   "imidazole_azole": 313,
+   "pyridine_azine": 1118,
+   "aniline": 54,
+   "phenol": 131,
+   "sulfonamide_imide": 43,
+   "none": 313
+  },
+  "n_sites_stratum[post_hoc]": {
+   "<=1_group": 652,
+   ">=2_groups": 2932
+  }
+ },
+ "wall_seconds": 1.5,
+ "provenance": {
+  "script": "$ANALYSIS_ROOT/scripts/charge_state/reference_errors.py",
+  "config": "$ANALYSIS_ROOT/configs/charge_state.yaml",
+  "inputs": [
+   {
+    "exists": true,
+    "bytes": 771888,
+    "md5": "df781cdbf2939ded87390f2f07dedb3b",
+    "n_records": 3371,
+    "record_unit": "table_rows",
+    "file": "anchor_set.csv"
+   },
+   {
+    "exists": true,
+    "bytes": 905959,
+    "md5": "99e2008dbb710c2702b9e9fa8f14d9f8",
+    "n_records": 3584,
+    "record_unit": "table_rows",
+    "file": "dude_single_vs_dominant.tsv"
+   }
+  ],
+  "seed": 20261016,
+  "n_boot": 10000,
+  "n_perm": null,
+  "tool_versions": {
+   "python": "3.11.15",
+   "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+   "numpy": "2.4.6",
+   "scipy": "1.17.1",
+   "pandas": "3.0.3",
+   "yaml": "6.0.3",
+   "rdkit": "2025.03.6"
+  },
+  "extra": {
+   "openbabel": "Open Babel 3.1.0 -- Nov 30 2023 -- 20:41:23"
+  }
+ }
+}

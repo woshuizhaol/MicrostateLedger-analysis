@@ -1,0 +1,71 @@
+{
+ "provenance": {
+  "script": "$ANALYSIS_ROOT/scripts/pose_validity/flips_full_scale.py",
+  "config": "$ANALYSIS_ROOT/configs/pose_validity.yaml",
+  "inputs": [
+   {
+    "exists": true,
+    "bytes": 5477936,
+    "md5": "5d555f37b4d328e297835b19a648aca3",
+    "n_records": 52236,
+    "record_unit": "table_rows",
+    "file": "ligand_sets.csv"
+   }
+  ],
+  "seed": 20261031,
+  "n_boot": 2000,
+  "n_perm": null,
+  "tool_versions": {
+   "python": "3.11.15",
+   "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+   "numpy": "2.4.6",
+   "scipy": "1.17.1",
+   "pandas": "3.0.3",
+   "yaml": "6.0.3"
+  },
+  "extra": {
+   "n_bust_parquet_files": 8668,
+   "max_round": 3
+  }
+ },
+ "n_microstate_dockings_recorded": 562140,
+ "n_dock_failed": 13802,
+ "n_poses_with_verdict": 659848,
+ "n_ligand_set_rows": 60291,
+ "n_records_waiting_for_bust": 0,
+ "pass_rate": {
+  "dude_full": {
+   "geom": 0.9237147846450454,
+   "full_pb": 0.9222208763589014,
+   "inter": 0.9983900110024326
+  },
+  "litpcba": {
+   "geom": 0.9292062653995072,
+   "full_pb": 0.9249054030271031,
+   "inter": 0.9953251495952129
+  },
+  "zinc_charge_mismatch": {
+   "geom": 0.9344726174389953,
+   "full_pb": 0.9337572530005563,
+   "inter": 0.9992581405823596
+  },
+  "zinc_unmatched": {
+   "geom": 0.938396225896981,
+   "full_pb": 0.9377371857888984,
+   "inter": 0.9993189918883146
+  }
+ },
+ "failed_checks_top": {
+  "non-aromatic_ring_non-flatness": 26597,
+  "internal_energy": 11117,
+  "internal_steric_clash": 4416,
+  "double_bond_flatness": 3927,
+  "minimum_distance_to_protein": 1008,
+  "inchi_convertible": 720,
+  "aromatic_ring_flatness": 529,
+  "no_radicals": 32,
+  "bond_lengths": 25,
+  "volume_overlap_with_protein": 3
+ },
+ "seconds": 358.3
+}

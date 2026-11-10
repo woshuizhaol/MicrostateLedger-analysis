@@ -1,0 +1,17 @@
+analysis,convention,method,group_1,k1,n1,rate1_pct,wilson1_lo_pct,wilson1_hi_pct,group_2,k2,n2,rate2_pct,b,c,diff_pct_points,diff_lo,diff_hi,p_value,p_holm
+rate,A,RDKit_score,dft24,3,24,12.5000,4.3443,31.0039,,,,,,,,,,,
+rate,ties_dropped,RDKit_score,dft24,1,22,4.5455,0.8069,21.7980,,,,,,,,,,,
+rate,A,PM6_gas,dft24,5,24,20.8333,9.2448,40.4705,,,,,,,,,,,
+rate,A,GFN2xtb_ALPB_free,dft24,6,24,25.0000,11.9994,44.8994,,,,,,,,,,,
+rate,A,GFN2xtb_ALPB_opt,dft24,5,24,20.8333,9.2448,40.4705,,,,,,,,,,,
+rate,A,DFT_SMD,dft24,1,24,4.1667,0.7393,20.2418,,,,,,,,,,,
+paired_vs_dft,A,RDKit_score,method,3,24,12.5000,,,DFT_SMD,1,24,4.1667,3,1,8.3333,-10.2567,27.4157,0.625,0.625
+paired_vs_dft,A,PM6_gas,method,5,24,20.8333,,,DFT_SMD,1,24,4.1667,4,0,16.6667,-1.6884,36.0884,0.125,0.5
+paired_vs_dft,A,GFN2xtb_ALPB_free,method,6,24,25.0000,,,DFT_SMD,1,24,4.1667,6,1,20.8333,-1.0240,41.4284,0.125,0.5
+paired_vs_dft,A,GFN2xtb_ALPB_opt,method,5,24,20.8333,,,DFT_SMD,1,24,4.1667,5,1,16.6667,-4.1313,36.9586,0.21875,0.5
+paired_vs_dft,ties_dropped,RDKit_score,method,1,22,4.5455,,,DFT_SMD,1,22,4.5455,1,1,0.0000,-17.8261,17.8261,1,1
+dft24_vs_rest,A,RDKit_score,dft24,3,24,12.5000,4.3443,31.0039,other_pairs_of_the_150,57,126,45.2381,,,-32.7381,-44.6654,-12.4080,0.00268636,0.0107454
+dft24_vs_rest,A,PM6_gas,dft24,5,24,20.8333,9.2448,40.4705,other_pairs_of_the_150,47,126,37.3016,,,-16.4683,-30.9605,4.7175,0.161048,0.483144
+dft24_vs_rest,A,GFN2xtb_ALPB_free,dft24,6,24,25.0000,11.9994,44.8994,other_pairs_of_the_150,40,126,31.7460,,,-6.7460,-22.3144,14.5145,0.632197,0.673155
+dft24_vs_rest,A,GFN2xtb_ALPB_opt,dft24,5,24,20.8333,9.2448,40.4705,other_pairs_of_the_150,41,126,32.5397,,,-11.7063,-26.1325,9.3353,0.336578,0.673155
+dft24_vs_rest,ties_dropped,RDKit_score,dft24,1,22,4.5455,0.8069,21.7980,other_pairs_of_the_150,31,100,31.0000,,,-26.4545,-36.7811,-7.3437,0.0137214,0.0137214

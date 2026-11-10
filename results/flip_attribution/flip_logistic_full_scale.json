@@ -1,0 +1,970 @@
+{
+ "source": "full_scale",
+ "formula_note": "logistic regression (binomial GLM) with cluster-robust standard errors (clusters = compounds; the 5 seeds of one compound form one cluster); reference class tautomer; covariates: target fixed effects, z-scored heavy atoms of the default microstate, log(n microstates); classes with < 20 pairs and targets without outcome variation dropped. A GEE with exchangeable working correlation was tried first on a subset and returned NaN for score_rank (highly correlated within-ligand outcomes) -- replaced for all criteria before any result existed",
+ "results": {
+  "dude_full|geom": {
+   "n_pairs": 180415,
+   "n_ligands": 15921,
+   "n_clusters": 15921,
+   "change_types_kept": [
+    "protonation",
+    "tautomer",
+    "stereo",
+    "resonance"
+   ],
+   "pair_counts": {
+    "protonation": 111467,
+    "tautomer": 41511,
+    "stereo": 27238,
+    "resonance": 199
+   },
+   "n_flips": 16819,
+   "targets_dropped_no_variation": [],
+   "types_vs_tautomer": {
+    "C(change_type, Treatment('tautomer'))[T.protonation]": {
+     "coef": -0.37503296499922384,
+     "odds_ratio": 0.6872666226738617,
+     "or_lo": 0.643431423020096,
+     "or_hi": 0.7340881929957966,
+     "p": 6.932805628688516e-29
+    },
+    "C(change_type, Treatment('tautomer'))[T.resonance]": {
+     "coef": -0.6954742620207294,
+     "odds_ratio": 0.49883781204709465,
+     "or_lo": 0.22771083388122612,
+     "or_hi": 1.0927857866337924,
+     "p": 0.08217551083819813
+    },
+    "C(change_type, Treatment('tautomer'))[T.stereo]": {
+     "coef": -0.34022004305103953,
+     "odds_ratio": 0.7116137198794696,
+     "or_lo": 0.6549586584947056,
+     "or_hi": 0.7731695424632511,
+     "p": 9.166319989664795e-16
+    },
+    "z_heavy": {
+     "coef": 0.056127857607073325,
+     "odds_ratio": 1.0577329142906433,
+     "or_lo": 1.0092448765774011,
+     "or_hi": 1.1085505053717997,
+     "p": 0.019061481477780362
+    },
+    "log_nmicro": {
+     "coef": 0.1909432809554362,
+     "odds_ratio": 1.2103907979247117,
+     "or_lo": 1.1089227889994642,
+     "or_hi": 1.3211432736653121,
+     "p": 1.9164981656683375e-05
+    }
+   },
+   "protonation_vs_rest": {
+    "is_prot": {
+     "coef": -0.24973770489084612,
+     "odds_ratio": 0.7790050855004024,
+     "or_lo": 0.7347706382510748,
+     "or_hi": 0.8259025220168444,
+     "p": 5.618437238598115e-17
+    },
+    "z_heavy": {
+     "coef": 0.05362678963119092,
+     "odds_ratio": 1.055090757855397,
+     "or_lo": 1.0068638655671034,
+     "or_hi": 1.1056276279066495,
+     "p": 0.024670647103248573
+    },
+    "log_nmicro": {
+     "coef": 0.21048778219487302,
+     "odds_ratio": 1.2342799729378786,
+     "or_lo": 1.1315404023977778,
+     "or_hi": 1.3463479062411625,
+     "p": 2.0649447117010002e-06
+    }
+   }
+  },
+  "dude_full|full_pb": {
+   "n_pairs": 180415,
+   "n_ligands": 15921,
+   "n_clusters": 15921,
+   "change_types_kept": [
+    "protonation",
+    "tautomer",
+    "stereo",
+    "resonance"
+   ],
+   "pair_counts": {
+    "protonation": 111467,
+    "tautomer": 41511,
+    "stereo": 27238,
+    "resonance": 199
+   },
+   "n_flips": 17242,
+   "targets_dropped_no_variation": [],
+   "types_vs_tautomer": {
+    "C(change_type, Treatment('tautomer'))[T.protonation]": {
+     "coef": -0.3743708223843439,
+     "odds_ratio": 0.6877218418859066,
+     "or_lo": 0.6442940182615551,
+     "or_hi": 0.7340768630494134,
+     "p": 2.3467644945896343e-29
+    },
+    "C(change_type, Treatment('tautomer'))[T.resonance]": {
+     "coef": -0.19694927405871124,
+     "odds_ratio": 0.8212322900370396,
+     "or_lo": 0.3285571739252101,
+     "or_hi": 2.0526791916983065,
+     "p": 0.6734861366119123
+    },
+    "C(change_type, Treatment('tautomer'))[T.stereo]": {
+     "coef": -0.32863764035453574,
+     "odds_ratio": 0.7199038335873797,
+     "or_lo": 0.6636670359171707,
+     "or_hi": 0.7809059386196299,
+     "p": 2.39198686645134e-15
+    },
+    "z_heavy": {
+     "coef": 0.07515562934279704,
+     "odds_ratio": 1.0780519143407647,
+     "or_lo": 1.0285185594501631,
+     "or_hi": 1.129970790838317,
+     "p": 0.001738074018398656
+    },
+    "log_nmicro": {
+     "coef": 0.17039385459385478,
+     "odds_ratio": 1.1857717810263453,
+     "or_lo": 1.088279233073587,
+     "or_hi": 1.2919981140385473,
+     "p": 9.919488378138836e-05
+    }
+   },
+   "protonation_vs_rest": {
+    "is_prot": {
+     "coef": -0.2539086940177669,
+     "odds_ratio": 0.7757626305818573,
+     "or_lo": 0.7321728270688163,
+     "or_hi": 0.8219475467514448,
+     "p": 7.603221543503472e-18
+    },
+    "z_heavy": {
+     "coef": 0.07279145343413822,
+     "odds_ratio": 1.07550622039647,
+     "or_lo": 1.0262152840488095,
+     "or_hi": 1.1271646876548411,
+     "p": 0.0023573613615356557
+    },
+    "log_nmicro": {
+     "coef": 0.1895514705067286,
+     "odds_ratio": 1.2087073351674265,
+     "or_lo": 1.1100069297911366,
+     "or_hi": 1.316184055141389,
+     "p": 1.2932116134838045e-05
+    }
+   }
+  },
+  "dude_full|score_rank": {
+   "n_pairs": 180415,
+   "n_ligands": 15921,
+   "n_clusters": 15921,
+   "change_types_kept": [
+    "protonation",
+    "tautomer",
+    "stereo",
+    "resonance"
+   ],
+   "pair_counts": {
+    "protonation": 111467,
+    "tautomer": 41511,
+    "stereo": 27238,
+    "resonance": 199
+   },
+   "n_flips": 97890,
+   "targets_dropped_no_variation": [],
+   "types_vs_tautomer": {
+    "C(change_type, Treatment('tautomer'))[T.protonation]": {
+     "coef": -0.044912030310218315,
+     "odds_ratio": 0.9560815843341901,
+     "or_lo": 0.9379138077773443,
+     "or_hi": 0.9746012782018617,
+     "p": 4.470330767311273e-06
+    },
+    "C(change_type, Treatment('tautomer'))[T.resonance]": {
+     "coef": 0.1368630864980854,
+     "odds_ratio": 1.1466711430108223,
+     "or_lo": 0.8896287701817369,
+     "or_hi": 1.4779813269136315,
+     "p": 0.2905741399873485
+    },
+    "C(change_type, Treatment('tautomer'))[T.stereo]": {
+     "coef": -0.0665012834586402,
+     "odds_ratio": 0.9356617149724478,
+     "or_lo": 0.9080762651805634,
+     "or_hi": 0.9640851527939711,
+     "p": 1.3278280246336952e-05
+    },
+    "z_heavy": {
+     "coef": -0.00411868926805892,
+     "odds_ratio": 0.995889780899931,
+     "or_lo": 0.9936767488667217,
+     "or_hi": 0.9981077416091767,
+     "p": 0.0002848829482429381
+    },
+    "log_nmicro": {
+     "coef": -0.30367096130499727,
+     "odds_ratio": 0.7381036911743559,
+     "or_lo": 0.7330754974092084,
+     "or_hi": 0.7431663735189599,
+     "p": 0.0
+    }
+   },
+   "protonation_vs_rest": {
+    "is_prot": {
+     "coef": -0.018987339634276464,
+     "odds_ratio": 0.9811917844110069,
+     "or_lo": 0.9660086867805237,
+     "or_hi": 0.9966135201167076,
+     "p": 0.017019204216943088
+    },
+    "z_heavy": {
+     "coef": -0.004475029899460406,
+     "odds_ratio": 0.995534968127457,
+     "or_lo": 0.9933404239149937,
+     "or_hi": 0.9977343606519236,
+     "p": 7.054191020202855e-05
+    },
+    "log_nmicro": {
+     "coef": -0.30005214846386513,
+     "odds_ratio": 0.7407795891568021,
+     "or_lo": 0.7358653259727403,
+     "or_hi": 0.7457266708224389,
+     "p": 0.0
+    }
+   }
+  },
+  "litpcba|geom": {
+   "n_pairs": 79498,
+   "n_ligands": 10221,
+   "n_clusters": 10221,
+   "change_types_kept": [
+    "protonation",
+    "tautomer",
+    "stereo",
+    "resonance"
+   ],
+   "pair_counts": {
+    "protonation": 54408,
+    "tautomer": 14475,
+    "stereo": 10582,
+    "resonance": 33
+   },
+   "n_flips": 6921,
+   "targets_dropped_no_variation": [],
+   "types_vs_tautomer": {
+    "C(change_type, Treatment('tautomer'))[T.protonation]": {
+     "coef": -0.3376302394176998,
+     "odds_ratio": 0.7134590481642988,
+     "or_lo": 0.6459274153273719,
+     "or_hi": 0.7880511050138994,
+     "p": 2.836126783226128e-11
+    },
+    "C(change_type, Treatment('tautomer'))[T.resonance]": {
+     "coef": -21.61766561984862,
+     "odds_ratio": 4.088529255251705e-10,
+     "or_lo": 2.3129074156936808e-10,
+     "or_hi": 7.227298143291925e-10,
+     "p": 0.0
+    },
+    "C(change_type, Treatment('tautomer'))[T.stereo]": {
+     "coef": -0.41955184963387965,
+     "odds_ratio": 0.6573413415780037,
+     "or_lo": 0.5682733599883725,
+     "or_hi": 0.760369339425679,
+     "p": 1.6263105432374915e-08
+    },
+    "z_heavy": {
+     "coef": 0.024204210065184806,
+     "odds_ratio": 1.0244995096420098,
+     "or_lo": 0.950530191648153,
+     "or_hi": 1.104225046693979,
+     "p": 0.5267106711927436
+    },
+    "log_nmicro": {
+     "coef": 0.22678835509817818,
+     "odds_ratio": 1.2545643176982446,
+     "or_lo": 1.1283928582410345,
+     "or_hi": 1.394843662600935,
+     "p": 2.7455468442593937e-05
+    }
+   },
+   "protonation_vs_rest": {
+    "is_prot": {
+     "coef": -0.17655747370111483,
+     "odds_ratio": 0.83815060615343,
+     "or_lo": 0.7721007432681545,
+     "or_hi": 0.9098507477428779,
+     "p": 2.488706330379262e-05
+    },
+    "z_heavy": {
+     "coef": 0.024585229902526512,
+     "odds_ratio": 1.0248899386544061,
+     "or_lo": 0.951135438191548,
+     "or_hi": 1.1043636312744494,
+     "p": 0.5187973898302405
+    },
+    "log_nmicro": {
+     "coef": 0.2493233931894772,
+     "odds_ratio": 1.283156930190998,
+     "or_lo": 1.1553462225907811,
+     "or_hi": 1.4251067561419344,
+     "p": 3.203029706221359e-06
+    }
+   }
+  },
+  "litpcba|full_pb": {
+   "n_pairs": 79498,
+   "n_ligands": 10221,
+   "n_clusters": 10221,
+   "change_types_kept": [
+    "protonation",
+    "tautomer",
+    "stereo",
+    "resonance"
+   ],
+   "pair_counts": {
+    "protonation": 54408,
+    "tautomer": 14475,
+    "stereo": 10582,
+    "resonance": 33
+   },
+   "n_flips": 7387,
+   "targets_dropped_no_variation": [],
+   "types_vs_tautomer": {
+    "C(change_type, Treatment('tautomer'))[T.protonation]": {
+     "coef": -0.3245172133557384,
+     "odds_ratio": 0.7228762644164781,
+     "or_lo": 0.6556904029391648,
+     "or_hi": 0.7969463809663299,
+     "p": 7.020949487490636e-11
+    },
+    "C(change_type, Treatment('tautomer'))[T.resonance]": {
+     "coef": -21.676317929880337,
+     "odds_ratio": 3.855624533771505e-10,
+     "or_lo": 2.1634578507310681e-10,
+     "or_hi": 6.871333564643897e-10,
+     "p": 0.0
+    },
+    "C(change_type, Treatment('tautomer'))[T.stereo]": {
+     "coef": -0.35399105319719937,
+     "odds_ratio": 0.7018812469204087,
+     "or_lo": 0.6098626091469478,
+     "or_hi": 0.8077840441269708,
+     "p": 7.930305481870735e-07
+    },
+    "z_heavy": {
+     "coef": 0.10811124913386559,
+     "odds_ratio": 1.1141716891274158,
+     "or_lo": 1.0363815150155062,
+     "or_hi": 1.1978007469908083,
+     "p": 0.0034149169047110687
+    },
+    "log_nmicro": {
+     "coef": 0.207807061561523,
+     "odds_ratio": 1.2309756441171325,
+     "or_lo": 1.1109714166463165,
+     "or_hi": 1.363942414453668,
+     "p": 7.163066339741471e-05
+    }
+   },
+   "protonation_vs_rest": {
+    "is_prot": {
+     "coef": -0.18619885184805604,
+     "odds_ratio": 0.8301085099574534,
+     "or_lo": 0.7651283284232178,
+     "or_hi": 0.9006072742383558,
+     "p": 7.565586911730918e-06
+    },
+    "z_heavy": {
+     "coef": 0.10829526834601888,
+     "odds_ratio": 1.114376736989647,
+     "or_lo": 1.0367901590206436,
+     "or_hi": 1.197769385771115,
+     "p": 0.003269283105204918
+    },
+    "log_nmicro": {
+     "coef": 0.2270081465183284,
+     "odds_ratio": 1.2548400904764365,
+     "or_lo": 1.13352405498044,
+     "or_hi": 1.3891400414030766,
+     "p": 1.2092933450877418e-05
+    }
+   }
+  },
+  "litpcba|score_rank": {
+   "n_pairs": 79498,
+   "n_ligands": 10221,
+   "n_clusters": 10221,
+   "change_types_kept": [
+    "protonation",
+    "tautomer",
+    "stereo",
+    "resonance"
+   ],
+   "pair_counts": {
+    "protonation": 54408,
+    "tautomer": 14475,
+    "stereo": 10582,
+    "resonance": 33
+   },
+   "n_flips": 44641,
+   "targets_dropped_no_variation": [],
+   "types_vs_tautomer": {
+    "C(change_type, Treatment('tautomer'))[T.protonation]": {
+     "coef": -0.0978460113910298,
+     "odds_ratio": 0.9067885281074384,
+     "or_lo": 0.8763610908468927,
+     "or_hi": 0.9382724122457772,
+     "p": 1.9231851279815718e-08
+    },
+    "C(change_type, Treatment('tautomer'))[T.resonance]": {
+     "coef": -0.6050084644121873,
+     "odds_ratio": 0.5460698044602394,
+     "or_lo": 0.27149965505372997,
+     "or_hi": 1.0983153230313745,
+     "p": 0.08970882238857189
+    },
+    "C(change_type, Treatment('tautomer'))[T.stereo]": {
+     "coef": -0.12687703803432215,
+     "odds_ratio": 0.8808419759992413,
+     "or_lo": 0.8373825596494466,
+     "or_hi": 0.9265568977302986,
+     "p": 8.887999008787481e-07
+    },
+    "z_heavy": {
+     "coef": 0.0004297602424206279,
+     "odds_ratio": 1.000429852602584,
+     "or_lo": 0.9962141850410962,
+     "or_hi": 1.004663359553689,
+     "p": 0.841894968979737
+    },
+    "log_nmicro": {
+     "coef": -0.4054103311522284,
+     "odds_ratio": 0.6667031856374805,
+     "or_lo": 0.6597285214172772,
+     "or_hi": 0.6737515861589128,
+     "p": 0.0
+    }
+   },
+   "protonation_vs_rest": {
+    "is_prot": {
+     "coef": -0.04316936689699852,
+     "odds_ratio": 0.9577491653254339,
+     "or_lo": 0.9316012191578558,
+     "or_hi": 0.984631025398149,
+     "p": 0.002238503893089783
+    },
+    "z_heavy": {
+     "coef": 0.0007194973943443879,
+     "odds_ratio": 1.0007197562946837,
+     "or_lo": 0.9965347194954917,
+     "or_hi": 1.0049223685307047,
+     "p": 0.7364963410120454
+    },
+    "log_nmicro": {
+     "coef": -0.39890668820752356,
+     "odds_ratio": 0.6710533156198035,
+     "or_lo": 0.6642630311433221,
+     "or_hi": 0.6779130123036633,
+     "p": 0.0
+    }
+   }
+  },
+  "zinc_charge_mismatch|geom": {
+   "n_pairs": 171514,
+   "n_ligands": 15949,
+   "n_clusters": 15949,
+   "change_types_kept": [
+    "protonation",
+    "tautomer",
+    "stereo",
+    "resonance"
+   ],
+   "pair_counts": {
+    "protonation": 120885,
+    "tautomer": 32534,
+    "stereo": 17963,
+    "resonance": 132
+   },
+   "n_flips": 12507,
+   "targets_dropped_no_variation": [],
+   "types_vs_tautomer": {
+    "C(change_type, Treatment('tautomer'))[T.protonation]": {
+     "coef": -0.48416759096603984,
+     "odds_ratio": 0.6162099220420264,
+     "or_lo": 0.5737870385168051,
+     "or_hi": 0.6617693369382709,
+     "p": 2.200248985028598e-40
+    },
+    "C(change_type, Treatment('tautomer'))[T.resonance]": {
+     "coef": -0.7427810234023625,
+     "odds_ratio": 0.47578889386847617,
+     "or_lo": 0.18215569061699158,
+     "or_hi": 1.242755967501307,
+     "p": 0.12944206807872882
+    },
+    "C(change_type, Treatment('tautomer'))[T.stereo]": {
+     "coef": -0.427444658815513,
+     "odds_ratio": 0.6521734930510656,
+     "or_lo": 0.5889546351045427,
+     "or_hi": 0.7221783133822011,
+     "p": 2.0936062748283996e-16
+    },
+    "z_heavy": {
+     "coef": 0.13324351248954827,
+     "odds_ratio": 1.1425281843411836,
+     "or_lo": 1.0893421802405916,
+     "or_hi": 1.1983109400258953,
+     "p": 4.29195058479925e-08
+    },
+    "log_nmicro": {
+     "coef": 0.21898892010123894,
+     "odds_ratio": 1.2448174841594208,
+     "or_lo": 1.1201545418729075,
+     "or_hi": 1.383354270276042,
+     "p": 4.7522909798384596e-05
+    }
+   },
+   "protonation_vs_rest": {
+    "is_prot": {
+     "coef": -0.3464584670064505,
+     "odds_ratio": 0.7071881903198804,
+     "or_lo": 0.6634860408042874,
+     "or_hi": 0.753768890030694,
+     "p": 1.836055107376733e-26
+    },
+    "z_heavy": {
+     "coef": 0.12384109201942747,
+     "odds_ratio": 1.1318359989350704,
+     "or_lo": 1.0791608899880283,
+     "or_hi": 1.1870822417402098,
+     "p": 3.5223035137013553e-07
+    },
+    "log_nmicro": {
+     "coef": 0.24125132178861602,
+     "odds_ratio": 1.2728408877621362,
+     "or_lo": 1.1458781813472347,
+     "or_hi": 1.413870996002635,
+     "p": 6.800256458050705e-06
+    }
+   }
+  },
+  "zinc_charge_mismatch|full_pb": {
+   "n_pairs": 171514,
+   "n_ligands": 15949,
+   "n_clusters": 15949,
+   "change_types_kept": [
+    "protonation",
+    "tautomer",
+    "stereo",
+    "resonance"
+   ],
+   "pair_counts": {
+    "protonation": 120885,
+    "tautomer": 32534,
+    "stereo": 17963,
+    "resonance": 132
+   },
+   "n_flips": 12718,
+   "targets_dropped_no_variation": [],
+   "types_vs_tautomer": {
+    "C(change_type, Treatment('tautomer'))[T.protonation]": {
+     "coef": -0.4839992316773545,
+     "odds_ratio": 0.6163136754398613,
+     "or_lo": 0.574161922255395,
+     "or_hi": 0.6615599743050039,
+     "p": 6.902421848129261e-41
+    },
+    "C(change_type, Treatment('tautomer'))[T.resonance]": {
+     "coef": 0.06879443469801344,
+     "odds_ratio": 1.071215981676792,
+     "or_lo": 0.3347250713654459,
+     "or_hi": 3.428197579341025,
+     "p": 0.9077215247330739
+    },
+    "C(change_type, Treatment('tautomer'))[T.stereo]": {
+     "coef": -0.41898103733860853,
+     "odds_ratio": 0.6577166672080178,
+     "or_lo": 0.5944509785298441,
+     "or_hi": 0.7277155391233062,
+     "p": 4.675709730716819e-16
+    },
+    "z_heavy": {
+     "coef": 0.14713649455830022,
+     "odds_ratio": 1.1585120828333952,
+     "or_lo": 1.1051237600964317,
+     "or_hi": 1.2144795854844868,
+     "p": 9.808778946232733e-10
+    },
+    "log_nmicro": {
+     "coef": 0.2076065536963544,
+     "odds_ratio": 1.2307288485617078,
+     "or_lo": 1.1090104980521875,
+     "or_hi": 1.3658062762637155,
+     "p": 9.3327755636663e-05
+    }
+   },
+   "protonation_vs_rest": {
+    "is_prot": {
+     "coef": -0.3501909541464278,
+     "odds_ratio": 0.7045535394529178,
+     "or_lo": 0.6612983643204237,
+     "or_hi": 0.7506380126401039,
+     "p": 2.405119329871271e-27
+    },
+    "z_heavy": {
+     "coef": 0.13810592858880902,
+     "odds_ratio": 1.1480971601450738,
+     "or_lo": 1.0951553186459202,
+     "or_hi": 1.2035983085604254,
+     "p": 9.8309659630301e-09
+    },
+    "log_nmicro": {
+     "coef": 0.2298283645292372,
+     "odds_ratio": 1.258384008061593,
+     "or_lo": 1.1344056679899714,
+     "or_hi": 1.3959118474354786,
+     "p": 1.4054046845755273e-05
+    }
+   }
+  },
+  "zinc_charge_mismatch|score_rank": {
+   "n_pairs": 171514,
+   "n_ligands": 15949,
+   "n_clusters": 15949,
+   "change_types_kept": [
+    "protonation",
+    "tautomer",
+    "stereo",
+    "resonance"
+   ],
+   "pair_counts": {
+    "protonation": 120885,
+    "tautomer": 32534,
+    "stereo": 17963,
+    "resonance": 132
+   },
+   "n_flips": 93419,
+   "targets_dropped_no_variation": [],
+   "types_vs_tautomer": {
+    "C(change_type, Treatment('tautomer'))[T.protonation]": {
+     "coef": -0.04677230383346734,
+     "odds_ratio": 0.954304664367807,
+     "or_lo": 0.9343138644208637,
+     "or_hi": 0.9747231921883663,
+     "p": 1.4899586818116757e-05
+    },
+    "C(change_type, Treatment('tautomer'))[T.resonance]": {
+     "coef": -0.14803121344848255,
+     "odds_ratio": 0.8624041959129894,
+     "or_lo": 0.6360023877726644,
+     "or_hi": 1.1693996931882213,
+     "p": 0.3407121738377936
+    },
+    "C(change_type, Treatment('tautomer'))[T.stereo]": {
+     "coef": -0.06191447326460931,
+     "odds_ratio": 0.939963275343682,
+     "or_lo": 0.9065859279800168,
+     "or_hi": 0.9745694607939,
+     "p": 0.0007896796479706585
+    },
+    "z_heavy": {
+     "coef": -0.004771092130665284,
+     "odds_ratio": 0.9952402714499812,
+     "or_lo": 0.9930954915866874,
+     "or_hi": 0.9973896833760535,
+     "p": 1.4606711555472813e-05
+    },
+    "log_nmicro": {
+     "coef": -0.29670108551938734,
+     "odds_ratio": 0.7432661521757169,
+     "or_lo": 0.7381241919569844,
+     "or_hi": 0.748443932592702,
+     "p": 0.0
+    }
+   },
+   "protonation_vs_rest": {
+    "is_prot": {
+     "coef": -0.024415682176176397,
+     "odds_ratio": 0.9758799695248411,
+     "or_lo": 0.9589304168476421,
+     "or_hi": 0.9931291136331907,
+     "p": 0.006310113683880282
+    },
+    "z_heavy": {
+     "coef": -0.005823010708160616,
+     "odds_ratio": 0.9941939101592978,
+     "or_lo": 0.9921581035812481,
+     "or_hi": 0.9962338940034589,
+     "p": 2.579451860506967e-08
+    },
+    "log_nmicro": {
+     "coef": -0.29386139032144637,
+     "odds_ratio": 0.7453798011378975,
+     "or_lo": 0.7403501960869938,
+     "or_hi": 0.7504435750552401,
+     "p": 0.0
+    }
+   }
+  },
+  "zinc_unmatched|geom": {
+   "n_pairs": 164792,
+   "n_ligands": 15930,
+   "n_clusters": 15930,
+   "change_types_kept": [
+    "protonation",
+    "tautomer",
+    "stereo",
+    "resonance"
+   ],
+   "pair_counts": {
+    "protonation": 115612,
+    "tautomer": 30944,
+    "stereo": 18122,
+    "resonance": 114
+   },
+   "n_flips": 11753,
+   "targets_dropped_no_variation": [],
+   "types_vs_tautomer": {
+    "C(change_type, Treatment('tautomer'))[T.protonation]": {
+     "coef": -0.4551246619218193,
+     "odds_ratio": 0.634368881374894,
+     "or_lo": 0.5898575335421249,
+     "or_hi": 0.6822391082135684,
+     "p": 1.4555384183585118e-34
+    },
+    "C(change_type, Treatment('tautomer'))[T.resonance]": {
+     "coef": -0.5708386954917293,
+     "odds_ratio": 0.5650513339062088,
+     "or_lo": 0.21322466298280565,
+     "or_hi": 1.497401874073698,
+     "p": 0.250961500910324
+    },
+    "C(change_type, Treatment('tautomer'))[T.stereo]": {
+     "coef": -0.32064085768146733,
+     "odds_ratio": 0.7256838279677283,
+     "or_lo": 0.6545029371384915,
+     "or_hi": 0.8046060426806985,
+     "p": 1.1481863371538245e-09
+    },
+    "z_heavy": {
+     "coef": 0.15525978855210518,
+     "odds_ratio": 1.1679613446822785,
+     "or_lo": 1.1122480572712667,
+     "or_hi": 1.2264653498417726,
+     "p": 4.786047617803789e-10
+    },
+    "log_nmicro": {
+     "coef": 0.2744030853623738,
+     "odds_ratio": 1.3157450529348518,
+     "or_lo": 1.182265190483942,
+     "or_hi": 1.4642950314843508,
+     "p": 4.963274537367957e-07
+    }
+   },
+   "protonation_vs_rest": {
+    "is_prot": {
+     "coef": -0.3449832191815191,
+     "odds_ratio": 0.7082322380847125,
+     "or_lo": 0.664166254585499,
+     "or_hi": 0.7552219035511237,
+     "p": 6.589734526578509e-26
+    },
+    "z_heavy": {
+     "coef": 0.14880351348966855,
+     "odds_ratio": 1.160444955027354,
+     "or_lo": 1.1051274624147829,
+     "or_hi": 1.2185313816253815,
+     "p": 2.3553865579843234e-09
+    },
+    "log_nmicro": {
+     "coef": 0.2905215797149404,
+     "odds_ratio": 1.3371247233097987,
+     "or_lo": 1.2019346432656413,
+     "or_hi": 1.4875205866673393,
+     "p": 9.186593957146543e-08
+    }
+   }
+  },
+  "zinc_unmatched|full_pb": {
+   "n_pairs": 164792,
+   "n_ligands": 15930,
+   "n_clusters": 15930,
+   "change_types_kept": [
+    "protonation",
+    "tautomer",
+    "stereo",
+    "resonance"
+   ],
+   "pair_counts": {
+    "protonation": 115612,
+    "tautomer": 30944,
+    "stereo": 18122,
+    "resonance": 114
+   },
+   "n_flips": 11940,
+   "targets_dropped_no_variation": [],
+   "types_vs_tautomer": {
+    "C(change_type, Treatment('tautomer'))[T.protonation]": {
+     "coef": -0.45538248826129674,
+     "odds_ratio": 0.6342053454511709,
+     "or_lo": 0.5899288328699982,
+     "or_hi": 0.6818049869542058,
+     "p": 6.033820314421314e-35
+    },
+    "C(change_type, Treatment('tautomer'))[T.resonance]": {
+     "coef": 0.2553052514896561,
+     "odds_ratio": 1.2908555963327442,
+     "or_lo": 0.40315210820546205,
+     "or_hi": 4.133199694777112,
+     "p": 0.6672093553759162
+    },
+    "C(change_type, Treatment('tautomer'))[T.stereo]": {
+     "coef": -0.3230190789851481,
+     "odds_ratio": 0.7239600418132653,
+     "or_lo": 0.653412477348045,
+     "or_hi": 0.8021244777410175,
+     "p": 6.617245563579993e-10
+    },
+    "z_heavy": {
+     "coef": 0.16730568533840343,
+     "odds_ratio": 1.1821155654801312,
+     "or_lo": 1.126119188361852,
+     "or_hi": 1.240896367446844,
+     "p": 1.4073153237737433e-11
+    },
+    "log_nmicro": {
+     "coef": 0.2679240168699216,
+     "odds_ratio": 1.3072478074609857,
+     "or_lo": 1.1758340354510894,
+     "or_hi": 1.4533486687651154,
+     "p": 7.177935300545741e-07
+    }
+   },
+   "protonation_vs_rest": {
+    "is_prot": {
+     "coef": -0.3462679982628733,
+     "odds_ratio": 0.7073229003945855,
+     "or_lo": 0.6634701258326589,
+     "or_hi": 0.7540741714553041,
+     "p": 2.864486117616003e-26
+    },
+    "z_heavy": {
+     "coef": 0.16116569801477307,
+     "odds_ratio": 1.1748796279080551,
+     "or_lo": 1.11921686697222,
+     "or_hi": 1.233310702158701,
+     "p": 7.612105463584967e-11
+    },
+    "log_nmicro": {
+     "coef": 0.28451656314329865,
+     "odds_ratio": 1.3291193275115365,
+     "or_lo": 1.1959642541988766,
+     "or_hi": 1.477099487348857,
+     "p": 1.2742317853901519e-07
+    }
+   }
+  },
+  "zinc_unmatched|score_rank": {
+   "n_pairs": 164792,
+   "n_ligands": 15930,
+   "n_clusters": 15930,
+   "change_types_kept": [
+    "protonation",
+    "tautomer",
+    "stereo",
+    "resonance"
+   ],
+   "pair_counts": {
+    "protonation": 115612,
+    "tautomer": 30944,
+    "stereo": 18122,
+    "resonance": 114
+   },
+   "n_flips": 89987,
+   "targets_dropped_no_variation": [],
+   "types_vs_tautomer": {
+    "C(change_type, Treatment('tautomer'))[T.protonation]": {
+     "coef": -0.061949503823362964,
+     "odds_ratio": 0.9399303484816653,
+     "or_lo": 0.9190349143445323,
+     "or_hi": 0.9613008670372076,
+     "p": 6.634704171074295e-08
+    },
+    "C(change_type, Treatment('tautomer'))[T.resonance]": {
+     "coef": -0.018872449807023142,
+     "odds_ratio": 0.9813045198415733,
+     "or_lo": 0.6811148541074824,
+     "or_hi": 1.4137976214354329,
+     "p": 0.9193135417101493
+    },
+    "C(change_type, Treatment('tautomer'))[T.stereo]": {
+     "coef": -0.08606077522868841,
+     "odds_ratio": 0.9175384659154971,
+     "or_lo": 0.8847676072290863,
+     "or_hi": 0.95152312263234,
+     "p": 3.5206107470942506e-06
+    },
+    "z_heavy": {
+     "coef": -0.0032601905194058027,
+     "odds_ratio": 0.9967451181310679,
+     "or_lo": 0.9945147103256653,
+     "or_hi": 0.9989805280937306,
+     "p": 0.004339573271245606
+    },
+    "log_nmicro": {
+     "coef": -0.30926563433125315,
+     "odds_ratio": 0.7339857723085893,
+     "or_lo": 0.7289200452400459,
+     "or_hi": 0.7390867043229982,
+     "p": 0.0
+    }
+   },
+   "protonation_vs_rest": {
+    "is_prot": {
+     "coef": -0.03022464608395553,
+     "odds_ratio": 0.9702275512450566,
+     "or_lo": 0.9525145543663406,
+     "or_hi": 0.988269939687384,
+     "p": 0.0013039391326425467
+    },
+    "z_heavy": {
+     "coef": -0.004462311254065469,
+     "odds_ratio": 0.9955476300642161,
+     "or_lo": 0.9933983688788341,
+     "or_hi": 0.9977015412709668,
+     "p": 5.192289598342458e-05
+    },
+    "log_nmicro": {
+     "coef": -0.3054386521289408,
+     "odds_ratio": 0.7368001045608421,
+     "or_lo": 0.7318405449156348,
+     "or_hi": 0.7417932743032833,
+     "p": 0.0
+    }
+   }
+  }
+ },
+ "provenance": {
+  "script": "$ANALYSIS_ROOT/scripts/flip_attribution/attribution.py",
+  "config": "$ANALYSIS_ROOT/configs/pose_validity.yaml",
+  "inputs": [],
+  "seed": 20261051,
+  "n_boot": null,
+  "n_perm": null,
+  "tool_versions": {
+   "python": "3.11.15",
+   "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+   "numpy": "2.4.6",
+   "scipy": "1.17.1",
+   "pandas": "3.0.3",
+   "yaml": "6.0.3"
+  }
+ }
+}

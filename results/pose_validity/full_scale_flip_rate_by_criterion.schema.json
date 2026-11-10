@@ -1,0 +1,126 @@
+{
+ "file": "full_scale_flip_rate_by_criterion.csv",
+ "description": "Validity flip rates of the decoy-matching poses (Wilson CI)",
+ "row_grain": "one row per (set, target, role) x criterion x denominator",
+ "n_rows": 552,
+ "n_columns": 12,
+ "delimiter": ",",
+ "file_md5": "eef6c5f67fb9c8603c104420bf7d6b8d",
+ "columns": [
+  {
+   "name": "set",
+   "type": "str",
+   "unit": "",
+   "description": "decoy-matching ligand set",
+   "n_missing": 0
+  },
+  {
+   "name": "target",
+   "type": "str",
+   "unit": "",
+   "description": "receptor target; ALL = pooled over targets",
+   "n_missing": 0
+  },
+  {
+   "name": "role",
+   "type": "str",
+   "unit": "",
+   "description": "active / negative; ALL = both",
+   "n_missing": 0
+  },
+  {
+   "name": "criterion",
+   "type": "str",
+   "unit": "",
+   "description": "geom | full_pb | score_rank",
+   "n_missing": 0
+  },
+  {
+   "name": "denominator",
+   "type": "str",
+   "unit": "",
+   "description": "primary = ligands with a default and >= 2 microstates; best_differs = those whose best microstate is not the default",
+   "n_missing": 0
+  },
+  {
+   "name": "n_ligands",
+   "type": "int",
+   "unit": "",
+   "description": "ligands in the denominator",
+   "n_missing": 0
+  },
+  {
+   "name": "n_flip",
+   "type": "int",
+   "unit": "",
+   "description": "ligands whose default and best microstate differ in the criterion",
+   "n_missing": 0
+  },
+  {
+   "name": "flip_pct",
+   "type": "float",
+   "unit": "%",
+   "description": "100 * n_flip / n_ligands",
+   "n_missing": 0
+  },
+  {
+   "name": "wilson_lo",
+   "type": "float",
+   "unit": "%",
+   "description": "Wilson 95% lower bound of flip_pct",
+   "n_missing": 0
+  },
+  {
+   "name": "wilson_hi",
+   "type": "float",
+   "unit": "%",
+   "description": "Wilson 95% upper bound of flip_pct",
+   "n_missing": 0
+  },
+  {
+   "name": "n_rescue",
+   "type": "int",
+   "unit": "",
+   "description": "default invalid -> best valid",
+   "n_missing": 0
+  },
+  {
+   "name": "n_degrade",
+   "type": "int",
+   "unit": "",
+   "description": "default valid -> best invalid",
+   "n_missing": 0
+  }
+ ],
+ "extra": {
+  "provenance": {
+   "script": "$ANALYSIS_ROOT/scripts/pose_validity/flips_full_scale.py",
+   "config": "$ANALYSIS_ROOT/configs/pose_validity.yaml",
+   "inputs": [
+    {
+     "exists": true,
+     "bytes": 5477936,
+     "md5": "5d555f37b4d328e297835b19a648aca3",
+     "n_records": 52236,
+     "record_unit": "table_rows",
+     "file": "ligand_sets.csv"
+    }
+   ],
+   "seed": 20261031,
+   "n_boot": 2000,
+   "n_perm": null,
+   "tool_versions": {
+    "python": "3.11.15",
+    "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "pandas": "3.0.3",
+    "yaml": "6.0.3"
+   },
+   "extra": {
+    "n_bust_parquet_files": 8668,
+    "max_round": 3
+   }
+  }
+ }
+}

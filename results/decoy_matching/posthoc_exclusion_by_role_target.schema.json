@@ -1,0 +1,146 @@
+{
+ "file": "posthoc_exclusion_by_role_target.csv",
+ "description": "Why ligands of the analysis prefix are not in the gain analysis",
+ "row_grain": "one row per set x target x role",
+ "n_rows": 80,
+ "n_columns": 9,
+ "delimiter": ",",
+ "file_md5": "e5aedef850381965222b4c577754f368",
+ "columns": [
+  {
+   "name": "set",
+   "type": "str",
+   "unit": "",
+   "description": "ligand set",
+   "n_missing": 0
+  },
+  {
+   "name": "target",
+   "type": "str",
+   "unit": "",
+   "description": "receptor target",
+   "n_missing": 0
+  },
+  {
+   "name": "role",
+   "type": "str",
+   "unit": "",
+   "description": "active / negative",
+   "n_missing": 0
+  },
+  {
+   "name": "n_in_prefix",
+   "type": "int",
+   "unit": "",
+   "description": "ligands of the analysis prefix (slice <= max_slice, round <= max_round)",
+   "n_missing": 0
+  },
+  {
+   "name": "n_in_analysis",
+   "type": "int",
+   "unit": "",
+   "description": "of them in the gain analysis",
+   "n_missing": 0
+  },
+  {
+   "name": "n_no_docking_record",
+   "type": "int",
+   "unit": "",
+   "description": "no docking record at all",
+   "n_missing": 0
+  },
+  {
+   "name": "n_default_state_failed",
+   "type": "int",
+   "unit": "",
+   "description": "docking record present, default microstate not docked",
+   "n_missing": 0
+  },
+  {
+   "name": "n_single_docked_microstate",
+   "type": "int",
+   "unit": "",
+   "description": "default docked but no other microstate docked (gain not defined)",
+   "n_missing": 0
+  },
+  {
+   "name": "excluded_fraction",
+   "type": "float",
+   "unit": "",
+   "description": "1 - n_in_analysis / n_in_prefix",
+   "n_missing": 0
+  }
+ ],
+ "extra": {
+  "provenance": {
+   "script": "$ANALYSIS_ROOT/scripts/decoy_matching/posthoc_sensitivity.py",
+   "config": "$ANALYSIS_ROOT/configs/decoy_matching.yaml",
+   "inputs": [
+    {
+     "exists": true,
+     "bytes": 3284877,
+     "md5": "11b1de033c4466d322088a949b6a5c74",
+     "n_records": 16456,
+     "record_unit": "table_rows",
+     "file": "dude_full_per_ligand.csv"
+    },
+    {
+     "exists": true,
+     "bytes": 2099092,
+     "md5": "bf2f1a3bad6805cdb277aafb03a9e707",
+     "n_records": 11096,
+     "record_unit": "table_rows",
+     "file": "litpcba_per_ligand.csv"
+    },
+    {
+     "exists": true,
+     "bytes": 3140342,
+     "md5": "38189099e8fa6fadcf4af567d45398a8",
+     "n_records": 16456,
+     "record_unit": "table_rows",
+     "file": "zinc_unmatched_per_ligand.csv"
+    },
+    {
+     "exists": true,
+     "bytes": 3261858,
+     "md5": "ec66cafec1655a50eba6202195e3b291",
+     "n_records": 16456,
+     "record_unit": "table_rows",
+     "file": "zinc_charge_mismatch_per_ligand.csv"
+    }
+   ],
+   "seed": 20261101,
+   "n_boot": 2000,
+   "n_perm": 5000,
+   "tool_versions": {
+    "python": "3.11.15",
+    "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "pandas": "3.0.3",
+    "yaml": "6.0.3"
+   },
+   "extra": {
+    "post_hoc": true,
+    "consistency_checks": [
+     {
+      "set": "dude_full",
+      "ok": true
+     },
+     {
+      "set": "litpcba",
+      "ok": true
+     },
+     {
+      "set": "zinc_unmatched",
+      "ok": true
+     },
+     {
+      "set": "zinc_charge_mismatch",
+      "ok": true
+     }
+    ]
+   }
+  }
+ }
+}

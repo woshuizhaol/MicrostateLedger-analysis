@@ -1,0 +1,114 @@
+{
+ "file": "posthoc_heavy_atom_bins.csv",
+ "description": "POST HOC: gain medians of actives and negatives inside heavy-atom bins",
+ "row_grain": "one row per ligand set x role x bin (bin ALL = the whole analysis unit)",
+ "n_rows": 48,
+ "n_columns": 7,
+ "delimiter": ",",
+ "file_md5": "3682bb83987b3fe1079c24a99ea6758d",
+ "columns": [
+  {
+   "name": "set",
+   "type": "str",
+   "unit": "",
+   "description": "ligand set",
+   "n_missing": 0
+  },
+  {
+   "name": "role",
+   "type": "str",
+   "unit": "",
+   "description": "active / negative",
+   "n_missing": 0
+  },
+  {
+   "name": "heavy_atom_bin",
+   "type": "str",
+   "unit": "",
+   "description": "ALL or a bin of the heavy-atom count (<=20, 21-25, 26-30, 31-35, >35)",
+   "n_missing": 0
+  },
+  {
+   "name": "n",
+   "type": "int",
+   "unit": "",
+   "description": "ligands of the analysis unit in the bin",
+   "n_missing": 0
+  },
+  {
+   "name": "median_gain",
+   "type": "float",
+   "unit": "kcal/mol",
+   "description": "median gain in the bin",
+   "n_missing": 0
+  },
+  {
+   "name": "mean_heavy_atoms",
+   "type": "float",
+   "unit": "",
+   "description": "mean heavy-atom count in the bin",
+   "n_missing": 0
+  },
+  {
+   "name": "median_heavy_atoms",
+   "type": "int",
+   "unit": "",
+   "description": "median heavy-atom count in the bin",
+   "n_missing": 0
+  }
+ ],
+ "extra": {
+  "provenance": {
+   "script": "$ANALYSIS_ROOT/scripts/decoy_matching/posthoc_descriptive.py",
+   "config": "$ANALYSIS_ROOT/configs/decoy_matching.yaml",
+   "inputs": [
+    {
+     "exists": true,
+     "bytes": 3284877,
+     "md5": "11b1de033c4466d322088a949b6a5c74",
+     "n_records": 16456,
+     "record_unit": "table_rows",
+     "file": "dude_full_per_ligand.csv"
+    },
+    {
+     "exists": true,
+     "bytes": 2099092,
+     "md5": "bf2f1a3bad6805cdb277aafb03a9e707",
+     "n_records": 11096,
+     "record_unit": "table_rows",
+     "file": "litpcba_per_ligand.csv"
+    },
+    {
+     "exists": true,
+     "bytes": 3140342,
+     "md5": "38189099e8fa6fadcf4af567d45398a8",
+     "n_records": 16456,
+     "record_unit": "table_rows",
+     "file": "zinc_unmatched_per_ligand.csv"
+    },
+    {
+     "exists": true,
+     "bytes": 3261858,
+     "md5": "ec66cafec1655a50eba6202195e3b291",
+     "n_records": 16456,
+     "record_unit": "table_rows",
+     "file": "zinc_charge_mismatch_per_ligand.csv"
+    }
+   ],
+   "seed": null,
+   "n_boot": null,
+   "n_perm": null,
+   "tool_versions": {
+    "python": "3.11.15",
+    "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "pandas": "3.0.3",
+    "yaml": "6.0.3"
+   },
+   "extra": {
+    "post_hoc": true
+   }
+  }
+ }
+}

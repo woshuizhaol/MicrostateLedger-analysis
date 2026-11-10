@@ -1,0 +1,163 @@
+{
+ "file": "anchor_constants.csv",
+ "description": "Macroscopic pKa constants of the anchor molecules after merging replicate measurements",
+ "row_grain": "per-constant (one row per macroscopic pKa constant of an anchor molecule after merging replicate measurements)",
+ "n_rows": 4006,
+ "n_columns": 8,
+ "delimiter": ",",
+ "file_md5": "c389df50a2979a19be7217f5385f274d",
+ "columns": [
+  {
+   "name": "mol_id",
+   "type": "str",
+   "unit": "",
+   "description": "anchor molecule",
+   "n_missing": 0
+  },
+  {
+   "name": "source",
+   "type": "str",
+   "unit": "",
+   "description": "source of the constant",
+   "n_missing": 0
+  },
+  {
+   "name": "direction",
+   "type": "str",
+   "unit": "",
+   "description": "AH = conjugate-acid step towards positive charge (pKaH); A = acid step towards negative charge",
+   "n_missing": 0
+  },
+  {
+   "name": "step",
+   "type": "int",
+   "unit": "",
+   "description": "step number inside the direction (1 = closest to the neutral molecule)",
+   "n_missing": 0
+  },
+  {
+   "name": "pka",
+   "type": "float",
+   "unit": "",
+   "description": "median of the replicate measurements at 20-30 C (pKb converted with pKaH = 14 - pKb)",
+   "n_missing": 0
+  },
+  {
+   "name": "n_records",
+   "type": "int",
+   "unit": "count",
+   "description": "records merged into this constant",
+   "n_missing": 0
+  },
+  {
+   "name": "spread",
+   "type": "float",
+   "unit": "pKa units",
+   "description": "max - min of the merged records",
+   "n_missing": 0
+  },
+  {
+   "name": "in_window",
+   "type": "str",
+   "unit": "",
+   "description": "True if pka is inside the gate window",
+   "n_missing": 0
+  }
+ ],
+ "extra": {
+  "provenance": {
+   "script": "$ANALYSIS_ROOT/scripts/charge_state/build_reference_set.py",
+   "config": "$ANALYSIS_ROOT/configs/charge_state.yaml",
+   "inputs": [
+    {
+     "exists": true,
+     "bytes": 7337064,
+     "md5": "178b3358152ae98e398a9135c43bdae3",
+     "n_records": 24211,
+     "record_unit": "table_rows",
+     "file": "iupac_high-confidence_v2_3.csv"
+    },
+    {
+     "exists": true,
+     "bytes": 2386,
+     "md5": "39e910272d3885830533d0714c705f0d",
+     "n_records": 24,
+     "record_unit": "table_rows",
+     "file": "pKa_experimental_values.csv"
+    },
+    {
+     "exists": true,
+     "bytes": 1053,
+     "md5": "5d22df3d474f3e159f6c7fa86b16cba2",
+     "n_records": 22,
+     "record_unit": "table_rows",
+     "file": "SAMPL7_molecule_ID_and_SMILES.csv"
+    },
+    {
+     "exists": true,
+     "bytes": 2100,
+     "md5": "21474bed13c1a51c3111734fb7ae7652",
+     "n_records": 22,
+     "record_unit": "table_rows",
+     "file": "Experimental_Properties_of_SAMPL7_Compounds.csv"
+    },
+    {
+     "exists": true,
+     "bytes": 1074,
+     "md5": "be2d4949de313eb8fdc8e08619b44ec2",
+     "n_records": 23,
+     "record_unit": "table_rows",
+     "file": "SAMPL8_molecule_ID_and_SMILES.csv"
+    },
+    {
+     "exists": true,
+     "bytes": 682,
+     "md5": "27f6a246efbee8de7cf14b58df192e15",
+     "n_records": 24,
+     "record_unit": "table_rows",
+     "file": "pKa.csv"
+    },
+    {
+     "exists": true,
+     "bytes": 3208960,
+     "md5": "3fff0677d2ebbc6ebd4f70caa54acbfe",
+     "n_records": 13022,
+     "record_unit": "table_rows",
+     "file": "chembl_pka_activities.tsv"
+    },
+    {
+     "exists": true,
+     "bytes": 5141,
+     "md5": "7f204cccfa129d7ff147af76827e1e4e",
+     "n_records": 69,
+     "record_unit": "lines",
+     "file": "site_substructures.smarts"
+    }
+   ],
+   "seed": 20261016,
+   "n_boot": null,
+   "n_perm": null,
+   "tool_versions": {
+    "python": "3.11.15",
+    "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "pandas": "3.0.3",
+    "yaml": "6.0.3",
+    "rdkit": "2025.03.6"
+   },
+   "extra": {
+    "dimorphite_dl": "2.0.2",
+    "openbabel": "Open Babel 3.1.0 -- Nov 30 2023 -- 20:41:23",
+    "molgpka_commit": "4dc835219baad18c2e705274ac54d49597703966",
+    "molgpka_weight_acid_md5": "f2125a7fccb4b9d04e677574aa52d1a9",
+    "molgpka_weight_base_md5": "4882070604809094d2b3c75d2db45fb6",
+    "leak_key_files": [
+     "$ANALYSIS_ROOT/raw_outputs/charge_state/leak_keys_chembl37.txt.gz",
+     "$ANALYSIS_ROOT/raw_outputs/charge_state/leak_keys_molgpka_example.txt.gz",
+     "$ANALYSIS_ROOT/raw_outputs/charge_state/leak_keys_pkasolver_train.txt.gz"
+    ]
+   }
+  }
+ }
+}

@@ -1,0 +1,289 @@
+{
+ "status": "TRACED_TO_A_SOURCE_BUT_THE_SOURCE_DOES_NOT_MATCH_THE_MANUSCRIPT_DESCRIPTION",
+ "conclusion": "The only literature item carrying a '20-30%' figure for DFT errors that could be traced is Perry et al., J. Am. Chem. Soc. 2025, 147, 26865 (the original code tags it 'JACS2025_DFT_wrong_dominant_frac'). It reports that periodic DFT models give the wrong qualitative STABILITY ORDERING OF TAUTOMERIC CRYSTAL POLYMORPHS in ~20-30% of the surveyed cases, against a DLPNO-CCSD(T1)-corrected reference. It is not a solution-phase benchmark, uses no implicit solvent, no Tautobase and no experimental tautomer ratios, so it is not a band of 'solvated density-functional treatments' of dominant-tautomer misranking. The manuscript gives no citation for the band. The band must therefore be treated as UNVERIFIED in its current wording (reported to the user; the text is not rewritten here).",
+ "manuscript_text": {
+  "main_sentence": [
+   "-molecule subset, and adding solvation with GFN2-xTB and the ALPB implicit-solvent model [@gfn2;@crest] lowers this only to 31%, with the free-energy error falling from 7.1 to 5.4 kcal mol⁻¹ (Figure 3a). Cost does not buy accuracy here: on the same 150 molecules the cheap RDKit enumeration misranks 26%, no worse than either semi-empirical method (Supplementary Figure S4b), and every method sits above the 20–30% band reported for far costlier solvated density-functional treatments. Dominant-tautomer ranking is intrinsically hard, and even a properly solvated semi-empirical treatment leaves nearly a third of pairs misranked.\n\nAcross the lactam–lactim, keto–enol, and amino–imino systems, the two tautomers differ only in the location of a single mobile proton, and the experimentally dominant "
+  ],
+  "si_sentence": [
+   " GFN2-xTB with the ALPB model 30.7% (free-energy RMSE 7.1 and 5.4 kcal mol⁻¹). On a 24-pair subset small enough for density-functional treatment, ωB97X-D/def2-TZVP with SMD misranks 4.2%, but this subset comprises the smallest and easiest cases; literature density-functional treatments on full sets remain in the 20–30% band, so the 4.2% is not representative of the general difficulty. Even a properly solvated semi-empirical method therefore leaves nearly a third of dominant tautomers misranked. These analyses support the main-text pKa and tautomer results and their conservative framing.\n\nSUPP_FIGURE_ANCHOR_S4\n\n## Supp"
+  ],
+  "citation_keys_in_main_paragraph": [
+   "[@gfn2;@crest]",
+   "[@tautobase]"
+  ],
+  "cites_perry_beran_or_wieder": false
+ },
+ "original_code_tag": {
+  "file": "code/analysis/tautomer_benchmark.py and p3_tautomer_solvated_xtb.py",
+  "key": "literature_ref.JACS2025_DFT_wrong_dominant_frac",
+  "value": "0.20-0.30"
+ },
+ "traced_source": {
+  "authors": "Perry CJ, Ramos SA, Phelps MC, Mueller LJ, Beran GJO.",
+  "title": "Taming Tautomerism in Organic Crystal Structure Prediction.",
+  "journal": "J. Am. Chem. Soc.",
+  "year": "2025",
+  "volume": 147,
+  "issue": 30,
+  "pages": "26865-26876",
+  "doi": "10.1021/jacs.5c08442",
+  "pmcid": "PMC13012796",
+  "abstract_sentence": [
+   "n ∼40% of the cases, sometimes by tens of kJ/mol. Moreover, the DFT errors in the polymorph energy differences are strikingly large: they can reach tens of kJ/mol and produce the wrong qualitative stability ordering in ∼20-30% of the cases. We address the challenge of predicting tautomeric polymorphs through a general solution that combines periodic hybrid DFT with intramolecular coupled-cluster theory corrections to substantially improve agr"
+  ],
+  "full_text_hits_of_20_30pct": [
+   "ciated with crystal polymorphism in ~40% of the cases, sometimes by tens of kJ/mol. Moreover, the DFT errors in the polymorph energy differences are strikingly large: they can reach tens of kJ/mol, and they produce the wrong qualitative stability ordering in ~20–30% of the cases. We address the challenge of predicting tautomeric polymorphs through a general solution that combines periodic hybrid DFT with intramolecular coupled-cluster theory corrections to",
+   "iven the common usage of crystal structure prediction for polymorph de-risking, it is especially concerning that the qualitative polymorph stability ordering predicted by the periodic DFT treatments differs from the final hybrid DFT + ΔDLPNO-CCSD(T1) ones in ~20–30% of the cases in this set. For the DUQMOS, NATKUP, GIQYAJ, and YUYYUM systems, all three DFT models predict the opposite stability polymorph stability ordering compared to the DLPNO-CCSD(T1)-cor",
+   "tautomeric polymorphs is called into question by the observations that the GGA and hybrid DFT frequently predict tautomeric polymorph energy differences with exceptionally large errors (>10 kJ/mol) and that they ranked the polymorph stabilities incorrectly in 20–30% of the cases surveyed. Intramolecular DLPNO-CCSD(Tl) corrections address the large errors that can occur when tautomerization significantly alters the π-conjugation network, and they tend to ma"
+  ],
+  "survey_size": "the abstract says 'Surveying 18 additional examples' (tautomeric crystal polymorph systems); the per-case table is in the paper's SI, which was not retrieved"
+ },
+ "equivalence_check_term_counts_in_paper_body": {
+  "Tautobase": 0,
+  "implicit solvent": 0,
+  "continuum solvation": 0,
+  "SMD": 0,
+  "COSMO": 0,
+  "PCM": 0,
+  "ALPB": 0,
+  "tautomer ratio": 0,
+  "logK": 0,
+  "experimental ratio": 0,
+  "polymorph": 111,
+  "periodic": 14,
+  "DLPNO-CCSD(T1)": 38,
+  "gas-phase": 7,
+  "NMR": 13
+ },
+ "reference_list_starts_at_char": 47579,
+ "why_not_equivalent": [
+  "subject: crystal polymorph relative energies, not dominant tautomer in solution",
+  "method: periodic DFT (GGA / hybrid) with XDM dispersion, judged against DLPNO-CCSD(T1)-corrected gas-phase intramolecular energies, not against experimental tautomer ratios",
+  "no implicit-solvent treatment and no Tautobase appear in the paper body (counts above)",
+  "the quantity is a rate of wrong qualitative stability ordering of polymorphs, not a rate of misranked dominant tautomers"
+ ],
+ "like_for_like_literature_value": {
+  "source_key": "wieder_chemsci2021",
+  "citation": "Wieder M, Fass J, Chodera JD. Chem. Sci. 2021, 12, 11364 (doi 10.1039/d1sc01185e)",
+  "method": "B3LYP/aug-cc-pVTZ // B3LYP/6-31G(d) + SMD(water) transfer free energy, RRHO gas-phase free energies, Tautobase aqueous pairs with numeric logK",
+  "wrong_dominant_pairs": 59,
+  "n_pairs": 460,
+  "rate_pct": 12.83,
+  "wilson_pct": [
+   10.08,
+   16.19
+  ],
+  "quote": [
+   ". 4B (lower panel). For 59 tautomer pairs (13% of the dataset) the method was not "
+  ],
+  "caveats": "a different pair set (460 of the Tautobase aqueous pairs, not our 150); position-only comparison; DFT here still has 13% wrong dominant tautomers, below the band the manuscript quotes; not used for the band relation in misrank_rates.csv"
+ },
+ "band_relation_rule": "BELOW if the Wilson upper end is under the band, ABOVE if the Wilson lower end is over it, else OVERLAP; point_position compares the point estimate (band edges inclusive: IN)",
+ "sources_saved_in": {
+  "perry_html": "$ANALYSIS_ROOT/inputs/external/literature/perry_jacs2025_PMC13012796.html",
+  "perry_record": "$ANALYSIS_ROOT/inputs/external/literature/perry_jacs2025_europepmc_record.json",
+  "wieder_html": "$ANALYSIS_ROOT/inputs/external/literature/wieder_chemsci2021_PMC8409483.html"
+ },
+ "provenance": {
+  "script": "$ANALYSIS_ROOT/scripts/tautomer_ranking/tautomer.py",
+  "config": "$ANALYSIS_ROOT/configs/tautomer_ranking.yaml",
+  "inputs": [
+   {
+    "exists": true,
+    "bytes": 23720,
+    "md5": "bf4e640107aced048f07d6a86fe65ce5",
+    "n_records": 543,
+    "record_unit": "lines",
+    "file": "tautomer_benchmark.py"
+   },
+   {
+    "exists": true,
+    "bytes": 11484,
+    "md5": "1141c735aaddcfe79ab6f02ef82b2432",
+    "n_records": 233,
+    "record_unit": "lines",
+    "file": "p3_tautomer_dft_g16.py"
+   },
+   {
+    "exists": true,
+    "bytes": 15256,
+    "md5": "945338e645e8945bb6f2d8ec45558e2c",
+    "n_records": 334,
+    "record_unit": "lines",
+    "file": "p3_tautomer_solvated_xtb.py"
+   },
+   {
+    "exists": true,
+    "bytes": 3766,
+    "md5": "83d68412b77e0f04f05ccaf58af7fd0e",
+    "n_records": 24,
+    "record_unit": "table_rows",
+    "file": "p3_dft_detail.tsv"
+   },
+   {
+    "exists": true,
+    "bytes": 1239,
+    "md5": "3b40cb7ebb635e619e85ccab6b4909fb",
+    "n_records": 3,
+    "record_unit": "json_top_level_keys",
+    "file": "p3_dft_summary.json"
+   },
+   {
+    "exists": true,
+    "bytes": 25374,
+    "md5": "de18ae3a71fae98070e804f316a281c4",
+    "n_records": 150,
+    "record_unit": "table_rows",
+    "file": "p3_xtb_detail_free.tsv"
+   },
+   {
+    "exists": true,
+    "bytes": 25351,
+    "md5": "6a8afc2914fcfb0d5b245950118b0a78",
+    "n_records": 150,
+    "record_unit": "table_rows",
+    "file": "p3_xtb_detail_opt.tsv"
+   },
+   {
+    "exists": true,
+    "bytes": 2209,
+    "md5": "49978c21dfc5ff9a6aa12acc32fc54c3",
+    "n_records": 7,
+    "record_unit": "json_top_level_keys",
+    "file": "p3_xtb_summary_free.json"
+   },
+   {
+    "exists": true,
+    "bytes": 2218,
+    "md5": "cdc0d01ead8dace7ccda81b8b2d81d72",
+    "n_records": 7,
+    "record_unit": "json_top_level_keys",
+    "file": "p3_xtb_summary_opt.json"
+   },
+   {
+    "exists": true,
+    "bytes": 179626,
+    "md5": "4bc5a70c53bbfe9f450b0b6a670b0f9d",
+    "n_records": 1677,
+    "record_unit": "table_rows",
+    "file": "tautomer_pairs.tsv"
+   },
+   {
+    "exists": true,
+    "bytes": 20246,
+    "md5": "932c572b6a9afb8719a5d30cd092b81b",
+    "n_records": 150,
+    "record_unit": "table_rows",
+    "file": "tautomer_sqm_detail.tsv"
+   },
+   {
+    "exists": true,
+    "bytes": 6445,
+    "md5": "6f64309c5307922ee149cc121311bfbb",
+    "n_records": 3,
+    "record_unit": "json_top_level_keys",
+    "file": "tautomer_summary.json"
+   },
+   {
+    "exists": true,
+    "bytes": 57921,
+    "md5": "c50abeec1511194181cc854decb18e1a",
+    "n_records": 1060,
+    "record_unit": "lines",
+    "file": "camis_paired_proportions_sas.html"
+   },
+   {
+    "exists": true,
+    "bytes": 139150,
+    "md5": "4343f314ea2ff295fe60114f3233f1b3",
+    "n_records": 667,
+    "record_unit": "lines",
+    "file": "newcombe1998_statmed.pdf"
+   },
+   {
+    "exists": true,
+    "bytes": 254204,
+    "md5": "351612e9ad0ceb78c4f639c31c83e4a0",
+    "n_records": 2918,
+    "record_unit": "lines",
+    "file": "perry_jacs2025_PMC13012796.html"
+   },
+   {
+    "exists": true,
+    "bytes": 6568,
+    "md5": "383bd91e37421c4d937168502af8e7c0",
+    "n_records": 4,
+    "record_unit": "json_top_level_keys",
+    "file": "perry_jacs2025_europepmc_record.json"
+   },
+   {
+    "exists": true,
+    "bytes": 261791,
+    "md5": "a2631af79a5a84a6ce1dd1dedcce0112",
+    "n_records": 2891,
+    "record_unit": "lines",
+    "file": "wieder_chemsci2021_PMC8409483.html"
+   },
+   {
+    "exists": true,
+    "bytes": 2209,
+    "md5": "49978c21dfc5ff9a6aa12acc32fc54c3",
+    "n_records": 7,
+    "record_unit": "json_top_level_keys",
+    "file": "tautomer_xtb.json"
+   },
+   {
+    "exists": true,
+    "bytes": 47685,
+    "md5": "faca7dd4203fc2ca5ecdd185aa6d52db",
+    "n_records": 236,
+    "record_unit": "lines",
+    "file": "manuscript_main.md"
+   },
+   {
+    "exists": true,
+    "bytes": 17668,
+    "md5": "dc822632b9709a3a054efe57f1f4cede",
+    "n_records": 89,
+    "record_unit": "lines",
+    "file": "supplementary_materials.md"
+   },
+   {
+    "exists": true,
+    "bytes": 359422,
+    "md5": "df5da62d080229955361c2a9af12a7ec",
+    "n_records": 1681,
+    "record_unit": "lines",
+    "file": "Tautobase_SMIRKS.txt"
+   }
+  ],
+  "seed": 20261015,
+  "n_boot": 200000,
+  "n_perm": null,
+  "tool_versions": {
+   "python": "3.11.15",
+   "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+   "numpy": "2.4.6",
+   "scipy": "1.17.1",
+   "pandas": "3.0.3",
+   "yaml": "6.0.3",
+   "statsmodels": "0.14.6",
+   "rdkit": "2025.03.6"
+  },
+  "extra": {
+   "numpy": "2.4.6",
+   "pandas": "3.0.3",
+   "null_fields_explained": {
+    "n_perm": "no permutation test is used: McNemar and Fisher tests are exact, the paired CI is Newcombe's closed form plus a multinomial bootstrap"
+   },
+   "bootstrap_unit": "tautomer pair (paired multinomial resampling of the four cell counts)",
+   "rdkit_probe_digests": {
+    "2025.03.6": "30881d906b627acb78cc94d34a6c96029a806d6db33a1fe90103b95910e858a4",
+    "2025.09.5": "30881d906b627acb78cc94d34a6c96029a806d6db33a1fe90103b95910e858a4",
+    "2026.03.3": "1593f6ea4c411acfbe289e7705f39c188f52ae2eb52723ab5191e766f4ce5527"
+   },
+   "out_root": "$ANALYSIS_ROOT"
+  }
+ }
+}

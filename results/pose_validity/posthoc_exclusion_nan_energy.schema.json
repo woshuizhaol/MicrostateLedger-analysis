@@ -1,0 +1,142 @@
+{
+ "file": "posthoc_exclusion_nan_energy.csv",
+ "description": "POST HOC: validity flip rates of the decoy-matching poses without the ligands whose PoseBusters energy-ratio check gave no number",
+ "row_grain": "one row per variant x set x role x criterion x denominator",
+ "n_rows": 216,
+ "n_columns": 13,
+ "delimiter": ",",
+ "file_md5": "aa18146eb5cac530711bf48b5427e6ea",
+ "columns": [
+  {
+   "name": "variant",
+   "type": "str",
+   "unit": "",
+   "description": "all / excl_direct / excl_any (see the script header)",
+   "n_missing": 0
+  },
+  {
+   "name": "set",
+   "type": "str",
+   "unit": "",
+   "description": "ligand set",
+   "n_missing": 0
+  },
+  {
+   "name": "role",
+   "type": "str",
+   "unit": "",
+   "description": "active / negative / ALL",
+   "n_missing": 0
+  },
+  {
+   "name": "criterion",
+   "type": "str",
+   "unit": "",
+   "description": "geom | full_pb | score_rank",
+   "n_missing": 0
+  },
+  {
+   "name": "denominator",
+   "type": "str",
+   "unit": "",
+   "description": "primary = ligands with a default and >= 2 docked microstates; best_differs = those whose best microstate is not the default",
+   "n_missing": 0
+  },
+  {
+   "name": "n_ligands",
+   "type": "int",
+   "unit": "",
+   "description": "ligands of the denominator in this variant",
+   "n_missing": 0
+  },
+  {
+   "name": "n_primary_all",
+   "type": "int",
+   "unit": "",
+   "description": "ligands of the primary denominator before any exclusion (same set and role)",
+   "n_missing": 0
+  },
+  {
+   "name": "n_flip",
+   "type": "int",
+   "unit": "",
+   "description": "ligands whose default and best microstate poses differ in validity",
+   "n_missing": 0
+  },
+  {
+   "name": "flip_pct",
+   "type": "float",
+   "unit": "%",
+   "description": "100 * n_flip / n_ligands",
+   "n_missing": 0
+  },
+  {
+   "name": "wilson_lo",
+   "type": "float",
+   "unit": "%",
+   "description": "Wilson 95% lower",
+   "n_missing": 0
+  },
+  {
+   "name": "wilson_hi",
+   "type": "float",
+   "unit": "%",
+   "description": "Wilson 95% upper",
+   "n_missing": 0
+  },
+  {
+   "name": "n_rescue",
+   "type": "int",
+   "unit": "",
+   "description": "default invalid -> best valid",
+   "n_missing": 0
+  },
+  {
+   "name": "n_degrade",
+   "type": "int",
+   "unit": "",
+   "description": "default valid -> best invalid",
+   "n_missing": 0
+  }
+ ],
+ "extra": {
+  "provenance": {
+   "script": "$ANALYSIS_ROOT/scripts/pose_validity/exclusion_sensitivity.py",
+   "config": "$ANALYSIS_ROOT/configs/pose_validity.yaml",
+   "inputs": [
+    {
+     "exists": true,
+     "bytes": 12716778,
+     "md5": "f060ae9af11564a987d7c7c67e477f72",
+     "n_records": 60291,
+     "record_unit": "table_rows",
+     "file": "full_scale_ligand_flips.csv"
+    },
+    {
+     "exists": true,
+     "bytes": 35027437,
+     "md5": "a15af92ea73919a39b9ee1b509674283",
+     "n_records": 119462,
+     "record_unit": "lines",
+     "file": "full_scale_pose_table.parquet"
+    }
+   ],
+   "seed": null,
+   "n_boot": null,
+   "n_perm": null,
+   "tool_versions": {
+    "python": "3.11.15",
+    "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "pandas": "3.0.3",
+    "yaml": "6.0.3"
+   },
+   "extra": {
+    "post_hoc": true,
+    "n_poses": 548338,
+    "n_nan_energy_poses": 1250
+   }
+  }
+ }
+}

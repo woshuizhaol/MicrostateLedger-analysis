@@ -1,0 +1,13 @@
+set,role,n_ligands_primary,n_default_or_best_nan,n_any_microstate_nan,pct_default_or_best_nan,pct_any_microstate_nan
+dude_full,ALL,15921,63,130,0.395704,0.816532
+dude_full,active,4062,17,51,0.418513,1.25554
+dude_full,negative,11859,46,79,0.387891,0.666161
+litpcba,ALL,10221,26,58,0.254378,0.567459
+litpcba,active,2475,6,17,0.242424,0.686869
+litpcba,negative,7746,20,41,0.258198,0.529305
+zinc_charge_mismatch,ALL,15949,27,77,0.16929,0.482789
+zinc_charge_mismatch,active,4062,17,51,0.418513,1.25554
+zinc_charge_mismatch,negative,11887,10,26,0.0841255,0.218726
+zinc_unmatched,ALL,15930,25,70,0.156937,0.439422
+zinc_unmatched,active,4062,17,51,0.418513,1.25554
+zinc_unmatched,negative,11868,8,19,0.0674082,0.160094

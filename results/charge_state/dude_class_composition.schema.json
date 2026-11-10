@@ -1,0 +1,92 @@
+{
+ "file": "dude_class_composition.csv",
+ "description": "Functional-class composition of the 3,584 DUD-E actives and anchor coverage",
+ "row_grain": "per-scheme-stratum (DUD-E actives by primary functional class, and by number of predicted ionisable groups [post hoc])",
+ "n_rows": 12,
+ "n_columns": 6,
+ "delimiter": ",",
+ "file_md5": "72030609530a47eefee21c981d624938",
+ "columns": [
+  {
+   "name": "scheme",
+   "type": "str",
+   "unit": "",
+   "description": "stratification: functional_class (as pre-specified) or n_sites_stratum[post_hoc] (added after the first error table was seen)",
+   "n_missing": 0
+  },
+  {
+   "name": "stratum",
+   "type": "str",
+   "unit": "",
+   "description": "functional class, or '<=1_group' / '>=2_groups' predicted ionisable groups in the pH 2-12 window",
+   "n_missing": 0
+  },
+  {
+   "name": "n_dude",
+   "type": "int",
+   "unit": "ligands",
+   "description": "DUD-E actives in this stratum",
+   "n_missing": 0
+  },
+  {
+   "name": "weight",
+   "type": "float",
+   "unit": "fraction",
+   "description": "n_dude / 3,584",
+   "n_missing": 0
+  },
+  {
+   "name": "n_anchor_complete",
+   "type": "int",
+   "unit": "molecules",
+   "description": "molecules of this stratum in the complete-profile anchor set",
+   "n_missing": 0
+  },
+  {
+   "name": "covered",
+   "type": "str",
+   "unit": "",
+   "description": "True if the stratum has at least one complete-profile anchor molecule",
+   "n_missing": 0
+  }
+ ],
+ "extra": {
+  "provenance": {
+   "script": "$ANALYSIS_ROOT/scripts/charge_state/reference_errors.py",
+   "config": "$ANALYSIS_ROOT/configs/charge_state.yaml",
+   "inputs": [
+    {
+     "exists": true,
+     "bytes": 771888,
+     "md5": "df781cdbf2939ded87390f2f07dedb3b",
+     "n_records": 3371,
+     "record_unit": "table_rows",
+     "file": "anchor_set.csv"
+    },
+    {
+     "exists": true,
+     "bytes": 905959,
+     "md5": "99e2008dbb710c2702b9e9fa8f14d9f8",
+     "n_records": 3584,
+     "record_unit": "table_rows",
+     "file": "dude_single_vs_dominant.tsv"
+    }
+   ],
+   "seed": 20261016,
+   "n_boot": 10000,
+   "n_perm": null,
+   "tool_versions": {
+    "python": "3.11.15",
+    "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "pandas": "3.0.3",
+    "yaml": "6.0.3",
+    "rdkit": "2025.03.6"
+   },
+   "extra": {
+    "openbabel": "Open Babel 3.1.0 -- Nov 30 2023 -- 20:41:23"
+   }
+  }
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "dude": {
+  "dataset": "DUD-E",
+  "n": 3584,
+  "openbabel_ne_default_frac": 0.4498,
+  "openbabel_nonzero_frac": 0.4478,
+  "dimorphite_has_charged_state_frac": 0.7695,
+  "dimorphite_default_absent_frac": 0.0918,
+  "both_tools_disagree_frac": 0.0787
+ },
+ "pdbbind": {
+  "dataset": "PDBbind",
+  "n": 192,
+  "openbabel_ne_default_frac": 0.4271,
+  "openbabel_nonzero_frac": 0.5312,
+  "dimorphite_has_charged_state_frac": 0.8385,
+  "dimorphite_default_absent_frac": 0.1823,
+  "both_tools_disagree_frac": 0.1719
+ }
+}

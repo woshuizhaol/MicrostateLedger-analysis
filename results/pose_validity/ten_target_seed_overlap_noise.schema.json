@@ -1,0 +1,122 @@
+{
+ "file": "ten_target_seed_overlap_noise.csv",
+ "description": "Seed-to-seed disagreement of the validity of the same microstate in the original data",
+ "row_grain": "one row per dataset x criterion",
+ "n_rows": 6,
+ "n_columns": 12,
+ "delimiter": ",",
+ "file_md5": "7c0292e8b8dc7a90b056805dae818ffd",
+ "columns": [
+  {
+   "name": "dataset",
+   "type": "str",
+   "unit": "",
+   "description": "ten_target_main | ten_target_budget6 | ALL",
+   "n_missing": 0
+  },
+  {
+   "name": "criterion",
+   "type": "str",
+   "unit": "",
+   "description": "geom | full_pb",
+   "n_missing": 0
+  },
+  {
+   "name": "n_seed_pairs",
+   "type": "int",
+   "unit": "",
+   "description": "pairs of seeds in which the same compound/microstate was docked",
+   "n_missing": 0
+  },
+  {
+   "name": "n_units",
+   "type": "int",
+   "unit": "",
+   "description": "compound x microstate units",
+   "n_missing": 0
+  },
+  {
+   "name": "n_compounds",
+   "type": "int",
+   "unit": "",
+   "description": "compounds (bootstrap clusters)",
+   "n_missing": 0
+  },
+  {
+   "name": "n_disagree",
+   "type": "int",
+   "unit": "",
+   "description": "pairs whose representative-pose verdict differs",
+   "n_missing": 0
+  },
+  {
+   "name": "disagree_rate",
+   "type": "float",
+   "unit": "",
+   "description": "n_disagree / n_seed_pairs",
+   "n_missing": 0
+  },
+  {
+   "name": "wilson_lo",
+   "type": "float",
+   "unit": "",
+   "description": "Wilson 95% lower (pairs treated as independent; descriptive)",
+   "n_missing": 0
+  },
+  {
+   "name": "wilson_hi",
+   "type": "float",
+   "unit": "",
+   "description": "Wilson 95% upper",
+   "n_missing": 0
+  },
+  {
+   "name": "boot_lo",
+   "type": "float",
+   "unit": "",
+   "description": "compound-cluster bootstrap 2.5%",
+   "n_missing": 0
+  },
+  {
+   "name": "boot_hi",
+   "type": "float",
+   "unit": "",
+   "description": "compound-cluster bootstrap 97.5%",
+   "n_missing": 0
+  },
+  {
+   "name": "mean_abs_score_diff",
+   "type": "float",
+   "unit": "kcal/mol",
+   "description": "mean |Vina score difference| between the two seeds (kcal/mol)",
+   "n_missing": 0
+  }
+ ],
+ "extra": {
+  "provenance": {
+   "script": "$ANALYSIS_ROOT/scripts/pose_validity/seed_overlap_noise.py",
+   "config": "$ANALYSIS_ROOT/configs/pose_validity.yaml",
+   "inputs": [
+    {
+     "exists": true,
+     "bytes": 2588705,
+     "md5": "d7c98826c8edf17a1e1daec3a5609bdd",
+     "n_records": 10393,
+     "record_unit": "lines",
+     "file": "ten_target_rep_pose_table.parquet"
+    }
+   ],
+   "seed": 20261034,
+   "n_boot": 2000,
+   "n_perm": null,
+   "tool_versions": {
+    "python": "3.11.15",
+    "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "pandas": "3.0.3",
+    "yaml": "6.0.3"
+   }
+  }
+ }
+}

@@ -1,0 +1,113 @@
+{
+ "file": "anchor_method_error.csv",
+ "description": "Method-vs-experiment dominant-charge error rates with Wilson CIs on the anchor sets and their variants",
+ "row_grain": "per-method-per-set (5 methods x anchor sets)",
+ "n_rows": 204,
+ "n_columns": 9,
+ "delimiter": ",",
+ "file_md5": "894bfd4c48c4c3d5779719319e9c12b1",
+ "columns": [
+  {
+   "name": "set",
+   "type": "str",
+   "unit": "",
+   "description": "anchor set: complete, complete_relaxed, sensitivity, all, or one of those with a suffix (:excl_ambiguous, :excl_coupled, :IUPAC, :SAMPL, :ChEMBL, :n_sites_1 / :n_sites_ge2 [post hoc], :non_overlap_*)",
+   "n_missing": 0
+  },
+  {
+   "name": "method",
+   "type": "str",
+   "unit": "",
+   "description": "naive (pipeline default), neutral_input (input structure as given, net 0), dimorphite_dom, openbabel, enum_popmax or ml_pka",
+   "n_missing": 0
+  },
+  {
+   "name": "k_wrong",
+   "type": "int",
+   "unit": "molecules",
+   "description": "molecules whose method net charge differs from the experimental dominant charge",
+   "n_missing": 0
+  },
+  {
+   "name": "n",
+   "type": "int",
+   "unit": "molecules",
+   "description": "molecules of the set for which the method produced a charge",
+   "n_missing": 0
+  },
+  {
+   "name": "error_rate",
+   "type": "float",
+   "unit": "fraction",
+   "description": "k_wrong / n",
+   "n_missing": 0
+  },
+  {
+   "name": "wilson_lo",
+   "type": "float",
+   "unit": "fraction",
+   "description": "lower 95% Wilson limit",
+   "n_missing": 0
+  },
+  {
+   "name": "wilson_hi",
+   "type": "float",
+   "unit": "fraction",
+   "description": "upper 95% Wilson limit",
+   "n_missing": 0
+  },
+  {
+   "name": "n_set",
+   "type": "int",
+   "unit": "molecules",
+   "description": "molecules in the set",
+   "n_missing": 0
+  },
+  {
+   "name": "n_failed",
+   "type": "int",
+   "unit": "molecules",
+   "description": "molecules of the set for which the method produced no charge",
+   "n_missing": 0
+  }
+ ],
+ "extra": {
+  "provenance": {
+   "script": "$ANALYSIS_ROOT/scripts/charge_state/reference_errors.py",
+   "config": "$ANALYSIS_ROOT/configs/charge_state.yaml",
+   "inputs": [
+    {
+     "exists": true,
+     "bytes": 771888,
+     "md5": "df781cdbf2939ded87390f2f07dedb3b",
+     "n_records": 3371,
+     "record_unit": "table_rows",
+     "file": "anchor_set.csv"
+    },
+    {
+     "exists": true,
+     "bytes": 905959,
+     "md5": "99e2008dbb710c2702b9e9fa8f14d9f8",
+     "n_records": 3584,
+     "record_unit": "table_rows",
+     "file": "dude_single_vs_dominant.tsv"
+    }
+   ],
+   "seed": 20261016,
+   "n_boot": 10000,
+   "n_perm": null,
+   "tool_versions": {
+    "python": "3.11.15",
+    "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "pandas": "3.0.3",
+    "yaml": "6.0.3",
+    "rdkit": "2025.03.6"
+   },
+   "extra": {
+    "openbabel": "Open Babel 3.1.0 -- Nov 30 2023 -- 20:41:23"
+   }
+  }
+ }
+}

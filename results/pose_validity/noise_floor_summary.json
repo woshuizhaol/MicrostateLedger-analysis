@@ -1,0 +1,16 @@
+{
+ "n_sampled": 1200,
+ "n_used": 1200,
+ "excluded": {
+  "no_noise_record": 0,
+  "noise_not_ok": 0,
+  "units_incomplete": 0,
+  "missing_verdict": 0,
+  "score_mismatch": 0,
+  "n_micro_mismatch": 0
+ },
+ "n_noise_records": 1200,
+ "n_bust_poses": 9600,
+ "conformer_reproduced_fraction": 1.0,
+ "n_units_checked": 2400
+}

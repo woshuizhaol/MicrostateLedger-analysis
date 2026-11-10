@@ -1,0 +1,254 @@
+{
+ "n_ligands": 285,
+ "match_key": "inchikey_skeleton",
+ "min_n_for_inference": 30,
+ "mcs_similarity_min": 0.8,
+ "layerA_exact_anchor_set": 10,
+ "layerA_complete_strict": 5,
+ "layerA_complete_relaxed": 5,
+ "layerA_with_exp_dominant_charge": 10,
+ "layerB_exact_any_record": 34,
+ "layerB_by_source": {
+  "IUPAC": 20,
+  "ChEMBL": 22
+ },
+ "layerB_not_in_anchor_set": 25,
+ "layerC_close_analogue_mcs": 51,
+ "layerC_close_analogue_among_unmatched": 34,
+ "fraction_exact_any_record": 0.11929824561403508,
+ "fraction_complete_strict": 0.017543859649122806,
+ "inference_allowed": false,
+ "matched_complexes_anchor_set": [
+  "1bcu",
+  "1oyt",
+  "1qkt",
+  "1w4o",
+  "2br1",
+  "3dxg",
+  "3f3a",
+  "3f3c",
+  "3lka",
+  "4jsz"
+ ],
+ "matched_complexes_any_record": [
+  "1bcu",
+  "1c5z",
+  "1o0h",
+  "1oyt",
+  "1p1n",
+  "1p1q",
+  "1qkt",
+  "1uto",
+  "1w4o",
+  "2wnc",
+  "2xbv",
+  "2ymd",
+  "3aru",
+  "3dd0",
+  "3dxg",
+  "3ebp",
+  "3f3a",
+  "3f3c",
+  "3f3d",
+  "3f3e",
+  "3gy4",
+  "3kgp",
+  "3lka",
+  "3nq9",
+  "3pww",
+  "3twp",
+  "3u5j",
+  "3u9q",
+  "3ueu",
+  "3uev",
+  "4ddk",
+  "4jsz",
+  "4llx",
+  "5dwr"
+ ],
+ "complete_strict_complexes": [
+  "1qkt",
+  "2br1",
+  "3f3a",
+  "3lka",
+  "4jsz"
+ ],
+ "unmatched_reason_note": "charge-state anchor set keeps neutral, drug-like (MW/rings/HBD/HBA), element-restricted molecules with quality-filtered constants; layer B has no filter.",
+ "agreement_with_experimental_dominant_charge": {
+  "matched_with_exp_dominant": {
+   "dimorphite_dom": {
+    "k": 5,
+    "n": 10
+   },
+   "openbabel": {
+    "k": 6,
+    "n": 10
+   },
+   "enum_popmax": {
+    "k": 5,
+    "n": 10
+   },
+   "ml_pka": {
+    "k": 5,
+    "n": 10
+   },
+   "consensus_ge3": {
+    "k": 5,
+    "n": 6
+   },
+   "single": {
+    "k": 9,
+    "n": 10
+   }
+  },
+  "complete_strict": {
+   "dimorphite_dom": {
+    "k": 4,
+    "n": 5
+   },
+   "openbabel": {
+    "k": 5,
+    "n": 5
+   },
+   "enum_popmax": {
+    "k": 4,
+    "n": 5
+   },
+   "ml_pka": {
+    "k": 4,
+    "n": 5
+   },
+   "consensus_ge3": {
+    "k": 4,
+    "n": 4
+   },
+   "single": {
+    "k": 5,
+    "n": 5
+   }
+  }
+ },
+ "note": "n is far below min_n_for_inference: coverage and descriptive agreement only; no Rp / dRp analysis on the experimentally defined state.",
+ "analogue_table_head": {
+  "1bcu": {
+   "mcs_cover": 1.0,
+   "tanimoto": 1.0,
+   "anchor_mol_id": "A2855"
+  },
+  "1nc1": {
+   "mcs_cover": 0.895,
+   "tanimoto": 0.482,
+   "anchor_mol_id": "A1857"
+  },
+  "1nc3": {
+   "mcs_cover": 0.882,
+   "tanimoto": 0.404,
+   "anchor_mol_id": "A2048"
+  },
+  "1o0h": {
+   "mcs_cover": 1.0,
+   "tanimoto": 0.636,
+   "anchor_mol_id": "A1857"
+  },
+  "1oyt": {
+   "mcs_cover": 1.0,
+   "tanimoto": 1.0,
+   "anchor_mol_id": "A0727"
+  },
+  "1qf1": {
+   "mcs_cover": 0.808,
+   "tanimoto": 0.471,
+   "anchor_mol_id": "A0279"
+  },
+  "1qkt": {
+   "mcs_cover": 1.0,
+   "tanimoto": 1.0,
+   "anchor_mol_id": "A2770"
+  },
+  "1u1b": {
+   "mcs_cover": 1.0,
+   "tanimoto": 0.542,
+   "anchor_mol_id": "A1452"
+  },
+  "1uto": {
+   "mcs_cover": 1.0,
+   "tanimoto": 0.464,
+   "anchor_mol_id": "A2882"
+  },
+  "1w4o": {
+   "mcs_cover": 1.0,
+   "tanimoto": 1.0,
+   "anchor_mol_id": "A0603"
+  },
+  "1z9g": {
+   "mcs_cover": 1.0,
+   "tanimoto": 0.417,
+   "anchor_mol_id": "A0252"
+  },
+  "2br1": {
+   "mcs_cover": 1.0,
+   "tanimoto": 1.0,
+   "anchor_mol_id": "A0094"
+  },
+  "2brb": {
+   "mcs_cover": 1.0,
+   "tanimoto": 0.729,
+   "anchor_mol_id": "A0094"
+  },
+  "2p15": {
+   "mcs_cover": 1.0,
+   "tanimoto": 0.455,
+   "anchor_mol_id": "A2770"
+  },
+  "2weg": {
+   "mcs_cover": 1.0,
+   "tanimoto": 0.44,
+   "anchor_mol_id": "A1291"
+  }
+ },
+ "provenance": {
+  "script": "$ANALYSIS_ROOT/scripts/casf_scoring/reference_coverage.py",
+  "config": "$ANALYSIS_ROOT/configs/casf_scoring.yaml",
+  "inputs": [
+   {
+    "exists": true,
+    "bytes": 771888,
+    "md5": "df781cdbf2939ded87390f2f07dedb3b",
+    "n_records": 3371,
+    "record_unit": "table_rows",
+    "file": "anchor_set.csv"
+   },
+   {
+    "exists": true,
+    "bytes": 7337064,
+    "md5": "178b3358152ae98e398a9135c43bdae3",
+    "n_records": 24211,
+    "record_unit": "table_rows",
+    "file": "iupac_high-confidence_v2_3.csv"
+   },
+   {
+    "exists": true,
+    "bytes": 154722,
+    "md5": "a74168c2559d822f448551d2c1890f2d",
+    "n_records": 1425,
+    "record_unit": "table_rows",
+    "file": "predictor_states.csv"
+   }
+  ],
+  "seed": null,
+  "n_boot": null,
+  "n_perm": null,
+  "tool_versions": {
+   "python": "3.11.15",
+   "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+   "numpy": "2.4.6",
+   "scipy": "1.17.1",
+   "pandas": "3.0.3",
+   "yaml": "6.0.3",
+   "rdkit": "2025.03.6"
+  },
+  "extra": {
+   "n_ligands": 285
+  }
+ }
+}

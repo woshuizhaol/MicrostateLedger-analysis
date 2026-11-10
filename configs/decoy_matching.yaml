@@ -1,0 +1,148 @@
+paths:
+  dude_inputs: $DOCKING_ROOT/verification/C2_dude_vs/inputs/dude_all_targets
+  dude_run018: $DOCKING_ROOT/verification/C2_dude_vs/outputs/ten_target_docking/seed_20260210/docking_run
+  litpcba_ave: $BASE_ROOT/data/raw/lit_pcba/AVE_unbiased
+  zinc_pool: $ANALYSIS_ROOT/inputs/external/zinc20/zinc_pool.tsv
+  receptors: $ANALYSIS_ROOT/inputs/receptors
+  vina: $DOCKING_ROOT/envs/all/bin/vina
+  pipeline_python: $DOCKING_ROOT/envs/all/bin/python
+  conformer_script: $ANALYSIS_ROOT/scripts/decoy_matching/microstate_modules/rdkit_conformers.py
+  protocol: $ANALYSIS_ROOT/configs/docking_protocol.yaml
+pinned_md5:
+  vina: f0fc6b2586d2bd4416030eb56b22e946
+  conformer_script: 075f43cd96f3fed83f4cf4118160e657
+  zinc_pool: 2c7cd2e6862795908239e4201818fa82
+  protocol: 93e12399ffa97fea724f69d6a88cc6ca
+targets:
+  dude:
+  - aa2ar
+  - adrb2
+  - bace1
+  - cdk2
+  - egfr
+  - fa10
+  - hivpr
+  - jak2
+  - pde5a
+  - src
+  litpcba:
+  - aldh1
+  - esr1_ant
+  - fen1
+  - gba
+  - kat2a
+  - mapk1
+  - mtorc1
+  - pkm2
+  - tp53
+  - vdr
+ligand_sets:
+  dude_full:
+    actives: all actives_final.ism of the 10 targets (4,114)
+    negatives: 3 x n_actives decoys per target drawn at random from the target's whole decoys_final.ism
+    seed: 20261015
+    decoys_per_active: 3
+  litpcba:
+    actives: all actives of the target (AVE_unbiased active_T + active_V) when <= 500, else a random 500
+    negatives: 3 x n_actives inactives (inactive_T + inactive_V) drawn at random
+    seed: 20261016
+    actives_cap: 500
+    inactives_per_active: 3
+  zinc_unmatched:
+    negatives: 3 x n_actives (of the same DUD-E target) molecules drawn at random from the ZINC20 drug-like in-stock pool, no property matching, drawn without replacement across targets
+    heavy_atoms:
+    - 15
+    - 40
+    exclude_ecfp4_tanimoto_ge: 0.4
+    seed: 20261017
+    per_active: 3
+  zinc_charge_mismatch:
+    negatives: 'stress test: as zinc_unmatched, but the dominant-net-charge class of the drawn molecules follows the COMPLEMENT of the actives'' class distribution of the target (weights 1 - p_active(class),
+      normalised)'
+    charge_classes:
+    - <=-1
+    - '0'
+    - '+1'
+    - '>=+2'
+    seed: 20261018
+    per_active: 3
+  comparison_litpcba_inactives_per_target: 10000
+  comparison_seed: 20261016
+budget:
+  decision: '3 negatives per active in every negative set; the queue is arranged in ROUNDS so that an interruption leaves a balanced design: round 0 = all actives, round k = the k-th negative of every active
+    in every set and target (k = 1, 2, 3); within a round the targets are interleaved at random'
+docking:
+  exhaustiveness: 8
+  cpu_per_vina: 1
+  n_conformers: 4
+  prune_rmsd: 0.5
+  successes_per_microstate: 1
+  max_abs_charge: 2
+  enumeration: 'msl default policy: Dimorphite pH 6.4-8.4 (max 32 variants), RDKit tautomers (<= 32) and stereo (<= 16), keep all if <= 32 microstates else top 16'
+  microstates_docked: ALL docking-eligible (|q| <= 2) microstates of the ligand (ordered by |q|, microstate_id); the default state is the first of that order, as in ten-target docking
+  seed_base: 20261015
+  nproc: 44
+  keep_top1_pose: true
+  pose_storage: first model of the meeko-exported SDF (top-1 pose) per microstate, gzip member per ligand; all mode scores in the JSONL
+  ligand_task: 'one task = one ligand: enumerate, then dock every eligible microstate sequentially in the worker; results appended to raw_outputs/decoy_matching/dock/<set>__<target>.jsonl by the main process
+    (resumable: ligand ids already present are skipped)'
+gain:
+  default_state: first eligible microstate by (|formal charge|, microstate_id)
+  primary: gain = score(default) - min over docked microstates   (score = Vina top-1 mode, kcal/mol; lower is better; gain >= 0)
+  secondary_first4: same with only the first 4 eligible microstates by (|q|, microstate_id) = the candidate set of the original 'full' strategy
+  min_docked_microstates: 2
+  swing: max - min over docked microstates
+comparison:
+  variables:
+  - dominant_net_charge
+  - n_ionizable_sites
+  - n_microstates
+  - n_tautomers
+  - n_rotatable_bonds
+  - n_heavy_atoms
+  categorical:
+  - dominant_net_charge
+  - n_ionizable_sites
+  continuous:
+  - n_microstates
+  - n_tautomers
+  - n_rotatable_bonds
+  - n_heavy_atoms
+  multiple_testing: Holm over 10 targets x 6 variables per dataset
+  dominant_charge_definition: formal charge of the Dimorphite-DL dominant state at pH 7.4 (precision 0) of the standardised ligand (charge-state convention)
+  sites_definition: number of independent-SMARTS ionisable sites (charge-state charge_common.independent_sites) on the neutral parent
+  first_n_lines_check:
+    decoys: 900
+tests:
+  alpha: 0.05
+  cliffs_delta_equiv_bound: 0.147
+  hl_equiv_bound_kcal: 0.1
+  n_boot_delta: 10000
+  n_boot_hl: 2000
+  seed_boot: 20261019
+  bootstrap: ligands resampled with replacement within target (stratified by target)
+  n_perm: 10000
+  seed_perm: 20261020
+  strata:
+    dominant_charge_classes:
+    - <=-1
+    - '0'
+    - '+1'
+    - '>=+2'
+    n_sites_classes:
+    - '0'
+    - '1'
+    - '>=2'
+    n_microstates_quartiles: quartile cuts of n_microstates computed on the pooled ligands of the dataset being tested
+  van_elteren: stratified Wilcoxon rank-sum (van Elteren) over the strata above; within-stratum label permutation (n_perm) as a check
+  mixed_model: gain ~ is_active + net_charge_class + n_sites_class + n_microstates + n_heavy_atoms + (1 | target); statsmodels MixedLM, REML; fallback GEE with target clusters if non-convergent
+  holm_family: datasets {dude_full, litpcba, zinc_unmatched} x tests {mann_whitney, van_elteren}; zinc_charge_mismatch reported with its own Holm family
+  auc_oracle_bootstrap: dAUC(oracle - default) with targets as the resampling unit, 10,000 resamples
+positive_control:
+  deltas_kcal:
+  - 0.3
+  - 0.6
+  - 1.0
+  dataset: dude_full
+  rule: pass if the stratified test rejects 'activity-independence' at every delta (or at least delta 0.6 and 1.0)
+  seed: 20261021

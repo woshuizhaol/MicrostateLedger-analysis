@@ -1,0 +1,37 @@
+{
+ "n_complexes_redocked": 285,
+ "n_poses": 7101,
+ "n_affected_complexes_with_poses": 178,
+ "pass_rate": {
+  "geom": 0.9618363610759048,
+  "full_pb": 0.9604281087170821,
+  "score_rank": 0.520349246584988,
+  "rmsd_ref": 0.3847345444303619,
+  "plif": 0.45987785825877003
+ },
+ "n_na": {
+  "geom": 0,
+  "full_pb": 0,
+  "score_rank": 0,
+  "rmsd_ref": 0,
+  "plif": 60
+ },
+ "rmsd_reasons": {},
+ "plif_reasons": {
+  "crystal_fingerprint_error:The following residues are fragmented and ProLIF only allows": 60
+ },
+ "plif_route_counts": {
+  "rdkit": 275,
+  "none": 5,
+  "rdkit_nopropcheck": 5
+ },
+ "plif_na_complexes": [
+  "1e66",
+  "1gpk",
+  "1gpn",
+  "2br1",
+  "2p15"
+ ],
+ "n_affected_missing_single_or_dominant": 0,
+ "seconds": 15.4
+}

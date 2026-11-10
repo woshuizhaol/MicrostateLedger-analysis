@@ -1,0 +1,161 @@
+{
+ "file": "property_comparison_zinc_charge_mismatch.csv",
+ "description": "Property-matching comparison of actives vs negatives (zinc_charge_mismatch)",
+ "row_grain": "one row per target x variable",
+ "n_rows": 60,
+ "n_columns": 16,
+ "delimiter": ",",
+ "file_md5": "940bc65fb796d953e5e6e3ee7d09e223",
+ "columns": [
+  {
+   "name": "dataset",
+   "type": "str",
+   "unit": "",
+   "description": "dude / litpcba / zinc_unmatched / zinc_charge_mismatch",
+   "n_missing": 0
+  },
+  {
+   "name": "target",
+   "type": "str",
+   "unit": "",
+   "description": "target",
+   "n_missing": 0
+  },
+  {
+   "name": "variable",
+   "type": "str",
+   "unit": "",
+   "description": "dominant_charge, n_sites, n_microstates, n_tautomers, n_rot, n_heavy",
+   "n_missing": 0
+  },
+  {
+   "name": "kind",
+   "type": "str",
+   "unit": "",
+   "description": "categorical / continuous",
+   "n_missing": 0
+  },
+  {
+   "name": "test",
+   "type": "str",
+   "unit": "",
+   "description": "chi2 (categorical) or ks (continuous)",
+   "n_missing": 0
+  },
+  {
+   "name": "statistic",
+   "type": "float",
+   "unit": "",
+   "description": "chi-square statistic or KS D",
+   "n_missing": 0
+  },
+  {
+   "name": "p",
+   "type": "float",
+   "unit": "",
+   "description": "p value",
+   "n_missing": 0
+  },
+  {
+   "name": "effect_size",
+   "type": "float",
+   "unit": "",
+   "description": "Cramer's V or Cliff's delta (> 0: actives larger)",
+   "n_missing": 0
+  },
+  {
+   "name": "effect_name",
+   "type": "str",
+   "unit": "",
+   "description": "cramers_v / cliffs_delta",
+   "n_missing": 0
+  },
+  {
+   "name": "n_active",
+   "type": "int",
+   "unit": "",
+   "description": "ligands with a successful enumeration among the actives",
+   "n_missing": 0
+  },
+  {
+   "name": "n_negative",
+   "type": "int",
+   "unit": "",
+   "description": "same among the negatives",
+   "n_missing": 0
+  },
+  {
+   "name": "median_active",
+   "type": "float",
+   "unit": "",
+   "description": "median (continuous variables)",
+   "n_missing": 20
+  },
+  {
+   "name": "median_negative",
+   "type": "int",
+   "unit": "",
+   "description": "median (continuous variables)",
+   "n_missing": 20
+  },
+  {
+   "name": "n_classes",
+   "type": "int",
+   "unit": "",
+   "description": "classes used in the chi-square test after pooling expected counts < 1",
+   "n_missing": 40
+  },
+  {
+   "name": "holm_p",
+   "type": "float",
+   "unit": "",
+   "description": "Holm-adjusted p over targets x variables within the dataset",
+   "n_missing": 0
+  },
+  {
+   "name": "significant_holm",
+   "type": "str",
+   "unit": "",
+   "description": "holm_p < alpha",
+   "n_missing": 0
+  }
+ ],
+ "extra": {
+  "provenance": {
+   "script": "$ANALYSIS_ROOT/scripts/decoy_matching/property_comparison.py",
+   "config": "$ANALYSIS_ROOT/configs/decoy_matching.yaml",
+   "inputs": [
+    {
+     "exists": true,
+     "bytes": 51892207,
+     "md5": "ca84c0b01eb7a0eb7dcade5f1cc95811",
+     "n_records": 264289,
+     "record_unit": "table_rows",
+     "file": "ligand_properties_dude.csv"
+    },
+    {
+     "exists": true,
+     "bytes": 16364274,
+     "md5": "edbb589dbdae977509d39b1b19352ff8",
+     "n_records": 95003,
+     "record_unit": "table_rows",
+     "file": "ligand_properties_litpcba.csv"
+    }
+   ],
+   "seed": null,
+   "n_boot": null,
+   "n_perm": null,
+   "tool_versions": {
+    "python": "3.11.15",
+    "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "pandas": "3.0.3",
+    "yaml": "6.0.3"
+   },
+   "extra": {
+    "dataset": "zinc_charge_mismatch"
+   }
+  }
+ }
+}

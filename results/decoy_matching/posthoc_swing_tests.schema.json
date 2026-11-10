@@ -1,0 +1,114 @@
+{
+ "file": "posthoc_swing_tests.csv",
+ "description": "POST HOC: swing (quantity of the original manuscript statement) tested between actives and negatives on the full data",
+ "row_grain": "one row per ligand set",
+ "n_rows": 4,
+ "n_columns": 7,
+ "delimiter": ",",
+ "file_md5": "a8b4fb2f3873ba30f161b9002ed16b71",
+ "columns": [
+  {
+   "name": "set",
+   "type": "str",
+   "unit": "",
+   "description": "ligand set",
+   "n_missing": 0
+  },
+  {
+   "name": "n_active",
+   "type": "int",
+   "unit": "",
+   "description": "actives in the analysis unit (in_analysis)",
+   "n_missing": 0
+  },
+  {
+   "name": "n_negative",
+   "type": "int",
+   "unit": "",
+   "description": "negatives in the analysis unit",
+   "n_missing": 0
+  },
+  {
+   "name": "median_swing_active",
+   "type": "float",
+   "unit": "kcal/mol",
+   "description": "median of max - min Vina score over the docked microstates, actives",
+   "n_missing": 0
+  },
+  {
+   "name": "median_swing_negative",
+   "type": "float",
+   "unit": "kcal/mol",
+   "description": "same, negatives",
+   "n_missing": 0
+  },
+  {
+   "name": "mw_p",
+   "type": "float",
+   "unit": "",
+   "description": "two-sided Mann-Whitney p",
+   "n_missing": 0
+  },
+  {
+   "name": "cliffs_delta",
+   "type": "float",
+   "unit": "",
+   "description": "2U/(n_a n_b) - 1; positive = actives have the larger swing (point estimate, no interval)",
+   "n_missing": 0
+  }
+ ],
+ "extra": {
+  "provenance": {
+   "script": "$ANALYSIS_ROOT/scripts/decoy_matching/posthoc_descriptive.py",
+   "config": "$ANALYSIS_ROOT/configs/decoy_matching.yaml",
+   "inputs": [
+    {
+     "exists": true,
+     "bytes": 3284877,
+     "md5": "11b1de033c4466d322088a949b6a5c74",
+     "n_records": 16456,
+     "record_unit": "table_rows",
+     "file": "dude_full_per_ligand.csv"
+    },
+    {
+     "exists": true,
+     "bytes": 2099092,
+     "md5": "bf2f1a3bad6805cdb277aafb03a9e707",
+     "n_records": 11096,
+     "record_unit": "table_rows",
+     "file": "litpcba_per_ligand.csv"
+    },
+    {
+     "exists": true,
+     "bytes": 3140342,
+     "md5": "38189099e8fa6fadcf4af567d45398a8",
+     "n_records": 16456,
+     "record_unit": "table_rows",
+     "file": "zinc_unmatched_per_ligand.csv"
+    },
+    {
+     "exists": true,
+     "bytes": 3261858,
+     "md5": "ec66cafec1655a50eba6202195e3b291",
+     "n_records": 16456,
+     "record_unit": "table_rows",
+     "file": "zinc_charge_mismatch_per_ligand.csv"
+    }
+   ],
+   "seed": null,
+   "n_boot": null,
+   "n_perm": null,
+   "tool_versions": {
+    "python": "3.11.15",
+    "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "pandas": "3.0.3",
+    "yaml": "6.0.3"
+   },
+   "extra": {
+    "post_hoc": true
+   }
+  }
+ }
+}

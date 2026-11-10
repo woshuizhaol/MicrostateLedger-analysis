@@ -1,0 +1,31 @@
+dataset,metric,definition,k,n,rate,wilson_lo,wilson_hi
+dude,ob_ne_default,OpenBabel net charge differs from the default (naive) net charge,1612,3584,0.4497767857,0.4335525303,0.4661085879
+dude,ob_nonzero,OpenBabel assigns a non-zero net charge (zwitterions count as neutral),1605,3584,0.4478236607,0.4316080683,0.4641509823
+dude,ob_unsanitised,OpenBabel output that RDKit cannot sanitise (baseline treated these as having no OpenBabel charge; they have none here either),96,3584,0.02678571429,0.02198505769,0.0325997006
+dude,ob_unsanitised_divalent_O_anion,"of the unsanitisable OpenBabel outputs, those with an [O-] bonded to two heavy atoms (an invalid valence: an OpenBabel artefact, so their charge is not trusted)",94,96,0.9791666667,0.9271928648,0.9942680301
+dude,ob_ne_default_recovered,"SENSITIVITY: as ob_ne_default, with the charge of unsanitisable OpenBabel outputs read from the unsanitised structure (untrusted)",1703,3584,0.4751674107,0.4588534827,0.4915345146
+dude,ob_nonzero_recovered,"SENSITIVITY: as ob_nonzero, with the charge of unsanitisable OpenBabel outputs read from the unsanitised structure (untrusted)",1696,3584,0.4732142857,0.4569057487,0.489580181
+dude,dd_has_charged,any Dimorphite state at pH 7.4 (default precision) has a non-zero net charge,2758,3584,0.76953125,0.7554596001,0.7830257322
+dude,dd_default_absent,the default (naive) net charge is not among the net charges of the Dimorphite states at pH 7.4,329,3584,0.091796875,0.08277589415,0.1016919722
+dude,both_tools_differ,OpenBabel and Dimorphite both exclude the default net charge,282,3584,0.07868303571,0.07031258034,0.08795568914
+dude,enum_mismatch,Dimorphite dominant net charge differs from the default net charge,2343,3584,0.6537388393,0.6380052667,0.6691431992
+dude,naive_nonzero,the default state has a non-zero net charge,87,3584,0.02427455357,0.01972238487,0.02984542933
+dude,dimorphite_dom_nonzero,the Dimorphite dominant state has a non-zero net charge,2406,3584,0.6713169643,0.6557620869,0.6865049877
+dude,enum_popmax_nonzero,the most populated ensemble member has a non-zero net charge,2398,3584,0.6690848214,0.6535059224,0.6843016463
+dude,ml_pka_nonzero,the MolGpKa-based state has a non-zero net charge,1484,3584,0.4140625,0.3980370321,0.4302719924
+dude,enum_popmax_ne_dom,most populated ensemble member and Dimorphite dominant state differ in net charge,49,3584,0.013671875,0.01035730836,0.01802785302
+pdbbind,ob_ne_default,OpenBabel net charge differs from the default (naive) net charge,82,192,0.4270833333,0.3592204475,0.4978067613
+pdbbind,ob_nonzero,OpenBabel assigns a non-zero net charge (zwitterions count as neutral),102,192,0.53125,0.4607442028,0.6005298506
+pdbbind,ob_unsanitised,OpenBabel output that RDKit cannot sanitise (baseline treated these as having no OpenBabel charge; they have none here either),1,192,0.005208333333,0.0009199911385,0.02890749716
+pdbbind,ob_unsanitised_divalent_O_anion,"of the unsanitisable OpenBabel outputs, those with an [O-] bonded to two heavy atoms (an invalid valence: an OpenBabel artefact, so their charge is not trusted)",0,1,0,0,0.7934506856
+pdbbind,ob_ne_default_recovered,"SENSITIVITY: as ob_ne_default, with the charge of unsanitisable OpenBabel outputs read from the unsanitised structure (untrusted)",83,192,0.4322916667,0.3642250614,0.5030144897
+pdbbind,ob_nonzero_recovered,"SENSITIVITY: as ob_nonzero, with the charge of unsanitisable OpenBabel outputs read from the unsanitised structure (untrusted)",103,192,0.5364583333,0.4658989046,0.605587491
+pdbbind,dd_has_charged,any Dimorphite state at pH 7.4 (default precision) has a non-zero net charge,161,192,0.8385416667,0.7799416918,0.883860553
+pdbbind,dd_default_absent,the default (naive) net charge is not among the net charges of the Dimorphite states at pH 7.4,35,192,0.1822916667,0.134092891,0.242954233
+pdbbind,both_tools_differ,OpenBabel and Dimorphite both exclude the default net charge,33,192,0.171875,0.1250822163,0.2315402234
+pdbbind,enum_mismatch,Dimorphite dominant net charge differs from the default net charge,125,192,0.6510416667,0.5812577656,0.714900159
+pdbbind,naive_nonzero,the default state has a non-zero net charge,35,192,0.1822916667,0.134092891,0.242954233
+pdbbind,dimorphite_dom_nonzero,the Dimorphite dominant state has a non-zero net charge,139,192,0.7239583333,0.6568019825,0.7823287333
+pdbbind,enum_popmax_nonzero,the most populated ensemble member has a non-zero net charge,138,192,0.71875,0.6513435611,0.7775748125
+pdbbind,ml_pka_nonzero,the MolGpKa-based state has a non-zero net charge,101,192,0.5260416667,0.4555969934,0.5954647177
+pdbbind,enum_popmax_ne_dom,most populated ensemble member and Dimorphite dominant state differ in net charge,2,192,0.01041666667,0.002861289378,0.03717854115

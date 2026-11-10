@@ -1,0 +1,178 @@
+{
+ "file": "power_check_injection.csv",
+ "description": "Positive control: detection of an artificial activity-dependent gain by the decoy-matching test battery",
+ "row_grain": "one row per injected offset (0 + 3 deltas)",
+ "n_rows": 4,
+ "n_columns": 19,
+ "delimiter": ",",
+ "file_md5": "f57ba832c415d73a7edbb68c5e06c6ae",
+ "columns": [
+  {
+   "name": "delta_kcal",
+   "type": "float",
+   "unit": "kcal/mol",
+   "description": "offset subtracted from the non-default microstate scores of the actives (0 = no injection)",
+   "n_missing": 0
+  },
+  {
+   "name": "n_active",
+   "type": "int",
+   "unit": "",
+   "description": "actives in the analysis",
+   "n_missing": 0
+  },
+  {
+   "name": "n_negative",
+   "type": "int",
+   "unit": "",
+   "description": "negatives in the analysis",
+   "n_missing": 0
+  },
+  {
+   "name": "median_gain_active",
+   "type": "float",
+   "unit": "kcal/mol",
+   "description": "median injected gain, actives",
+   "n_missing": 0
+  },
+  {
+   "name": "median_gain_negative",
+   "type": "float",
+   "unit": "kcal/mol",
+   "description": "median gain, negatives",
+   "n_missing": 0
+  },
+  {
+   "name": "cliffs_delta",
+   "type": "float",
+   "unit": "",
+   "description": "Cliff's delta (actives vs negatives)",
+   "n_missing": 0
+  },
+  {
+   "name": "cliffs_delta_lo",
+   "type": "float",
+   "unit": "",
+   "description": "bootstrap 2.5th percentile",
+   "n_missing": 0
+  },
+  {
+   "name": "cliffs_delta_hi",
+   "type": "float",
+   "unit": "",
+   "description": "bootstrap 97.5th percentile",
+   "n_missing": 0
+  },
+  {
+   "name": "hl_shift",
+   "type": "float",
+   "unit": "kcal/mol",
+   "description": "Hodges-Lehmann shift",
+   "n_missing": 0
+  },
+  {
+   "name": "mw_p",
+   "type": "float",
+   "unit": "",
+   "description": "Mann-Whitney two-sided p",
+   "n_missing": 0
+  },
+  {
+   "name": "mw_reject",
+   "type": "str",
+   "unit": "",
+   "description": "mw_p < alpha",
+   "n_missing": 0
+  },
+  {
+   "name": "stratified_p",
+   "type": "float",
+   "unit": "",
+   "description": "van Elteren p",
+   "n_missing": 0
+  },
+  {
+   "name": "stratified_reject",
+   "type": "str",
+   "unit": "",
+   "description": "stratified_p < alpha",
+   "n_missing": 0
+  },
+  {
+   "name": "stratified_delta",
+   "type": "float",
+   "unit": "",
+   "description": "stratified Cliff's delta",
+   "n_missing": 0
+  },
+  {
+   "name": "equivalent_cliffs",
+   "type": "str",
+   "unit": "",
+   "description": "TOST equivalence on Cliff's delta (|delta| < bound) holds",
+   "n_missing": 0
+  },
+  {
+   "name": "equivalent_hl",
+   "type": "str",
+   "unit": "",
+   "description": "TOST equivalence on the HL shift holds",
+   "n_missing": 0
+  },
+  {
+   "name": "mixed_coef",
+   "type": "float",
+   "unit": "kcal/mol",
+   "description": "mixed-model coefficient of is_active",
+   "n_missing": 0
+  },
+  {
+   "name": "mixed_p",
+   "type": "float",
+   "unit": "",
+   "description": "its p",
+   "n_missing": 0
+  },
+  {
+   "name": "mixed_reject",
+   "type": "str",
+   "unit": "",
+   "description": "mixed_p < alpha",
+   "n_missing": 0
+  }
+ ],
+ "extra": {
+  "provenance": {
+   "script": "$ANALYSIS_ROOT/scripts/decoy_matching/positive_control.py",
+   "config": "$ANALYSIS_ROOT/configs/decoy_matching.yaml",
+   "inputs": [
+    {
+     "exists": true,
+     "bytes": 3284877,
+     "md5": "11b1de033c4466d322088a949b6a5c74",
+     "n_records": 16456,
+     "record_unit": "table_rows",
+     "file": "dude_full_per_ligand.csv"
+    }
+   ],
+   "seed": 20261021,
+   "n_boot": 10000,
+   "n_perm": 10000,
+   "tool_versions": {
+    "python": "3.11.15",
+    "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "pandas": "3.0.3",
+    "yaml": "6.0.3"
+   },
+   "extra": {
+    "deltas": [
+     0.3,
+     0.6,
+     1.0
+    ]
+   }
+  }
+ }
+}

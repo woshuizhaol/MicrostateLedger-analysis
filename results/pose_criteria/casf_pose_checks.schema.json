@@ -1,0 +1,167 @@
+{
+ "file": "casf_pose_checks.csv",
+ "description": "Pose criteria of the re-docked CASF-2016 poses",
+ "row_grain": "one row per (complex, microstate, seed) pose",
+ "n_rows": 7101,
+ "n_columns": 18,
+ "delimiter": ",",
+ "file_md5": "b4df9c678ae20f184d18ddfa8702ecb1",
+ "columns": [
+  {
+   "name": "pdbid",
+   "type": "str",
+   "unit": "",
+   "description": "CASF-2016 complex",
+   "n_missing": 0
+  },
+  {
+   "name": "microstate_id",
+   "type": "str",
+   "unit": "",
+   "description": "microstate id of raw_outputs/casf_scoring/per_microstate_inplace_scores.csv",
+   "n_missing": 0
+  },
+  {
+   "name": "seed",
+   "type": "int",
+   "unit": "",
+   "description": "Vina seed",
+   "n_missing": 0
+  },
+  {
+   "name": "role",
+   "type": "str",
+   "unit": "",
+   "description": "single | dominant | single+dominant | other",
+   "n_missing": 0
+  },
+  {
+   "name": "vina_score",
+   "type": "float",
+   "unit": "",
+   "description": "top-1 mode score (kcal/mol)",
+   "n_missing": 0
+  },
+  {
+   "name": "conf_rank",
+   "type": "int",
+   "unit": "",
+   "description": "conformer used (0 = lowest energy)",
+   "n_missing": 0
+  },
+  {
+   "name": "geom",
+   "type": "str",
+   "unit": "",
+   "description": "PoseBusters intramolecular checks all True",
+   "n_missing": 0
+  },
+  {
+   "name": "full_pb",
+   "type": "str",
+   "unit": "",
+   "description": "all 22 PoseBusters checks True",
+   "n_missing": 0
+  },
+  {
+   "name": "score_rank",
+   "type": "str",
+   "unit": "",
+   "description": "rank <= ceil(n/2) among the complex's microstates of the same seed",
+   "n_missing": 0
+  },
+  {
+   "name": "rmsd",
+   "type": "float",
+   "unit": "",
+   "description": "symmetry-corrected heavy-atom RMSD to the crystal ligand (A)",
+   "n_missing": 0
+  },
+  {
+   "name": "rmsd_ref",
+   "type": "str",
+   "unit": "",
+   "description": "rmsd <= 2.0 A (empty = NA)",
+   "n_missing": 0
+  },
+  {
+   "name": "plif_tanimoto",
+   "type": "float",
+   "unit": "",
+   "description": "ProLIF Tanimoto to the crystal fingerprint",
+   "n_missing": 60
+  },
+  {
+   "name": "plif",
+   "type": "str",
+   "unit": "",
+   "description": "Tanimoto >= 0.5 (empty = NA)",
+   "n_missing": 60
+  },
+  {
+   "name": "plif_receptor_route",
+   "type": "str",
+   "unit": "",
+   "description": "how the receptor of the fingerprint was built (rdkit | rdkit_nopropcheck | none)",
+   "n_missing": 0
+  },
+  {
+   "name": "pb_timeout",
+   "type": "str",
+   "unit": "",
+   "description": "True when the PoseBusters energy-ratio check hit the CPU guard (internal_energy = NaN, counted as failed); use to exclude these poses in a sensitivity analysis",
+   "n_missing": 0
+  },
+  {
+   "name": "failed_checks",
+   "type": "str",
+   "unit": "",
+   "description": "failed PoseBusters columns",
+   "n_missing": 6820
+  },
+  {
+   "name": "rmsd_reason",
+   "type": "empty",
+   "unit": "",
+   "description": "reason when rmsd is NA",
+   "n_missing": 7101
+  },
+  {
+   "name": "plif_reason",
+   "type": "str",
+   "unit": "",
+   "description": "reason when plif_tanimoto is NA",
+   "n_missing": 7041
+  }
+ ],
+ "extra": {
+  "provenance": {
+   "script": "$ANALYSIS_ROOT/scripts/pose_criteria/criterion_flips.py",
+   "config": "$ANALYSIS_ROOT/configs/pose_validity.yaml",
+   "inputs": [
+    {
+     "exists": true,
+     "bytes": 362795,
+     "md5": "31b667b33f088bc9f14854563bc45973",
+     "n_records": 2367,
+     "record_unit": "table_rows",
+     "file": "per_microstate_inplace_scores.csv"
+    }
+   ],
+   "seed": 20261061,
+   "n_boot": 2000,
+   "n_perm": null,
+   "tool_versions": {
+    "python": "3.11.15",
+    "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "pandas": "3.0.3",
+    "yaml": "6.0.3"
+   },
+   "extra": {
+    "n_checks_files": 285
+   }
+  }
+ }
+}

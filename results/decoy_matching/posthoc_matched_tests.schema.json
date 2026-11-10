@@ -1,0 +1,216 @@
+{
+ "file": "posthoc_matched_tests.csv",
+ "description": "POST HOC sensitivity of the stratified activity-independence test (finer control of n_docked, heavy atoms and target)",
+ "row_grain": "one row per ligand set x post hoc stratification",
+ "n_rows": 20,
+ "n_columns": 19,
+ "delimiter": ",",
+ "file_md5": "c4d6d7b91281f75cbcd7c31d5171bc40",
+ "columns": [
+  {
+   "name": "set",
+   "type": "str",
+   "unit": "",
+   "description": "ligand set",
+   "n_missing": 0
+  },
+  {
+   "name": "post_hoc_stratification",
+   "type": "str",
+   "unit": "",
+   "description": "POST HOC stratification (see the script header)",
+   "n_missing": 0
+  },
+  {
+   "name": "n_ligands_in_analysis",
+   "type": "int",
+   "unit": "",
+   "description": "ligands of the analysis unit (in_analysis)",
+   "n_missing": 0
+  },
+  {
+   "name": "n_ligands_with_stratum",
+   "type": "int",
+   "unit": "",
+   "description": "of them with a defined stratum",
+   "n_missing": 0
+  },
+  {
+   "name": "n_active_used",
+   "type": "int",
+   "unit": "",
+   "description": "actives with a defined stratum",
+   "n_missing": 0
+  },
+  {
+   "name": "n_negative_used",
+   "type": "int",
+   "unit": "",
+   "description": "negatives with a defined stratum",
+   "n_missing": 0
+  },
+  {
+   "name": "n_strata_total",
+   "type": "int",
+   "unit": "",
+   "description": "strata with at least one ligand",
+   "n_missing": 0
+  },
+  {
+   "name": "n_strata_used",
+   "type": "int",
+   "unit": "",
+   "description": "strata containing both roles (the only ones that enter the test)",
+   "n_missing": 0
+  },
+  {
+   "name": "n_ligands_in_used_strata",
+   "type": "int",
+   "unit": "",
+   "description": "ligands in those strata",
+   "n_missing": 0
+  },
+  {
+   "name": "van_elteren_z",
+   "type": "float",
+   "unit": "",
+   "description": "van Elteren Z (positive = actives have the larger gain)",
+   "n_missing": 0
+  },
+  {
+   "name": "van_elteren_p",
+   "type": "float",
+   "unit": "",
+   "description": "two-sided p of Z",
+   "n_missing": 0
+  },
+  {
+   "name": "stratified_delta",
+   "type": "float",
+   "unit": "",
+   "description": "weighted mean within-stratum Cliff's delta (positive = actives larger)",
+   "n_missing": 0
+  },
+  {
+   "name": "delta_ci95_lo",
+   "type": "float",
+   "unit": "",
+   "description": "ligand bootstrap (within target x role, 2,000) 2.5%",
+   "n_missing": 0
+  },
+  {
+   "name": "delta_ci95_hi",
+   "type": "float",
+   "unit": "",
+   "description": "97.5%",
+   "n_missing": 0
+  },
+  {
+   "name": "tost_ci90_lo",
+   "type": "float",
+   "unit": "",
+   "description": "5% of the bootstrap distribution",
+   "n_missing": 0
+  },
+  {
+   "name": "tost_ci90_hi",
+   "type": "float",
+   "unit": "",
+   "description": "95%",
+   "n_missing": 0
+  },
+  {
+   "name": "tost_p",
+   "type": "int",
+   "unit": "",
+   "description": "TOST p (max of the two one-sided bootstrap tail shares)",
+   "n_missing": 0
+  },
+  {
+   "name": "equivalent",
+   "type": "str",
+   "unit": "",
+   "description": "90% interval inside (-0.147, +0.147)",
+   "n_missing": 0
+  },
+  {
+   "name": "permutation_p",
+   "type": "float",
+   "unit": "",
+   "description": "within-stratum label permutation p of the van Elteren T (5,000)",
+   "n_missing": 0
+  }
+ ],
+ "extra": {
+  "provenance": {
+   "script": "$ANALYSIS_ROOT/scripts/decoy_matching/posthoc_sensitivity.py",
+   "config": "$ANALYSIS_ROOT/configs/decoy_matching.yaml",
+   "inputs": [
+    {
+     "exists": true,
+     "bytes": 3284877,
+     "md5": "11b1de033c4466d322088a949b6a5c74",
+     "n_records": 16456,
+     "record_unit": "table_rows",
+     "file": "dude_full_per_ligand.csv"
+    },
+    {
+     "exists": true,
+     "bytes": 2099092,
+     "md5": "bf2f1a3bad6805cdb277aafb03a9e707",
+     "n_records": 11096,
+     "record_unit": "table_rows",
+     "file": "litpcba_per_ligand.csv"
+    },
+    {
+     "exists": true,
+     "bytes": 3140342,
+     "md5": "38189099e8fa6fadcf4af567d45398a8",
+     "n_records": 16456,
+     "record_unit": "table_rows",
+     "file": "zinc_unmatched_per_ligand.csv"
+    },
+    {
+     "exists": true,
+     "bytes": 3261858,
+     "md5": "ec66cafec1655a50eba6202195e3b291",
+     "n_records": 16456,
+     "record_unit": "table_rows",
+     "file": "zinc_charge_mismatch_per_ligand.csv"
+    }
+   ],
+   "seed": 20261101,
+   "n_boot": 2000,
+   "n_perm": 5000,
+   "tool_versions": {
+    "python": "3.11.15",
+    "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "pandas": "3.0.3",
+    "yaml": "6.0.3"
+   },
+   "extra": {
+    "post_hoc": true,
+    "consistency_checks": [
+     {
+      "set": "dude_full",
+      "ok": true
+     },
+     {
+      "set": "litpcba",
+      "ok": true
+     },
+     {
+      "set": "zinc_unmatched",
+      "ok": true
+     },
+     {
+      "set": "zinc_charge_mismatch",
+      "ok": true
+     }
+    ]
+   }
+  }
+ }
+}

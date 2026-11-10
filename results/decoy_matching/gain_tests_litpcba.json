@@ -1,0 +1,354 @@
+{
+ "set": "litpcba",
+ "n_rows": 11096,
+ "n_in_analysis": 10221,
+ "rounds_in_analysis": [
+  0,
+  1,
+  2,
+  3
+ ],
+ "gain": {
+  "gaincol": "gain",
+  "n_active": 2475,
+  "n_negative": 7746,
+  "median_active": 0.251,
+  "median_negative": 0.251,
+  "mean_active": 0.36884808080808085,
+  "mean_negative": 0.3658955589981926,
+  "frac_zero_active": 0.2101010101010101,
+  "frac_zero_negative": 0.19532662019106636,
+  "mann_whitney": {
+   "U": 9611337.5,
+   "p": 0.8402250301528592
+  },
+  "cliffs_delta": {
+   "estimate": 0.0026771719258162907,
+   "ci95": [
+    -0.023345612072180586,
+    0.028542154047576207
+   ],
+   "tost": {
+    "ci90": [
+     -0.019364090165794306,
+     0.024312103738130017
+    ],
+    "p_lower": 0.0,
+    "p_upper": 0.0,
+    "p_tost": 0.0,
+    "equivalent": true
+   },
+   "bound": 0.147
+  },
+  "hodges_lehmann": {
+   "estimate": 1.1203765866450159e-06,
+   "ci95": [
+    -3.650760650692645e-06,
+    3.5037994381902767e-06
+   ],
+   "tost": {
+    "ci90": [
+     -3.650760650692645e-06,
+     3.5037994381902767e-06
+    ],
+    "p_lower": 0.0,
+    "p_upper": 0.0,
+    "p_tost": 0.0,
+    "equivalent": true
+   },
+   "bound": 0.1,
+   "n_boot": 2000
+  },
+  "stratified": {
+   "van_elteren": {
+    "z": 1.452867147667336,
+    "p": 0.1462606439451165,
+    "T": 17.669481093900714,
+    "n_strata": 48,
+    "n_used": 10221
+   },
+   "stratified_delta": 0.01950462393429988,
+   "stratified_delta_ci95": [
+    -0.006738565275519004,
+    0.045593927689813206
+   ],
+   "tost": {
+    "ci90": [
+     -0.0031937931743139213,
+     0.04099973271757471
+    ],
+    "p_lower": 0.0,
+    "p_upper": 0.0,
+    "p_tost": 0.0,
+    "equivalent": true
+   },
+   "permutation_p": 0.1516848315168483,
+   "n_strata_total": 48,
+   "n_strata_used": 48,
+   "n_ligands_in_strata": 10221,
+   "n_ligands_excluded_no_property": 0,
+   "quartile_cuts_n_eligible": [
+    4.0,
+    7.0,
+    12.0
+   ]
+  },
+  "mixed_model": {
+   "n": 10221,
+   "n_groups": 10,
+   "model": "MixedLM",
+   "coef": 0.003953590802675316,
+   "se": 0.009154500838593198,
+   "ci95": [
+    -0.013988901137409075,
+    0.021896082742759705
+   ],
+   "p": 0.6658329998564969,
+   "converged": true,
+   "group_var": 0.002143359971853265
+  },
+  "mixed_model_rank": {
+   "n": 10221,
+   "n_groups": 10,
+   "model": "MixedLM",
+   "coef": 0.003152685564655591,
+   "se": 0.005984484138927911,
+   "ci95": [
+    -0.008576687813694313,
+    0.014882058943005493
+   ],
+   "p": 0.5983255987217813,
+   "converged": true,
+   "group_var": 0.00022305675360719207
+  }
+ },
+ "gain_first4": {
+  "gaincol": "gain_first4",
+  "n_active": 2475,
+  "n_negative": 7746,
+  "median_active": 0.158,
+  "median_negative": 0.15,
+  "mean_active": 0.2734420202020202,
+  "mean_negative": 0.2690658404337723,
+  "frac_zero_active": 0.2917171717171717,
+  "frac_zero_negative": 0.29447456751871937,
+  "mann_whitney": {
+   "U": 9701263.0,
+   "p": 0.35956687517665664
+  },
+  "cliffs_delta": {
+   "estimate": 0.012058410075451054,
+   "ci95": [
+    -0.013595145881745443,
+    0.03763749292564171
+   ],
+   "tost": {
+    "ci90": [
+     -0.009405902557722884,
+     0.03353429466365169
+    ],
+    "p_lower": 0.0,
+    "p_upper": 0.0,
+    "p_tost": 0.0,
+    "equivalent": true
+   },
+   "bound": 0.147
+  },
+  "hodges_lehmann": {
+   "estimate": 1.1203765866450159e-06,
+   "ci95": [
+    -1.714706421093809e-06,
+    3.824234008728707e-06
+   ],
+   "tost": {
+    "ci90": [
+     -1.578807830993461e-06,
+     3.824234008728707e-06
+    ],
+    "p_lower": 0.0,
+    "p_upper": 0.0,
+    "p_tost": 0.0,
+    "equivalent": true
+   },
+   "bound": 0.1,
+   "n_boot": 2000
+  },
+  "stratified": {
+   "van_elteren": {
+    "z": 1.4343737211593834,
+    "p": 0.15146564268785767,
+    "T": 17.366326615754428,
+    "n_strata": 48,
+    "n_used": 10221
+   },
+   "stratified_delta": 0.019169983994461282,
+   "stratified_delta_ci95": [
+    -0.007019152196128148,
+    0.04493866417624311
+   ],
+   "tost": {
+    "ci90": [
+     -0.0029422830325514142,
+     0.040866917848468826
+    ],
+    "p_lower": 0.0,
+    "p_upper": 0.0,
+    "p_tost": 0.0,
+    "equivalent": true
+   },
+   "permutation_p": 0.1526847315268473,
+   "n_strata_total": 48,
+   "n_strata_used": 48,
+   "n_ligands_in_strata": 10221,
+   "n_ligands_excluded_no_property": 0,
+   "quartile_cuts_n_eligible": [
+    4.0,
+    7.0,
+    12.0
+   ]
+  },
+  "mixed_model": {
+   "n": 10221,
+   "n_groups": 10,
+   "model": "MixedLM",
+   "coef": 0.003079220040541629,
+   "se": 0.008451274815484591,
+   "ci95": [
+    -0.01348497422125856,
+    0.01964341430234182
+   ],
+   "p": 0.7155968385905117,
+   "converged": true,
+   "group_var": 0.0
+  },
+  "mixed_model_rank": {
+   "n": 10221,
+   "n_groups": 10,
+   "model": "MixedLM",
+   "coef": 0.005785365568974608,
+   "se": 0.006477621238092639,
+   "ci95": [
+    -0.006910538763178719,
+    0.018481269901127934
+   ],
+   "p": 0.3717869214798645,
+   "converged": true,
+   "group_var": 0.0
+  }
+ },
+ "n_in_analysis_incl_single": 11028,
+ "gain_incl_single": {
+  "gaincol": "gain",
+  "n_active": 2762,
+  "n_negative": 8266,
+  "median_active": 0.1975,
+  "median_negative": 0.224,
+  "mean_active": 0.330520999275887,
+  "mean_negative": 0.34287769174933463,
+  "frac_zero_active": 0.29217958001448224,
+  "frac_zero_negative": 0.2459472538107912,
+  "mann_whitney": {
+   "U": 11054873.0,
+   "p": 0.012072641725717013
+  },
+  "cliffs_delta": {
+   "estimate": -0.03157793027035716,
+   "ci95": [
+    -0.05647546841768962,
+    -0.006357383954897224
+   ],
+   "tost": {
+    "ci90": [
+     -0.052358577217019954,
+     -0.010821205069035994
+    ],
+    "p_lower": 0.0,
+    "p_upper": 0.0,
+    "p_tost": 0.0,
+    "equivalent": true
+   },
+   "bound": 0.147
+  },
+  "hodges_lehmann": {
+   "estimate": 1.1203765866450159e-06,
+   "ci95": [
+    -3.650760650692645e-06,
+    3.5037994381902767e-06
+   ],
+   "tost": {
+    "ci90": [
+     -3.650760650692645e-06,
+     3.5037994381902767e-06
+    ],
+    "p_lower": 0.0,
+    "p_upper": 0.0,
+    "p_tost": 0.0,
+    "equivalent": true
+   },
+   "bound": 0.1,
+   "n_boot": 2000
+  },
+  "stratified": {
+   "van_elteren": {
+    "z": 0.5513472833082542,
+    "p": 0.5813956310846805,
+    "T": 6.848262869459653,
+    "n_strata": 48,
+    "n_used": 11028
+   },
+   "stratified_delta": 0.0068362241120507195,
+   "stratified_delta_ci95": [
+    -0.017904875222491824,
+    0.03111580780559542
+   ],
+   "tost": {
+    "ci90": [
+     -0.013955134639654147,
+     0.026934520117625725
+    ],
+    "p_lower": 0.0,
+    "p_upper": 0.0,
+    "p_tost": 0.0,
+    "equivalent": true
+   },
+   "permutation_p": 0.5762423757624238,
+   "n_strata_total": 48,
+   "n_strata_used": 48,
+   "n_ligands_in_strata": 11028,
+   "n_ligands_excluded_no_property": 0,
+   "quartile_cuts_n_eligible": [
+    3.0,
+    6.0,
+    12.0
+   ]
+  },
+  "mixed_model": {
+   "n": 11028,
+   "n_groups": 10,
+   "model": "MixedLM",
+   "coef": -0.005068793262458629,
+   "se": 0.008436236910342712,
+   "ci95": [
+    -0.021603513771777806,
+    0.011465927246860547
+   ],
+   "p": 0.5479493483206813,
+   "converged": true,
+   "group_var": 0.0
+  },
+  "mixed_model_rank": {
+   "n": 11028,
+   "n_groups": 10,
+   "model": "MixedLM",
+   "coef": -0.00866223523188145,
+   "se": 0.005427162284679188,
+   "ci95": [
+    -0.019299277848106776,
+    0.0019748073843438747
+   ],
+   "p": 0.11046887454334418,
+   "converged": true,
+   "group_var": 0.0
+  }
+ }
+}

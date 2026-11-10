@@ -1,0 +1,194 @@
+{
+ "provenance": {
+  "scatter": "$DOCKING_ROOT/verification/C2_dude_vs/outputs/figure_data/data/fig3_prior_empirical_scatter.csv",
+  "rows": "$DOCKING_ROOT/verification/C2_dude_vs/outputs/figure_data/data/fig3_run019_rows.csv",
+  "run": "ten-target docking (single seed) single-seed 20260210",
+  "seed_note": "empirical_obs_count all=1 (single seed)",
+  "default_rule": "ORDER BY ABS(formal_charge), microstate_id (single strategy candidate_mids[0])",
+  "best_rule": "argmin empirical_best_vina over docked microstates",
+  "rankable_def": ">=2 docked microstates with empirical vina"
+ },
+ "n_scatter_microstates": 2168,
+ "n_rankable_ligands": 391,
+ "swing_kcal": {
+  "n_ligands": 391,
+  "median": 0.74,
+  "median_ci95": [
+   0.667,
+   0.806
+  ],
+  "mean": 0.8457,
+  "std": 0.5314,
+  "q1": 0.4905,
+  "q3": 1.1015,
+  "iqr": 0.611,
+  "min": 0.01,
+  "max": 3.632
+ },
+ "microstate_vina_std": {
+  "median": 0.2664,
+  "mean": 0.3012,
+  "q1": 0.1764,
+  "q3": 0.3911
+ },
+ "discrimination_signal_best": {
+  "n_active": 99,
+  "n_decoy": 292,
+  "median_active": -9.665,
+  "median_decoy": -8.9925,
+  "abs_median_diff": 0.6725,
+  "mean_active": -9.5061,
+  "mean_decoy": -8.9109,
+  "abs_mean_diff": 0.5952,
+  "cliffs_delta": -0.2602,
+  "cohens_d": -0.449,
+  "mannwhitney_U": 10692.5,
+  "mannwhitney_p": 0.00010871148662917005
+ },
+ "discrimination_signal_default": {
+  "n_active": 99,
+  "n_decoy": 292,
+  "median_active": -9.178,
+  "median_decoy": -8.4625,
+  "abs_median_diff": 0.7155,
+  "mean_active": -9.0801,
+  "mean_decoy": -8.4693,
+  "abs_mean_diff": 0.6108,
+  "cliffs_delta": -0.2809,
+  "cohens_d": -0.4883,
+  "mannwhitney_U": 10393.5,
+  "mannwhitney_p": 2.941272905666024e-05
+ },
+ "discrimination_signal_best_per_target": {
+  "aa2ar": 0.167,
+  "adrb2": 1.3825,
+  "bace1": 0.404,
+  "cdk2": 0.9995,
+  "egfr": 0.275,
+  "fa10": 1.574,
+  "hivpr": 0.217,
+  "jak2": 0.794,
+  "pde5a": 0.623,
+  "src": 1.028
+ },
+ "discrimination_signal_best_per_target_mean": 0.7464,
+ "discrimination_signal_variants": {
+  "best__all_docked": {
+   "nA": 100,
+   "nD": 298,
+   "abs_median_diff": 0.738,
+   "abs_mean_diff": 0.5541
+  },
+  "best__ge2_docked": {
+   "nA": 99,
+   "nD": 292,
+   "abs_median_diff": 0.6725,
+   "abs_mean_diff": 0.5952
+  },
+  "default__all_docked": {
+   "nA": 100,
+   "nD": 298,
+   "abs_median_diff": 0.655,
+   "abs_mean_diff": 0.565
+  },
+  "default__ge2_docked": {
+   "nA": 99,
+   "nD": 292,
+   "abs_median_diff": 0.7155,
+   "abs_mean_diff": 0.6108
+  },
+  "mean__all_docked": {
+   "nA": 100,
+   "nD": 298,
+   "abs_median_diff": 0.6875,
+   "abs_mean_diff": 0.5124
+  },
+  "mean__ge2_docked": {
+   "nA": 99,
+   "nD": 292,
+   "abs_median_diff": 0.6564,
+   "abs_mean_diff": 0.5572
+  },
+  "worst__all_docked": {
+   "nA": 100,
+   "nD": 298,
+   "abs_median_diff": 0.616,
+   "abs_mean_diff": 0.4819
+  },
+  "worst__ge2_docked": {
+   "nA": 99,
+   "nD": 292,
+   "abs_median_diff": 0.617,
+   "abs_mean_diff": 0.5308
+  }
+ },
+ "best_ne_default": {
+  "n_comparable": 391,
+  "n_best_ne_default": 323,
+  "frac_best_ne_default": 0.8261,
+  "frac_default_is_best": 0.1739,
+  "frac_active": 0.8586,
+  "frac_decoy": 0.8151
+ },
+ "best_ne_default_per_target": {
+  "aa2ar": {
+   "n": 40,
+   "frac": 0.825
+  },
+  "adrb2": {
+   "n": 40,
+   "frac": 0.9
+  },
+  "bace1": {
+   "n": 40,
+   "frac": 0.85
+  },
+  "cdk2": {
+   "n": 40,
+   "frac": 0.875
+  },
+  "egfr": {
+   "n": 39,
+   "frac": 0.8718
+  },
+  "fa10": {
+   "n": 40,
+   "frac": 0.75
+  },
+  "hivpr": {
+   "n": 36,
+   "frac": 0.6944
+  },
+  "jak2": {
+   "n": 40,
+   "frac": 0.825
+  },
+  "pde5a": {
+   "n": 40,
+   "frac": 0.825
+  },
+  "src": {
+   "n": 36,
+   "frac": 0.8333
+  }
+ },
+ "label_independence": {
+  "swing_active_median": 0.788,
+  "swing_decoy_median": 0.7305,
+  "swing_mannwhitney_U": 15758.0,
+  "swing_mannwhitney_p": 0.1797980267410283,
+  "gain_active_median": 0.314,
+  "gain_decoy_median": 0.319,
+  "gain_mannwhitney_U": 14609.0,
+  "gain_mannwhitney_p": 0.8733465984262032,
+  "gain_overall_median": 0.318,
+  "gain_overall_mean": 0.4376
+ },
+ "swing_vs_signal_ratio_best": 1.1,
+ "original_diagnostic_reference": {
+  "swing": "~0.85",
+  "signal": "~0.51",
+  "best_ne_default": "83-94%",
+  "label_indep_p": "~0.88"
+ }
+}

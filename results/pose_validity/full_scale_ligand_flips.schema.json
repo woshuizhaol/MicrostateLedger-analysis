@@ -1,0 +1,252 @@
+{
+ "file": "full_scale_ligand_flips.csv",
+ "description": "Default vs best-scoring microstate validity of the decoy-matching poses",
+ "row_grain": "one row per (set, target, ligand)",
+ "n_rows": 60291,
+ "n_columns": 30,
+ "delimiter": ",",
+ "file_md5": "f060ae9af11564a987d7c7c67e477f72",
+ "columns": [
+  {
+   "name": "set",
+   "type": "str",
+   "unit": "",
+   "description": "decoy-matching ligand set",
+   "n_missing": 0
+  },
+  {
+   "name": "target",
+   "type": "str",
+   "unit": "",
+   "description": "receptor target; ALL = pooled over targets",
+   "n_missing": 0
+  },
+  {
+   "name": "role",
+   "type": "str",
+   "unit": "",
+   "description": "active / negative; ALL = both",
+   "n_missing": 0
+  },
+  {
+   "name": "round",
+   "type": "int",
+   "unit": "",
+   "description": "0 = active, k = k-th negative of the active",
+   "n_missing": 0
+  },
+  {
+   "name": "ligand_id",
+   "type": "str",
+   "unit": "",
+   "description": "database id",
+   "n_missing": 0
+  },
+  {
+   "name": "uid",
+   "type": "str",
+   "unit": "",
+   "description": "md5(target|smiles)[:12], key of the decoy-matching docking records",
+   "n_missing": 0
+  },
+  {
+   "name": "n_micro",
+   "type": "int",
+   "unit": "",
+   "description": "microstates with a docked pose (and a PoseBusters verdict)",
+   "n_missing": 0
+  },
+  {
+   "name": "has_default",
+   "type": "str",
+   "unit": "",
+   "description": "the default microstate was docked",
+   "n_missing": 0
+  },
+  {
+   "name": "best_microstate",
+   "type": "str",
+   "unit": "",
+   "description": "microstate of the lowest Vina score among the docked microstates",
+   "n_missing": 0
+  },
+  {
+   "name": "best_score",
+   "type": "float",
+   "unit": "kcal/mol",
+   "description": "lowest Vina score of the ligand",
+   "n_missing": 0
+  },
+  {
+   "name": "default_microstate",
+   "type": "str",
+   "unit": "",
+   "description": "default microstate id (original: first candidate of the single strategy; decoy-matching: order 0)",
+   "n_missing": 566
+  },
+  {
+   "name": "default_score",
+   "type": "float",
+   "unit": "kcal/mol",
+   "description": "Vina score of the default microstate's representative pose",
+   "n_missing": 566
+  },
+  {
+   "name": "best_is_default",
+   "type": "str",
+   "unit": "",
+   "description": "best-scoring microstate equals the default microstate",
+   "n_missing": 566
+  },
+  {
+   "name": "gain",
+   "type": "float",
+   "unit": "kcal/mol",
+   "description": "default_score - best_score (>= 0)",
+   "n_missing": 566
+  },
+  {
+   "name": "default_geom",
+   "type": "str",
+   "unit": "",
+   "description": "verdict of the default microstate's representative pose under geom",
+   "n_missing": 566
+  },
+  {
+   "name": "best_geom",
+   "type": "str",
+   "unit": "",
+   "description": "verdict of the best-scoring microstate's representative pose under geom",
+   "n_missing": 566
+  },
+  {
+   "name": "flip_geom",
+   "type": "str",
+   "unit": "",
+   "description": "default and best microstate differ in validity under geom",
+   "n_missing": 566
+  },
+  {
+   "name": "rescue_geom",
+   "type": "str",
+   "unit": "",
+   "description": "default invalid and best valid under geom",
+   "n_missing": 566
+  },
+  {
+   "name": "degrade_geom",
+   "type": "str",
+   "unit": "",
+   "description": "default valid and best invalid under geom",
+   "n_missing": 566
+  },
+  {
+   "name": "default_full_pb",
+   "type": "str",
+   "unit": "",
+   "description": "verdict of the default microstate's representative pose under full_pb",
+   "n_missing": 566
+  },
+  {
+   "name": "best_full_pb",
+   "type": "str",
+   "unit": "",
+   "description": "verdict of the best-scoring microstate's representative pose under full_pb",
+   "n_missing": 566
+  },
+  {
+   "name": "flip_full_pb",
+   "type": "str",
+   "unit": "",
+   "description": "default and best microstate differ in validity under full_pb",
+   "n_missing": 566
+  },
+  {
+   "name": "rescue_full_pb",
+   "type": "str",
+   "unit": "",
+   "description": "default invalid and best valid under full_pb",
+   "n_missing": 566
+  },
+  {
+   "name": "degrade_full_pb",
+   "type": "str",
+   "unit": "",
+   "description": "default valid and best invalid under full_pb",
+   "n_missing": 566
+  },
+  {
+   "name": "default_score_rank",
+   "type": "str",
+   "unit": "",
+   "description": "verdict of the default microstate's representative pose under score_rank",
+   "n_missing": 566
+  },
+  {
+   "name": "best_score_rank",
+   "type": "str",
+   "unit": "",
+   "description": "verdict of the best-scoring microstate's representative pose under score_rank",
+   "n_missing": 566
+  },
+  {
+   "name": "flip_score_rank",
+   "type": "str",
+   "unit": "",
+   "description": "default and best microstate differ in validity under score_rank",
+   "n_missing": 566
+  },
+  {
+   "name": "rescue_score_rank",
+   "type": "str",
+   "unit": "",
+   "description": "default invalid and best valid under score_rank",
+   "n_missing": 566
+  },
+  {
+   "name": "degrade_score_rank",
+   "type": "str",
+   "unit": "",
+   "description": "default valid and best invalid under score_rank",
+   "n_missing": 566
+  },
+  {
+   "name": "n_microstates_failed",
+   "type": "int",
+   "unit": "",
+   "description": "eligible microstates whose docking failed",
+   "n_missing": 0
+  }
+ ],
+ "extra": {
+  "provenance": {
+   "script": "$ANALYSIS_ROOT/scripts/pose_validity/flips_full_scale.py",
+   "config": "$ANALYSIS_ROOT/configs/pose_validity.yaml",
+   "inputs": [
+    {
+     "exists": true,
+     "bytes": 5477936,
+     "md5": "5d555f37b4d328e297835b19a648aca3",
+     "n_records": 52236,
+     "record_unit": "table_rows",
+     "file": "ligand_sets.csv"
+    }
+   ],
+   "seed": 20261031,
+   "n_boot": 2000,
+   "n_perm": null,
+   "tool_versions": {
+    "python": "3.11.15",
+    "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "pandas": "3.0.3",
+    "yaml": "6.0.3"
+   },
+   "extra": {
+    "n_bust_parquet_files": 8668,
+    "max_round": 3
+   }
+  }
+ }
+}

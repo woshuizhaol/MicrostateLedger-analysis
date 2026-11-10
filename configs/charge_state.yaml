@@ -1,0 +1,217 @@
+paths:
+  dude_tsv: $ANALYSIS_ROOT/inputs/data/dude_single_vs_dominant.tsv
+  pdbbind_tsv: $ANALYSIS_ROOT/inputs/data/pdbbind_faithful_single_vs_dominant.tsv
+  original_dominant_py: $BASE_ROOT/code/analysis/dominant_state.py
+  protonation_tools_json: $ANALYSIS_ROOT/results/benchmark_analyses/protonation_tools/production_protonation_charge.json
+  dimorphite_smarts: $ANALYSIS_ROOT/env/conda/lib/python3.11/site-packages/dimorphite_dl/smarts/site_substructures.smarts
+  obabel: $ANALYSIS_ROOT/env/conda/bin/obabel
+  iupac_csv: $DOCKING_ROOT/data/crawled/Dissociation-Constants/iupac_high-confidence_v2_3.csv
+  sampl6_smiles: $DOCKING_ROOT/data/crawled/SAMPL6/physical_properties/pKa/molecule_ID_and_SMILES.csv
+  sampl6_pka: $DOCKING_ROOT/data/crawled/SAMPL6/physical_properties/pKa/experimental_data/pKa_experimental_values.csv
+  sampl7_smiles: $DOCKING_ROOT/data/crawled/SAMPL7/physical_property/SAMPL7_molecule_ID_and_SMILES.csv
+  sampl7_pka: $DOCKING_ROOT/data/crawled/SAMPL7/physical_property/experimental_data/Experimental_Properties_of_SAMPL7_Compounds.csv
+  sampl8_smiles: $DOCKING_ROOT/data/crawled/SAMPL8/physical_properties/SAMPL8_molecule_ID_and_SMILES.csv
+  sampl8_pka: $DOCKING_ROOT/data/crawled/SAMPL8/physical_properties/experimental_data/pKa.csv
+  chembl_tsv: $ANALYSIS_ROOT/inputs/external/chembl/chembl_pka_activities.tsv
+  molgpka_acid: $ANALYSIS_ROOT/inputs/external/ml_pka_tools/MolGpKa/models/weight_acid.pth
+  molgpka_base: $ANALYSIS_ROOT/inputs/external/ml_pka_tools/MolGpKa/models/weight_base.pth
+  molgpka_example_sdf: $ANALYSIS_ROOT/inputs/external/ml_pka_tools/MolGpKa/src/datasets/mols.sdf
+  pkasolver_train_sdf: $ANALYSIS_ROOT/inputs/external/ml_pka_tools/pkasolver/data/Baltruschat/combined_training_datasets_unique.sdf
+  chembl_chemreps: $ANALYSIS_ROOT/inputs/external/chembl/chembl_37_chemreps.txt.gz
+  ml_wrapper: $ANALYSIS_ROOT/scripts/charge_state/ml_pka_sites.py
+  ml_python: $ANALYSIS_ROOT/env/pka_ml/bin/python
+pinned_md5:
+  dude_tsv: 99e2008dbb710c2702b9e9fa8f14d9f8
+  pdbbind_tsv: f60b42846d9368247fb3b0a43e0f0b57
+  original_dominant_py: 37dc8b4c52f7e6cc54c87c6582209a98
+  dimorphite_smarts: 7f204cccfa129d7ff147af76827e1e4e
+  iupac_csv: 178b3358152ae98e398a9135c43bdae3
+  sampl6_smiles: ee06c98c60b9e60f27b73df6e0fed6d0
+  sampl6_pka: 39e910272d3885830533d0714c705f0d
+  sampl7_smiles: 5d22df3d474f3e159f6c7fa86b16cba2
+  sampl7_pka: 21474bed13c1a51c3111734fb7ae7652
+  sampl8_smiles: be2d4949de313eb8fdc8e08619b44ec2
+  sampl8_pka: 27f6a246efbee8de7cf14b58df192e15
+  chembl_tsv: 3fff0677d2ebbc6ebd4f70caa54acbfe
+  molgpka_acid: f2125a7fccb4b9d04e677574aa52d1a9
+  molgpka_base: 4882070604809094d2b3c75d2db45fb6
+  molgpka_example_sdf: b400959ecb3ac6a8bb1090402c578fe7
+  pkasolver_train_sdf: aa8320439160d0ff9ef6e7a3269fa785
+  chembl_chemreps: 1f228d5459582284bffb31ee1b480e9d
+stats:
+  ph: 7.4
+  seed: 20261016
+  n_boot: 10000
+  alpha: 0.05
+  threads: 40
+agreement:
+  methods:
+  - naive
+  - dimorphite_dom
+  - openbabel
+  - enum_popmax
+  - ml_pka
+  fleiss_sets:
+    all_five:
+    - naive
+    - dimorphite_dom
+    - openbabel
+    - enum_popmax
+    - ml_pka
+    four_families:
+    - naive
+    - dimorphite_dom
+    - openbabel
+    - ml_pka
+    tools_only:
+    - dimorphite_dom
+    - openbabel
+    - ml_pka
+  charge_classes:
+  - <=-2
+  - '-1'
+  - '0'
+  - zwitterion
+  - '+1'
+  - '>=+2'
+  original_numbers_reproduced:
+    dude:
+      openbabel_ne_default_frac: 0.4498
+      openbabel_nonzero_frac: 0.4478
+      dimorphite_has_charged_state_frac: 0.7695
+      dimorphite_default_absent_frac: 0.0918
+    pdbbind:
+      openbabel_ne_default_frac: 0.4271
+      openbabel_nonzero_frac: 0.5312
+      dimorphite_has_charged_state_frac: 0.8385
+      dimorphite_default_absent_frac: 0.1823
+  original_enumeration_mismatch:
+    dude: 0.6537
+    pdbbind: 0.651
+anchor:
+  iupac_assessment_keep:
+  - Reliable
+  - Approximate
+  t_min_c: 20.0
+  t_max_c: 30.0
+  pka_type_regex: ^(pKaH|pKa|pKb)(\d+)?$
+  label_keep:
+  - A
+  - AH
+  - B
+  pkb_to_pkah_offset: 14.0
+  max_cosolvent: ''
+  pressure_ok:
+  - ''
+  - 1 (bar)
+  - 1 (atm)
+  max_dispersion: 1.0
+  allowed_elements:
+  - H
+  - C
+  - N
+  - O
+  - F
+  - P
+  - S
+  - Cl
+  - Br
+  - I
+  required_net_charge: 0
+  druglike:
+    mw_min: 150.0
+    mw_max: 600.0
+    min_rings: 1
+    hbd_max: 5
+    hba_max: 10
+  require_window_constant: true
+  gate_window:
+  - 2.0
+  - 12.0
+  site_grouping: 'nitrogen sites of the same kind that share a carbon neighbour (N-C-N: amidine, guanidine, imidazole) are one ionisable group; counts are of groups'
+  relevant_halfwidth: 3.0
+  min_complete_n: 150
+  ambiguous_below: 0.6
+  coupled_gap: 2.0
+  sampl_sets:
+  - SAMPL6
+  - SAMPL7
+  - SAMPL8
+  sampl_type_rule: constants of a SAMPL molecule are typed acid/base only if every independent-SMARTS site of the molecule inside the window has the same type; mixed molecules are excluded as sampl_type_unresolved
+  source_priority:
+  - IUPAC
+  - SAMPL
+  - ChEMBL
+  chembl_use: only records whose activity_comment is 'Acidic pKa' or 'Basic pKa' (669 records, 503 molecules, one curated ChEMBL document); the other ~12,350 records carry no acid/base type and are not
+    used (counted in anchor_build_log.json)
+  chembl_relation_ok:
+  - ''
+  - '='
+  methods:
+  - naive
+  - neutral_input
+  - dimorphite_dom
+  - openbabel
+  - enum_popmax
+  - ml_pka
+  primary_set: complete
+  variant_base_sets:
+  - complete
+  - complete_relaxed
+  - all
+  class_report_sets:
+  - complete
+  - complete_relaxed
+  - all
+  ladder_rule: constants are grouped by (molecule, direction, step); the steps of one direction must be 1..k without a gap, otherwise the molecule is excluded (reason ladder_gap or dispersion)
+classes:
+  priority:
+  - amidine_guanidine
+  - aliphatic_amine
+  - carboxylic_acid
+  - tetrazole_acylsulfonamide
+  - imidazole_azole
+  - pyridine_azine
+  - aniline
+  - phenol
+  - sulfonamide_imide
+  - none
+  nominal_pka_window:
+    amidine_guanidine:
+    - 11.0
+    - 13.6
+    aliphatic_amine:
+    - 8.0
+    - 11.0
+    carboxylic_acid:
+    - 3.0
+    - 5.0
+    tetrazole_acylsulfonamide:
+    - 4.0
+    - 5.5
+    imidazole_azole:
+    - 5.5
+    - 7.5
+    pyridine_azine:
+    - 2.0
+    - 6.0
+    aniline:
+    - 2.0
+    - 5.0
+    phenol:
+    - 8.0
+    - 10.5
+    sulfonamide_imide:
+    - 8.0
+    - 11.0
+  min_n_for_class_error: 5
+reweight:
+  dude_composition_from: dude_tsv
+  extrapolation_label: weighted extrapolation, not a measurement on DUD-E
+leakage:
+  tools:
+  - MolGpKa
+  note: MolGpKa was trained on ACD/pKa predictions for 1.6 million ChEMBL compounds (Pan et al., J. Chem. Inf. Model. 2021, 61, 3159); that training set is not public. The only public related files are
+    the 19,848-molecule example mols.sdf shipped with the code and the Baltruschat et al. experimental collection used by pkasolver; overlap with both is removed as a proxy and both versions are reported.
+post_freeze:
+  sampl_type_check_margin: 2.0

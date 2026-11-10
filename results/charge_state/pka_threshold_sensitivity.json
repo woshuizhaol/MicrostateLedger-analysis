@@ -1,0 +1,107 @@
+{
+ "n_records": 110,
+ "n_predicted": 106,
+ "n_silent_miss": 4,
+ "mae": 1.0996657534225023,
+ "rmse": 1.3675717716505766,
+ "bias": 0.26533173363548507,
+ "k_gt1": 49,
+ "frac_gt1": 0.46226415094339623,
+ "k_gt2": 13,
+ "frac_gt2": 0.12264150943396226,
+ "k_flip": 7,
+ "wilson_gt1": [
+  0.37033619506723053,
+  0.556831560296805
+ ],
+ "within_0p01_of_threshold": [
+  {
+   "mol_id": "iupac_168",
+   "smiles": "CCCc1nccs1",
+   "exp": 3.353,
+   "pred_full": 4.3535441240733945,
+   "err_full": 1.0005441240733943
+  },
+  {
+   "mol_id": "iupac_243",
+   "smiles": "O=C(O)c1cc(Cl)ccc1Cl",
+   "exp": 2.466,
+   "pred_full": 3.463441968255319,
+   "err_full": 0.9974419682553188
+  }
+ ],
+ "threshold_sweep": {
+  "0.95": 54,
+  "0.99": 50,
+  "1.0": 49,
+  "1.01": 48,
+  "1.05": 44
+ },
+ "original_summary": {
+  "dataset": "IUPAC_Reliable_mono",
+  "n_records": 110,
+  "n_predicted": 106,
+  "n_silent_miss": 4,
+  "silent_miss_frac": 0.036,
+  "pka_MAE": 1.1,
+  "pka_RMSE": 1.368,
+  "pka_bias_mean_err": 0.265,
+  "frac_abs_err_gt_1": 0.462,
+  "frac_abs_err_gt_2": 0.123,
+  "pH7.4_dominant_flip_frac": 0.066
+ },
+ "matches_old_summary": {
+  "n_predicted": true,
+  "n_silent_miss": true,
+  "mae": true,
+  "rmse": true,
+  "frac_gt1": true,
+  "frac_gt2": true,
+  "flip": true
+ },
+ "provenance": {
+  "script": "$ANALYSIS_ROOT/scripts/charge_state/pka_threshold.py",
+  "config": "$ANALYSIS_ROOT/configs/charge_state.yaml",
+  "inputs": [
+   {
+    "exists": true,
+    "bytes": 7337064,
+    "md5": "178b3358152ae98e398a9135c43bdae3",
+    "n_records": 24211,
+    "record_unit": "table_rows",
+    "file": "iupac_high-confidence_v2_3.csv"
+   },
+   {
+    "exists": true,
+    "bytes": 5141,
+    "md5": "7f204cccfa129d7ff147af76827e1e4e",
+    "n_records": 69,
+    "record_unit": "lines",
+    "file": "site_substructures.smarts"
+   },
+   {
+    "exists": true,
+    "bytes": 668,
+    "md5": "daf0e5818899feec7010e3345438fdd2",
+    "n_records": 2,
+    "record_unit": "json_top_level_keys",
+    "file": "pka_summary.json"
+   }
+  ],
+  "seed": null,
+  "n_boot": null,
+  "n_perm": null,
+  "tool_versions": {
+   "python": "3.11.15",
+   "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+   "numpy": "2.4.6",
+   "scipy": "1.17.1",
+   "pandas": "3.0.3",
+   "yaml": "6.0.3"
+  },
+  "extra": {
+   "original_script": "$BASE_ROOT/code/analysis/pka_benchmark.py md5 2b56f7252c7108d36da99b86243d52c0",
+   "rounding": "none"
+  }
+ }
+}

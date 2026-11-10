@@ -1,0 +1,86 @@
+paths:
+  decoy_dock: $ANALYSIS_ROOT/raw_outputs/decoy_matching/dock
+  decoy_tables: $ANALYSIS_ROOT/results/decoy_matching
+  receptors: $ANALYSIS_ROOT/inputs/receptors
+  ten_target_run: $DOCKING_ROOT/verification/C2_dude_vs/outputs/ten_target_docking
+  ten_target_p11: $BASE_ROOT/results/benchmark/budget6_docking
+  decoy_config: $ANALYSIS_ROOT/configs/decoy_matching.yaml
+posebusters:
+  version: 0.6.5
+  config: dock
+  geom_columns:
+  - mol_pred_loaded
+  - sanitization
+  - inchi_convertible
+  - all_atoms_connected
+  - no_radicals
+  - bond_lengths
+  - bond_angles
+  - internal_steric_clash
+  - aromatic_ring_flatness
+  - non-aromatic_ring_non-flatness
+  - double_bond_flatness
+  - internal_energy
+  inter_columns:
+  - mol_cond_loaded
+  - protein-ligand_maximum_distance
+  - minimum_distance_to_protein
+  - minimum_distance_to_organic_cofactors
+  - minimum_distance_to_inorganic_cofactors
+  - minimum_distance_to_waters
+  - volume_overlap_with_protein
+  - volume_overlap_with_organic_cofactors
+  - volume_overlap_with_inorganic_cofactors
+  - volume_overlap_with_waters
+  full_pb_rule: 'all 22 columns exactly True (original rule: every check column except file/molecule/position equal to ''True''); a NaN counts as failed and is listed in pb_nan_columns'
+criteria:
+  geom: all geom_columns True (intramolecular checks only)
+  full_pb: all geom_columns and inter_columns True
+  score_rank: the microstate's representative pose has an ordinal score rank <= ceil(n/2) among the representative poses of the n docked microstates of the same ligand (rank = 1 + number of strictly better
+    scores; lower Vina score = better); n = 1 passes
+  rmsd_ref: 'CASF only (pose-criteria): symmetry-corrected heavy-atom RMSD to the crystal ligand <= 2.0 A'
+  plif: 'CASF only (pose-criteria): ProLIF Tanimoto similarity of the interaction fingerprint to the crystal pose >= 0.5'
+  rmsd_threshold_A: 2.0
+  plif_threshold: 0.5
+representative_pose: 'for each (ligand, microstate) the docked pose with the lowest mode-1 Vina score (ties: lowest conformer rank); decoy-matching has exactly one pose per microstate. Pose-level kappa uses ALL
+  poses.'
+default_microstate:
+  original: single strategy's first candidate in the original run (strategy_allocation_json.single.candidate_mids[0]) = first eligible microstate by (|formal charge|, microstate_id)
+  decoy_matching: order 0 of the docking record (same rule)
+best_microstate: the microstate whose representative pose has the lowest Vina score among all docked microstates of the ligand
+flip:
+  definition: validity of the default microstate's representative pose differs from validity of the best-scoring microstate's representative pose (for each criterion separately)
+  denominator_primary: ligands whose default microstate and at least one other microstate were docked successfully
+  denominator_secondary: the subset of those in which the best-scoring microstate differs from the default microstate (the only ligands in which a flip is possible)
+  direction: rescue = default invalid and best valid; degrade = default valid and best invalid
+kappa:
+  statistic: Cohen's kappa, unit = pose (all poses)
+  ci: cluster bootstrap over ligands (a ligand is a unit with all its poses), 2000 resamples, seed 20261031, percentile 95%
+  pairs:
+  - - geom
+    - full_pb
+  - - geom
+    - score_rank
+  - - full_pb
+    - score_rank
+  datasets:
+  - ten_target_main
+  - ten_target_budget6
+  - dude_full
+  - litpcba
+  - zinc_unmatched
+  - zinc_charge_mismatch
+proportions:
+  ci: wilson
+  alpha: 0.05
+  multiple_testing: Holm over target x criterion within a dataset
+noise_floor:
+  n_extra_seeds: 4
+  seed_base: 20261101
+  units: the default and the best-scoring microstate of each sampled ligand (original conformer re-used by re-generating it with the original conformer seed and conformer rank)
+  sample: 'random ligands, stratified by (set, target): 60 per (dude_full, target) split 20 actives / 40 negatives, 30 per (litpcba, target) split 10 / 20, 30 per (zinc_unmatched, target) negatives only,
+    20 actives are shared; sampling seed 20261032; only ligands with best != default are sampled (the only ligands that can flip)'
+  noise_flip_rate: fraction of (ligand, criterion) in which the validity of the SAME microstate differs between its original pose and the pose of an extra seed (pairwise comparison of the original with
+    each extra seed, and among extra seeds, averaged)
+  comparison: two-proportion z-test (pooled over targets) of the microstate-induced flip rate against the noise flip rate within the sampled ligands, per criterion; Holm over criteria x dataset
+  fallback: if the main docking has not finished, the noise floor is computed on the completed ligands only, and the number of ligands is reported

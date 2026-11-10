@@ -1,0 +1,115 @@
+{
+ "file": "casf_noise_floor.csv",
+ "description": "Docking-noise floor versus microstate-induced validity flip on CASF-2016",
+ "row_grain": "one row per criterion",
+ "n_rows": 5,
+ "n_columns": 11,
+ "delimiter": ",",
+ "file_md5": "8b5294c6b1ee633fb9eb837b95a4edbb",
+ "columns": [
+  {
+   "name": "criterion",
+   "type": "str",
+   "unit": "",
+   "description": "criterion",
+   "n_missing": 0
+  },
+  {
+   "name": "n_complexes",
+   "type": "int",
+   "unit": "",
+   "description": "affected complexes with a flip fraction and a noise estimate",
+   "n_missing": 0
+  },
+  {
+   "name": "microstate_flip_rate",
+   "type": "float",
+   "unit": "",
+   "description": "mean over complexes of the single-vs-dominant flip fraction (over seeds)",
+   "n_missing": 0
+  },
+  {
+   "name": "noise_flip_rate",
+   "type": "float",
+   "unit": "",
+   "description": "mean over complexes of the seed-pair disagreement of the SAME microstate (single and dominant averaged)",
+   "n_missing": 0
+  },
+  {
+   "name": "diff",
+   "type": "float",
+   "unit": "",
+   "description": "microstate_flip_rate - noise_flip_rate (paired mean)",
+   "n_missing": 0
+  },
+  {
+   "name": "diff_lo",
+   "type": "float",
+   "unit": "",
+   "description": "complex bootstrap 2.5%",
+   "n_missing": 0
+  },
+  {
+   "name": "diff_hi",
+   "type": "float",
+   "unit": "",
+   "description": "complex bootstrap 97.5%",
+   "n_missing": 0
+  },
+  {
+   "name": "p_wilcoxon_paired",
+   "type": "float",
+   "unit": "",
+   "description": "Wilcoxon signed-rank on the paired complex differences (two-sided)",
+   "n_missing": 0
+  },
+  {
+   "name": "z_naive",
+   "type": "float",
+   "unit": "",
+   "description": "pooled two-proportion z (units treated as independent; descriptive only)",
+   "n_missing": 0
+  },
+  {
+   "name": "p_naive",
+   "type": "float",
+   "unit": "",
+   "description": "p of z_naive",
+   "n_missing": 0
+  },
+  {
+   "name": "p_holm",
+   "type": "float",
+   "unit": "",
+   "description": "Holm over the 5 criteria of p_wilcoxon_paired",
+   "n_missing": 0
+  }
+ ],
+ "extra": {
+  "provenance": {
+   "script": "$ANALYSIS_ROOT/scripts/pose_criteria/criterion_flips.py",
+   "config": "$ANALYSIS_ROOT/configs/pose_validity.yaml",
+   "inputs": [
+    {
+     "exists": true,
+     "bytes": 697032,
+     "md5": "b4df9c678ae20f184d18ddfa8702ecb1",
+     "n_records": 7101,
+     "record_unit": "table_rows",
+     "file": "casf_pose_checks.csv"
+    }
+   ],
+   "seed": 20261061,
+   "n_boot": 2000,
+   "n_perm": null,
+   "tool_versions": {
+    "python": "3.11.15",
+    "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "pandas": "3.0.3",
+    "yaml": "6.0.3"
+   }
+  }
+ }
+}

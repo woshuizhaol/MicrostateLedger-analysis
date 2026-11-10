@@ -1,0 +1,76 @@
+{
+ "provenance": {
+  "script": "$ANALYSIS_ROOT/scripts/decoy_matching/null_calibration.py",
+  "config": null,
+  "inputs": [
+   {
+    "exists": true,
+    "bytes": 10426,
+    "md5": "95021ecbb1b609fa91f004bed809dd88",
+    "n_records": 219,
+    "record_unit": "lines",
+    "file": "decoy_stats.py"
+   }
+  ],
+  "seed": 20261024,
+  "n_boot": null,
+  "n_perm": null,
+  "tool_versions": {
+   "python": "3.11.15",
+   "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+   "numpy": "2.4.6",
+   "scipy": "1.17.1",
+   "pandas": "3.0.3",
+   "yaml": "6.0.3"
+  },
+  "extra": {
+   "replicates": 300,
+   "n_active": 300,
+   "n_negative": 900
+  }
+ },
+ "by_test": {
+  "mann_whitney": {
+   "n": 300,
+   "n_nonfinite": 0,
+   "rejection_rate": 0.05,
+   "rejection_rate_ci95": [
+    0.030531640629347285,
+    0.08084703347274416
+   ],
+   "ks_uniform_p": 0.8242621563405743
+  },
+  "van_elteren": {
+   "n": 300,
+   "n_nonfinite": 0,
+   "rejection_rate": 0.04666666666666667,
+   "rejection_rate_ci95": [
+    0.027998933682334016,
+    0.07679736022792107
+   ],
+   "ks_uniform_p": 0.8410356388636833
+  },
+  "mixed": {
+   "n": 300,
+   "n_nonfinite": 0,
+   "rejection_rate": 0.06333333333333334,
+   "rejection_rate_ci95": [
+    0.04091688238391527,
+    0.09679131248552161
+   ],
+   "ks_uniform_p": 0.6823159687687065
+  },
+  "mixed_rank": {
+   "n": 300,
+   "n_nonfinite": 0,
+   "rejection_rate": 0.06333333333333334,
+   "rejection_rate_ci95": [
+    0.04091688238391527,
+    0.09679131248552161
+   ],
+   "ks_uniform_p": 0.7046212328476288
+  }
+ },
+ "wall_seconds": 1383.7,
+ "note": "synthetic null: gain skewed, 17% zeros, depends on n_eligible, independent of activity; a calibrated test rejects ~5%"
+}

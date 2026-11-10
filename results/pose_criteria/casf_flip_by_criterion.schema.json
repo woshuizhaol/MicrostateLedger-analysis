@@ -1,0 +1,125 @@
+{
+ "file": "casf_flip_by_criterion.csv",
+ "description": "Validity flip rate between the default and the dominant microstate on re-docked CASF-2016",
+ "row_grain": "one row per criterion x scope",
+ "n_rows": 20,
+ "n_columns": 12,
+ "delimiter": ",",
+ "file_md5": "d1e7e1099976756a0772f0290396dccb",
+ "columns": [
+  {
+   "name": "criterion",
+   "type": "str",
+   "unit": "",
+   "description": "geom | full_pb | score_rank | rmsd_ref | plif",
+   "n_missing": 0
+  },
+  {
+   "name": "scope",
+   "type": "str",
+   "unit": "",
+   "description": "all_seeds (complex-level mean, bootstrap CI) | one_seed (pooled complexes of that seed, Wilson CI)",
+   "n_missing": 0
+  },
+  {
+   "name": "seed",
+   "type": "str",
+   "unit": "",
+   "description": "Vina seed or ALL",
+   "n_missing": 0
+  },
+  {
+   "name": "n_complexes",
+   "type": "int",
+   "unit": "",
+   "description": "affected complexes with both verdicts",
+   "n_missing": 0
+  },
+  {
+   "name": "n_pairs",
+   "type": "int",
+   "unit": "",
+   "description": "(complex, seed) pairs with both verdicts",
+   "n_missing": 0
+  },
+  {
+   "name": "n_flip",
+   "type": "int",
+   "unit": "",
+   "description": "pairs with different verdicts",
+   "n_missing": 0
+  },
+  {
+   "name": "flip_pct",
+   "type": "float",
+   "unit": "%",
+   "description": "flip percentage (see scope)",
+   "n_missing": 0
+  },
+  {
+   "name": "ci_lo",
+   "type": "float",
+   "unit": "%",
+   "description": "95% lower",
+   "n_missing": 0
+  },
+  {
+   "name": "ci_hi",
+   "type": "float",
+   "unit": "%",
+   "description": "95% upper",
+   "n_missing": 0
+  },
+  {
+   "name": "n_rescue",
+   "type": "int",
+   "unit": "",
+   "description": "single invalid -> dominant valid",
+   "n_missing": 0
+  },
+  {
+   "name": "n_degrade",
+   "type": "int",
+   "unit": "",
+   "description": "single valid -> dominant invalid",
+   "n_missing": 0
+  },
+  {
+   "name": "n_complexes_with_any_flip",
+   "type": "int",
+   "unit": "",
+   "description": "complexes (all_seeds) / pairs (one_seed) with a flip",
+   "n_missing": 0
+  }
+ ],
+ "extra": {
+  "provenance": {
+   "script": "$ANALYSIS_ROOT/scripts/pose_criteria/criterion_flips.py",
+   "config": "$ANALYSIS_ROOT/configs/pose_validity.yaml",
+   "inputs": [
+    {
+     "exists": true,
+     "bytes": 697032,
+     "md5": "b4df9c678ae20f184d18ddfa8702ecb1",
+     "n_records": 7101,
+     "record_unit": "table_rows",
+     "file": "casf_pose_checks.csv"
+    }
+   ],
+   "seed": 20261061,
+   "n_boot": 2000,
+   "n_perm": null,
+   "tool_versions": {
+    "python": "3.11.15",
+    "platform": "Linux-5.15.0-91-generic-x86_64-with-glibc2.35",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "pandas": "3.0.3",
+    "yaml": "6.0.3"
+   },
+   "extra": {
+    "n_affected": 178
+   }
+  }
+ }
+}
